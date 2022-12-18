@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Stillnet Studios  &raquo; Blog Archive   &raquo; Require subversion comments &#8211; a perl pre-commit hook</title>
+
+<meta name="generator" content="WordPress 6.1.1"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/evanescence-12/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios RSS Feed" href="/feed/">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="robots" content="max-image-preview:large">
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-1413191-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios &raquo; Require subversion comments &#8211; a perl pre-commit hook Comments Feed" href="/require-subversion-comments-minimum/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"httpwww.stillnetstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/100">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="/require-subversion-comments-minimum/comment-page-1/#comments">
+<link rel="shortlink" href="/?p=100">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Frequire-subversion-comments-minimum%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Frequire-subversion-comments-minimum%2F&#038;format=xml">
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<div><div>	
+	<div class="header-title">
+		<h1><a href="/" title="Stillnet Studios: Web development notes and commentary from Ryan Stille">Stillnet Studios</a></h1>
+		<p>Web development notes and commentary from Ryan Stille</p>
+	</div> 
+	<!-- Search box (If you prefer having search form as a sidebar widget, remove this block) -->
+	<div class="search">
+		<form method="get" id="searchform" action="http://www.stillnetstudios.com/">
+<input type="text" size="12" name="s" id="s" value="search..." onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';">
+</form>
+	</div> 
+	<!-- Search ends here-->
+</div></div>	
+</div>
+<div id="wrapper">
+
+	<div id="content">
+
+			
+		<div class="navigation">
+			<div class="alignleft">&laquo; <a href="/mssql-case-statement-with-nulls/" rel="prev">SQL CASE statement with NULLs</a>
+</div>
+			<div class="alignright">
+<a href="/reset-javascript-firefox-back-button/" rel="next">Resetting the DOM and JavaScript when using the &#8216;Back&#8217; button in FireFox</a> &raquo;</div>
+		</div>
+
+		<div class="post" id="post-100">
+			<div class="post-title"><div>
+				<h2><a href="/require-subversion-comments-minimum/" rel="bookmark" title="Permanent Link to Require subversion comments &#8211; a perl pre-commit hook">Require subversion comments &#8211; a perl pre-commit hook</a></h2>
+			</div></div>
+			<div class="post-entry">
+				<p>We&#8217;ve been having some issues with people committing to the subversion server without entering a comment.  Its easy to to require a comment using a &#8220;pre-commit&#8221; hook, which is a script that runs before someone&#8217;s changes are committed to the repository.  A sample commit hook is supplied with subversion that you can enable to require comments.  The problem is it doesn&#8217;t report back any error message (users will just get a generic &#8220;commit failed&#8221; in their svn client), and there is no provision for making sure the comment is a minimum length.</p>
+<p>I tried to modify the example script, but I&#8217;m pretty bad with shell scripting.  I looked for a perl one, which I knew I could easily modify, but couldn&#8217;t find any.  So I whipped this one up:<br>
+<span id="more-100"></span></p>
+<pre><code>#!/usr/bin/perl
+
+# config section
+$minchars = 4;
+$svnlook = '/usr/bin/svnlook';
+
+#--------------------------------------------
+$repos = $ARGV[0];
+$txn = $ARGV[1];
+$comment = `$svnlook log -t "$txn" "$repos"`;
+chomp($comment);
+
+if ( length($comment) == 0 ) {
+  print STDERR "A comment is required!";
+  exit(1);
+  }
+elsif ( length($comment) &lt; $minchars ) {
+  print STDERR "Comment must be at least $minchars characters.";
+  exit(1);
+  }
+
+exit(0);</code></pre>
+<p>Those error messages get sent back to the client and display just fine in TortoiseSVN or whatever you use.</p>
+<p>My subversion server is running on Linux, but the script should run on Windows with little modification, if you have perl installed.</p>
+							</div>
+	
+			<p class="post-meta">
+					This entry was posted on 16 June 2008 at 2:52 pm					and is filed under <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/system-administration/" rel="category tag">System Administration</a>, <a href="/category/web-development/" rel="category tag">Web Development</a>.
+					You can follow any responses to this entry through the <a href="/require-subversion-comments-minimum/feed/">RSS 2.0</a> feed.
+
+											Both comments and pings are currently closed.
+
+					
+			</p>
+		</div>
+	
+<!-- You can start editing here. -->
+<div id="comments">
+	<h3>25 Comments</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-385">
+			<h4>
+<a href="http://robwilkerson.org/" rel="external nofollow ugc" class="url">Rob Wilkerson</a> says:</h4>
+			<p>If anyone&#8217;s interested in simply modifying the built-in script, here&#8217;s what I&#8217;ve done:</p>
+<p>SVNLOOK=/usr/bin/svnlook<br>
+LOGMSG=`$SVNLOOK log -t &#8220;$TXN&#8221; &#8220;$REPOS&#8221; | grep &#8220;[a-zA-Z0-9]&#8221; | wc -c`</p>
+<p>if [ &#8220;$LOGMSG&#8221; -lt 1 ]; then<br>
+    echo -e &#8220;Please provide a meaningful comment when committing changes.&#8221; 1&gt;&amp;2<br>
+    exit 1<br>
+fi</p>
+<p>The &#8220;1&gt;&amp;2&#8221; operator redirects to the standard error rather than the standard output which is what allows the message to display in TortoiseSVN.  I&#8217;ve never run Svn on a Windows box, so your mileage may vary. This works great on a Linux install to which I connect via TSVN, Subclipse and the command line.</p>
+<p>Hope this helps.</p>
+						<small class="commentmetadata"><a href="#comment-385" title="">16 June 2008, 6:08 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-386">
+			<h4>patrick says:</h4>
+			<p>Where does this go?</p>
+						<small class="commentmetadata"><a href="#comment-386" title="">18 June 2008, 4:48 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-387">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Patrick, there is a &#8220;hooks&#8221; subdirectory under your repository directory.  All your hook scripts go into there.  By repository directory, I mean where your repository is actually stored on the machine that is running the subversion server.</p>
+						<small class="commentmetadata"><a href="#comment-387" title="">18 June 2008, 4:51 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-388">
+			<h4>patrick says:</h4>
+			<p>Thanks so much for the quick reply.  I must be doing something incorrectly; this is my pre-commit.tmpl in hooks/</p>
+<p>REPOS=&#8221;$1&#8243;<br>
+TXN=&#8221;$2&#8243;</p>
+<p># Make sure that the log message contains some text.<br>
+SVNLOOK=/usr/bin/svnlook<br>
+#$SVNLOOK log -t &#8220;$TXN&#8221; &#8220;$REPOS&#8221; | \<br>
+#   grep &#8220;[a-zA-Z0-9]&#8221; &gt; /dev/null || exit 1</p>
+<p>LOGMSG=`$SVNLOOK log -t &#8220;$TXN&#8221; &#8220;$REPOS&#8221; | grep &#8220;[a-zA-Z0-9]&#8221; | wc -c`</p>
+<p>if [ &#8220;$LOGMSG&#8221; -lt 5 ]; then<br>
+echo -e &#8220;Please provide a meaningful comment when committing changes.&#8221; 1&gt;&amp;2<br>
+exit 1<br>
+fi</p>
+<p># Check that the author of this commit has the rights to perform<br>
+# the commit on the files and directories being modified.<br>
+commit-access-control.pl &#8220;$REPOS&#8221; &#8220;$TXN&#8221; commit-access-control.cfg || exit 1</p>
+<p># All checks passed, so allow the commit.<br>
+exit 0</p>
+<p>This seems to still let me put a single dot for the comment.</p>
+						<small class="commentmetadata"><a href="#comment-388" title="">18 June 2008, 5:47 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-389">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>You need to rename it to pre-commit, without the &#8220;.tmpl&#8221; on it, and make sure its executable.   I probably should have gotten into more detail in my post.</p>
+						<small class="commentmetadata"><a href="#comment-389" title="">18 June 2008, 5:49 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-390">
+			<h4>patrick says:</h4>
+			<p>Thanks a lot.  I used your perl script.  Couldn&#8217;t get the bash script the other guy posted to work.</p>
+						<small class="commentmetadata"><a href="#comment-390" title="">18 June 2008, 6:06 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-391">
+			<h4>Uzo says:</h4>
+			<p>Hi I am trying to write a hook script that will fail the commit if there is no bug id. I am getting frustrated with not being able to  do this. I have no technical knowledge though and this is what I encountered. I use the tortoiseSVN client, I noticed that there is no svnlook in my bin directory. I copied it across manually and this script was written for me in python</p>
+<p>#!/usr/bin/python</p>
+<p># commit acceptance python client for SVN</p>
+<p>import os</p>
+<p>import re</p>
+<p>import sys</p>
+<p>import urlparse</p>
+<p># configure svnlook path</p>
+<p>svnlookPath = &#8216;\&#8221;C:\\Program Files\\VisualSVN Server\\bin\\svnlook.exe\&#8221;&#8216;</p>
+<p># get committer</p>
+<p>try:</p>
+<p>            f = os.popen(svnlookPath + &#8216; author -t &#8216; + sys.argv[2] + &#8216; &#8216; + sys.argv[1])</p>
+<p>            committer = f.read()</p>
+<p>            if f.close():</p>
+<p>                        raise 1</p>
+<p>            committer = committer.rstrip(&#8220;\n\r&#8221;)</p>
+<p>except:</p>
+<p>            print &gt;&gt; sys.stderr, &#8216;Unable to get committer with svnlook.&#8217;</p>
+<p>            print &gt;&gt; sys.stderr, svnlookPath</p>
+<p>            print &gt;&gt; sys.stderr, sys.argv[1]</p>
+<p>            print &gt;&gt; sys.stderr, sys.argv[2]</p>
+<p>            sys.exit(1)</p>
+<p># get commit message</p>
+<p>try:</p>
+<p>            f = os.popen(svnlookPath + &#8216; log -t &#8216; + sys.argv[2] + &#8216; &#8216; + sys.argv[1])</p>
+<p>            commitMessage = f.read()</p>
+<p>            if f.close():</p>
+<p>                        raise 1</p>
+<p>            commitMessage = commitMessage.rstrip(&#8216;\n\r&#8217;)</p>
+<p>except:</p>
+<p>            print &gt;&gt; sys.stderr, &#8216;Unable to get commit message with svnlook.&#8217;</p>
+<p>            print &gt;&gt; sys.stderr, svnlookPath</p>
+<p>            print &gt;&gt; sys.stderr, sys.argv[1]</p>
+<p>            print &gt;&gt; sys.stderr, sys.argv[2]</p>
+<p>            sys.exit(1)</p>
+<p># print arguments</p>
+<p># print &gt;&gt; sys.stderr, &#8216;Committer: &#8216; + committer</p>
+<p>print &gt;&gt; sys.stderr, &#8216;Commit message: &#8220;&#8216; + commitMessage + &#8216;&#8221;&#8216;</p>
+<p>if (re.match(&#8216;^[a-zA-Z]+-[0-9]+([\s]+|$)&#8217;,commitMessage)):</p>
+<p>            print &gt;&gt; sys.stderr, &#8216;Commit accepted.&#8217;</p>
+<p>            sys.exit(0)</p>
+<p>else:</p>
+<p>            print &gt;&gt; sys.stderr, &#8216;Commit rejected: This repository requires a commit message to begin with a Jira issue number.\n\reg JIRAPRJ-1&#8217;</p>
+<p>            sys.exit(1)</p>
+<p>PLEASE HELP!!!</p>
+						<small class="commentmetadata"><a href="#comment-391" title="">3 July 2008, 5:10 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-393">
+			<h4>
+<a href="http://robwilkerson.org/" rel="external nofollow ugc" class="url">Rob Wilkerson</a> says:</h4>
+			<p>I&#8217;ve never installed Svn on Windows, but &#8220;#!&#8221; is a Unix script indicator. The paths you reference also appear Unix-centric.  Are you sure you installed the Windows version of Svn server (assuming there is such a thing)?  Changing the extension to .bat is meaningless if the syntax is that of a Unix shell script.</p>
+						<small class="commentmetadata"><a href="#comment-393" title="">25 July 2008, 12:42 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-394">
+			<h4>Asim says:</h4>
+			<p>Hi Rob,<br>
+Thanks for the quick update. I actually did download the Windows version and for some reason it has the same pre-hooks as unix then.</p>
+<p>I followed these steps to install it:<br>
+<a href="http://blogs.vertigosoftware.com/teamsystem/archive/2006/01/16/Setting_up_a_Subversion_Server_under_Windows.aspx" rel="nofollow ugc">http://blogs.vertigosoftware.com/teamsystem/archive/2006/01/16/Setting_up_a_Subversion_Server_under_Windows.aspx</a></p>
+<p>And its running fine as is, no pre-commits message checks though 🙁</p>
+						<small class="commentmetadata"><a href="#comment-394" title="">25 July 2008, 1:03 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-392">
+			<h4>Asim says:</h4>
+			<p>Hi Guys,</p>
+<p>I&#8217;m new to SVN. Its my second day with SVN today and I&#8217;m trying to setup a pre-hook to force a properly formatted commit message. I have installed SVN on windows and renamed the pre-hook file to .bat but it throws these error messages.</p>
+<p>Does this mean that I need to install some sort of an environment there? Please help!!</p>
+<p>Thanks</p>
+<p>Error: Commit failed (details follow):<br>
+Error: &#8216;pre-commit&#8217; hook failed with error output:<br>
+Error: &#8216;#!&#8217; is not recognized as an internal or external command,<br>
+Error: operable program or batch file.<br>
+Error: &#8216;#&#8217; is not recognized as an internal or external command,<br>
+Error: operable program or batch file.<br>
+<em>[ long list of this snipped&#8230; ]</em><br>
+Error: &#8216;REPOS&#8217; is not recognized as an internal or external command,<br>
+Error: operable program or batch file.<br>
+Error: &#8216;TXN&#8217; is not recognized as an internal or external command,<br>
+Error: operable program or batch file.<br>
+Error: &#8216;#&#8217; is not recognized as an internal or external command,<br>
+Error: operable program or batch file.<br>
+Error: Unknown command: &#8216;=/usr/local/bin/svnlook&#8217;<br>
+Error: Type &#8216;svnlook help&#8217; for usage.<br>
+Error: &#8216;$SVNLOOK&#8217; is not recognized as an internal or external command,<br>
+Error: operable program or batch file.</p>
+						<small class="commentmetadata"><a href="#comment-392" title="">25 July 2008, 12:31 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-395">
+			<h4>Felix says:</h4>
+			<p>No Commit Without Comment 🙂</p>
+						<small class="commentmetadata"><a href="#comment-395" title="">17 September 2008, 12:49 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-397">
+			<h4>Martin says:</h4>
+			<p>I can&#8217;t for the life of me get my hooks to print in stderr. Not through a bash script, not in python scripts. I managed to do a few errors in the python script which prompted the python interpreter to write those errors through stderr during a commit 😛 But other than that? It just won&#8217;t work.</p>
+<p>Any environmental things that need setting up or some such? hm</p>
+						<small class="commentmetadata"><a href="#comment-397" title="">12 October 2008, 3:00 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-396">
+			<h4>Anonymous says:</h4>
+			<p>What would be a Windows equivalent of this script by editing the .tmpl?</p>
+						<small class="commentmetadata"><a href="#comment-396" title="">15 May 2009, 10:11 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-595">
+			<h4>Dave Schinkel says:</h4>
+			<p>I assume this script would not work by pasting it and using it in a Windows environment.&nbsp;&nbsp;So how would you do this in a Windows environment and add this same kind of hook?&nbsp;&nbsp;Anyone, anyone?</p>
+						<small class="commentmetadata"><a href="#comment-595" title="">31 July 2009, 3:01 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-596">
+			<h4>Ryan says:</h4>
+			<p>Dave you could install <a href="http://www.activestate.com/activeperl/" rel="nofollow">Perl for Windows</a> and use this script.&nbsp;&nbsp;You&apos;ll need to change a few things of course, the path to the svnlook program won&apos;t be the same for example.</p>
+<p>Or you could try <a href="http://stackoverflow.com/questions/869248/windows-pre-commit-hook-for-comment-length-subversion" rel="nofollow">a windows batch file</a>.</p>
+						<small class="commentmetadata"><a href="#comment-596" title="">31 July 2009, 3:11 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-602">
+			<h4>Dave Schinkel says:</h4>
+			<p>Nice, thank you!</p>
+						<small class="commentmetadata"><a href="#comment-602" title="">5 August 2009, 9:43 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-604">
+			<h4>Dave Schinkel says:</h4>
+			<p>I was also told by a former collegue that you can just use the property tsvn:logminsize on your entire repository</p>
+						<small class="commentmetadata"><a href="#comment-604" title="">5 August 2009, 2:00 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-1475">
+			<h4>Dan Walker says:</h4>
+			<p>Nice, clean Perl script.&nbsp;&nbsp;Thanks!</p>
+						<small class="commentmetadata"><a href="#comment-1475" title="">9 June 2010, 2:48 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-1921">
+			<h4>Neil says:</h4>
+			<p>Thanks so much! Beautiful script</p>
+						<small class="commentmetadata"><a href="#comment-1921" title="">9 November 2010, 11:45 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-2196">
+			<h4>
+<a href="http://shah-oss.blogspot.com/" rel="external nofollow ugc" class="url">Shah</a> says:</h4>
+			<p>many thanks 🙂<br>
+I am trying to included code reviewer test as well, but being newbie not able to write perl code 🙁</p>
+						<small class="commentmetadata"><a href="#comment-2196" title="">14 April 2011, 4:24 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-2649">
+			<h4>shag says:</h4>
+			<p>can i able to force commands only for cpp files in svn</p>
+						<small class="commentmetadata"><a href="#comment-2649" title="">13 December 2011, 3:27 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-2662">
+			<h4>sagar says:</h4>
+			<p>hello i m using webfaction hosting and i put that script as pre-commit.sh ..but its not executable ???..can u plz suggest me..??</p>
+						<small class="commentmetadata"><a href="#comment-2662" title="">3 January 2012, 7:31 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-2673">
+			<h4>Keshav says:</h4>
+			<p>Hello all,<br>
+I want to mandate a specific pattern(Should start with AS- ) in the commit message while I commit to SVN . Could someone help me in writing a script for this ?<br>
+Any help on this would be greatly appreciated &#8230; </p>
+<p>Thanks,<br>
+K</p>
+						<small class="commentmetadata"><a href="#comment-2673" title="">10 January 2012, 7:33 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-2936">
+			<h4>Johnny C says:</h4>
+			<p>Thank you all. The STDERR thing is the tricky part that I was looking for.</p>
+						<small class="commentmetadata"><a href="#comment-2936" title="">8 August 2012, 1:24 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-2946">
+			<h4>
+<a href="http://relivingmyfavouritemoments.blogspot.in/" rel="external nofollow ugc" class="url">suma ramesh</a> says:</h4>
+			<p>HI</p>
+<p>I want to include Pre commit script..</p>
+<p>I have renamed the file from pre-commit to pre-commit.html.</p>
+<p>REPOS=&#8221;$1&#8243;<br>
+TXN=&#8221;$2&#8243;</p>
+<p># Make sure that the log message contains some text.<br>
+SVNLOOK=/usr/bin/svnlook<br>
+$SVNLOOK log -t &#8220;$TXN&#8221; &#8220;$REPOS&#8221; | \<br>
+   grep &#8220;[a-zA-Z0-9]&#8221; &gt; /dev/null || exit 1</p>
+<p># Check that the author of this commit has the rights to perform<br>
+# the commit on the files and directories being modified.<br>
+commit-access-control.pl &#8220;$REPOS&#8221; &#8220;$TXN&#8221; commit-access-control.cfg || exit 1</p>
+<p># All checks passed, so allow the commit.<br>
+exit 0</p>
+<p>Kindly tell me what are the changes i need to do&#8230;</p>
+						<small class="commentmetadata"><a href="#comment-2946" title="">22 September 2012, 1:28 am</a></small>
+					</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+	<div>
+		<ul>
+			<li id="text-3" class="widget widget_text">			<div class="textwidget"><center><img style="border: 1px solid gray;" src="/wp-content/uploads/2012/06/ryan-headshot-1.jpg" alt="Ryan Stille"></center></div>
+		</li>
+<li id="pages-3" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+
+			<ul>
+				<li class="page_item page-item-228"><a href="/about/">About Me</a></li>
+<li class="page_item page-item-35"><a href="/projects/">My Projects</a></li>
+			</ul>
+
+			</li>
+<li id="categories-3" class="widget widget_categories">
+<h2 class="widgettitle">Article Categories</h2>
+
+			<ul>
+					<li class="cat-item cat-item-3">
+<a href="/category/ajax-javascript/">AJAX / JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/bluedragon/">BlueDragon</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/book-reviews/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/coldfusion/">ColdFusion</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/flex/">Flex</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/misc/">Misc</a>
+</li>
+	<li class="cat-item cat-item-10">
+<a href="/category/railo/">Railo</a>
+</li>
+	<li class="cat-item cat-item-11">
+<a href="/category/sql/">SQL</a>
+</li>
+	<li class="cat-item cat-item-12">
+<a href="/category/system-administration/">System Administration</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/tomcat/">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/web-development/">Web Development</a>
+</li>
+			</ul>
+
+			</li>
+
+		<li id="recent-posts-3" class="widget widget_recent_entries">
+		<h2 class="widgettitle">Recent Posts</h2>
+
+		<ul>
+											<li>
+					<a href="/coldfusion-formfield-as-array-cf10/">Accessing form fields as an array in CF10</a>
+									</li>
+											<li>
+					<a href="/onerror-img-image-tag/">Did you know about the onerror attribute of the img tag?</a>
+									</li>
+											<li>
+					<a href="/copying-sql-studio-excel-headers/">Copying data from SQL Studio to Excel</a>
+									</li>
+											<li>
+					<a href="/dateconvert-utc-not-what-you-expect/">Using DateConvert to get a UTC timestamp may not return what you expect</a>
+									</li>
+											<li>
+					<a href="/get-filename-before-calling-cffile/">Getting the client filename before using cffile</a>
+									</li>
+											<li>
+					<a href="/jquery-snippet-to-get-all-input-values/">jQuery snippet to get all input values</a>
+									</li>
+											<li>
+					<a href="/mura-404-page-not-working-in-iis7-fix-it-in-web-config/">Mura 404 page not working in IIS7 &#8211; fix it in web.config</a>
+									</li>
+											<li>
+					<a href="/free-coldfusion-10-beta-hosting/">Free ColdFusion 10 beta hosting</a>
+									</li>
+											<li>
+					<a href="/remove-spaces-columns-cfspreadsheet/">Removing spaces from columns in cfspreadsheet (or any query)</a>
+									</li>
+											<li>
+					<a href="/online-code-formatters/">Online code formatters</a>
+									</li>
+											<li>
+					<a href="/joining-two-tables-one-id/">Joining to one of two tables with one ID</a>
+									</li>
+											<li>
+					<a href="/formatting-cfgrid-with-javascript/">Formatting CFGRID with JavaScript</a>
+									</li>
+											<li>
+					<a href="/cf-form-array-comma-workaround/">Accessing ColdFusion form values as an array</a>
+									</li>
+											<li>
+					<a href="/loading-fckeditor-dynamically/">Loading CFrichtext / FCKeditor on-the-fly</a>
+									</li>
+											<li>
+					<a href="/url-rewriting-windows-2008-iis7/">Mura URL rewriting on Windows 2008 / IIS7</a>
+									</li>
+					</ul>
+
+		</li>
+<li id="linkcat-2" class="widget widget_links">
+<h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.axelscript.com/" title="AxelScript &#8211; Flex development blog">Axel Jensen</a></li>
+<li><a href="http://jake.cfwebtools.com/" title="ColdFusion/Flex development">Jake Churchill</a></li>
+<li><a href="http://www.coldfusionmuse.com/" title="ColdFusion Muse">Mark Kruger</a></li>
+<li><a href="http://www.henke.ws/" title="ColdFusion, TDD, Ant, Subversion, etc.">Mike Henke</a></li>
+
+	</ul>
+</li>
+
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Donate</h2>
+			<div class="textwidget">If my code has helped you and you'd like give a donation, you can do so using the button below.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="ryan@stillnet.org">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Donation for helpful ColdFusion code">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget">
+<br><br>
+<img src="/wp-content/uploads/2010/01/acp_logo.gif">
+</div>
+		</li>
+			
+		</ul> 
+	</div>
+	</div>
+</div> <!-- wrapper -->
+
+<div id="footer"><div><div><div>
+
+	<a href="/feed/">Entries (RSS)</a> and <a href="/comments/feed/">Comments (RSS)</a>. Valid <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a>.<br>
+
+	Powered by <a href="http://www.wpthemes360.com/">Wordpress Themes</a>. Theme <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> by <a href="http://srinig.com/">Srini G</a>
+
+	</div></div></div></div>
+
+</div> <!-- page -->
+
+</body>
+
+</html>

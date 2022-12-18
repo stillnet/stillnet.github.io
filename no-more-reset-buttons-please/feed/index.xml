@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: No more reset buttons, please!	</title>
+	<atom:link href="/no-more-reset-buttons-please/feed/" rel="self" type="application/rss+xml" />
+	<link>/no-more-reset-buttons-please/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 27 Feb 2007 11:52:52 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: duncan		</title>
+		<link>/no-more-reset-buttons-please/comment-page-1/#comment-105</link>
+
+		<dc:creator><![CDATA[duncan]]></dc:creator>
+		<pubDate>Tue, 27 Feb 2007 11:52:52 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/26/no-more-reset-buttons-please/#comment-105</guid>
+
+					<description><![CDATA[Jakob Nielsen was saying the same thing 7 years ago:
+http://www.useit.com/alertbox/20000416.html]]></description>
+			<content:encoded><![CDATA[<p>Jakob Nielsen was saying the same thing 7 years ago:<br />
+<a href="http://www.useit.com/alertbox/20000416.html" rel="nofollow ugc">http://www.useit.com/alertbox/20000416.html</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Julian		</title>
+		<link>/no-more-reset-buttons-please/comment-page-1/#comment-104</link>
+
+		<dc:creator><![CDATA[Julian]]></dc:creator>
+		<pubDate>Sun, 04 Feb 2007 14:32:35 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/26/no-more-reset-buttons-please/#comment-104</guid>
+
+					<description><![CDATA[I totally agree! Basic visual coherence -- one has to weigh up the value brought to the interface vs the cognitive overhead of introducing the new element. I agree; the &#039;reset&#039; or &#039;clear&#039; buttons are not only never used as far as I can tell, they&#039;re right next to the &#039;submit&#039; button. I&#039;d propose that more people accidentally click it, watching their carefully entered data destroyed, than those who benefit from saying &#039;oh, you know what? I didn&#039;t want that data and I&#039;ll start again&#039;.]]></description>
+			<content:encoded><![CDATA[<p>I totally agree! Basic visual coherence &#8212; one has to weigh up the value brought to the interface vs the cognitive overhead of introducing the new element. I agree; the &#8216;reset&#8217; or &#8216;clear&#8217; buttons are not only never used as far as I can tell, they&#8217;re right next to the &#8216;submit&#8217; button. I&#8217;d propose that more people accidentally click it, watching their carefully entered data destroyed, than those who benefit from saying &#8216;oh, you know what? I didn&#8217;t want that data and I&#8217;ll start again&#8217;.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

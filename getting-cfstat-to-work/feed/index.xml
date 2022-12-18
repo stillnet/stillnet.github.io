@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Getting cfstat to work	</title>
+	<atom:link href="/getting-cfstat-to-work/feed/" rel="self" type="application/rss+xml" />
+	<link>/getting-cfstat-to-work/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 21 Jan 2011 19:02:03 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Brad Melendy		</title>
+		<link>/getting-cfstat-to-work/comment-page-1/#comment-2020</link>
+
+		<dc:creator><![CDATA[Brad Melendy]]></dc:creator>
+		<pubDate>Fri, 21 Jan 2011 19:02:03 +0000</pubDate>
+		<guid isPermaLink="false">/2008/03/04/getting-cfstat-to-work/#comment-2020</guid>
+
+					<description><![CDATA[Unfortunately, this continues to be a problem with version 9.&#160;&#160;I&amp;apos;ve tried everything I&amp;apos;ve read here plus other stuff and can&amp;apos;t get the options for CFSTAT or Performance Monitoring to stay selected.&#160;&#160;Very frustrating because I can&amp;apos;t use CFSTAT on my Coldfusion 9 servers.&#160;&#160;My Coldfusion 8 servers do work correctly with CFSTAT.]]></description>
+			<content:encoded><![CDATA[<p>Unfortunately, this continues to be a problem with version 9.&nbsp;&nbsp;I&apos;ve tried everything I&apos;ve read here plus other stuff and can&apos;t get the options for CFSTAT or Performance Monitoring to stay selected.&nbsp;&nbsp;Very frustrating because I can&apos;t use CFSTAT on my Coldfusion 9 servers.&nbsp;&nbsp;My Coldfusion 8 servers do work correctly with CFSTAT.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bill Wheatley		</title>
+		<link>/getting-cfstat-to-work/comment-page-1/#comment-368</link>
+
+		<dc:creator><![CDATA[Bill Wheatley]]></dc:creator>
+		<pubDate>Sun, 27 Apr 2008 15:38:32 +0000</pubDate>
+		<guid isPermaLink="false">/2008/03/04/getting-cfstat-to-work/#comment-368</guid>
+
+					<description><![CDATA[you can just do cfstat X (X being a # of seconds to wait before refresh)]]></description>
+			<content:encoded><![CDATA[<p>you can just do cfstat X (X being a # of seconds to wait before refresh)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Charlie Arehart		</title>
+		<link>/getting-cfstat-to-work/comment-page-1/#comment-367</link>
+
+		<dc:creator><![CDATA[Charlie Arehart]]></dc:creator>
+		<pubDate>Mon, 10 Mar 2008 22:11:03 +0000</pubDate>
+		<guid isPermaLink="false">/2008/03/04/getting-cfstat-to-work/#comment-367</guid>
+
+					<description><![CDATA[Hey Ryan, I&#039;ll throw out a couple more points. If you do set that port value to 7999, be careful that you are not running CF7, as that is the default value it uses. (CF6 used 8103, but as of CF7 you can change it using those XML entries you mention.) Also, if one does change it to other than 7999, then you have to use the -port option on the CFSTAT command to specify that value.]]></description>
+			<content:encoded><![CDATA[<p>Hey Ryan, I&#8217;ll throw out a couple more points. If you do set that port value to 7999, be careful that you are not running CF7, as that is the default value it uses. (CF6 used 8103, but as of CF7 you can change it using those XML entries you mention.) Also, if one does change it to other than 7999, then you have to use the -port option on the CFSTAT command to specify that value.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

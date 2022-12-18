@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Problems installing the ColdFusion connector on Linux/Apache	</title>
+	<atom:link href="/problems-installing-the-coldfusion-connector-on-linuxapache/feed/" rel="self" type="application/rss+xml" />
+	<link>/problems-installing-the-coldfusion-connector-on-linuxapache/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 12 Jul 2012 22:00:48 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Wendy Roberts		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-2927</link>
+
+		<dc:creator><![CDATA[Wendy Roberts]]></dc:creator>
+		<pubDate>Thu, 12 Jul 2012 22:00:48 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-2927</guid>
+
+					<description><![CDATA[Thank you!  Helped with my Coldfusion 9 installation - also had to install httpd-devel and correct the paths.
+
+Cheers.]]></description>
+			<content:encoded><![CDATA[<p>Thank you!  Helped with my Coldfusion 9 installation &#8211; also had to install httpd-devel and correct the paths.</p>
+<p>Cheers.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Christopher Jazinski		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-1248</link>
+
+		<dc:creator><![CDATA[Christopher Jazinski]]></dc:creator>
+		<pubDate>Fri, 02 Apr 2010 19:05:54 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-1248</guid>
+
+					<description><![CDATA[Awesome! CF 9 on CentOS 5.4 I needed the httpd-devel before i could run the cf-connectors.sh. Thanks]]></description>
+			<content:encoded><![CDATA[<p>Awesome! CF 9 on CentOS 5.4 I needed the httpd-devel before i could run the cf-connectors.sh. Thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jyoseph		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-965</link>
+
+		<dc:creator><![CDATA[jyoseph]]></dc:creator>
+		<pubDate>Wed, 06 Jan 2010 06:15:55 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-965</guid>
+
+					<description><![CDATA[Had the same issues decribed here w/ the connector trying 12 times. Coldfusion 8 on fresh install of CentOS 5.4.
+
+Pretty much followed your instruction, along with instructions to yum install httpd-devel by greg m/weboat/dillon and I&amp;apos;m in business.
+
+I appreciate your time to document this and for everyone who contributed.]]></description>
+			<content:encoded><![CDATA[<p>Had the same issues decribed here w/ the connector trying 12 times. Coldfusion 8 on fresh install of CentOS 5.4.</p>
+<p>Pretty much followed your instruction, along with instructions to yum install httpd-devel by greg m/weboat/dillon and I&apos;m in business.</p>
+<p>I appreciate your time to document this and for everyone who contributed.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-919</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 04:43:07 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-919</guid>
+
+					<description><![CDATA[Usually you don&amp;apos;t need to chmod anything.&#160;&#160;Do the permission denied errors tell you where its failing?&#160;&#160;Also look at the other log files, they are under runtime/bin I think.&#160;&#160;Also check the apache log.]]></description>
+			<content:encoded><![CDATA[<p>Usually you don&apos;t need to chmod anything.&nbsp;&nbsp;Do the permission denied errors tell you where its failing?&nbsp;&nbsp;Also look at the other log files, they are under runtime/bin I think.&nbsp;&nbsp;Also check the apache log.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jason		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-918</link>
+
+		<dc:creator><![CDATA[Jason]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 00:00:47 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-918</guid>
+
+					<description><![CDATA[Hi,
+
+I have CF 8.01 and CentOS 5.4. I have done all of this, but I get an internal server error when I try to hit a .cfm page after. I checked cfserver.log and I do have some permission denied errors.
+
+/opt/coldfusion8 is set to apache:root and some directories apache:apache (as done by the install.
+
+Would I need to chmod anything?]]></description>
+			<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have CF 8.01 and CentOS 5.4. I have done all of this, but I get an internal server error when I try to hit a .cfm page after. I checked cfserver.log and I do have some permission denied errors.</p>
+<p>/opt/coldfusion8 is set to apache:root and some directories apache:apache (as done by the install.</p>
+<p>Would I need to chmod anything?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: dillon		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-615</link>
+
+		<dc:creator><![CDATA[dillon]]></dc:creator>
+		<pubDate>Tue, 11 Aug 2009 16:22:11 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-615</guid>
+
+					<description><![CDATA[centos 5.3 cf8 apache2 
+thnaks WeBoat and Greg M
+Stop CF8
+yum install httpd-devel
+restart httpd
+start CF8
+Shazam]]></description>
+			<content:encoded><![CDATA[<p>centos 5.3 cf8 apache2<br />
+thnaks WeBoat and Greg M<br />
+Stop CF8<br />
+yum install httpd-devel<br />
+restart httpd<br />
+start CF8<br />
+Shazam</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tad Reeves		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-218</link>
+
+		<dc:creator><![CDATA[Tad Reeves]]></dc:creator>
+		<pubDate>Mon, 18 May 2009 17:21:49 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-218</guid>
+
+					<description><![CDATA[Same problem with me here - Fedora 10 x64, running Apache 2.2.&#160;&#160;Needed to install the httpd-devel package due to error logged in ConnectorInstall0.txt in the main CF install directory.&#160;&#160;
+
+It throws the error: &#034;Could not find the required apxs (Apache Extension Tool) binary /usr/sbin/apxs. Check that package httpd-devel package is installed.Could not build Apache2 web server connector from source.&#160;&#160;Use build script /opt/coldfusion8/runtime/lib/wsconfig/1/build_jrun22.&#034;]]></description>
+			<content:encoded><![CDATA[<p>Same problem with me here &#8211; Fedora 10 x64, running Apache 2.2.&nbsp;&nbsp;Needed to install the httpd-devel package due to error logged in ConnectorInstall0.txt in the main CF install directory.&nbsp;&nbsp;</p>
+<p>It throws the error: &quot;Could not find the required apxs (Apache Extension Tool) binary /usr/sbin/apxs. Check that package httpd-devel package is installed.Could not build Apache2 web server connector from source.&nbsp;&nbsp;Use build script /opt/coldfusion8/runtime/lib/wsconfig/1/build_jrun22.&quot;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-217</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Tue, 28 Apr 2009 15:09:41 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-217</guid>
+
+					<description><![CDATA[Diane, you are not giving us a lot to go on.&#160;&#160;When you manually run the command that is in the connector script, do you get an error?&#160;&#160;What is the error?]]></description>
+			<content:encoded><![CDATA[<p>Diane, you are not giving us a lot to go on.&nbsp;&nbsp;When you manually run the command that is in the connector script, do you get an error?&nbsp;&nbsp;What is the error?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Diane		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-216</link>
+
+		<dc:creator><![CDATA[Diane]]></dc:creator>
+		<pubDate>Tue, 28 Apr 2009 10:43:19 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-216</guid>
+
+					<description><![CDATA[I am having problems with CF8 on RHEL5 Apache2.&#160;&#160;I have updated the connectors file per everyone&amp;apos;s instructions with no change.&#160;&#160;I get the trying to connect 12 times and no luck.&#160;&#160;Did the post from Felix above mean that I need to change cf-connectors.sh to cfmx-connectors.sh even on a cf8 install.&#160;&#160;
+
+I am so frustrated....]]></description>
+			<content:encoded><![CDATA[<p>I am having problems with CF8 on RHEL5 Apache2.&nbsp;&nbsp;I have updated the connectors file per everyone&apos;s instructions with no change.&nbsp;&nbsp;I get the trying to connect 12 times and no luck.&nbsp;&nbsp;Did the post from Felix above mean that I need to change cf-connectors.sh to cfmx-connectors.sh even on a cf8 install.&nbsp;&nbsp;</p>
+<p>I am so frustrated&#8230;.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Aaron		</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/comment-page-1/#comment-220</link>
+
+		<dc:creator><![CDATA[Aaron]]></dc:creator>
+		<pubDate>Wed, 10 Dec 2008 22:58:41 +0000</pubDate>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/#comment-220</guid>
+
+					<description><![CDATA[Whoops, just realized that I posted something that may be irrelevant...i&#039;m getting my pages confused.]]></description>
+			<content:encoded><![CDATA[<p>Whoops, just realized that I posted something that may be irrelevant&#8230;i&#8217;m getting my pages confused.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

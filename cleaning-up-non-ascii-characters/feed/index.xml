@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Cleaning up non ascii chars for XML or other uses	</title>
+	<atom:link href="/cleaning-up-non-ascii-characters/feed/" rel="self" type="application/rss+xml" />
+	<link>/cleaning-up-non-ascii-characters/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 06 Apr 2009 15:39:26 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: chris		</title>
+		<link>/cleaning-up-non-ascii-characters/comment-page-1/#comment-416</link>
+
+		<dc:creator><![CDATA[chris]]></dc:creator>
+		<pubDate>Mon, 06 Apr 2009 15:39:26 +0000</pubDate>
+		<guid isPermaLink="false">/?p=114#comment-416</guid>
+
+					<description><![CDATA[Thanks very much for this. Saved me a lot of trouble. However, I think the &#034;i&#034; in the Insert statement needs to be &#034;i-1&#034; as we&amp;apos;ve just removed the &#034;i&#034;th character on the previous line.]]></description>
+			<content:encoded><![CDATA[<p>Thanks very much for this. Saved me a lot of trouble. However, I think the &quot;i&quot; in the Insert statement needs to be &quot;i-1&quot; as we&apos;ve just removed the &quot;i&quot;th character on the previous line.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sami Hoda		</title>
+		<link>/cleaning-up-non-ascii-characters/comment-page-1/#comment-415</link>
+
+		<dc:creator><![CDATA[Sami Hoda]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 18:27:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=114#comment-415</guid>
+
+					<description><![CDATA[Nice, thanks!]]></description>
+			<content:encoded><![CDATA[<p>Nice, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Phill		</title>
+		<link>/cleaning-up-non-ascii-characters/comment-page-1/#comment-414</link>
+
+		<dc:creator><![CDATA[Phill]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2008 08:33:59 +0000</pubDate>
+		<guid isPermaLink="false">/?p=114#comment-414</guid>
+
+					<description><![CDATA[I have also encountered this same issue and hope that Adobe pick this up and correct it soon.]]></description>
+			<content:encoded><![CDATA[<p>I have also encountered this same issue and hope that Adobe pick this up and correct it soon.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

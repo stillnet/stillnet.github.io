@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Uncategorized &#8211; Stillnet Studios</title>
+	<atom:link href="/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 11 Jun 2012 03:00:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Mura 404 page not working in IIS7 &#8211; fix it in web.config</title>
+		<link>/mura-404-page-not-working-in-iis7-fix-it-in-web-config/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 11 Jun 2012 16:00:42 +0000</pubDate>
+				<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=1106</guid>
+
+					<description><![CDATA[When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying. This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the onMissingTemplate handler. The fix [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404.gif" alt="" title="IIS7 404" width="600" height="390" class="alignnone size-full wp-image-1107" srcset="/wp-content/uploads/2012/06/IIS7-404.gif 600w, /wp-content/uploads/2012/06/IIS7-404-300x195.gif 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p>This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the <code>onMissingTemplate</code> handler. The fix is easy. Edit the web.config file in the webroot, look for an <code>httpErrors</code> tag. It might look like this:</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404-config.gif" alt="" title="IIS7-404 config" width="543" height="294" class="alignnone size-full wp-image-1111" srcset="/wp-content/uploads/2012/06/IIS7-404-config.gif 543w, /wp-content/uploads/2012/06/IIS7-404-config-300x162.gif 300w" sizes="(max-width: 543px) 100vw, 543px" /></p>
+<p>You need to add <code>existingResponse="PassThrough"</code> to it. If that element is missing completely, just add it with the necessary attribute.</p>
+<p>Fixed!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>aligning cells in an html cfgrid</title>
+		<link>/aligning-cells-in-an-html-cfgrid/</link>
+					<comments>/aligning-cells-in-an-html-cfgrid/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 28 Sep 2009 03:35:26 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=673</guid>
+
+					<description><![CDATA[The other day I had the need to align some data in an html cfgrid. There are some alignment attributes of the cfgriditem tag, but they do not work in html grids. I tried wrapping the data in a span tag with some css aligning it, but that didn&#8217;t work either. But there is a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The other day I had the need to align some data in an html cfgrid.  There are some alignment attributes of the cfgriditem tag, but they do not work in html grids.  I tried wrapping the data in a span tag with some css aligning it, but that didn&#8217;t work either.</p>
+<p>But there is a way.  When CF8 generates the grid it writes out CSS ids and classes that you can use to style the grid.  For example to right align the 5th column you can use this:</p>
+<pre><code>.x-grid-td-5 {text-align:right;}</code></pre>
+<p>The number you need to use in the class name does not always match up with the column.  Sometimes I had to use .x-grid-td-8 to reference the 6th column for example.  I think the number increments for each cfgrid item, even if you have display=no.</p>
+<p>If you have more than one cfgrid on your page and only want to align the nth column in one of them, you can wrap the cfgird in a div with an ID so you can reference only that grid in your CSS.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/aligning-cells-in-an-html-cfgrid/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Referencing returned value array values in CF9</title>
+		<link>/referencing-array-values-cf9/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 15 Sep 2009 04:06:27 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=653</guid>
+
+					<description><![CDATA[I just discovered a neat feature of CF9. Sometimes when calling a built in function or even a custom method, you get returned an array. But sometimes you only need one element in that array. In Perl and other languages its possible to directly access the element you want. I&#8217;m glad to see this has [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I just discovered a neat feature of CF9.  Sometimes when calling a built in function or even a custom method, you get returned an array.  But sometimes you only need one element in that array.  In Perl and other languages its possible to directly access the element you want.  I&#8217;m glad to see this has been added to ColdFusion9.</p>
+<p>For example, lets say you need the second particular element in an XML document.  You might fetch some XML with cffeed and then use XMLSearch() to get all the matching elements.  Then reference the second element of the resulting array, like this:<br />
+<span id="more-653"></span></p>
+<pre><code>&lt;cffeed source = "http://weather.yahooapis.com/forecastrss?p=90210" xmlVar= "myXML"&gt;
+
+&lt;cfset Forecasts =
+     xmlSearch(myXML,"//*[local-name()='forecast' and namespace-uri()='http://xml.weather.yahoo.com/ns/rss/1.0']")&gt;
+
+&lt;cfset theForecastIwant = Forecasts[2]&gt;</code></pre>
+<p>In CF9 you can take a little shortcut, like you can in many other languages:</p>
+<pre><code>&lt;cffeed source = "http://weather.yahooapis.com/forecastrss?p=90210" xmlVar= "myXML"&gt;
+
+&lt;cfset theForecastIwant =
+     xmlSearch(myXML,
+     "//*[local-name()='forecast' and namespace-uri()='http://xml.weather.yahoo.com/ns/rss/1.0']")<strong style="color: red;">[2]</strong>&gt;</code></pre>
+<p>Nice!  This probably happened when the team added the <a href="/anonymous-arrays-coldfusion9/">anonymous variables</a> feature.</p>
+<p>And if you are wondering, this works fine in Railo 3.1 but not in OpenBD 1.1.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

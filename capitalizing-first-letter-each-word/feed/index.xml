@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Capitalizing the first letter of each word with ColdFusion	</title>
+	<atom:link href="/capitalizing-first-letter-each-word/feed/" rel="self" type="application/rss+xml" />
+	<link>/capitalizing-first-letter-each-word/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 07 Apr 2011 15:40:58 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Bobby Tan		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-2046</link>
+
+		<dc:creator><![CDATA[Bobby Tan]]></dc:creator>
+		<pubDate>Thu, 31 Mar 2011 00:51:46 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-2046</guid>
+
+					<description><![CDATA[@Jake: That&amp;apos;s the first thing I thought of too. Great minds and all that. :)
+
+@Brandon: Thanks for the PHP version.
+
+The WeCodeThings blog is an excellent resource. Thanks!]]></description>
+			<content:encoded><![CDATA[<p>@Jake: That&apos;s the first thing I thought of too. Great minds and all that. 🙂</p>
+<p>@Brandon: Thanks for the PHP version.</p>
+<p>The WeCodeThings blog is an excellent resource. Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Brandon		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-2043</link>
+
+		<dc:creator><![CDATA[Brandon]]></dc:creator>
+		<pubDate>Tue, 29 Mar 2011 18:18:26 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-2043</guid>
+
+					<description><![CDATA[I just started learning CF and this is exactly what I was looking for. Thanks to Jake for his suggestion too.
+
+If anyone is looking to do this in php it&amp;apos;s simply ucwords($variable or text);
+
+Thanks,
+Brandon
+Webmaster, http://www.toprankconsultants.com]]>/</description>
+			<content:encoded><![CDATA[<p>I just started learning CF and this is exactly what I was looking for. Thanks to Jake for his suggestion too.</p>
+<p>If anyone is looking to do this in php it&apos;s simply ucwords($variable or text);</p>
+<p>Thanks,<br />
+Brandon<br />
+Webmaster, <a href="http://www.toprankconsultants.com/" rel="nofollow ugc">http://www.toprankconsultants.com/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Matt Wadsworth		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-2042</link>
+
+		<dc:creator><![CDATA[Matt Wadsworth]]></dc:creator>
+		<pubDate>Tue, 29 Mar 2011 16:03:36 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-2042</guid>
+
+					<description><![CDATA[Hi Ryan, 
+
+Thanks a lot for pointing me in the direction of the We Code Things blog. 
+That is going to come in very handy indeed. 
+
+Best 
+
+-Matt]]></description>
+			<content:encoded><![CDATA[<p>Hi Ryan, </p>
+<p>Thanks a lot for pointing me in the direction of the We Code Things blog.<br />
+That is going to come in very handy indeed. </p>
+<p>Best </p>
+<p>-Matt</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Shane		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-2041</link>
+
+		<dc:creator><![CDATA[Shane]]></dc:creator>
+		<pubDate>Tue, 29 Mar 2011 11:20:14 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-2041</guid>
+
+					<description><![CDATA[@Jake:
+Thanks for the CSS version of this! Exactly what I was looking for. :)]]></description>
+			<content:encoded><![CDATA[<p>@Jake:<br />
+Thanks for the CSS version of this! Exactly what I was looking for. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-1234</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 21 Mar 2010 14:44:52 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-1234</guid>
+
+					<description><![CDATA[True, perhaps it could be improved upon.&#160;&#160;In my case the text I was working on was all caps already, so adding a check to leave all cap words would not have worked for me.]]></description>
+			<content:encoded><![CDATA[<p>True, perhaps it could be improved upon.&nbsp;&nbsp;In my case the text I was working on was all caps already, so adding a check to leave all cap words would not have worked for me.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: ziggy		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-1230</link>
+
+		<dc:creator><![CDATA[ziggy]]></dc:creator>
+		<pubDate>Sun, 21 Mar 2010 05:21:19 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-1230</guid>
+
+					<description><![CDATA[That ruins acronyms and other all-cap words.]]></description>
+			<content:encoded><![CDATA[<p>That ruins acronyms and other all-cap words.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-1211</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 18 Mar 2010 13:24:55 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-1211</guid>
+
+					<description><![CDATA[Thats a great idea, that will work in many cases but it doesn&amp;apos;t seem to work where I needed it yesterday - inside a select option.]]></description>
+			<content:encoded><![CDATA[<p>Thats a great idea, that will work in many cases but it doesn&apos;t seem to work where I needed it yesterday &#8211; inside a select option.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake		</title>
+		<link>/capitalizing-first-letter-each-word/comment-page-1/#comment-1210</link>
+
+		<dc:creator><![CDATA[Jake]]></dc:creator>
+		<pubDate>Thu, 18 Mar 2010 03:32:26 +0000</pubDate>
+		<guid isPermaLink="false">/?p=809#comment-1210</guid>
+
+					<description><![CDATA[You can do this with CSS too:&#160;&#160;element { text-transform:capitalize; }]]></description>
+			<content:encoded><![CDATA[<p>You can do this with CSS too:&nbsp;&nbsp;element { text-transform:capitalize; }</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Using CFID and CFToken to jump between ColdFusion servers	</title>
+	<atom:link href="/maintaining-state-between-servers/feed/" rel="self" type="application/rss+xml" />
+	<link>/maintaining-state-between-servers/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 23 Jul 2008 20:16:33 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Kaye Swiftney		</title>
+		<link>/maintaining-state-between-servers/comment-page-1/#comment-379</link>
+
+		<dc:creator><![CDATA[Kaye Swiftney]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2008 20:16:33 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/17/maintaining-state-between-servers/#comment-379</guid>
+
+					<description><![CDATA[I have no idea how to do what you are talking about.  I am lost. I show a CFID=91314:path and
+CFToken-73019824:path=/
+
+I have always been able to get into this web site and now I cannot.  Thank you Kaye]]></description>
+			<content:encoded><![CDATA[<p>I have no idea how to do what you are talking about.  I am lost. I show a CFID=91314:path and<br />
+CFToken-73019824:path=/</p>
+<p>I have always been able to get into this web site and now I cannot.  Thank you Kaye</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

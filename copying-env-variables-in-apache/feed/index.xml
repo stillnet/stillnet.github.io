@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Copying environment variables in Apache &#8211; solving the AUTH_USER Apache/IIS issue	</title>
+	<atom:link href="/copying-env-variables-in-apache/feed/" rel="self" type="application/rss+xml" />
+	<link>/copying-env-variables-in-apache/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 11 Jan 2010 23:26:42 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: John Sieber		</title>
+		<link>/copying-env-variables-in-apache/comment-page-1/#comment-987</link>
+
+		<dc:creator><![CDATA[John Sieber]]></dc:creator>
+		<pubDate>Mon, 11 Jan 2010 23:26:42 +0000</pubDate>
+		<guid isPermaLink="false">/?p=726#comment-987</guid>
+
+					<description><![CDATA[Great tip! I did not realize that IIS and Apache use different cgi variables for authenticated user name storage. I&amp;apos;m sure I will run into this one of these days.]]></description>
+			<content:encoded><![CDATA[<p>Great tip! I did not realize that IIS and Apache use different cgi variables for authenticated user name storage. I&apos;m sure I will run into this one of these days.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake		</title>
+		<link>/copying-env-variables-in-apache/comment-page-1/#comment-986</link>
+
+		<dc:creator><![CDATA[Jake]]></dc:creator>
+		<pubDate>Mon, 11 Jan 2010 14:45:22 +0000</pubDate>
+		<guid isPermaLink="false">/?p=726#comment-986</guid>
+
+					<description><![CDATA[Very nice, Ryan.&#160;&#160;This worked like a charm]]></description>
+			<content:encoded><![CDATA[<p>Very nice, Ryan.&nbsp;&nbsp;This worked like a charm</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Tomcat &#8211; Stillnet Studios</title>
+	<atom:link href="/category/tomcat/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 16 Jul 2009 03:29:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Running your CFML code through Railo, OpenBD, and Adobe CF all at once</title>
+		<link>/run-code-railo-openbd-adobe-cf-at-once/</link>
+					<comments>/run-code-railo-openbd-adobe-cf-at-once/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 16 Jul 2009 03:28:50 +0000</pubDate>
+				<category><![CDATA[BlueDragon]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=551</guid>
+
+					<description><![CDATA[If you are developing a ColdFusion application, or even just a stand alone CFC that you plan to distribute, you might want to make sure it runs on all three major CFML engines &#8211; Adobe ColdFusion, Railo, and Open BlueDragon. It can be tedious to always copy code around between your three test sites, but [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>If you are developing a ColdFusion application, or even just a stand alone CFC that you plan to distribute, you might want to make sure it runs on all three major CFML engines &#8211; Adobe ColdFusion, Railo, and Open BlueDragon.  It can be tedious to always copy code around between your three test sites, but there is an easier way.  You can have the same code base run through all three CFML engines at once.</p>
+<p>There are a few caveats:<span id="more-551"></span></p>
+<ol>
+<li>You must be using Tomcat as your J2EE server (I think you can probably do this with JRun if you are using the J2EE/multi-server version of ColdFusion, but I have only done it using Tomcat)</li>
+<li>You must run your code from a subdirectory.  That is, if your local test site is setup like http://localhost:8080/openbd, you will run your code from http://localhost:8080/openbd/&lt;a subdirectory&gt;/</li>
+</ol>
+<p>I&#8217;m not going to go through setting up Tomcat or Railo/OpenBD/AdobeCF, see <a href="http://www.mattwoodward.com/blog/index.cfm?event=showEntry&#038;entryId=60F08421-5F0A-41C9-940B3681A3D09D99">this great blog post by Matt Woodward</a> if you need help with that.</p>
+<p>Once everything is setup, you should have three separate webroots, probably something like:<br />
+C:\Tomcat6\webapps\railo<br />
+C:\Tomcat6\webapps\openbd<br />
+C:\Tomcat6\webapps\cfusion</p>
+<p>Now create a subdirectory in one of those directories, lets just take the first one, railo.  Call the new subdirectory &#8220;shared&#8221;.  Now comes the trick, we will use a <em>junction</em> to make subdirectories named &#8220;shared&#8221; in openbd and cfusion, but really they just point to the shared directory under railo.  This &#8220;junction&#8221; is a feature of the NTFS file system and works much like a <a href="http://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> on Linux.</p>
+<p>If you are running Vista, Windows7, or Windows 2008 you already have a built in tool to create a junction called &#8220;mklink&#8221;.  Otherwise if you are running WindowsXP or Windows2000/2003 you need to download Junction v1.05 from Microsoft&#8217;s site.  Its a sysinternals tool, if you aren&#8217;t familiar with that group, they made lots of great techy tools for Windows.  You can get it from here: <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx</a>.</p>
+<p>Download the zip file and extract the single .exe file that is inside it.  This is a command line tool so I placed it into my C:\windows\system32 directory so it would be in my path and can be run from any command prompt.  Now open up a DOS command prompt, and change into your railo webroot.  Then create the two junctions named &#8220;shared&#8221; that point back to the real &#8220;shared&#8221; directory.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/cmd-junction.png" alt="command prompt - junction" title="command prompt - junction" width="668" height="319" class="alignnone size-full wp-image-559" srcset="/wp-content/uploads/2009/07/cmd-junction.png 668w, /wp-content/uploads/2009/07/cmd-junction-300x143.png 300w" sizes="(max-width: 668px) 100vw, 668px" /></p>
+<p>Now we have this folder structure, where &#8220;shared&#8221; is really the same folder in each location.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/folders.png" alt="folders - junction example" title="folders - junction example" style="border:1px solid black;" width="160" height="139" class="alignnone size-full wp-image-561" /></p>
+<p>Just drop your files into there and then you can hit them using the three separate URLs you used when setting up Tomcat.  I use railo.dev, openbd.dev, and cfusion.dev as my hostnames.</p>
+<p>If you are on an OS that has the mklink command, the syntax is a little different.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/windows7-cmd.png" alt="windows7 command prompt" title="windows7 command prompt" width="677" height="342" class="alignnone size-full wp-image-562" srcset="/wp-content/uploads/2009/07/windows7-cmd.png 677w, /wp-content/uploads/2009/07/windows7-cmd-300x151.png 300w" sizes="(max-width: 677px) 100vw, 677px" /></p>
+<p>Note how on Windows7 the DIR command is smart enough to recognize that the folder is actually a junction and shows me where it is linked to.</p>
+<p>The folder looks a little different in Windows Explorer, too.  Unfortunately it looks just like a shortcut, which it certainly is not, but at least you can tell its not a regular folder.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/windows7-folders.png" alt="windows7-folders" style="border: 1px solid black;" title="windows7-folders" width="471" height="263" class="alignnone size-full wp-image-571" srcset="/wp-content/uploads/2009/07/windows7-folders.png 471w, /wp-content/uploads/2009/07/windows7-folders-300x167.png 300w" sizes="(max-width: 471px) 100vw, 471px" /></p>
+<p>I have this setup on both of my main development machines, and find it very convenient to be able to run my exact same code through all 3 CFML engines just by changing the URL.  I usually keep three browser windows open as I develop so I can easily test stuff on all 3.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/run-code-railo-openbd-adobe-cf-at-once/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

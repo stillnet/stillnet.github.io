@@ -1,0 +1,284 @@
+<!---
+Debugging template that only shows queries.
+--->
+
+<cfif IsDebugMode()>
+<cfsilent>
+<cfset startTime = getTickCount()>
+<cfscript>
+	formEncoding = getEncoding("FORM");
+	urlEncoding = getEncoding("URL");
+
+	setEncoding("FORM", formEncoding);
+	setEncoding("URL", urlEncoding);
+</cfscript>
+</cfsilent>
+<!--- Localized strings --->
+<cfset undefined = "">
+	<!--- Use the debugging service to check options --->
+	<cftry>
+		<cfobject action="CREATE" type="JAVA" class="coldfusion.server.ServiceFactory" name="factory">
+		<cfset cfdebugger = factory.getDebuggingService()>
+		<cfcatch type="Any"></cfcatch>
+	</cftry>
+
+	<!--- Load the debugging service's event table --->
+	<cfset qEvents = cfdebugger.getDebugger().getData()>
+
+
+
+
+	<!--- EVENT: SQL Queries --->
+	<cftry>
+		<cfquery dbType="query" name="cfdebug_queries" debug="false">
+			SELECT *, (endTime - startTime) AS executionTime
+			FROM qEvents
+			WHERE type = 'SqlQuery'
+		</cfquery>
+		<cfscript>
+			if( cfdebug_queries.recordCount eq 1 and not len(trim(cfdebug_queries.executionTime)) )
+			{
+				querySetCell(cfdebug_queries, "executionTime", "0", 1);
+			}
+		</cfscript>
+		<cfcatch type="Any">
+			<cfscript>
+				cfdebug_queries = queryNew('ATTRIBUTES, BODY, CACHEDQUERY, CATEGORY, DATASOURCE, ENDTIME, EXECUTIONTIME, LINE, MESSAGE, NAME, PARENT, PRIORITY, RESULT, ROWCOUNT, STACKTRACE, STARTTIME, TEMPLATE, TIMESTAMP, TYPE, URL, et');
+			</cfscript>
+		</cfcatch>
+	</cftry>
+
+
+
+	<!--- Establish Section Display Flags --->
+	<cfparam name="displayDebug" default="false" type="boolean"><!--- ::	display the debug time 	:: --->
+	<cfparam name="bGeneral" default="false" type="boolean">
+	<cfparam name="bFoundExecution" default="false" type="boolean">
+	<cfparam name="bFoundTemplates" default="false" type="boolean">
+	<cfparam name="bFoundExceptions" default="false" type="boolean">
+	<cfparam name="bFoundSQLQueries" default="false" type="boolean">
+	<cfparam name="bFoundObjectQueries" default="false" type="boolean">
+	<cfparam name="bFoundStoredProc" default="false" type="boolean">
+	<cfparam name="bFoundTrace" default="false" type="boolean">
+	<cfparam name="bFoundTimer" default="false" type="boolean">
+	<cfparam name="bFoundLocking" default="false" type="boolean">
+	<cfparam name="bFoundScopeVars" default="false" type="boolean">
+
+	<cftry>
+		<cfscript>
+	        // no longer doing template query at the top since we have tree and summary mode
+			bFoundTemplates = cfdebugger.check("Template");
+
+			if( bFoundTemplates )
+			{ displayDebug=true; }
+
+			if ( isDefined("cfdebugger.settings.general") and cfdebugger.settings.general )
+			{ bGeneral = true; displayDebug=true; }
+
+			if (IsDefined("cfdebug_ex") AND cfdebug_ex.recordCount GT 0) { bFoundExceptions = true; displayDebug=true; }
+			else { bFoundExceptions = false; }
+
+			if (IsDefined("cfdebug_queries") AND cfdebug_queries.RecordCount GT 0) { bFoundSQLQueries = true; displayDebug=true; }
+			else { bFoundSQLQueries = false; }
+
+			if (IsDefined("cfdebug_cfoql") AND cfdebug_cfoql.RecordCount GT 0) { bFoundObjectQueries = true; displayDebug=true; }
+			else { bFoundObjectQueries = false; }
+
+			if (IsDefined("cfdebug_storedproc") AND cfdebug_storedproc.RecordCount GT 0) { bFoundStoredProc = true; displayDebug=true; }
+			else { bFoundStoredProc = false; }
+
+			if (IsDefined("cfdebug_trace") AND cfdebug_trace.recordCount GT 0) { bFoundTrace = true; displayDebug=true; }
+			else { bFoundTrace = false; }
+
+			if (IsDefined("cfdebug_timer") AND cfdebug_timer.recordCount GT 0) { bFoundTimer = true; displayDebug=true; }
+			else { bFoundTimer = false; }
+
+			if (IsDefined("cfdebug_lock") AND cfdebug_lock.recordCount GT 0) { bFoundLocking = true; displayDebug=true; }
+			else { bFoundLocking = false; }
+
+			if (IsDefined("cfdebugger") AND cfdebugger.check("Variables")) { bFoundScopeVars = true; displayDebug=true; }
+			else { bFoundScopeVars = false; }
+		</cfscript>
+		<cfcatch type="Any"></cfcatch>
+	</cftry>
+
+
+
+<cfsetting enablecfoutputonly="Yes">
+<cfif displayDebug>
+<cfoutput>
+<style type="text/css">
+.cfdebug
+{
+	color:black;
+	background-color:white;
+	font-family:"Times New Roman", Times, serif;
+	font-size:small
+}
+
+.cfdebuglge
+{
+	color:black;
+	background-color:white;
+	font-family:"Times New Roman", Times, serif;
+	font-size:medium;
+}
+
+a.cfdebuglink {color:blue; background-color:white }
+</style>
+<table class="cfdebug" bgcolor="white">
+<tr>
+	<td>
+</cfoutput>
+</cfif>
+
+
+
+
+
+<!--- SQL Queries --->
+<cfoutput>
+<cfif bFoundSQLQueries>
+	<cftry>
+		<p class="cfdebug"><hr/><b class="cfdebuglge"><a name="cfdebug_sql">SQL Queries</a></b></p>
+		<cfloop query="cfdebug_queries">
+			<code><b>#cfdebug_queries.name#</b> (Datasource=#cfdebug_queries.datasource#, Time=#Max(cfdebug_queries.executionTime, 0)#ms<cfif IsDefined("cfdebug_queries.rowcount") AND IsNumeric(cfdebug_queries.rowcount)>, Records=#Max(cfdebug_queries.rowcount, 0)#<cfelseif IsDefined("cfdebug_queries.result.recordCount")>, Records=#cfdebug_queries.result.recordCount#</cfif><cfif cfdebug_queries.cachedquery>, Cached Query</cfif>) in #cfdebug_queries.template# @ #TimeFormat(cfdebug_queries.timestamp, "HH:mm:ss.SSS")#</code><br />
+			<pre>#htmleditformat(cfdebug_queries.body)#</pre>
+
+			<cfif arrayLen(cfdebug_queries.attributes) GT 0>
+			    <code>Query Parameter Value(s) -<br />
+
+			    <cfloop index="x" from=1 to="#arrayLen(cfdebug_queries.attributes)#">
+	        		<cfset thisParam = #cfdebug_queries.attributes[cfdebug_queries.currentRow][x]#>
+			        Parameter ###x#<cfif StructKeyExists(thisParam, "sqlType")>(#thisParam.sqlType#)</cfif> = <cfif StructKeyExists(thisParam, "value")>#htmleditformat(thisParam.value)#</cfif><br />
+			    </cfloop>
+			    </code><br />
+			</cfif>
+		</cfloop>
+	<cfcatch type="Any">
+		<!--- Error reporting query event --->
+	</cfcatch>
+</cftry>
+</cfif>
+
+
+
+
+
+
+</cfoutput>
+<cfsetting enablecfoutputonly="No">
+</cfif>
+
+
+<cfscript>
+//UDF - Handle output of complex data types.
+function CFDebugSerializable(variable)
+{
+var ret = "";
+try
+    {
+		if(IsSimpleValue(variable))
+		{
+			ret = xmlFormat(variable);
+		}
+		else
+		{
+			if (IsStruct(variable))
+			{
+				ret = ("Struct (" & StructCount(variable) & ")");
+			}
+			else if(IsArray(variable))
+			{
+				ret = ("Array (" & ArrayLen(variable) & ")");
+			}
+			else if(IsQuery(variable))
+			{
+				ret = ("Query (" & variable.RecordCount & ")");
+			}
+			else
+			{
+				ret = ("Complex type");
+			}
+		}
+}
+    catch("any" ex)
+    {
+        ret = "undefined";
+    }
+    return ret;
+}
+// UDF - tree writing
+function drawNode(nTree, indent, id, highlightThreshold) {
+    var templateOuput = "";
+    if( nTree[id].duration GT highlightThreshold ) {
+        templateOutput = "<font color='red'><span class='template_overage'>(#nTree[id].duration#ms) " & nTree[id].template & " @ line " & #nTree[id].line# & "</span></font><br>";
+    } else {
+        templateOutput = "<span class='template'>(#nTree[id].duration#ms) " & nTree[id].template & " @ line " & #nTree[id].line# & "</span><br>";
+    }
+    writeOutput(repeatString("&nbsp;&nbsp;&middot;", indent + 1) & " <img src='#getpageContext().getRequest().getContextPath()#/CFIDE/debug/images/arrow.gif' alt='arrow' border='0'><img src='#getpageContext().getRequest().getContextPath()#/CFIDE/debug/images/endDoc.gif' alt='top level' border='0'> " & templateOutput);
+    return "";
+}
+
+function drawTree(tree, indent, id, highlightThreshold) {
+    var alength = 1;
+    var i = 1;
+    var templateOuput = "";
+
+	if( structKeyExists(tree, id) )
+	{
+	    // top level nodes (application.cfm,cgi.script_name,etc) have a -1 parent line number
+	    if(tree[id].line EQ -1) {
+			if( Tree[id].duration GT highlightThreshold )
+			{
+	        	writeoutput( "<img src='#getpageContext().getRequest().getContextPath()#/CFIDE/debug/images/topdoc.gif' alt='top level' border='0'> " & "<font color='red'><span class='template_overage'><b>(#Tree[id].duration#ms) " & Tree[id].template & "</b></span></font><br>" );
+			}
+			else
+			{
+				writeoutput( "<img src='#getpageContext().getRequest().getContextPath()#/CFIDE/debug/images/topdoc.gif' alt='top level' border='0'> " & "<span class='template'><b>(#Tree[id].duration#ms) " & Tree[id].template & "</b></span><br>" );
+			}
+	    } else {
+	        if( Tree[id].duration GT highlightThreshold ) {
+	            templateOutput = "<font color='red'><span class='template_overage'>(#Tree[id].duration#ms) " & Tree[id].template & " @ line " & #Tree[id].line# & "</span></font><br>";
+	        } else {
+	            templateOutput = "<span class='template'>(#Tree[id].duration#ms) " & Tree[id].template & " @ line " & #Tree[id].line# & "</span><br>";
+	        }
+	        writeoutput( repeatString("&nbsp;&nbsp;&middot;", indent + 1) & " <img src='#getpageContext().getRequest().getContextPath()#/CFIDE/debug/images/arrow.gif' alt='arrow' border='0'><img src='#getpageContext().getRequest().getContextPath()#/CFIDE/debug/images/parentDoc.gif' alt='top level' border='0'> " & templateOutput );
+	    }
+
+	    if( isArray( tree[id].children ) and arrayLen( tree[id].children ) ) {
+	        alength = arrayLen( tree[id].children );
+	        for( i = 1; i lte alength; i = i + 1 ) {
+	            if( isArray(tree[id].children[i].children) and arrayLen( tree[id].children[i].children ) gt 0 ) {
+	                drawTree(tree, indent + 1, tree[id].children[i].templateid, highlightThreshold);
+	            } else {
+	                drawNode(tree, indent + 1, tree[id].children[i].templateid, highlightThreshold);
+	            }
+	        }
+	    } else {
+	        // single template, no includes?
+	        //drawNode(tree, indent + 1, tree[id].template, highlightThreshold);
+	    }
+	}
+    return "";
+}
+</cfscript>
+
+<cffunction name="sortedScope" output="false">
+    <cfargument name="scope">
+    <cfset retVal="">
+    <cfset keys = structKeyArray(scope)>
+    <cfset arraySort(keys,"text")>
+    <cfloop index="x" from=1 to="#arrayLen(keys)#">
+    	<cfset keyName = keys[x]>
+        <cfset retVal = retVal & keyName & "=">
+           <cftry>
+    		    <cfset keyValue = CFDebugSerializable(scope[keyname])>
+    		<cfcatch>
+    			<cfset keyValue = "undefined">
+           	</cfcatch>
+      	    </cftry>
+        <cfset retVal = retVal & keyValue & Chr(13) & Chr(10)>
+    </cfloop>
+    <cfreturn retVal>
+</cffunction>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Copying data into other tables while eliminating duplicates	</title>
+	<atom:link href="/copying-data-into-other-tables-while-eliminating-duplicates/feed/" rel="self" type="application/rss+xml" />
+	<link>/copying-data-into-other-tables-while-eliminating-duplicates/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 06 Aug 2007 22:08:19 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Michael		</title>
+		<link>/copying-data-into-other-tables-while-eliminating-duplicates/comment-page-1/#comment-183</link>
+
+		<dc:creator><![CDATA[Michael]]></dc:creator>
+		<pubDate>Mon, 06 Aug 2007 22:08:19 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/04/copying-data-into-other-tables-while-eliminating-duplicates/#comment-183</guid>
+
+					<description><![CDATA[Any idea on how to handle a table with a more complex where clause?
+
+I have a table that has three columns that act like a unique field.
+
+Kind of like this: WHERE email, ssn, dob NOT IN (SELECT email, ssn, dob FROM reportUsers)
+
+Ideas?]]></description>
+			<content:encoded><![CDATA[<p>Any idea on how to handle a table with a more complex where clause?</p>
+<p>I have a table that has three columns that act like a unique field.</p>
+<p>Kind of like this: WHERE email, ssn, dob NOT IN (SELECT email, ssn, dob FROM reportUsers)</p>
+<p>Ideas?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

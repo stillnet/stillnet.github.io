@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: SQL CASE statement with NULLs	</title>
+	<atom:link href="/mssql-case-statement-with-nulls/feed/" rel="self" type="application/rss+xml" />
+	<link>/mssql-case-statement-with-nulls/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 20 Sep 2012 11:44:44 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ici		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-2943</link>
+
+		<dc:creator><![CDATA[Ici]]></dc:creator>
+		<pubDate>Thu, 20 Sep 2012 11:44:44 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-2943</guid>
+
+					<description><![CDATA[Many thanks]]></description>
+			<content:encoded><![CDATA[<p>Many thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: James		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-2808</link>
+
+		<dc:creator><![CDATA[James]]></dc:creator>
+		<pubDate>Mon, 30 Apr 2012 02:21:21 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-2808</guid>
+
+					<description><![CDATA[The problem with sub selects is that they tend to slow everything down when working with large data sets.  I am currently having trouble with this where the nulls will be sorted out properly if I put the statement in the where clause but I cannot change the value via a case statement in the select clause using all the methods mentioned above and then some.]]></description>
+			<content:encoded><![CDATA[<p>The problem with sub selects is that they tend to slow everything down when working with large data sets.  I am currently having trouble with this where the nulls will be sorted out properly if I put the statement in the where clause but I cannot change the value via a case statement in the select clause using all the methods mentioned above and then some.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Phil		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-2686</link>
+
+		<dc:creator><![CDATA[Phil]]></dc:creator>
+		<pubDate>Wed, 01 Feb 2012 10:14:03 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-2686</guid>
+
+					<description><![CDATA[Thanks for this, I was having trouble with NULL values but the &#039;search&#039; method of the CASE statement works just fine.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for this, I was having trouble with NULL values but the &#8216;search&#8217; method of the CASE statement works just fine.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Usman		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-2595</link>
+
+		<dc:creator><![CDATA[Usman]]></dc:creator>
+		<pubDate>Wed, 02 Nov 2011 16:45:27 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-2595</guid>
+
+					<description><![CDATA[Thanks Buddy. Helped me to get those NULL variables to accept values! My blog on that here:
+http://usman-suglatwala.blogspot.com/2011/11/handling-nulls-in-sql-while-inserting.html]]></description>
+			<content:encoded><![CDATA[<p>Thanks Buddy. Helped me to get those NULL variables to accept values! My blog on that here:<br />
+<a href="http://usman-suglatwala.blogspot.com/2011/11/handling-nulls-in-sql-while-inserting.html" rel="nofollow ugc">http://usman-suglatwala.blogspot.com/2011/11/handling-nulls-in-sql-while-inserting.html</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Priya		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-2025</link>
+
+		<dc:creator><![CDATA[Priya]]></dc:creator>
+		<pubDate>Mon, 31 Jan 2011 12:11:31 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-2025</guid>
+
+					<description><![CDATA[Hi Stelban and Kumar,
+@ Kumar : Actually, I was in need of not null records.
+
+I have resolved the issue in a simple way by just putting my query in a new select statement. 
+
+select * from (Select NAME, EMPID,
+case
+when ( LOCATION like &amp;apos;chennai&amp;apos; or LOCATION like &amp;apos;coimbatore&amp;apos;)
+then &amp;apos;Tamil Nadu&amp;apos;
+when ( LOCATION like &amp;apos;cochin&amp;apos; or LOCATION like &amp;apos;Trivandrum&amp;apos;)
+then &amp;apos;Kerala&amp;apos;
+else
+end STATE
+from biodata where EMPID in ( select EMPID from biodata))
+where STATE is not null;
+
+This gives the o/p
+NAME&#160;&#160;&#160;&#160;EMPID&#160;&#160;&#160;&#160;STATE
+Tom&#160;&#160;&#160;&#160;12546&#160;&#160;&#160;&#160;Tamil Nadu
+Amy&#160;&#160;&#160;&#160;14645&#160;&#160;&#160;&#160;Kerala
+ rather than
+
+The output would be like,
+
+NAME&#160;&#160;&#160;&#160;EMPID&#160;&#160;&#160;&#160;STATE
+Tom&#160;&#160;&#160;&#160;12546&#160;&#160;&#160;&#160;Tamil Nadu
+Amy&#160;&#160;&#160;&#160;14645&#160;&#160;&#160;&#160;Kerala
+Katie&#160;&#160;&#160;&#160;24645&#160;&#160;&#160;&#160;
+Ravesh&#160;&#160;&#160;&#160;54654
+
+
+Hope this helps !!]]></description>
+			<content:encoded><![CDATA[<p>Hi Stelban and Kumar,<br />
+@ Kumar : Actually, I was in need of not null records.</p>
+<p>I have resolved the issue in a simple way by just putting my query in a new select statement. </p>
+<p>select * from (Select NAME, EMPID,<br />
+case<br />
+when ( LOCATION like &apos;chennai&apos; or LOCATION like &apos;coimbatore&apos;)<br />
+then &apos;Tamil Nadu&apos;<br />
+when ( LOCATION like &apos;cochin&apos; or LOCATION like &apos;Trivandrum&apos;)<br />
+then &apos;Kerala&apos;<br />
+else<br />
+end STATE<br />
+from biodata where EMPID in ( select EMPID from biodata))<br />
+where STATE is not null;</p>
+<p>This gives the o/p<br />
+NAME&nbsp;&nbsp;&nbsp;&nbsp;EMPID&nbsp;&nbsp;&nbsp;&nbsp;STATE<br />
+Tom&nbsp;&nbsp;&nbsp;&nbsp;12546&nbsp;&nbsp;&nbsp;&nbsp;Tamil Nadu<br />
+Amy&nbsp;&nbsp;&nbsp;&nbsp;14645&nbsp;&nbsp;&nbsp;&nbsp;Kerala<br />
+ rather than</p>
+<p>The output would be like,</p>
+<p>NAME&nbsp;&nbsp;&nbsp;&nbsp;EMPID&nbsp;&nbsp;&nbsp;&nbsp;STATE<br />
+Tom&nbsp;&nbsp;&nbsp;&nbsp;12546&nbsp;&nbsp;&nbsp;&nbsp;Tamil Nadu<br />
+Amy&nbsp;&nbsp;&nbsp;&nbsp;14645&nbsp;&nbsp;&nbsp;&nbsp;Kerala<br />
+Katie&nbsp;&nbsp;&nbsp;&nbsp;24645&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Ravesh&nbsp;&nbsp;&nbsp;&nbsp;54654</p>
+<p>Hope this helps !!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: kumar		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-1987</link>
+
+		<dc:creator><![CDATA[kumar]]></dc:creator>
+		<pubDate>Wed, 22 Dec 2010 15:52:33 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-1987</guid>
+
+					<description><![CDATA[use ISNULL(columnName,&#060;What ever you want if the value is NULL&#062;)
+
+Hope this helps...]]></description>
+			<content:encoded><![CDATA[<p>use ISNULL(columnName,&lt;What ever you want if the value is NULL&gt;)</p>
+<p>Hope this helps&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: stelban		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-1864</link>
+
+		<dc:creator><![CDATA[stelban]]></dc:creator>
+		<pubDate>Fri, 29 Oct 2010 17:46:29 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-1864</guid>
+
+					<description><![CDATA[Nice trick using nulls with case statement.&#160;&#160;Very helpful!&#160;&#160;Thanks]]></description>
+			<content:encoded><![CDATA[<p>Nice trick using nulls with case statement.&nbsp;&nbsp;Very helpful!&nbsp;&nbsp;Thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Priya		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-1674</link>
+
+		<dc:creator><![CDATA[Priya]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2010 13:51:08 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-1674</guid>
+
+					<description><![CDATA[The output would be like,
+
+NAME&#160;&#160;&#160;&#160;EMPID&#160;&#160;&#160;&#160;STATE
+Tom&#160;&#160;&#160;&#160;12546&#160;&#160;&#160;&#160;Tamil Nadu
+Amy&#160;&#160;&#160;&#160;14645&#160;&#160;&#160;&#160;Kerala
+Katie&#160;&#160;&#160;&#160;24645&#160;&#160;&#160;&#160;
+Ravesh&#160;&#160;&#160;&#160;54654&#160;&#160;&#160;&#160;
+
+I need only not null state records.Please do the needful. Iam facing the issue in my project]]></description>
+			<content:encoded><![CDATA[<p>The output would be like,</p>
+<p>NAME&nbsp;&nbsp;&nbsp;&nbsp;EMPID&nbsp;&nbsp;&nbsp;&nbsp;STATE<br />
+Tom&nbsp;&nbsp;&nbsp;&nbsp;12546&nbsp;&nbsp;&nbsp;&nbsp;Tamil Nadu<br />
+Amy&nbsp;&nbsp;&nbsp;&nbsp;14645&nbsp;&nbsp;&nbsp;&nbsp;Kerala<br />
+Katie&nbsp;&nbsp;&nbsp;&nbsp;24645&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Ravesh&nbsp;&nbsp;&nbsp;&nbsp;54654&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>I need only not null state records.Please do the needful. Iam facing the issue in my project</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Priya		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-1673</link>
+
+		<dc:creator><![CDATA[Priya]]></dc:creator>
+		<pubDate>Tue, 07 Sep 2010 12:55:56 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-1673</guid>
+
+					<description><![CDATA[I have a similar issue. I do not wanna display the NULL records hitting the 
+else part.For eg .I tried out methods like 
+
+Select NAME, EMPID,
+case 
+when ( LOCATION like &amp;apos;chennai&amp;apos; or LOCATION like &amp;apos;coimbatore&amp;apos;)
+then &amp;apos;Tamil Nadu&amp;apos;
+when ( LOCATION like &amp;apos;cochin&amp;apos; or LOCATION like &amp;apos;Trivandrum&amp;apos;)
+then &amp;apos;Kerala&amp;apos;
+else
+end STATE
+from biodata where EMPID in ( select EMPID from biodata)
+and STATE is not null;
+
+But iam getting displayed with null STATE records. Please help.]]></description>
+			<content:encoded><![CDATA[<p>I have a similar issue. I do not wanna display the NULL records hitting the<br />
+else part.For eg .I tried out methods like </p>
+<p>Select NAME, EMPID,<br />
+case<br />
+when ( LOCATION like &apos;chennai&apos; or LOCATION like &apos;coimbatore&apos;)<br />
+then &apos;Tamil Nadu&apos;<br />
+when ( LOCATION like &apos;cochin&apos; or LOCATION like &apos;Trivandrum&apos;)<br />
+then &apos;Kerala&apos;<br />
+else<br />
+end STATE<br />
+from biodata where EMPID in ( select EMPID from biodata)<br />
+and STATE is not null;</p>
+<p>But iam getting displayed with null STATE records. Please help.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Patel Pinakin		</title>
+		<link>/mssql-case-statement-with-nulls/comment-page-1/#comment-1249</link>
+
+		<dc:creator><![CDATA[Patel Pinakin]]></dc:creator>
+		<pubDate>Sat, 03 Apr 2010 07:08:22 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/04/mssql-case-statement-with-nulls/#comment-1249</guid>
+
+					<description><![CDATA[was just forgot the syntax,
+thanx
+u helped me recall...
+
+keep posting...]]></description>
+			<content:encoded><![CDATA[<p>was just forgot the syntax,<br />
+thanx<br />
+u helped me recall&#8230;</p>
+<p>keep posting&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

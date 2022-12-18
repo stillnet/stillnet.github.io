@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Preventing multiple form submissions	</title>
+	<atom:link href="/prevent-multiple-form-submissions/feed/" rel="self" type="application/rss+xml" />
+	<link>/prevent-multiple-form-submissions/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 24 Sep 2007 13:40:54 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Seb		</title>
+		<link>/prevent-multiple-form-submissions/comment-page-1/#comment-106</link>
+
+		<dc:creator><![CDATA[Seb]]></dc:creator>
+		<pubDate>Mon, 24 Sep 2007 13:40:54 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/30/prevent-multiple-form-submissions/#comment-106</guid>
+
+					<description><![CDATA[I had problems trying to get something like this to work, but your example works perfectly.]]></description>
+			<content:encoded><![CDATA[<p>I had problems trying to get something like this to work, but your example works perfectly.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

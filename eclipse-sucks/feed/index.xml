@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Hey Eclipse &#8211; Call me when you grow up	</title>
+	<atom:link href="/eclipse-sucks/feed/" rel="self" type="application/rss+xml" />
+	<link>/eclipse-sucks/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 17 Sep 2007 14:01:37 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Gareth Jones		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-78</link>
+
+		<dc:creator><![CDATA[Gareth Jones]]></dc:creator>
+		<pubDate>Mon, 17 Sep 2007 14:01:37 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-78</guid>
+
+					<description><![CDATA[For PHP development don&#039;t have any problems using &quot;Eclipse PDT&quot;. Would love to see some improvements to the refactoring side of things but all in all probably one of the best PHP editors out there.
+
+Never used the FTP side of thigns though, at home run Samba on the server and just mount as a local drive. For dev on the net, try http://www.killprog.com/fdrve.html to do the same.]]></description>
+			<content:encoded><![CDATA[<p>For PHP development don&#8217;t have any problems using &#8220;Eclipse PDT&#8221;. Would love to see some improvements to the refactoring side of things but all in all probably one of the best PHP editors out there.</p>
+<p>Never used the FTP side of thigns though, at home run Samba on the server and just mount as a local drive. For dev on the net, try <a href="http://www.killprog.com/fdrve.html" rel="nofollow ugc">http://www.killprog.com/fdrve.html</a> to do the same.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-77</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Mon, 13 Aug 2007 21:56:12 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-77</guid>
+
+					<description><![CDATA[Doh! - Did you know that if you hit Ctrl+Z (undo) too many times in CFEclipse, sometimes you&#039;ll end up renaming or even *deleting* files?  It appears &quot;undo&quot; applies to any file operations you&#039;ve done through CFEclipse.  So when you are hitting Ctrl+Z a bunch to back out some changes in a file, be careful - when you get back to the original state of the file, pressing Ctrl+Z again may start moving files around (back where they were before) or deleting them (if you&#039;ve recently created them).]]></description>
+			<content:encoded><![CDATA[<p>Doh! &#8211; Did you know that if you hit Ctrl+Z (undo) too many times in CFEclipse, sometimes you&#8217;ll end up renaming or even *deleting* files?  It appears &#8220;undo&#8221; applies to any file operations you&#8217;ve done through CFEclipse.  So when you are hitting Ctrl+Z a bunch to back out some changes in a file, be careful &#8211; when you get back to the original state of the file, pressing Ctrl+Z again may start moving files around (back where they were before) or deleting them (if you&#8217;ve recently created them).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ivan		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-76</link>
+
+		<dc:creator><![CDATA[Ivan]]></dc:creator>
+		<pubDate>Wed, 25 Jul 2007 13:11:09 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-76</guid>
+
+					<description><![CDATA[Tried out CFEclipse with the Aptana plugin and I just have to say that I miss DW.  The FTP features are very poor quality on both plugins.  One doesn&#039;t have SFTP support and the other marks your uploaded files as &#039;Read only&#039;.  I&#039;ve seen myself uploading through FTP using CFEclipse/Aptana and having to RD just to change the file&#039;s attributes.  It&#039;s ridiculous.  DW is slow for sure, but I have very seldomly had issues with a version past MX 2004.  Using version CS3 was lovely.
+
+I am totally for the idea of eclipse but as mentioned before, it&#039;s the execution that&#039;s a problem.  Perhaps the IDE does need to grow up a bit.  Then again, I&#039;ve noticed a pattern with open-source software.  They typically tend to carry a steeper learning curve and so demand a higher level of research and interactivity among its users.  Of course, that&#039;s in my opinion, but all I know is that I haven&#039;t researched a single problem with DW as much as I have researched any of my multiple problems with CFEclipse.  You do the math and in the process consider how this translates to lost productivity.]]></description>
+			<content:encoded><![CDATA[<p>Tried out CFEclipse with the Aptana plugin and I just have to say that I miss DW.  The FTP features are very poor quality on both plugins.  One doesn&#8217;t have SFTP support and the other marks your uploaded files as &#8216;Read only&#8217;.  I&#8217;ve seen myself uploading through FTP using CFEclipse/Aptana and having to RD just to change the file&#8217;s attributes.  It&#8217;s ridiculous.  DW is slow for sure, but I have very seldomly had issues with a version past MX 2004.  Using version CS3 was lovely.</p>
+<p>I am totally for the idea of eclipse but as mentioned before, it&#8217;s the execution that&#8217;s a problem.  Perhaps the IDE does need to grow up a bit.  Then again, I&#8217;ve noticed a pattern with open-source software.  They typically tend to carry a steeper learning curve and so demand a higher level of research and interactivity among its users.  Of course, that&#8217;s in my opinion, but all I know is that I haven&#8217;t researched a single problem with DW as much as I have researched any of my multiple problems with CFEclipse.  You do the math and in the process consider how this translates to lost productivity.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Robb		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-75</link>
+
+		<dc:creator><![CDATA[Robb]]></dc:creator>
+		<pubDate>Fri, 29 Jun 2007 19:26:40 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-75</guid>
+
+					<description><![CDATA[I understand your frustrations but, eclipse and CFEclipse have a rather steep learning curve in order to get the most out of them. The tasks, snippets, and CFFrameworks explorer features in CFEclipse, Adobe Flex builder with CF data wizards and JSEclipse plugins and ANT support for the eclipse IDE leaves HS and DW in the dust IMO. If you need FTP support use FireFTP its free, stable, and fast but as long-time user of DW I have bad memories of DW FTP and the many crashes and timeouts when uploading files to meet deadlines. DW has always had issues with their FTP until this recent release which sounds better but have not tried yet.]]></description>
+			<content:encoded><![CDATA[<p>I understand your frustrations but, eclipse and CFEclipse have a rather steep learning curve in order to get the most out of them. The tasks, snippets, and CFFrameworks explorer features in CFEclipse, Adobe Flex builder with CF data wizards and JSEclipse plugins and ANT support for the eclipse IDE leaves HS and DW in the dust IMO. If you need FTP support use FireFTP its free, stable, and fast but as long-time user of DW I have bad memories of DW FTP and the many crashes and timeouts when uploading files to meet deadlines. DW has always had issues with their FTP until this recent release which sounds better but have not tried yet.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-74</link>
+
+		<dc:creator><![CDATA[Mike]]></dc:creator>
+		<pubDate>Tue, 15 May 2007 15:59:31 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-74</guid>
+
+					<description><![CDATA[I haven&#039;t received any errors from CFEclipse (I have not worked with FTP), but the exclusion and/or bugginess of the &quot;right-click to open a CFINCLUDE file&quot; is a non-starter for me.  I only use this 4000 times a day, so it is kind of important for me.  For the life of me, I cannot see how any developer can code for a day without this, especially concerning the popularity of Fusebox-style frameworks.
+
+I&#039;ll keep an eye out on the CFEclipse trouble ticket (http://trac.cfeclipse.org/cfeclipse/ticket/83), which seems to address this.  Perhaps I&#039;ll try again when that feature is closed.]]></description>
+			<content:encoded><![CDATA[<p>I haven&#8217;t received any errors from CFEclipse (I have not worked with FTP), but the exclusion and/or bugginess of the &#8220;right-click to open a CFINCLUDE file&#8221; is a non-starter for me.  I only use this 4000 times a day, so it is kind of important for me.  For the life of me, I cannot see how any developer can code for a day without this, especially concerning the popularity of Fusebox-style frameworks.</p>
+<p>I&#8217;ll keep an eye out on the CFEclipse trouble ticket (<a href="http://trac.cfeclipse.org/cfeclipse/ticket/83" rel="nofollow ugc">http://trac.cfeclipse.org/cfeclipse/ticket/83</a>), which seems to address this.  Perhaps I&#8217;ll try again when that feature is closed.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Anthony		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-73</link>
+
+		<dc:creator><![CDATA[Anthony]]></dc:creator>
+		<pubDate>Sun, 22 Apr 2007 09:27:38 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-73</guid>
+
+					<description><![CDATA[I thought I was the only one with serious FTP issues in cfeclipse!  The aptana plugin works much better but not having the file explorer as a split view is super annoying.
+
+Thought I would give ubuntu a twirl for a few weeks, but I may have to go back to windows just for homesite+. Arggg.]]></description>
+			<content:encoded><![CDATA[<p>I thought I was the only one with serious FTP issues in cfeclipse!  The aptana plugin works much better but not having the file explorer as a split view is super annoying.</p>
+<p>Thought I would give ubuntu a twirl for a few weeks, but I may have to go back to windows just for homesite+. Arggg.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bill Tindal		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-72</link>
+
+		<dc:creator><![CDATA[Bill Tindal]]></dc:creator>
+		<pubDate>Wed, 11 Apr 2007 23:20:36 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-72</guid>
+
+					<description><![CDATA[Have you tried the Aptana plugin? It has much better FTP handling plus being great for CSS / Javascript. http://www.aptana.com/download_all.php]]></description>
+			<content:encoded><![CDATA[<p>Have you tried the Aptana plugin? It has much better FTP handling plus being great for CSS / Javascript. <a href="http://www.aptana.com/download_all.php" rel="nofollow ugc">http://www.aptana.com/download_all.php</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-71</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Thu, 01 Mar 2007 04:36:50 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-71</guid>
+
+					<description><![CDATA[What&#039;s outdated about Homesite?  You can drop in html files for any version of any language and load syntax highlighting files for Fusebox or whatever you want.  I think they built an amazingly extensible editor.
+
+I agree that Eclipse could be so loaded with awesome features as to leave Homesite in the dust, but right now I find Homesite to be much more stable, and completely capable.]]></description>
+			<content:encoded><![CDATA[<p>What&#8217;s outdated about Homesite?  You can drop in html files for any version of any language and load syntax highlighting files for Fusebox or whatever you want.  I think they built an amazingly extensible editor.</p>
+<p>I agree that Eclipse could be so loaded with awesome features as to leave Homesite in the dust, but right now I find Homesite to be much more stable, and completely capable.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Adam Ness		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-70</link>
+
+		<dc:creator><![CDATA[Adam Ness]]></dc:creator>
+		<pubDate>Thu, 01 Mar 2007 02:42:39 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-70</guid>
+
+					<description><![CDATA[Faced with the choice of the out of date Homesite+, incurably slow and bug-ridden DreamWeaver (Why do I have to stop typing for 5 mintues every time I hit Ctrl-S?), and CFEclipse, I tend to chose CFEclipse, though I&#039;ve even toyed with the idea of using GVIM for all my coldFusion development.]]></description>
+			<content:encoded><![CDATA[<p>Faced with the choice of the out of date Homesite+, incurably slow and bug-ridden DreamWeaver (Why do I have to stop typing for 5 mintues every time I hit Ctrl-S?), and CFEclipse, I tend to chose CFEclipse, though I&#8217;ve even toyed with the idea of using GVIM for all my coldFusion development.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Kay Smoljak		</title>
+		<link>/eclipse-sucks/comment-page-1/#comment-69</link>
+
+		<dc:creator><![CDATA[Kay Smoljak]]></dc:creator>
+		<pubDate>Wed, 28 Feb 2007 10:20:44 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/08/eclipse-sucks/#comment-69</guid>
+
+					<description><![CDATA[Whew - I&#039;m not the only one! In some respects I&#039;m still waiting for DW to catch up to Homesite+/CFStudio, although thankfully it&#039;s not as buggy. I love the idea of CFEclipse, but I just can&#039;t get used to it.]]></description>
+			<content:encoded><![CDATA[<p>Whew &#8211; I&#8217;m not the only one! In some respects I&#8217;m still waiting for DW to catch up to Homesite+/CFStudio, although thankfully it&#8217;s not as buggy. I love the idea of CFEclipse, but I just can&#8217;t get used to it.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

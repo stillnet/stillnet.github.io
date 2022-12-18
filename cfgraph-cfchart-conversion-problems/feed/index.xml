@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: ColdFusion CFChart woes &#8211; converting from CFGraph	</title>
+	<atom:link href="/cfgraph-cfchart-conversion-problems/feed/" rel="self" type="application/rss+xml" />
+	<link>/cfgraph-cfchart-conversion-problems/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 09 Nov 2010 18:45:04 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Gaidzag Shahbazian		</title>
+		<link>/cfgraph-cfchart-conversion-problems/comment-page-1/#comment-1920</link>
+
+		<dc:creator><![CDATA[Gaidzag Shahbazian]]></dc:creator>
+		<pubDate>Tue, 09 Nov 2010 18:45:04 +0000</pubDate>
+		<guid isPermaLink="false">/2007/02/22/cfgraph-cfchart-conversion-problems/#comment-1920</guid>
+
+					<description><![CDATA[Please advice me to convert the following code from CF5 to CF7. Thanks
+
+&#060;!--- Display The Graph ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;APPLET CODE=&#034;BarChart.class&#034; CODEBASE=&#034;/classes/CFGraphs/&#034; WIDTH=&#034;450&#034; HEIGHT=&#034;250&#034;&#062;
+&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;!--- Set required record set parameters ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;CFOUTPUT&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;ChartData.Columns&#034; VALUE=&#034;Items,Values,Colors&#034;&#062; 
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;ChartData.Items&#034; VALUE=&#034;#ValueList(GetDeputyQuery.ComplaintDeputy)#&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;ChartData.Values&#034; VALUE=&#034;#ValueList(GetDeputyQuery.CountofComplaintDeputy)#&#034;&#062; 
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;ChartData.Colors&#034; VALUE=&#034;red,blue,green,yellow,magenta,cyan,orange,pink,darkgray,red,blue,green,yellow,magenta,cyan,orange,pink,darkgray&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;/CFOUTPUT&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;!--- Set the optional display parameters ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;Title&#034; VALUE=&#034;Deputy&#034;&#062; 
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;TitleFontName&#034; VALUE=&#034;Arial&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;TitleFontHeight&#034; VALUE=&#034;9&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;PARAM NAME=&#034;DebugInfoEnabled&#034; VALUE=&#034;yes&#034;&#062;]]></description>
+			<content:encoded><![CDATA[<p>Please advice me to convert the following code from CF5 to CF7. Thanks</p>
+<p>&lt;!&#8212; Display The Graph &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;APPLET CODE=&quot;BarChart.class&quot; CODEBASE=&quot;/classes/CFGraphs/&quot; WIDTH=&quot;450&quot; HEIGHT=&quot;250&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!&#8212; Set required record set parameters &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;CFOUTPUT&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;ChartData.Columns&quot; VALUE=&quot;Items,Values,Colors&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;ChartData.Items&quot; VALUE=&quot;#ValueList(GetDeputyQuery.ComplaintDeputy)#&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;ChartData.Values&quot; VALUE=&quot;#ValueList(GetDeputyQuery.CountofComplaintDeputy)#&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;ChartData.Colors&quot; VALUE=&quot;red,blue,green,yellow,magenta,cyan,orange,pink,darkgray,red,blue,green,yellow,magenta,cyan,orange,pink,darkgray&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/CFOUTPUT&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!&#8212; Set the optional display parameters &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;Title&quot; VALUE=&quot;Deputy&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;TitleFontName&quot; VALUE=&quot;Arial&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;TitleFontHeight&quot; VALUE=&quot;9&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;PARAM NAME=&quot;DebugInfoEnabled&quot; VALUE=&quot;yes&quot;&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: maramandan		</title>
+		<link>/cfgraph-cfchart-conversion-problems/comment-page-1/#comment-1164</link>
+
+		<dc:creator><![CDATA[maramandan]]></dc:creator>
+		<pubDate>Tue, 23 Feb 2010 11:40:04 +0000</pubDate>
+		<guid isPermaLink="false">/2007/02/22/cfgraph-cfchart-conversion-problems/#comment-1164</guid>
+
+					<description><![CDATA[Hi Ryan
+
+I have a normal chart ( type=&#034;horizontalbar&#034;) Is there any way by which I could put the X axis on the top ? Sort of like primaryXAxisplacement = Top&#124;Bottom. I didn&amp;apos;t find this setting in CF 8 / WebCharts3D 5.1. Any Idea how this could be done? Please help me
+
+Thanks in Advance]]></description>
+			<content:encoded><![CDATA[<p>Hi Ryan</p>
+<p>I have a normal chart ( type=&quot;horizontalbar&quot;) Is there any way by which I could put the X axis on the top ? Sort of like primaryXAxisplacement = Top|Bottom. I didn&apos;t find this setting in CF 8 / WebCharts3D 5.1. Any Idea how this could be done? Please help me</p>
+<p>Thanks in Advance</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

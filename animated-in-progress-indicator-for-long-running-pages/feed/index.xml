@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Animated in-progress indicator for long running pages	</title>
+	<atom:link href="/animated-in-progress-indicator-for-long-running-pages/feed/" rel="self" type="application/rss+xml" />
+	<link>/animated-in-progress-indicator-for-long-running-pages/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 04 Oct 2012 14:56:39 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: PEDRO FERREIRA		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2953</link>
+
+		<dc:creator><![CDATA[PEDRO FERREIRA]]></dc:creator>
+		<pubDate>Thu, 04 Oct 2012 14:56:39 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2953</guid>
+
+					<description><![CDATA[Thank you for the excellent, elegant, and light solution. 
+Salute from Rio!]]></description>
+			<content:encoded><![CDATA[<p>Thank you for the excellent, elegant, and light solution.<br />
+Salute from Rio!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: justin		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2928</link>
+
+		<dc:creator><![CDATA[justin]]></dc:creator>
+		<pubDate>Mon, 16 Jul 2012 13:47:50 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2928</guid>
+
+					<description><![CDATA[i got error
+
+Uncaught TypeError: Cannot read property &#039;style&#039; of null 
+
+
+Please help me]]></description>
+			<content:encoded><![CDATA[<p>i got error</p>
+<p>Uncaught TypeError: Cannot read property &#8216;style&#8217; of null </p>
+<p>Please help me</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Crimson Kate		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2794</link>
+
+		<dc:creator><![CDATA[Crimson Kate]]></dc:creator>
+		<pubDate>Wed, 28 Mar 2012 10:11:52 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2794</guid>
+
+					<description><![CDATA[Excellent!!  Really, really helpful. Works perfectly. Thank you so much for sharing this. :)]]></description>
+			<content:encoded><![CDATA[<p>Excellent!!  Really, really helpful. Works perfectly. Thank you so much for sharing this. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: brij		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2672</link>
+
+		<dc:creator><![CDATA[brij]]></dc:creator>
+		<pubDate>Tue, 10 Jan 2012 08:19:45 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2672</guid>
+
+					<description><![CDATA[I am still getting the non animated icon/image when I click on the submit button. 
+
+Below given is the code
+if (! submitted) {
+alert(“test”);
+submitted = true;
+ProgressImg = document.getElementById(‘inprogress_img’);
+ProgressImg.style.display = “block”;
+setTimeOut(“ProgressImg.src = ‘C:\\130.gif’”,1000);
+return true;
+}
+else {
+return false;
+}
+
+Can someone help?
+Regards]]></description>
+			<content:encoded><![CDATA[<p>I am still getting the non animated icon/image when I click on the submit button. </p>
+<p>Below given is the code<br />
+if (! submitted) {<br />
+alert(“test”);<br />
+submitted = true;<br />
+ProgressImg = document.getElementById(‘inprogress_img’);<br />
+ProgressImg.style.display = “block”;<br />
+setTimeOut(“ProgressImg.src = ‘C:\\130.gif’”,1000);<br />
+return true;<br />
+}<br />
+else {<br />
+return false;<br />
+}</p>
+<p>Can someone help?<br />
+Regards</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Brij		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2671</link>
+
+		<dc:creator><![CDATA[Brij]]></dc:creator>
+		<pubDate>Tue, 10 Jan 2012 08:18:57 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2671</guid>
+
+					<description><![CDATA[I am still getting the non animated icon/image when I click on the submit button. 
+
+Below given is the code 
+if (! submitted) {
+		alert(&quot;test&quot;);
+		submitted = true;
+		ProgressImg = document.getElementById(&#039;inprogress_img&#039;);
+		ProgressImg.style.display = &quot;block&quot;;
+		setTimeOut(&quot;ProgressImg.src = &#039;C:\\130.gif&#039;&quot;,1000);
+		return true;
+		}
+	else {
+		return false;
+		}]]></description>
+			<content:encoded><![CDATA[<p>I am still getting the non animated icon/image when I click on the submit button. </p>
+<p>Below given is the code<br />
+if (! submitted) {<br />
+		alert(&#8220;test&#8221;);<br />
+		submitted = true;<br />
+		ProgressImg = document.getElementById(&#8216;inprogress_img&#8217;);<br />
+		ProgressImg.style.display = &#8220;block&#8221;;<br />
+		setTimeOut(&#8220;ProgressImg.src = &#8216;C:\\130.gif'&#8221;,1000);<br />
+		return true;<br />
+		}<br />
+	else {<br />
+		return false;<br />
+		}</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: amod		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2652</link>
+
+		<dc:creator><![CDATA[amod]]></dc:creator>
+		<pubDate>Tue, 20 Dec 2011 06:39:22 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2652</guid>
+
+					<description><![CDATA[Hi thanks for cool sol. i want to set its display time to until  its browser close. how can i achieve?]]></description>
+			<content:encoded><![CDATA[<p>Hi thanks for cool sol. i want to set its display time to until  its browser close. how can i achieve?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2651</link>
+
+		<dc:creator><![CDATA[Dan]]></dc:creator>
+		<pubDate>Mon, 19 Dec 2011 08:14:32 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2651</guid>
+
+					<description><![CDATA[Outstanding! Thanks for the post.
+
+IE still broken on version 9, but this fixed it.
+
+I used a simpler version - only a hidden image tag on the page.
+
+
+
+	function appear()
+	{
+		ProgressImg = document.getElementById(&#039;processing&#039;);
+		ProgressImg.style.visibility = &#039;visible&#039;;
+		setTimeout(&quot;ProgressImg.src = ProgressImg.src&quot;,100);
+	}
+So the only extra line needed for IE compared to my original was the setTimeout()]]></description>
+			<content:encoded><![CDATA[<p>Outstanding! Thanks for the post.</p>
+<p>IE still broken on version 9, but this fixed it.</p>
+<p>I used a simpler version &#8211; only a hidden image tag on the page.</p>
+<p>	function appear()<br />
+	{<br />
+		ProgressImg = document.getElementById(&#8216;processing&#8217;);<br />
+		ProgressImg.style.visibility = &#8216;visible&#8217;;<br />
+		setTimeout(&#8220;ProgressImg.src = ProgressImg.src&#8221;,100);<br />
+	}<br />
+So the only extra line needed for IE compared to my original was the setTimeout()</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: John		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-2312</link>
+
+		<dc:creator><![CDATA[John]]></dc:creator>
+		<pubDate>Wed, 18 May 2011 12:16:53 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-2312</guid>
+
+					<description><![CDATA[Thank you for this solution!!]]></description>
+			<content:encoded><![CDATA[<p>Thank you for this solution!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sebastian		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-1722</link>
+
+		<dc:creator><![CDATA[Sebastian]]></dc:creator>
+		<pubDate>Wed, 22 Sep 2010 17:20:02 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-1722</guid>
+
+					<description><![CDATA[You save me.... I was two days trying to solve this issue. Thanks a lot!]]></description>
+			<content:encoded><![CDATA[<p>You save me&#8230;. I was two days trying to solve this issue. Thanks a lot!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Kirk		</title>
+		<link>/animated-in-progress-indicator-for-long-running-pages/comment-page-1/#comment-1497</link>
+
+		<dc:creator><![CDATA[Kirk]]></dc:creator>
+		<pubDate>Tue, 15 Jun 2010 17:04:54 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/02/04/animated-in-progress-indicator-for-long-running-pages/#comment-1497</guid>
+
+					<description><![CDATA[Thank you! The web is such a great place because of people like you!]]></description>
+			<content:encoded><![CDATA[<p>Thank you! The web is such a great place because of people like you!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

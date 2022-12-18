@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Copying data from SQL Studio to Excel	</title>
+	<atom:link href="/copying-sql-studio-excel-headers/feed/" rel="self" type="application/rss+xml" />
+	<link>/copying-sql-studio-excel-headers/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 08 Jan 2013 18:13:21 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Chris Tierney		</title>
+		<link>/copying-sql-studio-excel-headers/comment-page-1/#comment-3400</link>
+
+		<dc:creator><![CDATA[Chris Tierney]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 18:13:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1164#comment-3400</guid>
+
+					<description><![CDATA[Great tip! Thanks Ryan.]]></description>
+			<content:encoded><![CDATA[<p>Great tip! Thanks Ryan.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/copying-sql-studio-excel-headers/comment-page-1/#comment-3329</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 02 Jan 2013 18:03:46 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1164#comment-3329</guid>
+
+					<description><![CDATA[Yea I&#039;ve done it that way too, but I&#039;ve run into problems when there are commas in the data. I don&#039;t think SQL Studio escapes them.]]></description>
+			<content:encoded><![CDATA[<p>Yea I&#8217;ve done it that way too, but I&#8217;ve run into problems when there are commas in the data. I don&#8217;t think SQL Studio escapes them.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake Churchill		</title>
+		<link>/copying-sql-studio-excel-headers/comment-page-1/#comment-3328</link>
+
+		<dc:creator><![CDATA[Jake Churchill]]></dc:creator>
+		<pubDate>Wed, 02 Jan 2013 18:00:50 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1164#comment-3328</guid>
+
+					<description><![CDATA[Nice post.  I usually do the results to text and save as a csv file but then I always have to open that with excel and make sure to re-save as an excel file.  This might actually save a step.]]></description>
+			<content:encoded><![CDATA[<p>Nice post.  I usually do the results to text and save as a csv file but then I always have to open that with excel and make sure to re-save as an excel file.  This might actually save a step.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

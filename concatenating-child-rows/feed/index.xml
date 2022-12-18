@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Concatenating child rows in SQL &#8211; Cross Apply / FOR XML PATH	</title>
+	<atom:link href="/concatenating-child-rows/feed/" rel="self" type="application/rss+xml" />
+	<link>/concatenating-child-rows/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 10 Apr 2013 14:32:34 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-3859</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 10 Apr 2013 14:32:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-3859</guid>
+
+					<description><![CDATA[Great tip Oscar, thanks!]]></description>
+			<content:encoded><![CDATA[<p>Great tip Oscar, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Oscar		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-3858</link>
+
+		<dc:creator><![CDATA[Oscar]]></dc:creator>
+		<pubDate>Wed, 10 Apr 2013 14:21:09 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-3858</guid>
+
+					<description><![CDATA[to get rid of the comma you can use STUFF... in Ryan&#039;s example you would basically declare your columns and &#039;STUFF&#039; the one with the results of the CROSS APPLY like this:
+
+SELECT OrderID, OrderNotes, STUFF(listOfLineNotes,1,1,&#039;&#039;) as listOfLineNotes
+FROM orders AS o
+CROSS APPLY (
+	SELECT linenotes + &#039;,&#039;
+	FROM orderLines AS ol
+	WHERE ol.orderID = o.orderID 
+	FOR XML PATH(&#039;&#039;) )
+temp ( listOfLineNotes )]]></description>
+			<content:encoded><![CDATA[<p>to get rid of the comma you can use STUFF&#8230; in Ryan&#8217;s example you would basically declare your columns and &#8216;STUFF&#8217; the one with the results of the CROSS APPLY like this:</p>
+<p>SELECT OrderID, OrderNotes, STUFF(listOfLineNotes,1,1,&#8221;) as listOfLineNotes<br />
+FROM orders AS o<br />
+CROSS APPLY (<br />
+	SELECT linenotes + &#8216;,&#8217;<br />
+	FROM orderLines AS ol<br />
+	WHERE ol.orderID = o.orderID<br />
+	FOR XML PATH(&#8221;) )<br />
+temp ( listOfLineNotes )</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-2006</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 02 Jan 2011 04:39:47 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-2006</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/concatenating-child-rows/comment-page-1/#comment-2001&quot;&gt;Bryan&lt;/a&gt;.
+
+You might be able to use the Left() function to remove the trailing comma character.&#160;&#160;I don&amp;apos;t have my database up now so I can&amp;apos;t test it, but something like Left( [computed value], Len([computed value])-1)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/concatenating-child-rows/comment-page-1/#comment-2001">Bryan</a>.</p>
+<p>You might be able to use the Left() function to remove the trailing comma character.&nbsp;&nbsp;I don&apos;t have my database up now so I can&apos;t test it, but something like Left( [computed value], Len([computed value])-1)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bryan		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-2001</link>
+
+		<dc:creator><![CDATA[Bryan]]></dc:creator>
+		<pubDate>Thu, 30 Dec 2010 20:04:07 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-2001</guid>
+
+					<description><![CDATA[Thanks for posting this.&#160;&#160;It was exactly what I needed!
+
+One minor question though: Is there a way within the query itself to strip the comma off of the last item?&#160;&#160;For example, when I run the query you posted I get the value &#034;ABC,XYZ,&#034; instead of &#034;ABC,XYZ&#034; for the listOfLineNotes field in the first row.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for posting this.&nbsp;&nbsp;It was exactly what I needed!</p>
+<p>One minor question though: Is there a way within the query itself to strip the comma off of the last item?&nbsp;&nbsp;For example, when I run the query you posted I get the value &quot;ABC,XYZ,&quot; instead of &quot;ABC,XYZ&quot; for the listOfLineNotes field in the first row.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bill Richard		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-1907</link>
+
+		<dc:creator><![CDATA[Bill Richard]]></dc:creator>
+		<pubDate>Fri, 05 Nov 2010 20:05:59 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-1907</guid>
+
+					<description><![CDATA[Interesting, I had no idea you could use CROSS APPLY like that. Thanks]]></description>
+			<content:encoded><![CDATA[<p>Interesting, I had no idea you could use CROSS APPLY like that. Thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-1842</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 23 Oct 2010 14:13:16 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-1842</guid>
+
+					<description><![CDATA[Good stuff Julian, thanks.]]></description>
+			<content:encoded><![CDATA[<p>Good stuff Julian, thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Julian Halliwell		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-1841</link>
+
+		<dc:creator><![CDATA[Julian Halliwell]]></dc:creator>
+		<pubDate>Sat, 23 Oct 2010 07:50:14 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-1841</guid>
+
+					<description><![CDATA[In MySQL you can accomplish the same in a slightly more transparent way with GROUP_CONCAT. As you say great for any time you need to de-normalise such as populating a search index.
+
+SELECT
+ o.orderID
+ ,o.orderNotes
+ ,GROUP_CONCAT( lineNotes ) AS listOfLineNotes
+FROM
+ orders o
+LEFT JOIN
+ orderLines ol ON ol.orderID = o.orderID
+GROUP BY
+ o.orderID]]></description>
+			<content:encoded><![CDATA[<p>In MySQL you can accomplish the same in a slightly more transparent way with GROUP_CONCAT. As you say great for any time you need to de-normalise such as populating a search index.</p>
+<p>SELECT<br />
+ o.orderID<br />
+ ,o.orderNotes<br />
+ ,GROUP_CONCAT( lineNotes ) AS listOfLineNotes<br />
+FROM<br />
+ orders o<br />
+LEFT JOIN<br />
+ orderLines ol ON ol.orderID = o.orderID<br />
+GROUP BY<br />
+ o.orderID</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: damiththa		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-1829</link>
+
+		<dc:creator><![CDATA[damiththa]]></dc:creator>
+		<pubDate>Wed, 20 Oct 2010 18:50:46 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-1829</guid>
+
+					<description><![CDATA[Thank you Ryan this is great. 
+I always wondered how this can be accomplished but now I know how.]]></description>
+			<content:encoded><![CDATA[<p>Thank you Ryan this is great.<br />
+I always wondered how this can be accomplished but now I know how.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

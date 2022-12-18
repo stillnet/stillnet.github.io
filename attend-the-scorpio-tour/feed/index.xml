@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: If you can make it to a Scorpio Tour event &#8211; Do it!	</title>
+	<atom:link href="/attend-the-scorpio-tour/feed/" rel="self" type="application/rss+xml" />
+	<link>/attend-the-scorpio-tour/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 31 Jul 2007 14:20:59 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Mayoorathen		</title>
+		<link>/attend-the-scorpio-tour/comment-page-1/#comment-225</link>
+
+		<dc:creator><![CDATA[Mayoorathen]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2007 14:20:59 +0000</pubDate>
+		<guid isPermaLink="false">/2007/05/01/attend-the-scorpio-tour/#comment-225</guid>
+
+					<description><![CDATA[Well yeah I just thought about it too.. Once I was writing the code in CFscript try to put var++ and it isn&#039;t working! Then only found out the CF doesn&#039;t support. Thanks.]]></description>
+			<content:encoded><![CDATA[<p>Well yeah I just thought about it too.. Once I was writing the code in CFscript try to put var++ and it isn&#8217;t working! Then only found out the CF doesn&#8217;t support. Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: vrushali		</title>
+		<link>/attend-the-scorpio-tour/comment-page-1/#comment-224</link>
+
+		<dc:creator><![CDATA[vrushali]]></dc:creator>
+		<pubDate>Thu, 24 May 2007 09:51:31 +0000</pubDate>
+		<guid isPermaLink="false">/2007/05/01/attend-the-scorpio-tour/#comment-224</guid>
+
+					<description><![CDATA[I Really help this data for datetime and union oprator thanks]]></description>
+			<content:encoded><![CDATA[<p>I Really help this data for datetime and union oprator thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Axel		</title>
+		<link>/attend-the-scorpio-tour/comment-page-1/#comment-223</link>
+
+		<dc:creator><![CDATA[Axel]]></dc:creator>
+		<pubDate>Wed, 02 May 2007 13:54:33 +0000</pubDate>
+		<guid isPermaLink="false">/2007/05/01/attend-the-scorpio-tour/#comment-223</guid>
+
+					<description><![CDATA[the ecma script operators are going to be soooooo awesome, it&#039;s just one less thing that will hold me back from going back and forth when writing in flex, and coldfusion.]]></description>
+			<content:encoded><![CDATA[<p>the ecma script operators are going to be soooooo awesome, it&#8217;s just one less thing that will hold me back from going back and forth when writing in flex, and coldfusion.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

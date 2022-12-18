@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: CFEclipse tip &#8211; Recovering a deleted file	</title>
+	<atom:link href="/cfeclipse-recover-deleted-file/feed/" rel="self" type="application/rss+xml" />
+	<link>/cfeclipse-recover-deleted-file/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 17 Dec 2009 13:28:04 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Mike Henke		</title>
+		<link>/cfeclipse-recover-deleted-file/comment-page-1/#comment-905</link>
+
+		<dc:creator><![CDATA[Mike Henke]]></dc:creator>
+		<pubDate>Thu, 17 Dec 2009 13:28:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=679#comment-905</guid>
+
+					<description><![CDATA[A more direct way to recover a deleted file is to right click on the project folder and select &#034;Restore from Local History&#034;.]]></description>
+			<content:encoded><![CDATA[<p>A more direct way to recover a deleted file is to right click on the project folder and select &quot;Restore from Local History&quot;.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

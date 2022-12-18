@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Comparing dates without times in SQL Server	</title>
+	<atom:link href="/comparing-dates-without-times-in-sql-server/feed/" rel="self" type="application/rss+xml" />
+	<link>/comparing-dates-without-times-in-sql-server/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 19 Jul 2012 13:20:30 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Rodger		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-2930</link>
+
+		<dc:creator><![CDATA[Rodger]]></dc:creator>
+		<pubDate>Thu, 19 Jul 2012 13:20:30 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-2930</guid>
+
+					<description><![CDATA[WHERE CAST(expire_date AS DATE) &#062;= CAST(getdate() AS DATE)]]></description>
+			<content:encoded><![CDATA[<p>WHERE CAST(expire_date AS DATE) &gt;= CAST(getdate() AS DATE)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: dave		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-2859</link>
+
+		<dc:creator><![CDATA[dave]]></dc:creator>
+		<pubDate>Wed, 20 Jun 2012 16:13:33 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-2859</guid>
+
+					<description><![CDATA[Like Jose said... use datediff(day, logindate ,&#039;2012/06/05&#039; ) = 0
+
+Query Optimizer can use index on date that way.]]></description>
+			<content:encoded><![CDATA[<p>Like Jose said&#8230; use datediff(day, logindate ,&#8217;2012/06/05&#8242; ) = 0</p>
+<p>Query Optimizer can use index on date that way.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-2598</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 03 Nov 2011 12:15:55 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-2598</guid>
+
+					<description><![CDATA[Kenny, thanks for the comment. The &#039;date&#039; type was only added in SQL Server 2008. In all the prior versions you&#039;ll need to do some mangling to be able to compare just the date portion.]]></description>
+			<content:encoded><![CDATA[<p>Kenny, thanks for the comment. The &#8216;date&#8217; type was only added in SQL Server 2008. In all the prior versions you&#8217;ll need to do some mangling to be able to compare just the date portion.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: kenny		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-2597</link>
+
+		<dc:creator><![CDATA[kenny]]></dc:creator>
+		<pubDate>Thu, 03 Nov 2011 09:34:54 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-2597</guid>
+
+					<description><![CDATA[What&#039;s wrong with:
+select cast(datetimefield as date) ?
+
+Why go the hard way?
+I tried it, and just casting to date type works, no floor, floats, .. involved..]]></description>
+			<content:encoded><![CDATA[<p>What&#8217;s wrong with:<br />
+select cast(datetimefield as date) ?</p>
+<p>Why go the hard way?<br />
+I tried it, and just casting to date type works, no floor, floats, .. involved..</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ankur		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-2530</link>
+
+		<dc:creator><![CDATA[Ankur]]></dc:creator>
+		<pubDate>Sat, 24 Sep 2011 13:09:36 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-2530</guid>
+
+					<description><![CDATA[SELECT * FROM TableName WHERE DATEPART(DY,Date) = DATEPART(DY,@date)]]></description>
+			<content:encoded><![CDATA[<p>SELECT * FROM TableName WHERE DATEPART(DY,Date) = DATEPART(DY,@date)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Javier		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-2185</link>
+
+		<dc:creator><![CDATA[Javier]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2011 21:43:17 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-2185</guid>
+
+					<description><![CDATA[This is the best way by far:
+
+DateAdd(day, datediff(day,0, MydateValue), 0) 
+
+See the complete article on : http://stackoverflow.com/questions/353014/convert-sql-server-datetime-fields-to-compare-date-parts-only-with-indexed-looku]]></description>
+			<content:encoded><![CDATA[<p>This is the best way by far:</p>
+<p>DateAdd(day, datediff(day,0, MydateValue), 0) </p>
+<p>See the complete article on : <a href="http://stackoverflow.com/questions/353014/convert-sql-server-datetime-fields-to-compare-date-parts-only-with-indexed-looku" rel="nofollow ugc">http://stackoverflow.com/questions/353014/convert-sql-server-datetime-fields-to-compare-date-parts-only-with-indexed-looku</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Faheem Ahmad		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-2182</link>
+
+		<dc:creator><![CDATA[Faheem Ahmad]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2011 08:00:24 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-2182</guid>
+
+					<description><![CDATA[Great article.
+I tested with following example and it really works for me.
+
+DECLARE @d1 SMALLDATETIME
+DECLARE @d2 SMALLDATETIME
+
+SET @d1 = (SELECT CAST(FLOOR(CAST( GETUTCDATE() AS float)) AS datetime))
+SET @d2 = (SELECT CAST(FLOOR(CAST( GETDATE() AS float)) AS datetime))
+
+--PRINT @d3
+--PRINT @d4
+
+IF(@d1 = @d2)
+&#160;&#160;&#160;&#160;PRINT &amp;apos;both dates are equal&amp;apos;
+ELSE
+&#160;&#160;&#160;&#160;PRINT &amp;apos;no both dates are different&amp;apos;
+&#160;&#160;&#160;&#160;
+Thanks dude.]]></description>
+			<content:encoded><![CDATA[<p>Great article.<br />
+I tested with following example and it really works for me.</p>
+<p>DECLARE @d1 SMALLDATETIME<br />
+DECLARE @d2 SMALLDATETIME</p>
+<p>SET @d1 = (SELECT CAST(FLOOR(CAST( GETUTCDATE() AS float)) AS datetime))<br />
+SET @d2 = (SELECT CAST(FLOOR(CAST( GETDATE() AS float)) AS datetime))</p>
+<p>&#8211;PRINT @d3<br />
+&#8211;PRINT @d4</p>
+<p>IF(@d1 = @d2)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT &apos;both dates are equal&apos;<br />
+ELSE<br />
+&nbsp;&nbsp;&nbsp;&nbsp;PRINT &apos;no both dates are different&apos;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Thanks dude.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Manoj		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-1565</link>
+
+		<dc:creator><![CDATA[Manoj]]></dc:creator>
+		<pubDate>Sun, 25 Jul 2010 14:00:49 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-1565</guid>
+
+					<description><![CDATA[can we able to compare two dates by using if condition]]></description>
+			<content:encoded><![CDATA[<p>can we able to compare two dates by using if condition</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Claes		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-685</link>
+
+		<dc:creator><![CDATA[Claes]]></dc:creator>
+		<pubDate>Tue, 25 Aug 2009 09:13:39 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-685</guid>
+
+					<description><![CDATA[If you compare two datetime fields in this way, the cast back to datetime should not be necessary. This saves some execution time.]]></description>
+			<content:encoded><![CDATA[<p>If you compare two datetime fields in this way, the cast back to datetime should not be necessary. This saves some execution time.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Blerta		</title>
+		<link>/comparing-dates-without-times-in-sql-server/comment-page-1/#comment-588</link>
+
+		<dc:creator><![CDATA[Blerta]]></dc:creator>
+		<pubDate>Fri, 31 Jul 2009 11:52:19 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2007/01/20/comparing-dates-without-times-in-sql-server/#comment-588</guid>
+
+					<description><![CDATA[Great article and big help. Thank you!]]></description>
+			<content:encoded><![CDATA[<p>Great article and big help. Thank you!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

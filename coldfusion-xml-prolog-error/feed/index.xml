@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Cleaning up those funny characters on an XML web service result	</title>
+	<atom:link href="/coldfusion-xml-prolog-error/feed/" rel="self" type="application/rss+xml" />
+	<link>/coldfusion-xml-prolog-error/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 08 Oct 2008 19:20:34 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: CM		</title>
+		<link>/coldfusion-xml-prolog-error/comment-page-1/#comment-245</link>
+
+		<dc:creator><![CDATA[CM]]></dc:creator>
+		<pubDate>Wed, 08 Oct 2008 19:20:34 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/09/coldfusion-xml-prolog-error/#comment-245</guid>
+
+					<description><![CDATA[Just repeating the thanks -- very helpful!]]></description>
+			<content:encoded><![CDATA[<p>Just repeating the thanks &#8212; very helpful!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carolyn		</title>
+		<link>/coldfusion-xml-prolog-error/comment-page-1/#comment-244</link>
+
+		<dc:creator><![CDATA[Carolyn]]></dc:creator>
+		<pubDate>Tue, 01 Apr 2008 19:54:18 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/09/coldfusion-xml-prolog-error/#comment-244</guid>
+
+					<description><![CDATA[Thanks so much - this helped me &quot;parse the unparceable feed&quot;!]]></description>
+			<content:encoded><![CDATA[<p>Thanks so much &#8211; this helped me &#8220;parse the unparceable feed&#8221;!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: George		</title>
+		<link>/coldfusion-xml-prolog-error/comment-page-1/#comment-243</link>
+
+		<dc:creator><![CDATA[George]]></dc:creator>
+		<pubDate>Thu, 18 Oct 2007 23:17:58 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/09/coldfusion-xml-prolog-error/#comment-243</guid>
+
+					<description><![CDATA[THANK YOU THANK YOU THANK YOUTHANK YOU!!!!! You are awesome!!!!!!!!!!!!!]]></description>
+			<content:encoded><![CDATA[<p>THANK YOU THANK YOU THANK YOUTHANK YOU!!!!! You are awesome!!!!!!!!!!!!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Kevin R.		</title>
+		<link>/coldfusion-xml-prolog-error/comment-page-1/#comment-242</link>
+
+		<dc:creator><![CDATA[Kevin R.]]></dc:creator>
+		<pubDate>Mon, 15 Oct 2007 21:37:41 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/09/coldfusion-xml-prolog-error/#comment-242</guid>
+
+					<description><![CDATA[Hello,
+
+I ran into this exact issue when parsing XML returned from a QuarkXpress Server &#039;deconstruct&#039; (it returns a XML document with all of the data used in conjunction with the referenced Quark file).
+
+I kept thinking it was my code, but it all worked perfectly with other XML documents.
+
+I used your fix and life was good!
+
+Best regards,
+Kevin R.
+www.MyOwnLabels.com]]></description>
+			<content:encoded><![CDATA[<p>Hello,</p>
+<p>I ran into this exact issue when parsing XML returned from a QuarkXpress Server &#8216;deconstruct&#8217; (it returns a XML document with all of the data used in conjunction with the referenced Quark file).</p>
+<p>I kept thinking it was my code, but it all worked perfectly with other XML documents.</p>
+<p>I used your fix and life was good!</p>
+<p>Best regards,<br />
+Kevin R.<br />
+<a href="http://www.MyOwnLabels.com/" rel="nofollow ugc">http://www.MyOwnLabels.com/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: mark kruger		</title>
+		<link>/coldfusion-xml-prolog-error/comment-page-1/#comment-241</link>
+
+		<dc:creator><![CDATA[mark kruger]]></dc:creator>
+		<pubDate>Fri, 20 Jul 2007 03:48:49 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/09/coldfusion-xml-prolog-error/#comment-241</guid>
+
+					<description><![CDATA[Ryan, awesome stuff.  You do a great job of organizing and sequencing information.]]></description>
+			<content:encoded><![CDATA[<p>Ryan, awesome stuff.  You do a great job of organizing and sequencing information.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>System Administration &#8211; Stillnet Studios</title>
+	<atom:link href="/category/system-administration/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 11 Jun 2012 03:00:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Mura 404 page not working in IIS7 &#8211; fix it in web.config</title>
+		<link>/mura-404-page-not-working-in-iis7-fix-it-in-web-config/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 11 Jun 2012 16:00:42 +0000</pubDate>
+				<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=1106</guid>
+
+					<description><![CDATA[When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying. This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the onMissingTemplate handler. The fix [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404.gif" alt="" title="IIS7 404" width="600" height="390" class="alignnone size-full wp-image-1107" srcset="/wp-content/uploads/2012/06/IIS7-404.gif 600w, /wp-content/uploads/2012/06/IIS7-404-300x195.gif 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p>This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the <code>onMissingTemplate</code> handler. The fix is easy. Edit the web.config file in the webroot, look for an <code>httpErrors</code> tag. It might look like this:</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404-config.gif" alt="" title="IIS7-404 config" width="543" height="294" class="alignnone size-full wp-image-1111" srcset="/wp-content/uploads/2012/06/IIS7-404-config.gif 543w, /wp-content/uploads/2012/06/IIS7-404-config-300x162.gif 300w" sizes="(max-width: 543px) 100vw, 543px" /></p>
+<p>You need to add <code>existingResponse="PassThrough"</code> to it. If that element is missing completely, just add it with the necessary attribute.</p>
+<p>Fixed!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Mura URL rewriting on Windows 2008 / IIS7</title>
+		<link>/url-rewriting-windows-2008-iis7/</link>
+					<comments>/url-rewriting-windows-2008-iis7/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 09 Dec 2010 23:21:00 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<guid isPermaLink="false">/?p=973</guid>
+
+					<description><![CDATA[I have been involved in setting up a new Mura site on Windows 2008 Server. Mura is a full featured CMS written in ColdFusion. By default Mura URLs look something like /index.cfm/SiteID/pagename. So for example the contact us page might look like /index.cfm/default/contact-us. Not a great URL. But its fairly simple to translate into /contact-us [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I have been involved in setting up a new Mura site on Windows 2008 Server.  <a href="http://www.getmura.com/">Mura</a> is a full featured CMS written in ColdFusion.</p>
+<p>By default Mura URLs look something like /index.cfm/SiteID/pagename.  So for example the contact us page might look like /index.cfm/default/contact-us.  Not a great URL.  But its fairly simple to translate into /contact-us which is much nicer.</p>
+<h2>Getting rid of the SiteID</h2>
+<p>Getting rid of the siteID is easy in the newest version of Mura.  In the config/settings.ini.cfm file there is a setting named &#8220;siteidinurls&#8221;.  Set this to 0 and Mura will no longer add the siteID to the URLs it generates.  Of course this only works if you plan on only using Mura for one site.  If you had more than one site, Mura wouldn&#8217;t know which one you are trying to access.  There are several ways to get around this if you have more than one site, but I won&#8217;t get into that in this article.</p>
+<h2>Getting rid of the index.cfm</h2>
+<p>Getting rid of the index.cfm takes a little more work.  There is another setting in the ini file called indexfileinurls.  Setting this to 0 will remove the index.cfm from the URLs Mura generates.  But when you click on any of those links you are going to get the 404 page.  To fix this, you&#8217;ll need to tweak your webserver.</p>
+<p>Apache is pretty straight forward, as you would expect.  Enable the mod_rewrite module and drop this into an .htaccess file in your webroot:</p>
+<pre><code>RewriteEngine On
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-d
+RewriteRule ^([a-zA-Z0-9/-]+)$ /index.cfm%{REQUEST_URI} [PT]</code></pre>
+<p>Our site happens to be hosted on Windows 2008 Server / IIS7.  To do the rewriting on II7 you&#8217;ll need to install Microsoft&#8217;s URL rewriting extension.  You can get it from here: <a href="http://www.iis.net/download/URLRewrite">http://www.iis.net/download/URLRewrite</a></p>
+<p>Once its installed, open IIS Manager.  Click on your website, then double click on the new URL rewrite icon.<br />
+<a href="/wp-content/uploads/2010/12/iis7_url_rewrite1.png"><img decoding="async" src="/wp-content/uploads/2010/12/iis7_url_rewrite1.png" alt="" title="iis7_url_rewrite" width="600" class="alignnone size-full wp-image-988" srcset="/wp-content/uploads/2010/12/iis7_url_rewrite1.png 800w, /wp-content/uploads/2010/12/iis7_url_rewrite1-300x208.png 300w" sizes="(max-width: 800px) 100vw, 800px" /></a><br />
+<span id="more-973"></span><br />
+Select Import Rules from the right hand side.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2010/12/iis7_url_import_link.png" alt="" title="iis7_url_import_link" width="583" height="474" class="alignnone size-full wp-image-979" srcset="/wp-content/uploads/2010/12/iis7_url_import_link.png 583w, /wp-content/uploads/2010/12/iis7_url_import_link-300x243.png 300w" sizes="(max-width: 583px) 100vw, 583px" /></p>
+<p>Then paste the apache lines above into the Rewrite rules box.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2010/12/iis7_url_paste_here.png" alt="" title="iis7_url_paste_here" width="583" height="474" class="alignnone size-full wp-image-980" srcset="/wp-content/uploads/2010/12/iis7_url_paste_here.png 583w, /wp-content/uploads/2010/12/iis7_url_paste_here-300x243.png 300w" sizes="(max-width: 583px) 100vw, 583px" /></p>
+<p>Instantly you&#8217;ll see the new rules appear in the Converted Rules box. Click Apply in the upper right.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2010/12/iis7_url_after_pasting.png" alt="" title="iis7_url_after_pasting" width="583" height="474" class="alignnone size-full wp-image-981" srcset="/wp-content/uploads/2010/12/iis7_url_after_pasting.png 583w, /wp-content/uploads/2010/12/iis7_url_after_pasting-300x243.png 300w" sizes="(max-width: 583px) 100vw, 583px" /></p>
+<p>Now change the Mura ini file I mentioned above, then click the Reload link in your Mura admin.</p>
+<p><img decoding="async" loading="lazy" style="border: 1px solid black;" src="/wp-content/uploads/2010/12/iis7_mura_ini.png" alt="" title="iis7_mura_ini" width="237" height="167" class="alignnone size-full wp-image-983" /></p>
+<p>That&#8217;s it!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/url-rewriting-windows-2008-iis7/feed/</wfw:commentRss>
+			<slash:comments>13</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>MySQL losing case in table names</title>
+		<link>/mysql-losing-case-in-table-names/</link>
+					<comments>/mysql-losing-case-in-table-names/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 03 Jan 2010 17:24:13 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<guid isPermaLink="false">/?p=699</guid>
+
+					<description><![CDATA[I had an issue recently when I was working with a couple other developers on a project. We keep our MySQL database in sync by exporting the database as an SQL script and sharing it in a subversion repository (I wish MS SQL could be this easy!). Our table names are saved with mix case, [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I had an issue recently when I was working with a couple other developers on a project.  We keep our MySQL database in sync by exporting the database as an SQL script and sharing it in a subversion repository (I wish MS SQL could be this easy!).  Our table names are saved with mix case, like &#8220;userFiles&#8221;, but everytime I would export my database the tables would come out all lower case, like &#8220;userfiles&#8221;.</p>
+<p>Turns out this is a simple thing to fix, I had to add a line to MySQL&#8217;s config file: <em>my.cnf</em>.  Mine was located at <em>[MySQL installed root]\bin\my.cnf</em>.  The setting that needs to change is lower_case_table_names, I set the value to 2, like this:</p>
+<p><code>lower_case_table_names=2</code></p>
+<p>If you are interested, here are the different possible values:</p>
+<table>
+<tbody>
+<tr>
+<td valign="top"><span class="bold"><strong>Value</strong></span></td>
+<td><span class="bold"><strong>Meaning</strong></span></td>
+</tr>
+<tr>
+<td valign="top">0</td>
+<td>Table and database names are stored on disk using the lettercase<br />
+                specified in the CREATE  TABLE or CREATE DATABASE statement. Name comparisons are case<br />
+                sensitive. Note that if you force this variable to 0 with &#8211;lower-case-table-names=0<br />
+                on a case-insensitive file system and access MyISAM tablenames using different<br />
+                lettercases, index corruption may result.</td>
+</tr>
+<tr>
+<td valign="top">1</td>
+<td>Table names are stored in lowercase on disk and name comparisons are not<br />
+                case sensitive. MySQL converts all table names to<br />
+                lowercase on storage and lookup. This behavior also<br />
+                applies to database names and table aliases.</td>
+</tr>
+<tr>
+<td valign="top">2</td>
+<td>Table and database names are stored on disk using the lettercase<br />
+                specified in the CREATE TABLE or CREATE  DATABASE statement, but MySQL converts them to<br />
+                lowercase on lookup. Name comparisons are not case sensitive. This works only on file<br />
+                systems that are not case sensitive! InnoDB table names are stored in<br />
+                lowercase, as for lower_case_table_names=1.</td>
+</tr>
+</tbody>
+</table>
+<p>On Windows the default is 1.</p>
+<p>More information at <a href="http://dev.mysql.com/doc/refman/5.0/en/identifier-case-sensitivity.html">http://dev.mysql.com/doc/refman/5.0/en/identifier-case-sensitivity.html</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/mysql-losing-case-in-table-names/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Garbled / truncated data when reading XLS files</title>
+		<link>/garbled-truncated-reading-xls-files/</link>
+					<comments>/garbled-truncated-reading-xls-files/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 11 Jul 2009 20:09:26 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=524</guid>
+
+					<description><![CDATA[We had an issue recently where one of our Excel import routines was putting garbled data into the database. By &#8220;garbled&#8221; I mean the field contained a few normal words then broke into a bunch of strange characters. This Excel file was read in using an ODBC datasource. If you are not familiar with this [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>We had an issue recently where one of our Excel import routines was putting garbled data into the database.  By &#8220;garbled&#8221; I mean the field contained a few normal words then broke into a bunch of strange characters.  This Excel file was read in using an ODBC datasource.</p>
+<p>If you are not familiar with this method of reading Excel files, here is a short summary.<br />
+1) Create a system ODBC DSN using the MS Excel driver in your Windows ODBC control panel.  Point it to an empty .xls file somewhere on your drive.<br />
+2) Create a datasource in ColdFusion (driver: &#8220;ODBC Socket&#8221;) and select your Windows ODBC DSN from the drop down.<br />
+3) Copy the XLS file you want to read on top of the empty file you setup in your ODBC DSN.<br />
+4) Use it like this in your CFML:</p>
+<pre><code>&lt;cfquery name="myQuery" datasource="XLSPassThroughDSN"&gt;
+SELECT * 
+FROM [Sheet1$]
+&lt;/cfquery&gt;</code></pre>
+<p>This usually works well but for some reason we were having problems.  Digging through the Excel file turned up nothing out of the ordinary, except <em>some</em> rows (and not the ones causing problems) looked like they were double byte encoded (unicode).</p>
+<p>Turns out this XLS driver determines the data type of each column in the spread sheet by looking through the first couple of rows and guessing a data type based on that data.  In our case column B only contained values with less than 100 characters in the first few dozen rows.  So the driver assumed it was a varchar type of some length.  But much further down in the spread sheet, in a different row, that same column contained a value that was several hundred characters, thus overflowing the data type.</p>
+<p>Normally this only results in truncated data.  If that would have been the issue I probably would have found the fix much sooner.  But instead we were ending up with garbled data, which was truncated as well but it was impossible to tell.</p>
+<p>The fix is to adjust your registry to tell the driver to scan through more, preferably all, of the rows before guessing at a data type.   In your odbc control panel you&#8217;ll notice a setting for this:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/odbc.png" alt="ODBC DSN screen shot" title="ODBC DSN screen shot" width="434" height="303" class="alignnone size-full wp-image-525" srcset="/wp-content/uploads/2009/07/odbc.png 434w, /wp-content/uploads/2009/07/odbc-300x209.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
+<p>But, that doesn&#8217;t work!  You need to change the registry value manually.  I set mine to 1000, since that will cover the length of any of the spreadsheets we upload.</p>
+<p>The registry keys are located at:</p>
+<p>For Excel 97:<br />
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Jet\3.5\Engines\Excel<br />
+For Excel 2000 and later versions:<br />
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Jet\4.0\Engines\Excel</p>
+<p>Here is the MS knowledge base article for more detail: <a href="http://support.microsoft.com/kb/189897/">http://support.microsoft.com/kb/189897/</a></p>
+<p>Now the driver scans through all the rows before determining a data type, and probably uses something like a &#8220;text&#8221; type for column B.  I think our data may have been getting garbled, instead of just truncated, because of the double byte data. </p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/garbled-truncated-reading-xls-files/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Securing your open blue dragon settings file</title>
+		<link>/securing-blue-dragon-settings-file/</link>
+					<comments>/securing-blue-dragon-settings-file/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 17 Jun 2009 15:36:29 +0000</pubDate>
+				<category><![CDATA[BlueDragon]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=508</guid>
+
+					<description><![CDATA[After installing Open Blue Dragon on Tomcat and hooking it up to Apache, I did some poking around and found I was able to pull up my bluedragon.xml configuration file directly in my browser. Now, this may not happen in all configurations (there are many ways to setup a J2EE web application), but it my [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>After installing Open Blue Dragon on Tomcat and hooking it up to Apache, I did some poking around and found I was able to pull up my bluedragon.xml configuration file directly in my browser.  Now, this may not happen in all configurations (there are many ways to setup a J2EE web application), but it my case, running through Apache and having copied Blue Dragon&#8217;s WEB-INF directory to my webroot, I was able to browse this file.  In case you didn&#8217;t know, all OpenBD&#8217;s settings are stored in a single xml file (which I find very convenient, by the way).</p>
+<p>It didn&#8217;t work when going directly through Tomcat, i.e. browsing on port 8080 would not pull it up, I think Tomcat is smart enough to know not to serve files from the WEB-INF directory.  But browsing through Apache on port 80 bypasses Tomcat for anything thats not a .cfm or .cfc file, so it would happily return the xml file.   Datasource passwords are stored encrypted but the administrator password is clear text.  Its easy to lock this down, just add this to your Apache config file:</p>
+<p><code>&lt;location "/WEB-INF/"&gt;<br />
+deny from all<br />
+&lt;/location&gt;</code></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/securing-blue-dragon-settings-file/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>&#8216;Failed to retrieve style path&#8217; error when adding a Verity collection</title>
+		<link>/verity-collection-error-coldfusion/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 01 May 2009 18:11:06 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<guid isPermaLink="false">/?p=444</guid>
+
+					<description><![CDATA[When trying to create a Verity collection on a freshly setup ColdFusion8 installation today I received this error: Unable to create collection MyCollection. An error occurred while creating the collection: com.verity.api.administration.ConfigurationException: Failed to retrieve style path. (-6044) Turns out the Verity installation did not complete correctly. I could tell by looking in the {cf-root}/verity/verity-install.log file. [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When trying to create a Verity collection on a freshly setup ColdFusion8 installation today I received this error:</p>
+<p><code>Unable to create collection MyCollection.<br />
+An error occurred while creating the collection: com.verity.api.administration.ConfigurationException: Failed to retrieve style path. (-6044)</code></p>
+<p>Turns out the Verity installation did not complete correctly.  I could tell by looking in the {cf-root}/verity/verity-install.log file.  This problem is fixed by simply uninstalling and reinstalling verity.</p>
+<p>In the {cf-root}/verity directory you&#8217;ll find a script named uninstall-verity.sh (on linux) or uninstall-verity.bat (on windows).  Just run that and then run the install-verity.* file and you should be back in business.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Missing library errors when installing ColdFusion on Linux</title>
+		<link>/missing-library-errors-when-installing-coldfusion-on-linux/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2009 17:19:08 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=423</guid>
+
+					<description><![CDATA[I was installing ColdFusion 7.02 on a client&#8217;s CentOS 5.2 Linux server the other day and received an error when running the installer. Note that this OS is NOT supported by Adobe for this version of ColdFusion. This is a fairly old version of CF being installed on a pretty current version of CentOS. The [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I was installing ColdFusion 7.02 on a client&#8217;s CentOS 5.2 Linux server the other day and received an error when running the installer.  Note that this OS is NOT supported by Adobe for this version of ColdFusion.  This is a fairly old version of CF being installed on a pretty current version of CentOS.  The error was:</p>
+<p><code>[root@server tmp]# ./coldfusion-702-linux.bin<br />
+Preparing to install...<br />
+Extracting the JRE from the installer archive...<br />
+Unpacking the JRE...<br />
+Extracting the installation resources from the installer archive...<br />
+Configuring the installer for this system's environment...<br />
+awk: error while loading shared libraries: libdl.so.2: cannot open shared object file: No such file or directory<br />
+dirname: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+/bin/ls: error while loading shared libraries: librt.so.1: cannot open shared object file: No such file or directory<br />
+basename: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+dirname: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+basename: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+Launching installer<br />
+grep: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+/tmp/install.dir.3348/Linux/resource/jre/bin/java: error while loading shared libraries: libpthread.so.0: cannot open shared object file: No such file or directory</code></p>
+<p>There is a hard coded value in the installer thats causing things to get messed up.  Fixing this is fairly easy, you can modify the installer like this:</p>
+<p><code>cp coldfusion-702-linux.bin coldfusion-702-linux.bin.backup<br />
+cat coldfusion-702-linux.bin.backup | sed "s/export LD_ASSUME/#xport LD_ASSUME/" &gt; coldfusion-702-linux.bin</code></p>
+<p>That comments out the offending line in all places in the installation script.</p>
+<p>More discussion on this here:<br />
+<a href="http://www.billmitchell.org/coldfusion/centos5/mx7_apache.php">http://www.billmitchell.org/coldfusion/centos5/mx7_apache.php</a><br />
+<a href="http://www.talkingtree.com/blog/index.cfm/2006/12/6/Running-ColdFusion-MX-7-on-Fedora-Core-6-Linux">http://www.talkingtree.com/blog/index.cfm/2006/12/6/Running-ColdFusion-MX-7-on-Fedora-Core-6-Linux</a></p>
+<p>You will probably run into more issues installing CF7 on this version of CentOS but it can be done.  I also had to upgrade the connector to work with Apache 2.2 (when CF7 came out the connector was designed to run on Apache 2.0).  The Adobe KB article that discusses this is here: <a href="http://kb.adobe.com/selfservice/viewContent.do?externalId=8001e97&#038;sliceId=1">http://kb.adobe.com/selfservice/viewContent.do?externalId=8001e97&#038;sliceId=1</a>.   Their example didn&#8217;t quite work for me because its defaulting to the version of Java thats on your OS, which won&#8217;t work unless its a Sun 1.4.2x version.  So I just used the JRE that is bundled with ColdFusion to install the new connector:</p>
+<pre><code>/opt/coldfusionmx7/runtime/jre/bin/java -Dtrace.ci=1 -jar ../../runtime/lib/wsconfig.jar \
+        -server coldfusion \
+    -ws apache \
+        -dir /etc/httpd/conf \
+        -bin /usr/sbin/httpd \
+        -script /etc/rc.d/init.d/httpd \
+        -coldfusion -v</code></pre>
+<p>I thought that was the last hurdle but when we tried to log in to the ColdFusion administrator we got an error about &#8220;The Graphing service is not available&#8221;.  The message in the log file was &#8220;Unable to initialize Graphing service: java.lang.UnsatisfiedLinkError: /opt/coldfusionmx7/runtime/jre/lib/i386/libawt.so: libXp.so.6: cannot open shared object file: No such file or directory&#8221;.  This was fixed by installing the libXp library:</p>
+<p><code>yum install libXp</code></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Problems connecting to MySQL locally &#8211; try localhost instead of %</title>
+		<link>/problems-connecting-to-mysql-locally/</link>
+					<comments>/problems-connecting-to-mysql-locally/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 24 Aug 2008 22:19:05 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/08/24/problems-connecting-to-mysql-locally/</guid>
+
+					<description><![CDATA[I&#8217;m setting up mysql locally on my laptop this weekend, and ran into a snag that cost me at least an hour. To mimic a web app I am running locally, I needed to connect to mysql with a specific username and password. But no matter what I did, I always got this error: MySQL: [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m setting up mysql locally on my laptop this weekend, and ran into a snag that cost me at least an hour.  To mimic a web app I am running locally, I needed to connect to mysql with a specific username and password.  But no matter what I did, I always got this error:</p>
+<pre><code>MySQL: access denied for user: <em>username</em> (Using password: YES)</code></pre>
+<p>I got this when connecting via the command line client and via ColdFusion.  Finally after some googling I came across <a href="http://javafoo.wordpress.com/2005/06/30/mysql-access-denied-for-user-using-password-yes">this blog post</a> suggesting to change the privilege details to allow connecting from &#8216;localhost&#8217; instead of &#8216;%&#8217;.   The % indicates a wildcard and should allow connections from any host.  But for some reason this was not working for me.   Changing it to &#8216;localhost&#8217; fixed the problem and allowed me to connect.  I think it may have had something to do with the fact that I checked a box when installing that would only allow connections from the localhost.</p>
+<p>I used this SQL to fix the host setting after connecting to the &#8216;mysql&#8217; database:</p>
+<pre><code>update user set Host=’localhost’ where User=’myUserName’</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/problems-connecting-to-mysql-locally/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Deleting all your .svn directories</title>
+		<link>/deleting-svn-dirs-linux-windows/</link>
+					<comments>/deleting-svn-dirs-linux-windows/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 02 Jul 2008 15:17:56 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/</guid>
+
+					<description><![CDATA[Sometimes its necessary to delete all the .svn folders from your subversion working copy. Here is a simple way to do it on Linux: rm -rf `find . -name .svn` That might not work if you have hundreds or thousands of folders, as it might be too many arguments for the rm command. I still [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Sometimes its necessary to delete all the .svn folders from your subversion working copy.</p>
+<p>Here is a simple way to do it on Linux:</p>
+<pre><code>rm -rf `find . -name .svn`</code></pre>
+<p>That might not work if you have hundreds or thousands of folders, as it might be too many arguments for the rm command.  I still like it because its simple.  But a more robust way would be:</p>
+<pre><code>find . -name .svn -prune -exec rm -rf {} \;</code></pre>
+<p>This calls rm on each file separately.</p>
+<p>I haven&#8217;t tried the following, but on Windows you may be able to:</p>
+<p>Create a cleanSVN.cmd file in the root containing these lines:</p>
+<pre><code>for /f “tokens=* delims=” %%i in (’dir /s /b /a:d *svn’) do (
+rd /s /q “%%i”
+)</code></pre>
+<p>You could also try browsing to the files in Windows Exporer and then:<br />
+Right click on the folder and click Search..<br />
+Enter .svn as the filename to search for.<br />
+Click “More advanced options” and select:<br />
+&#8211; Search hidden files and folders<br />
+&#8211; Search subfolders<br />
+Press search button and delete the folders you find appropriate.</p>
+<p>The Windows tips came from Axel&#8217;s blog at <a href="http://www.axelscript.com/2008/03/11/delete-all-svn-files-in-windows/">http://www.axelscript.com/2008/03/11/delete-all-svn-files-in-windows/</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/deleting-svn-dirs-linux-windows/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Require subversion comments &#8211; a perl pre-commit hook</title>
+		<link>/require-subversion-comments-minimum/</link>
+					<comments>/require-subversion-comments-minimum/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 16 Jun 2008 19:52:14 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/</guid>
+
+					<description><![CDATA[We&#8217;ve been having some issues with people committing to the subversion server without entering a comment. Its easy to to require a comment using a &#8220;pre-commit&#8221; hook, which is a script that runs before someone&#8217;s changes are committed to the repository. A sample commit hook is supplied with subversion that you can enable to require [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;ve been having some issues with people committing to the subversion server without entering a comment.  Its easy to to require a comment using a &#8220;pre-commit&#8221; hook, which is a script that runs before someone&#8217;s changes are committed to the repository.  A sample commit hook is supplied with subversion that you can enable to require comments.  The problem is it doesn&#8217;t report back any error message (users will just get a generic &#8220;commit failed&#8221; in their svn client), and there is no provision for making sure the comment is a minimum length.</p>
+<p>I tried to modify the example script, but I&#8217;m pretty bad with shell scripting.  I looked for a perl one, which I knew I could easily modify, but couldn&#8217;t find any.  So I whipped this one up:<br />
+<span id="more-100"></span></p>
+<pre><code>#!/usr/bin/perl
+
+# config section
+$minchars = 4;
+$svnlook = '/usr/bin/svnlook';
+
+#--------------------------------------------
+$repos = $ARGV[0];
+$txn = $ARGV[1];
+$comment = `$svnlook log -t "$txn" "$repos"`;
+chomp($comment);
+
+if ( length($comment) == 0 ) {
+  print STDERR "A comment is required!";
+  exit(1);
+  }
+elsif ( length($comment) &lt; $minchars ) {
+  print STDERR "Comment must be at least $minchars characters.";
+  exit(1);
+  }
+
+exit(0);</code></pre>
+<p>Those error messages get sent back to the client and display just fine in TortoiseSVN or whatever you use.</p>
+<p>My subversion server is running on Linux, but the script should run on Windows with little modification, if you have perl installed.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/require-subversion-comments-minimum/feed/</wfw:commentRss>
+			<slash:comments>25</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

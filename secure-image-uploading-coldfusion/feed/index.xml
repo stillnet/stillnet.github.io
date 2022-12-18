@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Secure image uploading with ColdFusion	</title>
+	<atom:link href="/secure-image-uploading-coldfusion/feed/" rel="self" type="application/rss+xml" />
+	<link>/secure-image-uploading-coldfusion/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 24 Jan 2012 08:38:35 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: anon		</title>
+		<link>/secure-image-uploading-coldfusion/comment-page-1/#comment-2681</link>
+
+		<dc:creator><![CDATA[anon]]></dc:creator>
+		<pubDate>Tue, 24 Jan 2012 08:38:35 +0000</pubDate>
+		<guid isPermaLink="false">/?p=579#comment-2681</guid>
+
+					<description><![CDATA[ColdFusion has an attribute you can specify in cffile &#039;nameconflict&#039;, set this attribute&#039;s value to &quot;makeunique&quot; and ColdFusion will automatically resolve name conflicts. Make sure you use the &#039;serverFile&#039; field of the resulting struct to get the name as it was saved.]]></description>
+			<content:encoded><![CDATA[<p>ColdFusion has an attribute you can specify in cffile &#8216;nameconflict&#8217;, set this attribute&#8217;s value to &#8220;makeunique&#8221; and ColdFusion will automatically resolve name conflicts. Make sure you use the &#8216;serverFile&#8217; field of the resulting struct to get the name as it was saved.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: tim		</title>
+		<link>/secure-image-uploading-coldfusion/comment-page-1/#comment-2654</link>
+
+		<dc:creator><![CDATA[tim]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2011 23:37:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=579#comment-2654</guid>
+
+					<description><![CDATA[@raffael - one solution I like is to rename the .jpg to the primary key of the record / profile it&#039;s associated with. eg: 1.jpg, 2.jpg. or this could be some other unique identifier. I agree that doing a fileExists() would be a good addition before before writing with cfimage.]]></description>
+			<content:encoded><![CDATA[<p>@raffael &#8211; one solution I like is to rename the .jpg to the primary key of the record / profile it&#8217;s associated with. eg: 1.jpg, 2.jpg. or this could be some other unique identifier. I agree that doing a fileExists() would be a good addition before before writing with cfimage.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Raffael		</title>
+		<link>/secure-image-uploading-coldfusion/comment-page-1/#comment-2270</link>
+
+		<dc:creator><![CDATA[Raffael]]></dc:creator>
+		<pubDate>Sun, 24 Apr 2011 17:22:32 +0000</pubDate>
+		<guid isPermaLink="false">/?p=579#comment-2270</guid>
+
+					<description><![CDATA[Great post!
+How do you ensure that uploaded files have unique filenames? your solution could get an error when exact filename already exists in the destination=&#034;#application.imageDir#/#uploadResult.serverFileName#.jpg&#034; directory (step cfimage/write). as a first step, you make nameconflict=&#034;overwrite&#034; in the temp directory, but later on, the serverfilename could be already present in the &#034;real&#034; destination directory. bad though, cffile action=&#034;move&#034;, cffile action=&#034;copy&#034; and cffile action=&#034;write&#034; (and cfimage action=&#034;write&#034;) have no nameconflict=&#034;makeunique&#034; attribute. I think we need a kind of cfdirectory check loop for that filename and append a number or so if already exists. or even make a whole new file with createuuid and check that file for existance before moving/writing.
+what do you guys think about this?]]></description>
+			<content:encoded><![CDATA[<p>Great post!<br />
+How do you ensure that uploaded files have unique filenames? your solution could get an error when exact filename already exists in the destination=&quot;#application.imageDir#/#uploadResult.serverFileName#.jpg&quot; directory (step cfimage/write). as a first step, you make nameconflict=&quot;overwrite&quot; in the temp directory, but later on, the serverfilename could be already present in the &quot;real&quot; destination directory. bad though, cffile action=&quot;move&quot;, cffile action=&quot;copy&quot; and cffile action=&quot;write&quot; (and cfimage action=&quot;write&quot;) have no nameconflict=&quot;makeunique&quot; attribute. I think we need a kind of cfdirectory check loop for that filename and append a number or so if already exists. or even make a whole new file with createuuid and check that file for existance before moving/writing.<br />
+what do you guys think about this?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike Henke		</title>
+		<link>/secure-image-uploading-coldfusion/comment-page-1/#comment-1946</link>
+
+		<dc:creator><![CDATA[Mike Henke]]></dc:creator>
+		<pubDate>Tue, 23 Nov 2010 18:59:37 +0000</pubDate>
+		<guid isPermaLink="false">/?p=579#comment-1946</guid>
+
+					<description><![CDATA[You are the MAN!!!]]></description>
+			<content:encoded><![CDATA[<p>You are the MAN!!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Prashant		</title>
+		<link>/secure-image-uploading-coldfusion/comment-page-1/#comment-1200</link>
+
+		<dc:creator><![CDATA[Prashant]]></dc:creator>
+		<pubDate>Mon, 15 Mar 2010 09:09:05 +0000</pubDate>
+		<guid isPermaLink="false">/?p=579#comment-1200</guid>
+
+					<description><![CDATA[Good post! very helpful]]></description>
+			<content:encoded><![CDATA[<p>Good post! very helpful</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: funandlearning		</title>
+		<link>/secure-image-uploading-coldfusion/comment-page-1/#comment-582</link>
+
+		<dc:creator><![CDATA[funandlearning]]></dc:creator>
+		<pubDate>Sun, 26 Jul 2009 05:07:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=579#comment-582</guid>
+
+					<description><![CDATA[Hi Ryan,
+
+This post is really helpful.
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>Hi Ryan,</p>
+<p>This post is really helpful.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

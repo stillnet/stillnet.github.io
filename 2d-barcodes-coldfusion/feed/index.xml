@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: CFC for generating and reading 2D barcodes in ColdFusion	</title>
+	<atom:link href="/2d-barcodes-coldfusion/feed/" rel="self" type="application/rss+xml" />
+	<link>/2d-barcodes-coldfusion/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sun, 18 Apr 2010 12:08:11 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Dave		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-1302</link>
+
+		<dc:creator><![CDATA[Dave]]></dc:creator>
+		<pubDate>Sun, 18 Apr 2010 12:08:11 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-1302</guid>
+
+					<description><![CDATA[I get crazy results back. It seems I get results that I did the last time I ran the script? Also, now I am getting 08:07:02.002 - java.lang.ArrayIndexOutOfBoundsException - in : line -1]]></description>
+			<content:encoded><![CDATA[<p>I get crazy results back. It seems I get results that I did the last time I ran the script? Also, now I am getting 08:07:02.002 &#8211; java.lang.ArrayIndexOutOfBoundsException &#8211; in : line -1</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andy		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-904</link>
+
+		<dc:creator><![CDATA[Andy]]></dc:creator>
+		<pubDate>Wed, 16 Dec 2009 00:35:17 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-904</guid>
+
+					<description><![CDATA[Hi Cfloe
+
+
+code did not work with french.
+
+Illegal character: `&#160;&#160;
+ 
+&#160;&#160;
+The error occurred in D:\iis\cflove.org\examples\barcode\datamatrix.cfc: line 57
+ 
+55 :&#160;&#160;&#160;&#160; &#060;/cfswitch&#062;
+56 :&#160;&#160;&#160;&#160; 
+57 :&#160;&#160;&#160;&#160; &#060;cfset Reader.generateBarcode(canvas, JavaCast(&amp;apos;string&amp;apos;,value))&#062;
+58 :&#160;&#160;&#160;&#160; &#060;cfset canvas.finish()&#062;
+59 :&#160;&#160;&#160;&#160; &#060;cfset out.close()&#062;]]></description>
+			<content:encoded><![CDATA[<p>Hi Cfloe</p>
+<p>code did not work with french.</p>
+<p>Illegal character: `&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;<br />
+The error occurred in D:\iis\cflove.org\examples\barcode\datamatrix.cfc: line 57</p>
+<p>55 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;/cfswitch&gt;<br />
+56 :&nbsp;&nbsp;&nbsp;&nbsp;<br />
+57 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;cfset Reader.generateBarcode(canvas, JavaCast(&apos;string&apos;,value))&gt;<br />
+58 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;cfset canvas.finish()&gt;<br />
+59 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;cfset out.close()&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: cflove		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-818</link>
+
+		<dc:creator><![CDATA[cflove]]></dc:creator>
+		<pubDate>Wed, 07 Oct 2009 17:13:34 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-818</guid>
+
+					<description><![CDATA[A similar, but free, solution can be found here:&#160;&#160;http://www.cflove.org/examples/barcode/datamatrix.cfm
+
+The source code can be found here: http://www.cflove.org/examples/barcode/bc.rar]]></description>
+			<content:encoded><![CDATA[<p>A similar, but free, solution can be found here:&nbsp;&nbsp;<a href="http://www.cflove.org/examples/barcode/datamatrix.cfm" rel="nofollow ugc">http://www.cflove.org/examples/barcode/datamatrix.cfm</a></p>
+<p>The source code can be found here: <a href="http://www.cflove.org/examples/barcode/bc.rar" rel="nofollow ugc">http://www.cflove.org/examples/barcode/bc.rar</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: David		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-770</link>
+
+		<dc:creator><![CDATA[David]]></dc:creator>
+		<pubDate>Wed, 30 Sep 2009 09:26:57 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-770</guid>
+
+					<description><![CDATA[PDF417 update...
+
+OK, I got this working for PDF417 barcodes. From what I can tell, the input params as specified in this J4L doc are incorrect (or I am missing the point there!): http://www.java4less.com/barcodes/barcodes.php?info=guide
+
+The correct PDF417 input params are listed in the Java doc html page BarCode2D.html, in example 1. This html doc is located in the rbard10.zip file: location: rbard10\javadoc\com\java4less\rbarcode\BarCode2D.html.
+
+To clarify, to create PDF417 barcodes you need only this jar file:
+http://www.java4less.com/rbard10.zip copy only this file rbarcode.jar to the coldfusion8 lib folder as Ryan describes.
+
+
+--------
+CODE: there are 2 files:
+
+1) The CFC: save as PDF417BarCode_j4l.cfc
+
+&#060;cfcomponent displayname=&#034;Wrapper for Java4Less 2D BarCode PDF417&#034;&#062;
+&#160;&#160;&#160;&#160;&#060;cffunction name=&#034;init&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- used below, see comment there. ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset var sys = &amp;apos;&amp;apos;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- create a temporary instance of the writer, just to make sure it is available. 
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;We can&amp;apos;t create a persistance instance of this because it is not thread safe. ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset var Writer = CreateObject(&amp;apos;java&amp;apos;,&#034;com.java4less.rdatamatrix.RDataMatrix&#034;).init()&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfreturn this&#062;
+&#160;&#160;&#160;&#160;&#060;/cffunction&#062;
+
+&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#060;cffunction name=&#034;createBarCode&#034; access=&#034;public&#034; returntype=&#034;Any&#034; output=&#034;yes&#034; hint=&#034;Creates a barcode and returns a ColdFusion image object containing the barcode.&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;width&#034; default=&#034;90&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;height&#034; default=&#034;250&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;resolution&#034; default=&#034;1&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;PDFECLevel&#034; default=&#034;4&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- PDF_TEXT, PDF_BYTE, PDF_NUMERIC ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;PDFMode&#034; default=&#034;PDF_TEXT&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;barType&#034; default=&#034;PDF417&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;code&#034; hint=&#034;Text to encode in barcode&#034; required=&#034;yes&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- dont know max? ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;PDFMaxRows&#034; default=&#034;30&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- 1 - 30 ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;PDFColumns&#034; default=&#034;10&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!---&#160;&#160;3 - 90 ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;PDFRows&#034; default=&#034;10&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfargument name=&#034;rotate&#034; default=&#034;90&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- create an image to place this barcode into ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset var ReturnImage = ImageNew(&amp;apos;&amp;apos;,90,250,&amp;apos;grayscale&amp;apos;)&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- the writer is not thread safe, so we must create an instance of it for each request ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset var Writer = CreateObject(&amp;apos;java&amp;apos;,&#034;com.java4less.rbarcode.BarCode2D&#034;).init()&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.setSize(Arguments.width,Arguments.height)&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.resolution = Arguments.resolution&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.PDFECLevel = Arguments.PDFECLevel&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.PDFMode = Writer[Arguments.PDFMode]&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.barType = Writer[Arguments.barType]&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.code = Arguments.code&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.PDFMaxRows = Arguments.PDFMaxRows&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.PDFColumns = Arguments.PDFColumns&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.PDFRows = Arguments.PDFRows&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.rotate = Arguments.rotate&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;!--- now &amp;apos;paint&amp;apos; the barcode into our ColdFusion image object ---&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.paint(ImageGetBufferedImage(ReturnImage).createGraphics())&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfreturn ReturnImage&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#060;/cffunction&#062;
+
+&#060;/cfcomponent&#062;
+
+
+
+
+2) The cfm file: save as test.cfm (in the same folder as the CFC above).
+
+&#060;cfset BarCoder = CreateObject(&#034;component&#034;,&#034;PDF417BarCode_j4l&#034;).init()&#062;
+
+&#060;cfset ImageObjContainingBarcode = BarCoder.createBarCode(code=&amp;apos;My text to encode&amp;apos;)&#062;
+
+&#060;p&#062;
+&#060;cfimage action=&#034;writetobrowser&#034; source=&#034;#ImageObjContainingBarcode#&#034;&#062;
+&#060;/p&#062;
+-------------------
+
+
+
+Nb. i have rotated the barcode, but you can change the rotate angle as you wish, see above in the CFC &#060;cfargument name=&#034;rotate&#034; default=&#034;90&#034;&#062;
+
+also note, in setting the input params there are 2 methods used above:
+1. &#060;cfset Writer.barType = Writer[Arguments.barType]&#062;
+2. &#060;cfset Writer.code = Arguments.code&#062;
+
+1 used when selecting an option from an array of possible types.
+2 used when setting a simple value like the code (text to encode).
+
+good luck... and thanks again Ryan.]]></description>
+			<content:encoded><![CDATA[<p>PDF417 update&#8230;</p>
+<p>OK, I got this working for PDF417 barcodes. From what I can tell, the input params as specified in this J4L doc are incorrect (or I am missing the point there!): <a href="http://www.java4less.com/barcodes/barcodes.php?info=guide" rel="nofollow ugc">http://www.java4less.com/barcodes/barcodes.php?info=guide</a></p>
+<p>The correct PDF417 input params are listed in the Java doc html page BarCode2D.html, in example 1. This html doc is located in the rbard10.zip file: location: rbard10\javadoc\com\java4less\rbarcode\BarCode2D.html.</p>
+<p>To clarify, to create PDF417 barcodes you need only this jar file:<br />
+<a href="http://www.java4less.com/rbard10.zip" rel="nofollow ugc">http://www.java4less.com/rbard10.zip</a> copy only this file rbarcode.jar to the coldfusion8 lib folder as Ryan describes.</p>
+<p>&#8212;&#8212;&#8211;<br />
+CODE: there are 2 files:</p>
+<p>1) The CFC: save as PDF417BarCode_j4l.cfc</p>
+<p>&lt;cfcomponent displayname=&quot;Wrapper for Java4Less 2D BarCode PDF417&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cffunction name=&quot;init&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; used below, see comment there. &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var sys = &apos;&apos;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; create a temporary instance of the writer, just to make sure it is available.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can&apos;t create a persistance instance of this because it is not thread safe. &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var Writer = CreateObject(&apos;java&apos;,&quot;com.java4less.rdatamatrix.RDataMatrix&quot;).init()&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfreturn this&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cffunction&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cffunction name=&quot;createBarCode&quot; access=&quot;public&quot; returntype=&quot;Any&quot; output=&quot;yes&quot; hint=&quot;Creates a barcode and returns a ColdFusion image object containing the barcode.&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;width&quot; default=&quot;90&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;height&quot; default=&quot;250&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;resolution&quot; default=&quot;1&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFECLevel&quot; default=&quot;4&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; PDF_TEXT, PDF_BYTE, PDF_NUMERIC &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFMode&quot; default=&quot;PDF_TEXT&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;barType&quot; default=&quot;PDF417&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;code&quot; hint=&quot;Text to encode in barcode&quot; required=&quot;yes&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; dont know max? &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFMaxRows&quot; default=&quot;30&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; 1 &#8211; 30 &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFColumns&quot; default=&quot;10&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212;&nbsp;&nbsp;3 &#8211; 90 &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFRows&quot; default=&quot;10&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;rotate&quot; default=&quot;90&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; create an image to place this barcode into &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var ReturnImage = ImageNew(&apos;&apos;,90,250,&apos;grayscale&apos;)&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; the writer is not thread safe, so we must create an instance of it for each request &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var Writer = CreateObject(&apos;java&apos;,&quot;com.java4less.rbarcode.BarCode2D&quot;).init()&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.setSize(Arguments.width,Arguments.height)&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.resolution = Arguments.resolution&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFECLevel = Arguments.PDFECLevel&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFMode = Writer[Arguments.PDFMode]&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.barType = Writer[Arguments.barType]&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.code = Arguments.code&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFMaxRows = Arguments.PDFMaxRows&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFColumns = Arguments.PDFColumns&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFRows = Arguments.PDFRows&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.rotate = Arguments.rotate&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; now &apos;paint&apos; the barcode into our ColdFusion image object &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.paint(ImageGetBufferedImage(ReturnImage).createGraphics())&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfreturn ReturnImage&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cffunction&gt;</p>
+<p>&lt;/cfcomponent&gt;</p>
+<p>2) The cfm file: save as test.cfm (in the same folder as the CFC above).</p>
+<p>&lt;cfset BarCoder = CreateObject(&quot;component&quot;,&quot;PDF417BarCode_j4l&quot;).init()&gt;</p>
+<p>&lt;cfset ImageObjContainingBarcode = BarCoder.createBarCode(code=&apos;My text to encode&apos;)&gt;</p>
+<p>&lt;p&gt;<br />
+&lt;cfimage action=&quot;writetobrowser&quot; source=&quot;#ImageObjContainingBarcode#&quot;&gt;<br />
+&lt;/p&gt;<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>Nb. i have rotated the barcode, but you can change the rotate angle as you wish, see above in the CFC &lt;cfargument name=&quot;rotate&quot; default=&quot;90&quot;&gt;</p>
+<p>also note, in setting the input params there are 2 methods used above:<br />
+1. &lt;cfset Writer.barType = Writer[Arguments.barType]&gt;<br />
+2. &lt;cfset Writer.code = Arguments.code&gt;</p>
+<p>1 used when selecting an option from an array of possible types.<br />
+2 used when setting a simple value like the code (text to encode).</p>
+<p>good luck&#8230; and thanks again Ryan.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: David		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-766</link>
+
+		<dc:creator><![CDATA[David]]></dc:creator>
+		<pubDate>Tue, 29 Sep 2009 15:21:18 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-766</guid>
+
+					<description><![CDATA[Hi Ryan, firstly thanks for the tutorial... great work!
+
+Right now I am working on modifying your cf code to write PDF417 barcodes, simple right, just change the java class and the correct param names/values… but no, I have hit a brick-wall and I would really appreciate your help if possible.
+
+
+
+For writing matrix barcodes in your example, you specify the following input parameters, but I can&amp;apos;t see how this is working, ie. the names you use are different to those as specified in the J4L documentation (help: http://www.java4less.com/barcodes/barcodes.php?info=guide#dm): 
+
+&#060;cfset var Writer = CreateObject(&amp;apos;java&amp;apos;,&#034;com.java4less.rdatamatrix.RDataMatrix&#034;).init()&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.code = Arguments.text&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.dotPixels = Arguments.dotPixels&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.encoding = Writer[Arguments.encoding]&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.preferredFormat = Writer[Arguments.preferredFormat]&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.margin = Arguments.margin&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;cfset Writer.setSize(Arguments.width,Arguments.height)&#062;
+
+ie. you specify &amp;apos;dotPixels&amp;apos; and &amp;apos;code&amp;apos; but the J4L documentation specifies the Parameters and properties of the Java Class as
+&amp;apos;DOT_PIXELS&amp;apos; and &amp;apos;BARCODE&amp;apos;. There are others but I am just showing these examples. 
+Perhaps the J4L documentation wrong?
+
+
+Also confusing: The J4L documentation (help url as above) specifies the 3 main RBarcode classes:
+
+com.java4less.rbarcode.BarCode: for 1D symbologies 
+com.java4less.rbarcode.BarCode2D: for PDF417 and Macro PDF417 symbologies 
+com.java4less.rdatamatrix.DataMatrix: for Datamatrix symbology 
+
+But when you create the java object for a matrix barcode, you use:
+com.java4less.rdatamatrix.RDataMatrix
+ie. *R*DataMatrix, with an &amp;apos;R&amp;apos;.
+
+
+
+Could it be possible that your matrix barcode example uses different RBarcode java classes? Perhaps an earlier version to those as current on their site now?
+
+
+Also…. if you could show a working example, writing a PDF417 barcode, I would be more than happy to make a nice donation via paypal.
+
+Thanks in advance,
+David]]></description>
+			<content:encoded><![CDATA[<p>Hi Ryan, firstly thanks for the tutorial&#8230; great work!</p>
+<p>Right now I am working on modifying your cf code to write PDF417 barcodes, simple right, just change the java class and the correct param names/values… but no, I have hit a brick-wall and I would really appreciate your help if possible.</p>
+<p>For writing matrix barcodes in your example, you specify the following input parameters, but I can&apos;t see how this is working, ie. the names you use are different to those as specified in the J4L documentation (help: <a href="http://www.java4less.com/barcodes/barcodes.php?info=guide#dm" rel="nofollow ugc">http://www.java4less.com/barcodes/barcodes.php?info=guide#dm</a>): </p>
+<p>&lt;cfset var Writer = CreateObject(&apos;java&apos;,&quot;com.java4less.rdatamatrix.RDataMatrix&quot;).init()&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.code = Arguments.text&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.dotPixels = Arguments.dotPixels&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.encoding = Writer[Arguments.encoding]&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.preferredFormat = Writer[Arguments.preferredFormat]&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.margin = Arguments.margin&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.setSize(Arguments.width,Arguments.height)&gt;</p>
+<p>ie. you specify &apos;dotPixels&apos; and &apos;code&apos; but the J4L documentation specifies the Parameters and properties of the Java Class as<br />
+&apos;DOT_PIXELS&apos; and &apos;BARCODE&apos;. There are others but I am just showing these examples.<br />
+Perhaps the J4L documentation wrong?</p>
+<p>Also confusing: The J4L documentation (help url as above) specifies the 3 main RBarcode classes:</p>
+<p>com.java4less.rbarcode.BarCode: for 1D symbologies<br />
+com.java4less.rbarcode.BarCode2D: for PDF417 and Macro PDF417 symbologies<br />
+com.java4less.rdatamatrix.DataMatrix: for Datamatrix symbology </p>
+<p>But when you create the java object for a matrix barcode, you use:<br />
+com.java4less.rdatamatrix.RDataMatrix<br />
+ie. *R*DataMatrix, with an &apos;R&apos;.</p>
+<p>Could it be possible that your matrix barcode example uses different RBarcode java classes? Perhaps an earlier version to those as current on their site now?</p>
+<p>Also…. if you could show a working example, writing a PDF417 barcode, I would be more than happy to make a nice donation via paypal.</p>
+<p>Thanks in advance,<br />
+David</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Christian		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-742</link>
+
+		<dc:creator><![CDATA[Christian]]></dc:creator>
+		<pubDate>Tue, 22 Sep 2009 08:15:46 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-742</guid>
+
+					<description><![CDATA[Ryan,
+
+I&amp;apos;m trying to run this in Railo (v 3.1.1.000) and getting the following error:
+
+&#034;can&amp;apos;t assign value to a Object of this type [com.java4less.rdatamatrix.RDataMatrix] with key DOTPIXELS&#034;
+
+for this source code line in your CFC:
+&#060;cfset Writer.dotPixels = Arguments.dotPixels&#062;
+
+The code is just the demo code from above. Any idea what I&amp;apos;m doing wrong?]]></description>
+			<content:encoded><![CDATA[<p>Ryan,</p>
+<p>I&apos;m trying to run this in Railo (v 3.1.1.000) and getting the following error:</p>
+<p>&quot;can&apos;t assign value to a Object of this type [com.java4less.rdatamatrix.RDataMatrix] with key DOTPIXELS&quot;</p>
+<p>for this source code line in your CFC:<br />
+&lt;cfset Writer.dotPixels = Arguments.dotPixels&gt;</p>
+<p>The code is just the demo code from above. Any idea what I&apos;m doing wrong?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike D		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-571</link>
+
+		<dc:creator><![CDATA[Mike D]]></dc:creator>
+		<pubDate>Tue, 21 Jul 2009 16:05:18 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-571</guid>
+
+					<description><![CDATA[Thanks Ryan, this package is very helpful and nicely written.&#160;&#160; I seem to have encountered a probelm though...&#160;&#160; When testing with the attached code it does not always produce consistent results.&#160;&#160; For example #results# is, only sometimes, missing the &#034;my&#034; from the bc string.&#160;&#160;Likewise, #results2# is missing, only sometimes, the &#034;Th&#034; from &#034;The&#034;.&#160;&#160;Is this something I&amp;apos;m doing wrong, or maybe an issue with the demo versions of the jar files?
+
+Thanks.
+
+&#060;cfset objBarCoder = CreateObject(&#034;component&#034;,&#034;#APPLICATION.componentPath#/2DBarCode_j4l&#034;).init()&#062;
+&#060;cfset BCImage = objBarCoder.createBarCode(text=&amp;apos;my text to place into barcode&amp;apos;,margin=50)&#062;
+&#060;cfimage action = &#034;writeToBrowser&#034; source = &#034;#BCImage#&#034; &#062;
+&#060;br /&#062;
+&#060;cfset results = objBarCoder.readFromImage(#BCImage#)&#062;
+&#060;cfdump var=#results# /&#062;&#060;br /&#062;
+&#060;cfset BCImage2 = objBarCoder.createBarCode(text=&amp;apos;The quick brown fox jumps over the lazy dog&amp;apos;,margin=50)&#062;
+&#060;cfimage action = &#034;writeToBrowser&#034; source = &#034;#BCImage2#&#034; &#062;
+&#060;br /&#062;
+&#060;cfset results2 = objBarCoder.readFromImage(#BCImage2#)&#062;
+&#060;cfdump var=#results2# /&#062;&#060;br /&#062;
+&#060;cfimage action = &#034;writeToBrowser&#034; source = &#034;#BCImage2#&#034; &#062;
+&#060;br /&#062;
+&#060;cfset results2 = objBarCoder.readFromImage(#BCImage2#)&#062;
+&#060;cfdump var=#results2# /&#062;&#060;br /&#062;]]></description>
+			<content:encoded><![CDATA[<p>Thanks Ryan, this package is very helpful and nicely written.&nbsp;&nbsp; I seem to have encountered a probelm though&#8230;&nbsp;&nbsp; When testing with the attached code it does not always produce consistent results.&nbsp;&nbsp; For example #results# is, only sometimes, missing the &quot;my&quot; from the bc string.&nbsp;&nbsp;Likewise, #results2# is missing, only sometimes, the &quot;Th&quot; from &quot;The&quot;.&nbsp;&nbsp;Is this something I&apos;m doing wrong, or maybe an issue with the demo versions of the jar files?</p>
+<p>Thanks.</p>
+<p>&lt;cfset objBarCoder = CreateObject(&quot;component&quot;,&quot;#APPLICATION.componentPath#/2DBarCode_j4l&quot;).init()&gt;<br />
+&lt;cfset BCImage = objBarCoder.createBarCode(text=&apos;my text to place into barcode&apos;,margin=50)&gt;<br />
+&lt;cfimage action = &quot;writeToBrowser&quot; source = &quot;#BCImage#&quot; &gt;<br />
+&lt;br /&gt;<br />
+&lt;cfset results = objBarCoder.readFromImage(#BCImage#)&gt;<br />
+&lt;cfdump var=#results# /&gt;&lt;br /&gt;<br />
+&lt;cfset BCImage2 = objBarCoder.createBarCode(text=&apos;The quick brown fox jumps over the lazy dog&apos;,margin=50)&gt;<br />
+&lt;cfimage action = &quot;writeToBrowser&quot; source = &quot;#BCImage2#&quot; &gt;<br />
+&lt;br /&gt;<br />
+&lt;cfset results2 = objBarCoder.readFromImage(#BCImage2#)&gt;<br />
+&lt;cfdump var=#results2# /&gt;&lt;br /&gt;<br />
+&lt;cfimage action = &quot;writeToBrowser&quot; source = &quot;#BCImage2#&quot; &gt;<br />
+&lt;br /&gt;<br />
+&lt;cfset results2 = objBarCoder.readFromImage(#BCImage2#)&gt;<br />
+&lt;cfdump var=#results2# /&gt;&lt;br /&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Simon Harper		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-336</link>
+
+		<dc:creator><![CDATA[Simon Harper]]></dc:creator>
+		<pubDate>Wed, 14 Jan 2009 15:59:06 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-336</guid>
+
+					<description><![CDATA[Great stuff, Ryan, thanks. Saved us a fortune!]]></description>
+			<content:encoded><![CDATA[<p>Great stuff, Ryan, thanks. Saved us a fortune!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Natalie		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-335</link>
+
+		<dc:creator><![CDATA[Natalie]]></dc:creator>
+		<pubDate>Mon, 06 Oct 2008 15:44:58 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-335</guid>
+
+					<description><![CDATA[How many characters does this encode?  Mine does not seem to read the barcode if there are more than 230 characters in the string.  Is this the maximum?]]></description>
+			<content:encoded><![CDATA[<p>How many characters does this encode?  Mine does not seem to read the barcode if there are more than 230 characters in the string.  Is this the maximum?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Natalie		</title>
+		<link>/2d-barcodes-coldfusion/comment-page-1/#comment-327</link>
+
+		<dc:creator><![CDATA[Natalie]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2008 12:55:41 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/15/2d-barcodes-coldfusion/#comment-327</guid>
+
+					<description><![CDATA[I downloaded the RBarcode (1D, Post 4 state barcodes, PDF417 and RDataMatrix) trial version.  Now I&#039;m ready to buy it, but I wanted to make sure I&#039;m choosing the right one to purchase.  I am guessing it&#039;s the  RDataMatrix Binary (and J4L Datamatrix Vision (Java) to read).    Do you need the versions with source code?]]></description>
+			<content:encoded><![CDATA[<p>I downloaded the RBarcode (1D, Post 4 state barcodes, PDF417 and RDataMatrix) trial version.  Now I&#8217;m ready to buy it, but I wanted to make sure I&#8217;m choosing the right one to purchase.  I am guessing it&#8217;s the  RDataMatrix Binary (and J4L Datamatrix Vision (Java) to read).    Do you need the versions with source code?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

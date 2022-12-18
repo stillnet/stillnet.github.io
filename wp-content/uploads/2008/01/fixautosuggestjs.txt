@@ -1,0 +1,12 @@
+function fixAutoSuggest() {
+	divs = document.getElementsByTagName("div");
+	s = "<style type=\"text/css\">\n";
+	counter = 1;
+	for (x = divs.length-1; x >= 0; x--) {
+		if ( divs[x].getAttribute("id") && divs[x].getAttribute("id").indexOf("autosuggest") > -1) {
+			s += "#"+divs[x].getAttribute("id") + "{z-index:"+(counter++)+"!important;}\n";
+		}
+	}
+	s += "</style>";
+	document.write(s);
+};

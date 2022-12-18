@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Using the Java StringBuffer class ColdFusion &#8211; faster CSV files	</title>
+	<atom:link href="/java-strings-in-coldfusion/feed/" rel="self" type="application/rss+xml" />
+	<link>/java-strings-in-coldfusion/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 20 Feb 2009 21:40:11 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Alex Ismail		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-193</link>
+
+		<dc:creator><![CDATA[Alex Ismail]]></dc:creator>
+		<pubDate>Fri, 20 Feb 2009 21:40:11 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-193</guid>
+
+					<description><![CDATA[Thank you, Ryan.
+
+Meanwhile I found this version, which works too:
+
+&#060;cfset csvstr.append(Chr(34) &#038; FirstName &#038; Chr(34) &#038; &#034;,&#034;)&#062;]]></description>
+			<content:encoded><![CDATA[<p>Thank you, Ryan.</p>
+<p>Meanwhile I found this version, which works too:</p>
+<p>&lt;cfset csvstr.append(Chr(34) &amp; FirstName &amp; Chr(34) &amp; &quot;,&quot;)&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-194</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Fri, 20 Feb 2009 14:50:24 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-194</guid>
+
+					<description><![CDATA[Alex, if the value contains a comma you need to enclose the whole string in double quotes (that is the most common way of handling it).&#160;&#160;I left this out of the example code for clarity.
+
+For example you might change this line above:
+&#060;cfset csvstr.append(fname &#038; &#034;,&#034;)&#062;
+
+To do this instead:
+&#060;cfif Find(&#034;,&#034; , fname)&#062;
+&#160;&#160;&#160;&#160;&#060;cfset csvstr.append(&#034;&#034;&#034;#fname#&#034;&#034;&#034; &#038; &#034;,&#034;)&#062;
+&#060;cfelse&#062;
+&#160;&#160;&#160;&#160;&#060;cfset csvstr.append(fname &#038; &#034;,&#034;)&#062;
+&#060;/cfif&#062;]]></description>
+			<content:encoded><![CDATA[<p>Alex, if the value contains a comma you need to enclose the whole string in double quotes (that is the most common way of handling it).&nbsp;&nbsp;I left this out of the example code for clarity.</p>
+<p>For example you might change this line above:<br />
+&lt;cfset csvstr.append(fname &amp; &quot;,&quot;)&gt;</p>
+<p>To do this instead:<br />
+&lt;cfif Find(&quot;,&quot; , fname)&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset csvstr.append(&quot;&quot;&quot;#fname#&quot;&quot;&quot; &amp; &quot;,&quot;)&gt;<br />
+&lt;cfelse&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset csvstr.append(fname &amp; &quot;,&quot;)&gt;<br />
+&lt;/cfif&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Alex Ismail		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-195</link>
+
+		<dc:creator><![CDATA[Alex Ismail]]></dc:creator>
+		<pubDate>Thu, 19 Feb 2009 22:43:22 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-195</guid>
+
+					<description><![CDATA[Great post, which covered exactly what I needed.
+
+Could you share how to handle fields that contain commas with the Java class solution?
+
+Thank you very much,
+
+Alex]]></description>
+			<content:encoded><![CDATA[<p>Great post, which covered exactly what I needed.</p>
+<p>Could you share how to handle fields that contain commas with the Java class solution?</p>
+<p>Thank you very much,</p>
+<p>Alex</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mayoorathen		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-192</link>
+
+		<dc:creator><![CDATA[Mayoorathen]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2007 14:17:55 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-192</guid>
+
+					<description><![CDATA[Well this code works with only CF 7. Can any suggest me a code will work with CF 6.1?
+
+Thanks]]></description>
+			<content:encoded><![CDATA[<p>Well this code works with only CF 7. Can any suggest me a code will work with CF 6.1?</p>
+<p>Thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-191</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Mon, 02 Apr 2007 15:22:10 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-191</guid>
+
+					<description><![CDATA[Thats interesting Michael, can you explain why that works?]]></description>
+			<content:encoded><![CDATA[<p>Thats interesting Michael, can you explain why that works?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Michael Sharman		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-190</link>
+
+		<dc:creator><![CDATA[Michael Sharman]]></dc:creator>
+		<pubDate>Mon, 02 Apr 2007 06:58:19 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-190</guid>
+
+					<description><![CDATA[Hi Ryan,
+
+If you method chain the Init() method when creating your StringBuffer object, you don&#039;t need to use ToString() when outputting your variable.
+
+i.e.
+
+csvstr = createObject(&quot;java&quot;,&quot;java.lang.StringBuffer&quot;).init();
+
+Great post, keep em&#039; coming!]]></description>
+			<content:encoded><![CDATA[<p>Hi Ryan,</p>
+<p>If you method chain the Init() method when creating your StringBuffer object, you don&#8217;t need to use ToString() when outputting your variable.</p>
+<p>i.e.</p>
+<p>csvstr = createObject(&#8220;java&#8221;,&#8221;java.lang.StringBuffer&#8221;).init();</p>
+<p>Great post, keep em&#8217; coming!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: James Moberg		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-189</link>
+
+		<dc:creator><![CDATA[James Moberg]]></dc:creator>
+		<pubDate>Thu, 08 Mar 2007 20:28:12 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-189</guid>
+
+					<description><![CDATA[Sorry... it didn&#039;t keep the HTML and the reply form doesn&#039;t offer the ability to preview a post (like Slashdot.org does) or automatically escape HTML using HTMLEditFormat()-like function.
+
+&#060;cfsavecontent variable=&quot;csvstr&quot;&#062;Email Address,First Name,Last Name&#060;cfoutput query=&quot;qrycowusers&quot;&#062;
+#email#,#fname#,#lname#&#060;/cfoutput&#062;&#060;/cfsavecontent&#062;]]></description>
+			<content:encoded><![CDATA[<p>Sorry&#8230; it didn&#8217;t keep the HTML and the reply form doesn&#8217;t offer the ability to preview a post (like Slashdot.org does) or automatically escape HTML using HTMLEditFormat()-like function.</p>
+<p>&lt;cfsavecontent variable=&#8221;csvstr&#8221;&gt;Email Address,First Name,Last Name&lt;cfoutput query=&#8221;qrycowusers&#8221;&gt;<br />
+#email#,#fname#,#lname#&lt;/cfoutput&gt;&lt;/cfsavecontent&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: James Moberg		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-188</link>
+
+		<dc:creator><![CDATA[James Moberg]]></dc:creator>
+		<pubDate>Thu, 08 Mar 2007 20:24:24 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-188</guid>
+
+					<description><![CDATA[I believe a simple cfsavecontent example would look like this (without quote and comma checking):
+
+Email Address,First Name,Last Name
+#email#,#fname#,#lname#
+
+How does this method compare to using java stringbuffer?
+
+On a recent project, I had to be able to export 100,000&#039;s of records.  Using CFMX, MSSQL and BCP.exe (via CFEXECUTE), the CSV export was almost instantaneous compared to trying to generate the export using CFMX or java (which was timing out and consuming too much RAM.)
+
+BCP (Bulk Copy Program) for Microsoft SQL Server
+http://msdn2.microsoft.com/en-us/library/aa174646(SQL.80).aspx]]></description>
+			<content:encoded><![CDATA[<p>I believe a simple cfsavecontent example would look like this (without quote and comma checking):</p>
+<p>Email Address,First Name,Last Name<br />
+#email#,#fname#,#lname#</p>
+<p>How does this method compare to using java stringbuffer?</p>
+<p>On a recent project, I had to be able to export 100,000&#8217;s of records.  Using CFMX, MSSQL and BCP.exe (via CFEXECUTE), the CSV export was almost instantaneous compared to trying to generate the export using CFMX or java (which was timing out and consuming too much RAM.)</p>
+<p>BCP (Bulk Copy Program) for Microsoft SQL Server<br />
+<a href="http://msdn2.microsoft.com/en-us/library/aa174646(SQL.80)" rel="nofollow ugc">http://msdn2.microsoft.com/en-us/library/aa174646(SQL.80)</a>.aspx</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: tony petruzzi		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-187</link>
+
+		<dc:creator><![CDATA[tony petruzzi]]></dc:creator>
+		<pubDate>Thu, 08 Mar 2007 18:06:14 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-187</guid>
+
+					<description><![CDATA[i remember when I first started using stringbuffer and was floored with how much performance I gained.
+
+@ed
+
+Give us an example. I&#039;ve tried using cfsavecontent both and while it did give a performance increase it was no where&#039;s near what stringbuffer gave.]]></description>
+			<content:encoded><![CDATA[<p>i remember when I first started using stringbuffer and was floored with how much performance I gained.</p>
+<p>@ed</p>
+<p>Give us an example. I&#8217;ve tried using cfsavecontent both and while it did give a performance increase it was no where&#8217;s near what stringbuffer gave.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ed		</title>
+		<link>/java-strings-in-coldfusion/comment-page-1/#comment-186</link>
+
+		<dc:creator><![CDATA[Ed]]></dc:creator>
+		<pubDate>Thu, 08 Mar 2007 17:32:55 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/07/java-strings-in-coldfusion/#comment-186</guid>
+
+					<description><![CDATA[Good post, thanks! You can also access Java Stringbuffers natively in CF using string concatenation via cfsavecontent instead of &#039;&#038;&#039;-driven string concatenation.]]></description>
+			<content:encoded><![CDATA[<p>Good post, thanks! You can also access Java Stringbuffers natively in CF using string concatenation via cfsavecontent instead of &#8216;&amp;&#8217;-driven string concatenation.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

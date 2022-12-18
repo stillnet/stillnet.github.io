@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: ColdFusion 8 auto-suggest shows through other form fields	</title>
+	<atom:link href="/cf8-autosuggest-shows-through/feed/" rel="self" type="application/rss+xml" />
+	<link>/cf8-autosuggest-shows-through/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 11 Apr 2012 17:26:11 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: hasan		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-2798</link>
+
+		<dc:creator><![CDATA[hasan]]></dc:creator>
+		<pubDate>Wed, 11 Apr 2012 17:26:11 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-2798</guid>
+
+					<description><![CDATA[Thank you very much! saved my day!!!!!!!!]]></description>
+			<content:encoded><![CDATA[<p>Thank you very much! saved my day!!!!!!!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Aaron Mclean		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-2511</link>
+
+		<dc:creator><![CDATA[Aaron Mclean]]></dc:creator>
+		<pubDate>Wed, 07 Sep 2011 01:10:21 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-2511</guid>
+
+					<description><![CDATA[Worked for me. Just had to replace the double quotes in the style type line with single quotes.]]></description>
+			<content:encoded><![CDATA[<p>Worked for me. Just had to replace the double quotes in the style type line with single quotes.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ralf Guttmann		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-2468</link>
+
+		<dc:creator><![CDATA[Ralf Guttmann]]></dc:creator>
+		<pubDate>Mon, 25 Jul 2011 08:41:50 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-2468</guid>
+
+					<description><![CDATA[Thank you very much for this fix that worked great for me!]]></description>
+			<content:encoded><![CDATA[<p>Thank you very much for this fix that worked great for me!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Michael Kane		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-2038</link>
+
+		<dc:creator><![CDATA[Michael Kane]]></dc:creator>
+		<pubDate>Mon, 28 Mar 2011 21:20:05 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-2038</guid>
+
+					<description><![CDATA[Your fix worked for me! Glad I kept googling the problem, I don&amp;apos;t have a CSS guru to help. Too bad Adobe can&amp;apos;t fix this, after several years.]]></description>
+			<content:encoded><![CDATA[<p>Your fix worked for me! Glad I kept googling the problem, I don&apos;t have a CSS guru to help. Too bad Adobe can&apos;t fix this, after several years.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Joseph Frank		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-1702</link>
+
+		<dc:creator><![CDATA[Joseph Frank]]></dc:creator>
+		<pubDate>Thu, 16 Sep 2010 01:13:23 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-1702</guid>
+
+					<description><![CDATA[My page is hanging up when the function is called - using IE8, CF9 on a 64bit Win7 machine - not sure if that is relevant.
+
+Any ideas?]]></description>
+			<content:encoded><![CDATA[<p>My page is hanging up when the function is called &#8211; using IE8, CF9 on a 64bit Win7 machine &#8211; not sure if that is relevant.</p>
+<p>Any ideas?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Willene		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-1552</link>
+
+		<dc:creator><![CDATA[Willene]]></dc:creator>
+		<pubDate>Mon, 19 Jul 2010 16:48:31 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-1552</guid>
+
+					<description><![CDATA[Thank you. Works like a charm in development.]]></description>
+			<content:encoded><![CDATA[<p>Thank you. Works like a charm in development.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Aidan Whitehall		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-1355</link>
+
+		<dc:creator><![CDATA[Aidan Whitehall]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 14:16:45 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-1355</guid>
+
+					<description><![CDATA[Fantastic... great fix -- thanks for sharing.]]></description>
+			<content:encoded><![CDATA[<p>Fantastic&#8230; great fix &#8212; thanks for sharing.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Matt		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-814</link>
+
+		<dc:creator><![CDATA[Matt]]></dc:creator>
+		<pubDate>Wed, 07 Oct 2009 09:00:52 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-814</guid>
+
+					<description><![CDATA[This is a good fix for text input fields.
+This won&amp;apos;t fix the z order of a cfselect or select input.
+
+A select form input control is presented to the web browser in a different way, if i remember rightly its part of the OS whilst other form controls are generated by the client browser. (Please correct me if i&amp;apos;m wrong).
+
+If there is some magical code to get around this i would be most greatful.
+
+Matt]]></description>
+			<content:encoded><![CDATA[<p>This is a good fix for text input fields.<br />
+This won&apos;t fix the z order of a cfselect or select input.</p>
+<p>A select form input control is presented to the web browser in a different way, if i remember rightly its part of the OS whilst other form controls are generated by the client browser. (Please correct me if i&apos;m wrong).</p>
+<p>If there is some magical code to get around this i would be most greatful.</p>
+<p>Matt</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Don Blaire		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-741</link>
+
+		<dc:creator><![CDATA[Don Blaire]]></dc:creator>
+		<pubDate>Mon, 21 Sep 2009 23:00:13 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-741</guid>
+
+					<description><![CDATA[The users were about to hang me over this issue. I kept telling them that Adobe will fix it. I twice reported this problem as a bug to Adobe for ColdFusion 9.
+
+Though I could not get your script to work, the css example worked fine. Now the users are extremely happy.&#160;&#160;Thanks for this blog entry.]]></description>
+			<content:encoded><![CDATA[<p>The users were about to hang me over this issue. I kept telling them that Adobe will fix it. I twice reported this problem as a bug to Adobe for ColdFusion 9.</p>
+<p>Though I could not get your script to work, the css example worked fine. Now the users are extremely happy.&nbsp;&nbsp;Thanks for this blog entry.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Cheryl		</title>
+		<link>/cf8-autosuggest-shows-through/comment-page-1/#comment-716</link>
+
+		<dc:creator><![CDATA[Cheryl]]></dc:creator>
+		<pubDate>Wed, 09 Sep 2009 20:35:28 +0000</pubDate>
+		<guid isPermaLink="false">/2008/01/30/cf8-autosuggest-shows-through/#comment-716</guid>
+
+					<description><![CDATA[Hi all,
+
+I don&amp;apos;t know if this will help anyone, but I was having problems with the CF added floats.&#160;&#160;I had three fields in a list intending to have one field below another.&#160;&#160;Because of the CF added floats, they were all on one line.&#160;&#160;I added an &#060;li class=&#034;clear-floats&#034;&#062;&#060;/li&#062; after each datefield cfinput and it cleared up the problem:
+
+.clear-floats {
+&#160;&#160;&#160;&#160;clear: both;
+}
+
+I hope it helps someone.]]></description>
+			<content:encoded><![CDATA[<p>Hi all,</p>
+<p>I don&apos;t know if this will help anyone, but I was having problems with the CF added floats.&nbsp;&nbsp;I had three fields in a list intending to have one field below another.&nbsp;&nbsp;Because of the CF added floats, they were all on one line.&nbsp;&nbsp;I added an &lt;li class=&quot;clear-floats&quot;&gt;&lt;/li&gt; after each datefield cfinput and it cleared up the problem:</p>
+<p>.clear-floats {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;clear: both;<br />
+}</p>
+<p>I hope it helps someone.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

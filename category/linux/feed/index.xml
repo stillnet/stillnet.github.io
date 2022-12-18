@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linux &#8211; Stillnet Studios</title>
+	<atom:link href="/category/linux/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sat, 09 Jan 2010 21:50:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Copying environment variables in Apache &#8211; solving the AUTH_USER Apache/IIS issue</title>
+		<link>/copying-env-variables-in-apache/</link>
+					<comments>/copying-env-variables-in-apache/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 09 Jan 2010 21:50:27 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=726</guid>
+
+					<description><![CDATA[A friend asked me for some help the other day. At the place he works at they use IIS on their production servers, but each developer works locally using Apache. Why use different webservers for production and development? He said they do it because its easier to develop locally with Apache. My guess is its [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A friend asked me for some help the other day. At the place he works at they use IIS on their production servers, but each developer works locally using Apache.  Why use different webservers for production and development?  He said they do it because its easier to develop locally with Apache.  My guess is its easier because you can run multiple sites at once with Apache.  With IIS on a desktop machine you can only run one site at a time.  I do the exact same thing at my job, actually.</p>
+<p>Anyway, once in a while this causes issues.  In this case, there was code on the server that required a username and password in order to access the page.  The security was done at the web server level, aka &#8220;HTTP authentication&#8221;, which causes your browser to prompt you for a username and password. These credentials then get sent along in the request headers (its actually a little more complicated than that but I won&#8217;t get into that here).  After authenticating, the username is available to ColdFusion as a CGI variable &#8211; CGI.REMOTE_USER.</p>
+<p>When using IIS, that value is <em>also</em> available as CGI.<strong>AUTH_USER</strong>.  In all CGI variable specs I could find, they all reference REMOTE_USER, not AUTH_USER, I&#8217;m not sure when AUTH_USER started to be used.  Anyway, this ColdFusion code running on the IIS server would look to the CGI.AUTH_USER variable and display some things differently depending on who the user was.</p>
+<p>This posed a problem when trying to run this code locally under apache.  The CGI.AUTH_USER variable did exist, but it was always blank.  One could change the code to use the more multi-platform friendly &#8220;REMOTE_USER&#8221;, but sometimes there are hurdles to changing existing code.</p>
+<p>But there is a way to mimic the behavior of IIS, by copying the REMOTE_USER value into AUTH_USER.  Its only three simple lines but it took me quite a while to figure this out.</p>
+<pre><code>RewriteEngine on
+RewriteCond %{REMOTE_USER} (.*)
+RewriteRule .* - [E=AUTH_USER:%1]</code></pre>
+<p>You&#8217;ll need to have mod_rewrite enabled of course.  Usually all you need to do is uncomment a line that looks like this in httpd.conf:</p>
+<pre><code>LoadModule rewrite_module modules/mod_rewrite.so</code></pre>
+<p>The three magic lines can go into the httpd.conf file, or you could place them in a .htaccess file in the directory you&#8217;re working in.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/copying-env-variables-in-apache/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Missing library errors when installing ColdFusion on Linux</title>
+		<link>/missing-library-errors-when-installing-coldfusion-on-linux/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2009 17:19:08 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=423</guid>
+
+					<description><![CDATA[I was installing ColdFusion 7.02 on a client&#8217;s CentOS 5.2 Linux server the other day and received an error when running the installer. Note that this OS is NOT supported by Adobe for this version of ColdFusion. This is a fairly old version of CF being installed on a pretty current version of CentOS. The [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I was installing ColdFusion 7.02 on a client&#8217;s CentOS 5.2 Linux server the other day and received an error when running the installer.  Note that this OS is NOT supported by Adobe for this version of ColdFusion.  This is a fairly old version of CF being installed on a pretty current version of CentOS.  The error was:</p>
+<p><code>[root@server tmp]# ./coldfusion-702-linux.bin<br />
+Preparing to install...<br />
+Extracting the JRE from the installer archive...<br />
+Unpacking the JRE...<br />
+Extracting the installation resources from the installer archive...<br />
+Configuring the installer for this system's environment...<br />
+awk: error while loading shared libraries: libdl.so.2: cannot open shared object file: No such file or directory<br />
+dirname: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+/bin/ls: error while loading shared libraries: librt.so.1: cannot open shared object file: No such file or directory<br />
+basename: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+dirname: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+basename: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+Launching installer<br />
+grep: error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory<br />
+/tmp/install.dir.3348/Linux/resource/jre/bin/java: error while loading shared libraries: libpthread.so.0: cannot open shared object file: No such file or directory</code></p>
+<p>There is a hard coded value in the installer thats causing things to get messed up.  Fixing this is fairly easy, you can modify the installer like this:</p>
+<p><code>cp coldfusion-702-linux.bin coldfusion-702-linux.bin.backup<br />
+cat coldfusion-702-linux.bin.backup | sed "s/export LD_ASSUME/#xport LD_ASSUME/" &gt; coldfusion-702-linux.bin</code></p>
+<p>That comments out the offending line in all places in the installation script.</p>
+<p>More discussion on this here:<br />
+<a href="http://www.billmitchell.org/coldfusion/centos5/mx7_apache.php">http://www.billmitchell.org/coldfusion/centos5/mx7_apache.php</a><br />
+<a href="http://www.talkingtree.com/blog/index.cfm/2006/12/6/Running-ColdFusion-MX-7-on-Fedora-Core-6-Linux">http://www.talkingtree.com/blog/index.cfm/2006/12/6/Running-ColdFusion-MX-7-on-Fedora-Core-6-Linux</a></p>
+<p>You will probably run into more issues installing CF7 on this version of CentOS but it can be done.  I also had to upgrade the connector to work with Apache 2.2 (when CF7 came out the connector was designed to run on Apache 2.0).  The Adobe KB article that discusses this is here: <a href="http://kb.adobe.com/selfservice/viewContent.do?externalId=8001e97&#038;sliceId=1">http://kb.adobe.com/selfservice/viewContent.do?externalId=8001e97&#038;sliceId=1</a>.   Their example didn&#8217;t quite work for me because its defaulting to the version of Java thats on your OS, which won&#8217;t work unless its a Sun 1.4.2x version.  So I just used the JRE that is bundled with ColdFusion to install the new connector:</p>
+<pre><code>/opt/coldfusionmx7/runtime/jre/bin/java -Dtrace.ci=1 -jar ../../runtime/lib/wsconfig.jar \
+        -server coldfusion \
+    -ws apache \
+        -dir /etc/httpd/conf \
+        -bin /usr/sbin/httpd \
+        -script /etc/rc.d/init.d/httpd \
+        -coldfusion -v</code></pre>
+<p>I thought that was the last hurdle but when we tried to log in to the ColdFusion administrator we got an error about &#8220;The Graphing service is not available&#8221;.  The message in the log file was &#8220;Unable to initialize Graphing service: java.lang.UnsatisfiedLinkError: /opt/coldfusionmx7/runtime/jre/lib/i386/libawt.so: libXp.so.6: cannot open shared object file: No such file or directory&#8221;.  This was fixed by installing the libXp library:</p>
+<p><code>yum install libXp</code></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>coldfusion.jsp. CompilationFailedException: jikes error on CentOS 5.2</title>
+		<link>/jikes-error-on-centos-52/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 06 Feb 2009 16:10:12 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=329</guid>
+
+					<description><![CDATA[I was trying to execute a .cfm page on a new CentOS 5.2 server and I received this error. Not all requests were erroring out, the CF Administrator was working fine as were other simple pages. But when I tried to load a page that instantiated some java objects, I got this error. "coldfusion.jsp.CompilationFailedException: Errors [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I was trying to execute a .cfm page on a new CentOS 5.2 server and I received this error.  Not all requests were erroring out, the CF Administrator was working fine as were other simple pages.  But when I tried to load a page that instantiated some java objects, I got this error.</p>
+<p><code>"coldfusion.jsp.CompilationFailedException: Errors reported by Java compiler: jikes: error while loading shared libraries: libstdc++.so.5: cannot open shared object file: No such file or directory</code></p>
+<p>I checked to make sure libstdc++ was installed, and it was, although not version 5.  I checked another one of our Linux CF8 servers, it didn&#8217;t have version 5 installed either, so I didn&#8217;t think that was the problem.  I noticed the other server had some compat libs installed that I was missing though.  I ran this command: <code>yum install compat-libstdc\*</code> which installed two RPMs: compat-libstdc++-296 and compat-libstdc++-33.   Then I restarted ColdFusion, and was able to execute the page with no errors.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Batch conversion of audio files &#8211; shrinking MP3s</title>
+		<link>/batch-convert-audio-files/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 08 Oct 2008 15:47:38 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=126</guid>
+
+					<description><![CDATA[One of my clients has a site where they offer their archived radio shows for downloading. The files they provide us come from directly from the radio station. They are already in MP3 format, but they are encoded at an insanely high bitrate for a talk show, and are in stereo to boot. This can [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>One of my clients has a site where they offer their archived radio shows for downloading.  The files they provide us come from directly from the radio station. They are already in MP3 format, but they are encoded at an insanely high bitrate for a talk show, and are in stereo to boot.  This can eat up a lot of bandwidth unnecessarily.</p>
+<p>There are over 100 files, so opening each one in an audio tool such as Audacity or SoundBooth to re-compress would be quite tedious.   Here is a short script I wrote to re-encode the files.  Note that I did this on our Linux server, but since Perl and lame/notlame are both available for Windows you shouldn&#8217;t have a problem doing it there either.<br />
+<span id="more-126"></span><br />
+Perl was already installed, and I installed notlame by downloading the RPM and running <code>rpm -i notlame-3.96.1-1.i686.rpm</code>.</p>
+<p>Here is the script:</p>
+<pre><code>#!/usr/bin/perl
+
+$sourcedir = '/tmp/audio/input';
+$destdir = '/tmp/audio/output';
+
+opendir(DIR,$sourcedir);
+@files = grep !/^\./, readdir(DIR);
+closedir(DIR);
+
+foreach $file (@files) {
+  if ($file =~ /mp3/i) {
+    $cmd = "nice notlame -h -b 32 -m m '$sourcedir/$file' '$destdir/$file'";
+    `$cmd`;
+    }
+
+  }</code></pre>
+<p>The script reads in files from the sourcedir, and creates new compressed files in the destdir.   Note the $cmd towards the end &#8211; the <code>nice</code> part of the command tells the system to lower the CPU priority on this task, so it doesn&#8217;t effect ColdFusion or anything else running on the server.  The <code>-h</code> tells lame to go slower, for a higher quality end result, the <code>-b 32</code> indicates a bitrate of 32kbps, and the <code>-m m</code> sets the mode to <em>mono</em>.</p>
+<p>In the end a 43MB file gets reduced to an 8.5MB file, with almost no noticeable loss in quality.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Deleting all your .svn directories</title>
+		<link>/deleting-svn-dirs-linux-windows/</link>
+					<comments>/deleting-svn-dirs-linux-windows/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 02 Jul 2008 15:17:56 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/</guid>
+
+					<description><![CDATA[Sometimes its necessary to delete all the .svn folders from your subversion working copy. Here is a simple way to do it on Linux: rm -rf `find . -name .svn` That might not work if you have hundreds or thousands of folders, as it might be too many arguments for the rm command. I still [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Sometimes its necessary to delete all the .svn folders from your subversion working copy.</p>
+<p>Here is a simple way to do it on Linux:</p>
+<pre><code>rm -rf `find . -name .svn`</code></pre>
+<p>That might not work if you have hundreds or thousands of folders, as it might be too many arguments for the rm command.  I still like it because its simple.  But a more robust way would be:</p>
+<pre><code>find . -name .svn -prune -exec rm -rf {} \;</code></pre>
+<p>This calls rm on each file separately.</p>
+<p>I haven&#8217;t tried the following, but on Windows you may be able to:</p>
+<p>Create a cleanSVN.cmd file in the root containing these lines:</p>
+<pre><code>for /f “tokens=* delims=” %%i in (’dir /s /b /a:d *svn’) do (
+rd /s /q “%%i”
+)</code></pre>
+<p>You could also try browsing to the files in Windows Exporer and then:<br />
+Right click on the folder and click Search..<br />
+Enter .svn as the filename to search for.<br />
+Click “More advanced options” and select:<br />
+&#8211; Search hidden files and folders<br />
+&#8211; Search subfolders<br />
+Press search button and delete the folders you find appropriate.</p>
+<p>The Windows tips came from Axel&#8217;s blog at <a href="http://www.axelscript.com/2008/03/11/delete-all-svn-files-in-windows/">http://www.axelscript.com/2008/03/11/delete-all-svn-files-in-windows/</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/deleting-svn-dirs-linux-windows/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Require subversion comments &#8211; a perl pre-commit hook</title>
+		<link>/require-subversion-comments-minimum/</link>
+					<comments>/require-subversion-comments-minimum/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 16 Jun 2008 19:52:14 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/</guid>
+
+					<description><![CDATA[We&#8217;ve been having some issues with people committing to the subversion server without entering a comment. Its easy to to require a comment using a &#8220;pre-commit&#8221; hook, which is a script that runs before someone&#8217;s changes are committed to the repository. A sample commit hook is supplied with subversion that you can enable to require [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;ve been having some issues with people committing to the subversion server without entering a comment.  Its easy to to require a comment using a &#8220;pre-commit&#8221; hook, which is a script that runs before someone&#8217;s changes are committed to the repository.  A sample commit hook is supplied with subversion that you can enable to require comments.  The problem is it doesn&#8217;t report back any error message (users will just get a generic &#8220;commit failed&#8221; in their svn client), and there is no provision for making sure the comment is a minimum length.</p>
+<p>I tried to modify the example script, but I&#8217;m pretty bad with shell scripting.  I looked for a perl one, which I knew I could easily modify, but couldn&#8217;t find any.  So I whipped this one up:<br />
+<span id="more-100"></span></p>
+<pre><code>#!/usr/bin/perl
+
+# config section
+$minchars = 4;
+$svnlook = '/usr/bin/svnlook';
+
+#--------------------------------------------
+$repos = $ARGV[0];
+$txn = $ARGV[1];
+$comment = `$svnlook log -t "$txn" "$repos"`;
+chomp($comment);
+
+if ( length($comment) == 0 ) {
+  print STDERR "A comment is required!";
+  exit(1);
+  }
+elsif ( length($comment) &lt; $minchars ) {
+  print STDERR "Comment must be at least $minchars characters.";
+  exit(1);
+  }
+
+exit(0);</code></pre>
+<p>Those error messages get sent back to the client and display just fine in TortoiseSVN or whatever you use.</p>
+<p>My subversion server is running on Linux, but the script should run on Windows with little modification, if you have perl installed.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/require-subversion-comments-minimum/feed/</wfw:commentRss>
+			<slash:comments>25</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>3GB of memory for ColdFusion on Linux</title>
+		<link>/3gb-of-memory-for-coldfusion-on-linux/</link>
+					<comments>/3gb-of-memory-for-coldfusion-on-linux/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 09 Mar 2008 04:22:57 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/03/08/3gb-of-memory-for-coldfusion-on-linux/</guid>
+
+					<description><![CDATA[There has been some discussion on various ColdFusion discussion lists regarding the maximum heap size you can allocate to ColdFusion/Jrun. Windows allows a process to grab as much as 2GB of contiguous memory. Subtracting out memory for overhead, permgen memory, etc. you are left somewhere with 1.5-1.8GB available for general heap memory. We were considering [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>There has been some discussion on various ColdFusion discussion lists regarding the maximum heap size you can allocate to ColdFusion/Jrun.  Windows allows a process to grab as much as 2GB of contiguous memory.  Subtracting out memory for overhead, permgen memory, etc. you are left somewhere with 1.5-1.8GB available for general heap memory.</p>
+<p>We were considering moving one of our clients to a Linux server if that would allow us to allocate more memory to the heap.  In my research, it seemed the opinions were split about 50/50 as to if Linux would allow us to allocate more than 2GB of memory.  So I decided to test for myself.  I placed an order for 4GB of memory and waited for them to arrive.</p>
+<p>Once I had swapped out my 4 256MB modules for the 4 1GB modules, I increased the heap size (Xms and Xmx options in jvm.config) to 2048 and restarted the server.  No problems!  I kept increasing by 100mb at a time until I reached 2600 &#8211; there it failed to start, so I backed it down to 2500mb.  With the permgen and other overhead, Jrun was taking up about 2950Mb of memory &#8211; indicating a 3GB limit.  I have been running this way for a few days now with no problems.</p>
+<p>Your experience may vary of course, depending on what memory options you have in your jvm.config file.  I did not need to do anything special other than bump up the Xms and Xmx values.</p>
+<p>So the short answer is Yes, you can allocate about 1GB more memory to ColdFusion when running on Linux.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/3gb-of-memory-for-coldfusion-on-linux/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Getting cfstat to work</title>
+		<link>/getting-cfstat-to-work/</link>
+					<comments>/getting-cfstat-to-work/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 04 Mar 2008 21:12:11 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/03/04/getting-cfstat-to-work/</guid>
+
+					<description><![CDATA[The command line statistics program supplied with ColdFusion, cfstat, has never worked for me. I&#8217;ve never tried it on Windows, but I have tried it on Linux on versions 6 and 7, and now version 8. A little digging around told me why it never worked in CFMX 6-7. Apparently the cfstat script was looking [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The command line statistics program supplied with ColdFusion, <em>cfstat</em>, has never worked for me.  I&#8217;ve never tried it on Windows, but I have tried it on Linux on versions 6 and 7, and now version 8.</p>
+<p>A little digging around told me why it never worked in CFMX 6-7.  Apparently the cfstat script was looking for a particular jar file using a relative path &#8211; so it only worked if you were calling it from within the ColdFusion installation directory, which I guess I never did.  Looking at the cfstat script in version 8, I can see they specify the full path.</p>
+<p>But cfstat still wasn&#8217;t working for me in CF8, I got this error message:<br />
+<span id="more-91"></span></p>
+<pre><code>Could not contact the ColdFusion Application Server running on this machine:
+     Perhaps ColdFusion is not running on this machine?
+     Perhaps cfstat is not enabled from the ColdFusion administrator?
+     Perhaps ColdFusion was not restarted after enabling cfstat?
+     Perhaps cfstat service is not listening on default port?
+       Use option -port with port number as per the cfstatport
+       defined in the neo-metrics xml file.</code></pre>
+<p>I realized I hadn&#8217;t checked the <strong>Enable CFSTAT</strong> button in the CF administrator, so I did that and restarted ColdFusion.  Still got the same error message.</p>
+<p>After googing around a while I found mention of someone who had a similar issue &#8211; they couldn&#8217;t get the Enable CFSTAT checkbox to stay checked after CF restarts.  He fixed it by editing the neo-metric.xml file and changing the <code>&lt;var name='cfstat'&gt;&lt;number&gt;1.0&lt;/number&gt;&lt;/var&gt;</code> setting to be <code>&lt;var name='cfstat'&gt;&lt;string&gt;true&lt;/string&gt;&lt;/var&gt;</code>.  Mine was already set to the string &#8220;true&#8221;, so that wasn&#8217;t it.  But I did notice the cfstatport setting looked funny: <code>&lt;var name='cfstatport'&gt;&lt;number&gt;1.0&lt;/number&gt;&lt;/var&gt;</code>.  There was a neo-metric.bak file on my server, so I compared the two, and found that in the bak file the setting was <code>&lt;var name='cfstatport'&gt;&lt;string&gt;7999&lt;/string&gt;&lt;/var&gt;</code>.   I changed my neo-metric.xml file to reflect this and restarted CF.  It worked!</p>
+<p>I can&#8217;t be sure but this server <em>may</em> have been upgraded from CF7, instead of a fresh install, and that might have contributed to the problem.</p>
+<p>Also, here is a (Linux only) tip: To have cfstat run every X seconds and continually refresh, use this command &#8220;watch -nX ./cfstat&#8221;, where X is how many seconds between refreshes.  I&#8217;m new to cfstat &#8211; so if there is a better way to do this please let me know.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/getting-cfstat-to-work/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Book Review &#8211; Apache Security</title>
+		<link>/book-review-apache-security/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 12 Oct 2007 00:38:20 +0000</pubDate>
+				<category><![CDATA[Book Reviews]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2007/10/11/book-review-apache-security/</guid>
+
+					<description><![CDATA[A few months ago I decided to go on a book binge and acquired a stack of books about two feet tall. It includes classics such as The Pragmatic Progammer and Practices of an Agile Developer, as well as some on Java, Asterisk, Extreme Programming, Linux Firewalls, and a NASCAR book thrown in for good [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A few months ago I decided to go on a book binge and acquired a stack of books about two feet tall. It includes classics such as <a href="http://www.amazon.com/dp/020161622X">The Pragmatic Progammer</a> and <a href="http://www.amazon.com/dp/097451408X/">Practices of an Agile Developer</a>, as well as some on Java, <a href="http://www.oreilly.com/catalog/9780596510480/">Asterisk</a>, <a href="http://www.amazon.com/dp/0672324415/">Extreme Programming</a>, <a href="http://www.amazon.com/dp/0764524631/">Linux Firewalls</a>, and a NASCAR book thrown in for good measure.</p>
+<p>I&#8217;ve gotten through a couple, and will be posting reviews of a few of them.  This week I finished <a href="http://www.amazon.com/dp/0596007248/">Apache Security</a>, from O&#8217;Reilly.  I found this book while browsing the programming section of Borders (the programming section of my local Borders is amazing!), and I&#8217;ve found it to be a real gem.<br />
+<span id="more-66"></span><br />
+The book covers so much more than just Apache security.  It covers installation and configuration, and explains a little of how Apache works along the way.  There are also chapters or sections on:</p>
+<p>&#8211; Understanding and securing PHP<br />
+&#8211; An explanation of SSL<br />
+&#8211; DOS attacks<br />
+&#8211; Traffic shaping in Apache<br />
+&#8211; Logging is covered extensively<br />
+&#8211; There&#8217;s a chapter on web security in general, where all the common attacks are explained<br />
+&#8211; Using Apache as a proxy or a reverse proxy</p>
+<p>I especially enjoyed the <em>Web Security Assessment</em> chapter where the author explained how to systematically analyze and probe web applications/servers, with many real world examples.</p>
+<p>There is a large section discussing mod_security, which is an amazing Apache module. Mod_security is an intrusion detection and prevention engine for web applications (a web application firewall).  The book is written by the author of mod_security (Ivan Ristic), so he really knows what he&#8217;s talking about in this area.  Also covered is mod_dosevasive, which, obviously helps prevent against denial of service attacks.</p>
+<p>I would not hesitate to recommend this book to any Apache administrator, user, or web programmer.</p>
+<p><a href="http://www.amazon.com/dp/0596007248/" title="Apache Security book cover"><img decoding="async" id="image67" src="/wp-content/uploads/2007/10/apachesecurity.jpg" alt="Apache Security book cover" style="border: 1px solid black;" /></a></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Problems installing the ColdFusion connector on Linux/Apache</title>
+		<link>/problems-installing-the-coldfusion-connector-on-linuxapache/</link>
+					<comments>/problems-installing-the-coldfusion-connector-on-linuxapache/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 06 Apr 2007 03:20:16 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2007/04/05/problems-installing-the-coldfusion-connector-on-linuxapache/</guid>
+
+					<description><![CDATA[Some people have encountered problems during the ColdFusion MX 7 install on Linux/Apache. When you first start the ColdFusion server, you may see something like this: Configuring the web server connector (Launched on the first run of the ColdFusion MX 7 start script) Running apache connector wizard... ======================================= There was an error while running the [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Some people have encountered problems during the ColdFusion MX 7 install on Linux/Apache.  When you first start the ColdFusion server, you may see something like this:</p>
+<p><code>Configuring the web server connector (Launched on the first run of the ColdFusion MX 7 start script)<br />
+Running apache connector wizard...<br />
+=======================================<br />
+There was an error while running the connector wizard<br />
+Connector installation was not successful</code><br />
+<span id="more-46"></span><br />
+The connector may or may not actually be installed.  In some cases it is, but you still get this error.  If it is installed, you should know it.  Restart apache to make the httpd.conf changes take effect, then try browsing to a .cfm page.  If it displays correctly, the connector was installed.</p>
+<p>In this case, all you need to do to get rid of the error message is rename the <code>/opt/coldfusionmx7/bin/cfmx-connectors.sh</code> script.  Thats normally what happens when the connector is successfully installed &#8211; ColdFusion renames that script to &#8220;cfmx-connectors-run.sh&#8221;.</p>
+<p>If your connector did <em>not</em> successfully install, there are a few additional steps to get it properly installed.  Change into the /opt/coldfusionmx7/bin/connectors directory.  Open the apache_connector.sh file, and fix the paths to be correct to your system.</p>
+<p>By default the file contains these lines (among others):<br />
+<code>../../runtime/bin/wsconfig \<br />
+        -server coldfusion \<br />
+    -ws apache \<br />
+        -dir /usr/local/apache2/conf \<br />
+        -bin /usr/local/apache2/bin/httpd \<br />
+        -script /usr/local/apache2/bin/apachectl \<br />
+        -coldfusion</code></p>
+<p>On RedHat/CentOS, they should usually look like this:</p>
+<p><code>../../runtime/bin/wsconfig \<br />
+        -server coldfusion \<br />
+    -ws apache \<br />
+        -dir /etc/httpd/conf \<br />
+        -bin /usr/sbin/httpd \<br />
+        -script /etc/rc.d/init.d/httpd \<br />
+        -coldfusion</code></p>
+<p>Even though those are the values I entered during the install, they don&#8217;t always make it to this connector script for some reason.</p>
+<p>Save the script and run it.  Restart apache, and browse to a .cfm file, or to the Administrator to verify that it is installed properly.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/problems-installing-the-coldfusion-connector-on-linuxapache/feed/</wfw:commentRss>
+			<slash:comments>27</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

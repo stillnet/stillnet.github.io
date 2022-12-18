@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: A &#8216;MakeDate&#8217; function for MS SQL Server	</title>
+	<atom:link href="/makedate-function-ms-sql-server/feed/" rel="self" type="application/rss+xml" />
+	<link>/makedate-function-ms-sql-server/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 03 Apr 2009 20:28:21 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/makedate-function-ms-sql-server/comment-page-1/#comment-515</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Fri, 03 Apr 2009 20:28:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=361#comment-515</guid>
+
+					<description><![CDATA[Nice, thanks.]]></description>
+			<content:encoded><![CDATA[<p>Nice, thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Roland Collins		</title>
+		<link>/makedate-function-ms-sql-server/comment-page-1/#comment-514</link>
+
+		<dc:creator><![CDATA[Roland Collins]]></dc:creator>
+		<pubDate>Fri, 03 Apr 2009 20:24:44 +0000</pubDate>
+		<guid isPermaLink="false">/?p=361#comment-514</guid>
+
+					<description><![CDATA[This one will run much faster if you&amp;apos;re using it in a batch statement since it avoids the extra variable declarations and string conversions.
+
+CREATE FUNCTION [dbo].[MakeDate]
+(
+&#160;&#160;&#160;&#160;-- Add the parameters for the function here
+&#160;&#160;&#160;&#160;@year INT, @month INT, @day INT
+)
+RETURNS smalldatetime
+AS
+BEGIN
+
+RETURN CONVERT(SMALLDATETIME, CONVERT(VARCHAR, @month) + &amp;apos;/&amp;apos; + CONVERT(VARCHAR, @day) + &amp;apos;/&amp;apos; + CONVERT(VARCHAR, @year))
+
+END]]></description>
+			<content:encoded><![CDATA[<p>This one will run much faster if you&apos;re using it in a batch statement since it avoids the extra variable declarations and string conversions.</p>
+<p>CREATE FUNCTION [dbo].[MakeDate]<br />
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&#8212; Add the parameters for the function here<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@year INT, @month INT, @day INT<br />
+)<br />
+RETURNS smalldatetime<br />
+AS<br />
+BEGIN</p>
+<p>RETURN CONVERT(SMALLDATETIME, CONVERT(VARCHAR, @month) + &apos;/&apos; + CONVERT(VARCHAR, @day) + &apos;/&apos; + CONVERT(VARCHAR, @year))</p>
+<p>END</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

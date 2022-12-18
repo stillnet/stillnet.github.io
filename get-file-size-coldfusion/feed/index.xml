@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Getting the size of a file in ColdFusion	</title>
+	<atom:link href="/get-file-size-coldfusion/feed/" rel="self" type="application/rss+xml" />
+	<link>/get-file-size-coldfusion/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 12 Jul 2011 17:37:48 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: JC		</title>
+		<link>/get-file-size-coldfusion/comment-page-1/#comment-2422</link>
+
+		<dc:creator><![CDATA[JC]]></dc:creator>
+		<pubDate>Tue, 12 Jul 2011 17:37:48 +0000</pubDate>
+		<guid isPermaLink="false">/2008/02/13/get-file-size-coldfusion/#comment-2422</guid>
+
+					<description><![CDATA[I know this is a really old post, but in case someone else finds it, the answer to John DeGrood&amp;apos;s question:
+&#060;cfhttp method=&#034;head&#034; url=&#034;http://wherever.com/whatever.jpg&#034; &#062;
+&#060;cfdump var=&#034;#cfhttp.Responseheader[&amp;apos;Content-Length&amp;apos;]#&#034;&#062;
+
+I&amp;apos;d put the result into some kind of cached variable for some period of time, unless you expect the file on the remote server will change without changing filenames.]]></description>
+			<content:encoded><![CDATA[<p>I know this is a really old post, but in case someone else finds it, the answer to John DeGrood&apos;s question:<br />
+&lt;cfhttp method=&quot;head&quot; url=&quot;<a href="http://wherever.com/whatever.jpg&#038;quot" rel="nofollow ugc">http://wherever.com/whatever.jpg&#038;quot</a>; &gt;<br />
+&lt;cfdump var=&quot;#cfhttp.Responseheader[&apos;Content-Length&apos;]#&quot;&gt;</p>
+<p>I&apos;d put the result into some kind of cached variable for some period of time, unless you expect the file on the remote server will change without changing filenames.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Helgi Hrafn Gunnarsson		</title>
+		<link>/get-file-size-coldfusion/comment-page-1/#comment-1557</link>
+
+		<dc:creator><![CDATA[Helgi Hrafn Gunnarsson]]></dc:creator>
+		<pubDate>Wed, 21 Jul 2010 19:41:21 +0000</pubDate>
+		<guid isPermaLink="false">/2008/02/13/get-file-size-coldfusion/#comment-1557</guid>
+
+					<description><![CDATA[Leave it to ColdFusion to not have this basic functionality implemented until 2007. *sigh*
+
+Thanks for the tips. :) It worked.]]></description>
+			<content:encoded><![CDATA[<p>Leave it to ColdFusion to not have this basic functionality implemented until 2007. *sigh*</p>
+<p>Thanks for the tips. 🙂 It worked.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: John DeGrood		</title>
+		<link>/get-file-size-coldfusion/comment-page-1/#comment-365</link>
+
+		<dc:creator><![CDATA[John DeGrood]]></dc:creator>
+		<pubDate>Mon, 06 Oct 2008 16:01:41 +0000</pubDate>
+		<guid isPermaLink="false">/2008/02/13/get-file-size-coldfusion/#comment-365</guid>
+
+					<description><![CDATA[the getFileInfo(path) function only works if you are dealing with a file on your one server, what if I need to see the size of a file on a remote server before I allow users to download the file - trying to control bandwidth issues.]]></description>
+			<content:encoded><![CDATA[<p>the getFileInfo(path) function only works if you are dealing with a file on your one server, what if I need to see the size of a file on a remote server before I allow users to download the file &#8211; trying to control bandwidth issues.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/get-file-size-coldfusion/comment-page-1/#comment-364</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Thu, 14 Feb 2008 14:29:44 +0000</pubDate>
+		<guid isPermaLink="false">/2008/02/13/get-file-size-coldfusion/#comment-364</guid>
+
+					<description><![CDATA[Doh!  I had looked all over the docs too see if I was missing something, but I guess I just didn&#039;t catch that.  I have used ImageInfo(), which returns info about an image, so I was sure there would be a FileInfo(), too, but there wasn&#039;t.
+
+Anyway, good to know, thanks.]]></description>
+			<content:encoded><![CDATA[<p>Doh!  I had looked all over the docs too see if I was missing something, but I guess I just didn&#8217;t catch that.  I have used ImageInfo(), which returns info about an image, so I was sure there would be a FileInfo(), too, but there wasn&#8217;t.</p>
+<p>Anyway, good to know, thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Roland Collins		</title>
+		<link>/get-file-size-coldfusion/comment-page-1/#comment-363</link>
+
+		<dc:creator><![CDATA[Roland Collins]]></dc:creator>
+		<pubDate>Thu, 14 Feb 2008 06:05:53 +0000</pubDate>
+		<guid isPermaLink="false">/2008/02/13/get-file-size-coldfusion/#comment-363</guid>
+
+					<description><![CDATA[In CF8, we have GetFileInfo(path) to retrieve all of this information :)]]></description>
+			<content:encoded><![CDATA[<p>In CF8, we have GetFileInfo(path) to retrieve all of this information 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

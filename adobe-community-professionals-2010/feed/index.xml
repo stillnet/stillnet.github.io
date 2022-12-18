@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: New member of Adobe Community Professionals &#8211; Me	</title>
+	<atom:link href="/adobe-community-professionals-2010/feed/" rel="self" type="application/rss+xml" />
+	<link>/adobe-community-professionals-2010/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 17 Sep 2010 14:25:06 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Eric Pierce		</title>
+		<link>/adobe-community-professionals-2010/comment-page-1/#comment-1705</link>
+
+		<dc:creator><![CDATA[Eric Pierce]]></dc:creator>
+		<pubDate>Fri, 17 Sep 2010 14:25:06 +0000</pubDate>
+		<guid isPermaLink="false">/?p=749#comment-1705</guid>
+
+					<description><![CDATA[Congrats, Ryan.]]></description>
+			<content:encoded><![CDATA[<p>Congrats, Ryan.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike K		</title>
+		<link>/adobe-community-professionals-2010/comment-page-1/#comment-1031</link>
+
+		<dc:creator><![CDATA[Mike K]]></dc:creator>
+		<pubDate>Mon, 25 Jan 2010 14:53:24 +0000</pubDate>
+		<guid isPermaLink="false">/?p=749#comment-1031</guid>
+
+					<description><![CDATA[Congrats, Ryan!&#160;&#160;Well deserved.]]></description>
+			<content:encoded><![CDATA[<p>Congrats, Ryan!&nbsp;&nbsp;Well deserved.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris Tierney		</title>
+		<link>/adobe-community-professionals-2010/comment-page-1/#comment-1002</link>
+
+		<dc:creator><![CDATA[Chris Tierney]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2010 14:22:01 +0000</pubDate>
+		<guid isPermaLink="false">/?p=749#comment-1002</guid>
+
+					<description><![CDATA[Congrats Ryan]]></description>
+			<content:encoded><![CDATA[<p>Congrats Ryan</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

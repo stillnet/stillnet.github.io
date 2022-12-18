@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Securing your open blue dragon settings file	</title>
+	<atom:link href="/securing-blue-dragon-settings-file/feed/" rel="self" type="application/rss+xml" />
+	<link>/securing-blue-dragon-settings-file/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 18 Jun 2009 13:28:59 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/securing-blue-dragon-settings-file/comment-page-1/#comment-552</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Thu, 18 Jun 2009 13:28:59 +0000</pubDate>
+		<guid isPermaLink="false">/?p=508#comment-552</guid>
+
+					<description><![CDATA[William these may be helpful:
+http://wiki.openbluedragon.org/wiki/index.php/Apache_Tomcat
+http://mattwoodward.com/blog/index.cfm?event=showEntry&#038;entryId=03233F6F-ED2C-43C7-AFF5FA2B3C3D845B
+
+The key is copying the WEB-INF (and related directories, for openBD thats the bluedragon directory which contains the administrator) to your webroot, and changing Tomcat&amp;apos;s server.xml to point there.]]></description>
+			<content:encoded><![CDATA[<p>William these may be helpful:<br />
+<a href="http://wiki.openbluedragon.org/wiki/index.php/Apache_Tomcat" rel="nofollow ugc">http://wiki.openbluedragon.org/wiki/index.php/Apache_Tomcat</a><br />
+<a href="http://mattwoodward.com/blog/index.cfm?event=showEntry&#038;entryId=03233F6F-ED2C-43C7-AFF5FA2B3C3D845B" rel="nofollow ugc">http://mattwoodward.com/blog/index.cfm?event=showEntry&#038;entryId=03233F6F-ED2C-43C7-AFF5FA2B3C3D845B</a></p>
+<p>The key is copying the WEB-INF (and related directories, for openBD thats the bluedragon directory which contains the administrator) to your webroot, and changing Tomcat&apos;s server.xml to point there.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: William from Lagos		</title>
+		<link>/securing-blue-dragon-settings-file/comment-page-1/#comment-551</link>
+
+		<dc:creator><![CDATA[William from Lagos]]></dc:creator>
+		<pubDate>Thu, 18 Jun 2009 06:04:51 +0000</pubDate>
+		<guid isPermaLink="false">/?p=508#comment-551</guid>
+
+					<description><![CDATA[Hi. Thanks for the tip. I have been having a little issue configuring tomcat + apache httpd + OBD that makes use of virtual hosting. In my development environment, I have always prefered using http://app1:8081/ or http://app2:8081/ instead of http://localhost:8081/app1. Could u kindly point me to any resource you might know of that can help]]></description>
+			<content:encoded><![CDATA[<p>Hi. Thanks for the tip. I have been having a little issue configuring tomcat + apache httpd + OBD that makes use of virtual hosting. In my development environment, I have always prefered using <a href="http://app1:8081/" rel="nofollow ugc">http://app1:8081/</a> or <a href="http://app2:8081/" rel="nofollow ugc">http://app2:8081/</a> instead of <a href="http://localhost:8081/app1" rel="nofollow ugc">http://localhost:8081/app1</a>. Could u kindly point me to any resource you might know of that can help</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

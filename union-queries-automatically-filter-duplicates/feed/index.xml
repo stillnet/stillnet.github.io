@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: SQL &#8216;UNION&#8217; queries automatically filter out duplicates	</title>
+	<atom:link href="/union-queries-automatically-filter-duplicates/feed/" rel="self" type="application/rss+xml" />
+	<link>/union-queries-automatically-filter-duplicates/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 18 Dec 2012 09:26:07 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: max4ever		</title>
+		<link>/union-queries-automatically-filter-duplicates/comment-page-1/#comment-3232</link>
+
+		<dc:creator><![CDATA[max4ever]]></dc:creator>
+		<pubDate>Tue, 18 Dec 2012 09:26:07 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/26/union-queries-automatically-filter-duplicates/#comment-3232</guid>
+
+					<description><![CDATA[I had problems because i needed the duplicates, thanks!]]></description>
+			<content:encoded><![CDATA[<p>I had problems because i needed the duplicates, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Aaron Greenblatt		</title>
+		<link>/union-queries-automatically-filter-duplicates/comment-page-1/#comment-201</link>
+
+		<dc:creator><![CDATA[Aaron Greenblatt]]></dc:creator>
+		<pubDate>Thu, 19 Apr 2007 21:32:47 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/26/union-queries-automatically-filter-duplicates/#comment-201</guid>
+
+					<description><![CDATA[Knowing this, how would I see only records that have a duplicate entry.  I need to return only one column since I will be using the result set in a subquery so I will be using UNION ALL, and I want to see which records turn up two or more times.]]></description>
+			<content:encoded><![CDATA[<p>Knowing this, how would I see only records that have a duplicate entry.  I need to return only one column since I will be using the result set in a subquery so I will be using UNION ALL, and I want to see which records turn up two or more times.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: dc		</title>
+		<link>/union-queries-automatically-filter-duplicates/comment-page-1/#comment-200</link>
+
+		<dc:creator><![CDATA[dc]]></dc:creator>
+		<pubDate>Tue, 27 Mar 2007 11:38:18 +0000</pubDate>
+		<guid isPermaLink="false">/2007/03/26/union-queries-automatically-filter-duplicates/#comment-200</guid>
+
+					<description><![CDATA[MINUS and INTERSECT are pretty good tools to have in your box too, they are from the same family as UNION and UNION ALL.   Worth reading up on.  (Oracle has them and I think MSSQL from 2005).]]></description>
+			<content:encoded><![CDATA[<p>MINUS and INTERSECT are pretty good tools to have in your box too, they are from the same family as UNION and UNION ALL.   Worth reading up on.  (Oracle has them and I think MSSQL from 2005).</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

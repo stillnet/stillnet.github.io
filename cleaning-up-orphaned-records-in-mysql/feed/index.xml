@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Cleaning up orphaned records in MySQL	</title>
+	<atom:link href="/cleaning-up-orphaned-records-in-mysql/feed/" rel="self" type="application/rss+xml" />
+	<link>/cleaning-up-orphaned-records-in-mysql/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 22 May 2008 15:51:57 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Arian		</title>
+		<link>/cleaning-up-orphaned-records-in-mysql/comment-page-1/#comment-378</link>
+
+		<dc:creator><![CDATA[Arian]]></dc:creator>
+		<pubDate>Thu, 22 May 2008 15:51:57 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/11/cleaning-up-orphaned-records-in-mysql/#comment-378</guid>
+
+					<description><![CDATA[whoops more research found this...
+Thanks for the info! really useful
+&quot;
+For the first multiple-table syntax, only matching rows from the tables listed before the FROM clause are deleted. For the second multiple-table syntax, only matching rows from the tables listed in the FROM clause (before the USING clause) are deleted. The effect is that you can delete rows from many tables at the same time and have additional tables that are used only for searching:
+
+DELETE t1, t2 FROM t1, t2, t3 WHERE t1.id=t2.id AND t2.id=t3.id;
+&quot;]]></description>
+			<content:encoded><![CDATA[<p>whoops more research found this&#8230;<br />
+Thanks for the info! really useful<br />
+&#8221;<br />
+For the first multiple-table syntax, only matching rows from the tables listed before the FROM clause are deleted. For the second multiple-table syntax, only matching rows from the tables listed in the FROM clause (before the USING clause) are deleted. The effect is that you can delete rows from many tables at the same time and have additional tables that are used only for searching:</p>
+<p>DELETE t1, t2 FROM t1, t2, t3 WHERE t1.id=t2.id AND t2.id=t3.id;<br />
+&#8220;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/cleaning-up-orphaned-records-in-mysql/comment-page-1/#comment-377</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Thu, 22 May 2008 15:48:20 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/11/cleaning-up-orphaned-records-in-mysql/#comment-377</guid>
+
+					<description><![CDATA[Yes - that documentation appears to support the syntax I used in this article, no?]]></description>
+			<content:encoded><![CDATA[<p>Yes &#8211; that documentation appears to support the syntax I used in this article, no?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Arian		</title>
+		<link>/cleaning-up-orphaned-records-in-mysql/comment-page-1/#comment-376</link>
+
+		<dc:creator><![CDATA[Arian]]></dc:creator>
+		<pubDate>Thu, 22 May 2008 15:45:24 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/11/cleaning-up-orphaned-records-in-mysql/#comment-376</guid>
+
+					<description><![CDATA[Just saying cause i was looking at the MYSQL5.1 manual
+
+DELETE [LOW_PRIORITY] [QUICK] [IGNORE]
+    tbl_name[.*] [, tbl_name[.*]] ...
+    FROM table_references
+    [WHERE where_condition]]]></description>
+			<content:encoded><![CDATA[<p>Just saying cause i was looking at the MYSQL5.1 manual</p>
+<p>DELETE [LOW_PRIORITY] [QUICK] [IGNORE]<br />
+    tbl_name[.*] [, tbl_name[.*]] &#8230;<br />
+    FROM table_references<br />
+    [WHERE where_condition]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/cleaning-up-orphaned-records-in-mysql/comment-page-1/#comment-375</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Thu, 22 May 2008 15:23:44 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/11/cleaning-up-orphaned-records-in-mysql/#comment-375</guid>
+
+					<description><![CDATA[No, thats not a mistake.  You are right that in a normal delete you would just say &quot;DELETE FROM subTable&quot;.  But we are doing a join here.  So I believe doing it this way indicates which table from all the tables listed you want to delete from.  I&#039;m not 100% sure if its required or not, maybe it will just delete from the first table listed if you didn&#039;t explicitly say &quot;DELETE subTable&quot;.]]></description>
+			<content:encoded><![CDATA[<p>No, thats not a mistake.  You are right that in a normal delete you would just say &#8220;DELETE FROM subTable&#8221;.  But we are doing a join here.  So I believe doing it this way indicates which table from all the tables listed you want to delete from.  I&#8217;m not 100% sure if its required or not, maybe it will just delete from the first table listed if you didn&#8217;t explicitly say &#8220;DELETE subTable&#8221;.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Arian		</title>
+		<link>/cleaning-up-orphaned-records-in-mysql/comment-page-1/#comment-374</link>
+
+		<dc:creator><![CDATA[Arian]]></dc:creator>
+		<pubDate>Thu, 22 May 2008 15:19:34 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/11/cleaning-up-orphaned-records-in-mysql/#comment-374</guid>
+
+					<description><![CDATA[&#039;DELETE subTable FROM subTable&#039;, is that a mistake?
+thought MYSQL syntax was &#039;DELETE FROM subTable&#039;?]]></description>
+			<content:encoded><![CDATA[<p>&#8216;DELETE subTable FROM subTable&#8217;, is that a mistake?<br />
+thought MYSQL syntax was &#8216;DELETE FROM subTable&#8217;?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

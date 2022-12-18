@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Is the CF8 Server Monitor supposed to affect your CF applications?	</title>
+	<atom:link href="/cf8-server-monitor-effect-applications/feed/" rel="self" type="application/rss+xml" />
+	<link>/cf8-server-monitor-effect-applications/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 18 Sep 2008 08:01:29 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Andy Neale		</title>
+		<link>/cf8-server-monitor-effect-applications/comment-page-1/#comment-420</link>
+
+		<dc:creator><![CDATA[Andy Neale]]></dc:creator>
+		<pubDate>Thu, 18 Sep 2008 08:01:29 +0000</pubDate>
+		<guid isPermaLink="false">/?p=120#comment-420</guid>
+
+					<description><![CDATA[We have also experienced memory usage problems as a result of using the server monitor. One part of our application creates an output file by interleaving and sequencing a group of recordsets. The function was working perfectly in all of our test environments, but when run on our production server, the JVM memory usage would ramp up to 100% within seconds of this function being run, resulting in the server hanging. After many hours of head-scratching - comparing code between test and live environments, comparing ColdFusion Administrator settings, comparing JRun settings - it turned out that the Monitoring and Profiling options had been switched on in the server monitor on the production system. Two mouse clicks later - problem solved.
+
+Henry is right - the server monitor is designed more as a debugging tool than a permanent server monitoring solution - if you want the latter, then you should investigate FusionReactor, which provides a broadly similar set of monitoring tools but with a minimal footprint and no unwanted side effects.]]></description>
+			<content:encoded><![CDATA[<p>We have also experienced memory usage problems as a result of using the server monitor. One part of our application creates an output file by interleaving and sequencing a group of recordsets. The function was working perfectly in all of our test environments, but when run on our production server, the JVM memory usage would ramp up to 100% within seconds of this function being run, resulting in the server hanging. After many hours of head-scratching &#8211; comparing code between test and live environments, comparing ColdFusion Administrator settings, comparing JRun settings &#8211; it turned out that the Monitoring and Profiling options had been switched on in the server monitor on the production system. Two mouse clicks later &#8211; problem solved.</p>
+<p>Henry is right &#8211; the server monitor is designed more as a debugging tool than a permanent server monitoring solution &#8211; if you want the latter, then you should investigate FusionReactor, which provides a broadly similar set of monitoring tools but with a minimal footprint and no unwanted side effects.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Henry Ho		</title>
+		<link>/cf8-server-monitor-effect-applications/comment-page-1/#comment-419</link>
+
+		<dc:creator><![CDATA[Henry Ho]]></dc:creator>
+		<pubDate>Wed, 17 Sep 2008 18:11:59 +0000</pubDate>
+		<guid isPermaLink="false">/?p=120#comment-419</guid>
+
+					<description><![CDATA[I&#039;ve experienced somewhat similar behavior with Model-Glue as well.]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve experienced somewhat similar behavior with Model-Glue as well.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: James Morrow		</title>
+		<link>/cf8-server-monitor-effect-applications/comment-page-1/#comment-418</link>
+
+		<dc:creator><![CDATA[James Morrow]]></dc:creator>
+		<pubDate>Wed, 17 Sep 2008 17:39:35 +0000</pubDate>
+		<guid isPermaLink="false">/?p=120#comment-418</guid>
+
+					<description><![CDATA[We&#039;ve observed nearly identical behavior on a couple of dev boxes here recently- we&#039;ve got a quite large application built on cf8 and mach-ii, and if server monitor is enabled, CF will die on application initialization, usually with a gc overhead limit exceeded - out of heap space exception.
+
+Painful time was spent trying to figure out wth was going on, and it just ended up being server monitor having been enabled.
+
+One item to note is that server monitoring being enabled appears to be persistent across restarts - CF or OS.]]></description>
+			<content:encoded><![CDATA[<p>We&#8217;ve observed nearly identical behavior on a couple of dev boxes here recently- we&#8217;ve got a quite large application built on cf8 and mach-ii, and if server monitor is enabled, CF will die on application initialization, usually with a gc overhead limit exceeded &#8211; out of heap space exception.</p>
+<p>Painful time was spent trying to figure out wth was going on, and it just ended up being server monitor having been enabled.</p>
+<p>One item to note is that server monitoring being enabled appears to be persistent across restarts &#8211; CF or OS.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Henry Ho		</title>
+		<link>/cf8-server-monitor-effect-applications/comment-page-1/#comment-417</link>
+
+		<dc:creator><![CDATA[Henry Ho]]></dc:creator>
+		<pubDate>Wed, 17 Sep 2008 16:59:56 +0000</pubDate>
+		<guid isPermaLink="false">/?p=120#comment-417</guid>
+
+					<description><![CDATA[From what I remember, Server monitor is not meant for monitoring live server for an extend period of time.  It was a tool that one should use to log, say, a day to inspect the CF app performance.  As for what your app couldn&#039;t start, I&#039;m not sure.  Was it built on any framework?]]></description>
+			<content:encoded><![CDATA[<p>From what I remember, Server monitor is not meant for monitoring live server for an extend period of time.  It was a tool that one should use to log, say, a day to inspect the CF app performance.  As for what your app couldn&#8217;t start, I&#8217;m not sure.  Was it built on any framework?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

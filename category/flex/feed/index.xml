@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Flex &#8211; Stillnet Studios</title>
+	<atom:link href="/category/flex/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 03 Nov 2008 05:43:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>The &#8216;Another flash debugger may be running&#8217; error in Flex Builder 3</title>
+		<link>/another-flash-debugger-error-flex/</link>
+					<comments>/another-flash-debugger-error-flex/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 03 Nov 2008 05:43:33 +0000</pubDate>
+				<category><![CDATA[Flex]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=167</guid>
+
+					<description><![CDATA[When debugging a Flex 3 application on Vista / IE 7, you may encounter this error when debugging an application for the second time. Even though it appears there are no IE instances still running, this error comes up. There are several solutions to this, one is to configure Flex Builder to launch a different [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When debugging a Flex 3 application on Vista / IE 7, you may encounter this error when debugging an application for the <em>second</em> time.</p>
+<div id="attachment_169" style="width: 510px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-169" decoding="async" loading="lazy" src="/wp-content/uploads/2008/11/another_running_flex_error.png" alt="Another flash debugger may be running. Close it to Continue." title="Another flash debugger may be running. Close it to Continue." width="500" height="152" class="size-full wp-image-169" srcset="/wp-content/uploads/2008/11/another_running_flex_error.png 532w, /wp-content/uploads/2008/11/another_running_flex_error-300x91.png 300w" sizes="(max-width: 500px) 100vw, 500px" /><p id="caption-attachment-169" class="wp-caption-text">Another flash debugger may be running. Close it to Continue.</p></div>
+<p>Even though it appears there are no IE instances still running, this error comes up.</p>
+<p>There are several solutions to this, one is to configure Flex Builder to launch a different browser for debugging, such as FireFox.  Another is to disable Vista&#8217;s UAC.  Neither of these were good solutions for me.</p>
+<p>The problem has to do with a socket getting left open.  As a short term fix you can use your task manager and kill the <code>ieuser.exe</code> process when you get this error.  Then you should be able to launch the debugger ok.</p>
+<p>This bug is discussed in <a href="http://bugs.adobe.com/jira/browse/FB-9902">Adobe&#8217;s bug tracker system</a>.  Their suggested solution for now is to add this string to your flexbuilder.ini file:</p>
+<p><code> -Djava.net.preferIPv4Stack=true</code></p>
+<p>After searching around for a while and not finding my flexbuilder.ini file, I discovered that file only exists if you&#8217;ve installed Flex Builder stand alone.  If you install it as an eclipse plug-in, as I have, then you need to add that line to eclipse.ini.  But that didn&#8217;t solve the problem for me, and I&#8217;ve read it didn&#8217;t solve it for some other people as well.</p>
+<p>My solution was to add it to the shortcut I was using to launch Flex Builder.  This solved the problem and I can now debug as many times as I want with no errors.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2008/11/flex_shortcut_properties.png" alt="" title="Flex 3 shortcut properties" width="377" height="513" class="alignnone size-full wp-image-172" srcset="/wp-content/uploads/2008/11/flex_shortcut_properties.png 377w, /wp-content/uploads/2008/11/flex_shortcut_properties-220x300.png 220w" sizes="(max-width: 377px) 100vw, 377px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/another-flash-debugger-error-flex/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

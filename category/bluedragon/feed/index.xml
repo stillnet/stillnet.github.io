@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>BlueDragon &#8211; Stillnet Studios</title>
+	<atom:link href="/category/bluedragon/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 16 Jul 2009 03:30:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Running your CFML code through Railo, OpenBD, and Adobe CF all at once</title>
+		<link>/run-code-railo-openbd-adobe-cf-at-once/</link>
+					<comments>/run-code-railo-openbd-adobe-cf-at-once/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 16 Jul 2009 03:28:50 +0000</pubDate>
+				<category><![CDATA[BlueDragon]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=551</guid>
+
+					<description><![CDATA[If you are developing a ColdFusion application, or even just a stand alone CFC that you plan to distribute, you might want to make sure it runs on all three major CFML engines &#8211; Adobe ColdFusion, Railo, and Open BlueDragon. It can be tedious to always copy code around between your three test sites, but [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>If you are developing a ColdFusion application, or even just a stand alone CFC that you plan to distribute, you might want to make sure it runs on all three major CFML engines &#8211; Adobe ColdFusion, Railo, and Open BlueDragon.  It can be tedious to always copy code around between your three test sites, but there is an easier way.  You can have the same code base run through all three CFML engines at once.</p>
+<p>There are a few caveats:<span id="more-551"></span></p>
+<ol>
+<li>You must be using Tomcat as your J2EE server (I think you can probably do this with JRun if you are using the J2EE/multi-server version of ColdFusion, but I have only done it using Tomcat)</li>
+<li>You must run your code from a subdirectory.  That is, if your local test site is setup like http://localhost:8080/openbd, you will run your code from http://localhost:8080/openbd/&lt;a subdirectory&gt;/</li>
+</ol>
+<p>I&#8217;m not going to go through setting up Tomcat or Railo/OpenBD/AdobeCF, see <a href="http://www.mattwoodward.com/blog/index.cfm?event=showEntry&#038;entryId=60F08421-5F0A-41C9-940B3681A3D09D99">this great blog post by Matt Woodward</a> if you need help with that.</p>
+<p>Once everything is setup, you should have three separate webroots, probably something like:<br />
+C:\Tomcat6\webapps\railo<br />
+C:\Tomcat6\webapps\openbd<br />
+C:\Tomcat6\webapps\cfusion</p>
+<p>Now create a subdirectory in one of those directories, lets just take the first one, railo.  Call the new subdirectory &#8220;shared&#8221;.  Now comes the trick, we will use a <em>junction</em> to make subdirectories named &#8220;shared&#8221; in openbd and cfusion, but really they just point to the shared directory under railo.  This &#8220;junction&#8221; is a feature of the NTFS file system and works much like a <a href="http://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> on Linux.</p>
+<p>If you are running Vista, Windows7, or Windows 2008 you already have a built in tool to create a junction called &#8220;mklink&#8221;.  Otherwise if you are running WindowsXP or Windows2000/2003 you need to download Junction v1.05 from Microsoft&#8217;s site.  Its a sysinternals tool, if you aren&#8217;t familiar with that group, they made lots of great techy tools for Windows.  You can get it from here: <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx</a>.</p>
+<p>Download the zip file and extract the single .exe file that is inside it.  This is a command line tool so I placed it into my C:\windows\system32 directory so it would be in my path and can be run from any command prompt.  Now open up a DOS command prompt, and change into your railo webroot.  Then create the two junctions named &#8220;shared&#8221; that point back to the real &#8220;shared&#8221; directory.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/cmd-junction.png" alt="command prompt - junction" title="command prompt - junction" width="668" height="319" class="alignnone size-full wp-image-559" srcset="/wp-content/uploads/2009/07/cmd-junction.png 668w, /wp-content/uploads/2009/07/cmd-junction-300x143.png 300w" sizes="(max-width: 668px) 100vw, 668px" /></p>
+<p>Now we have this folder structure, where &#8220;shared&#8221; is really the same folder in each location.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/folders.png" alt="folders - junction example" title="folders - junction example" style="border:1px solid black;" width="160" height="139" class="alignnone size-full wp-image-561" /></p>
+<p>Just drop your files into there and then you can hit them using the three separate URLs you used when setting up Tomcat.  I use railo.dev, openbd.dev, and cfusion.dev as my hostnames.</p>
+<p>If you are on an OS that has the mklink command, the syntax is a little different.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/windows7-cmd.png" alt="windows7 command prompt" title="windows7 command prompt" width="677" height="342" class="alignnone size-full wp-image-562" srcset="/wp-content/uploads/2009/07/windows7-cmd.png 677w, /wp-content/uploads/2009/07/windows7-cmd-300x151.png 300w" sizes="(max-width: 677px) 100vw, 677px" /></p>
+<p>Note how on Windows7 the DIR command is smart enough to recognize that the folder is actually a junction and shows me where it is linked to.</p>
+<p>The folder looks a little different in Windows Explorer, too.  Unfortunately it looks just like a shortcut, which it certainly is not, but at least you can tell its not a regular folder.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/windows7-folders.png" alt="windows7-folders" style="border: 1px solid black;" title="windows7-folders" width="471" height="263" class="alignnone size-full wp-image-571" srcset="/wp-content/uploads/2009/07/windows7-folders.png 471w, /wp-content/uploads/2009/07/windows7-folders-300x167.png 300w" sizes="(max-width: 471px) 100vw, 471px" /></p>
+<p>I have this setup on both of my main development machines, and find it very convenient to be able to run my exact same code through all 3 CFML engines just by changing the URL.  I usually keep three browser windows open as I develop so I can easily test stuff on all 3.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/run-code-railo-openbd-adobe-cf-at-once/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Error messages on Railo, OpenBD and ColdFusion 8 compared</title>
+		<link>/errors-compared-railo-openbd-and-coldfusion8/</link>
+					<comments>/errors-compared-railo-openbd-and-coldfusion8/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 13 Jul 2009 13:05:22 +0000</pubDate>
+				<category><![CDATA[BlueDragon]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<guid isPermaLink="false">/?p=531</guid>
+
+					<description><![CDATA[I have been working on an project in my spare time that will eventually be deployed on Open BlueDragon. I ran into an error the other night after adding some methods to one my CFCs. I run all three CFML engines side by side (another blog post about that is coming soon), so I was [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I have been working on an project in my spare time that will eventually be deployed on Open BlueDragon.  I ran into an error the other night after adding some methods to one my CFCs.  I run all three CFML engines side by side (another blog post about that is coming soon), so I was easily able to see and compare the error messages in all three.</p>
+<p>This was my error message in OpenBD:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/error-openbd.png" alt="error-openbd" title="error-openbd" width="647" height="420" class="alignnone size-full wp-image-535" srcset="/wp-content/uploads/2009/07/error-openbd.png 647w, /wp-content/uploads/2009/07/error-openbd-300x194.png 300w" sizes="(max-width: 647px) 100vw, 647px" /><br />
+<span id="more-531"></span><br />
+What immediately catches my eye is &#8220;Line 13 Column 2&#8221; of Application.cfc.  So I open that file and see:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/error-code.png" alt="error - lines of code" title="error - lines of code" style="border: 1px solid black;" width="650" height="526" class="alignnone size-full wp-image-539" srcset="/wp-content/uploads/2009/07/error-code.png 650w, /wp-content/uploads/2009/07/error-code-300x242.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<p>As you can see, line 13 is just the opening cffunction tag. I don&#8217;t see anything wrong with it, nor anything wrong with the lines around it.  So I went back to the error message and scanned for some other files and line numbers.  I see that the error message highlighted line 26 in red.  Line 26 creates a component from my UserService.cfc file.  That line looks ok to me.  I also see in the &#8220;Detail&#8221; section of the error message it says <em>Problem occurred while parsing:</em> followed by several lines of code.  Glancing through the code shown I don&#8217;t see anything obviously wrong, and I&#8217;m not given a line number either.</p>
+<p>So I flipped over to Railo to see if that would give me a more useful error message.  Here is the output from Railo:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/error-railo.png" alt="error-railo" title="error-railo" width="686" height="197" class="alignnone size-full wp-image-536" srcset="/wp-content/uploads/2009/07/error-railo.png 686w, /wp-content/uploads/2009/07/error-railo-300x86.png 300w" sizes="(max-width: 686px) 100vw, 686px" /></p>
+<p>&#8220;Syntax Error, Invalid Construct&#8221;.  Hmmm that isn&#8217;t much more helpful. But I do get a different file/line number this time, line 107 of UserService.cfc.  Look carefully at that code and you might spot the error, but it just wasn&#8217;t registering for me.  So I decided to try the code in Adobe ColdFusion8:</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/error-cfusion.png" alt="error-cfusion" title="error-cfusion" width="634" height="240" class="alignnone size-full wp-image-534" /></p>
+<p>Aha!  The same line number is referenced, and ColdFusion even gives us the column number and the character at that column that is causing the problem.  Looking near the @ sign in that line, the obvious problem is I have a # in that string.  # has special meaning in CFML and must be escaped.</p>
+<p>I&#8217;ve been very impressed with what Railo and OpenBD have brought to the table, but here is one area where they need some work.  Had I saw the error in Adobe CF first I would have found my error in seconds.  Looking back at the openBD error message now that I know what the problem was, I can see that it is showing me the offending code.  But it gets lost in all the other misinformation &#8211; pointing out files &#038; line numbers that had me looking in the wrong direction.  And no where did it ever mention line 107 of UserService.cfc.</p>
+<p>Railo did much better, showing me the exact line with the problem, but not quite as good as Adobe CF8.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/errors-compared-railo-openbd-and-coldfusion8/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Securing your open blue dragon settings file</title>
+		<link>/securing-blue-dragon-settings-file/</link>
+					<comments>/securing-blue-dragon-settings-file/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 17 Jun 2009 15:36:29 +0000</pubDate>
+				<category><![CDATA[BlueDragon]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=508</guid>
+
+					<description><![CDATA[After installing Open Blue Dragon on Tomcat and hooking it up to Apache, I did some poking around and found I was able to pull up my bluedragon.xml configuration file directly in my browser. Now, this may not happen in all configurations (there are many ways to setup a J2EE web application), but it my [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>After installing Open Blue Dragon on Tomcat and hooking it up to Apache, I did some poking around and found I was able to pull up my bluedragon.xml configuration file directly in my browser.  Now, this may not happen in all configurations (there are many ways to setup a J2EE web application), but it my case, running through Apache and having copied Blue Dragon&#8217;s WEB-INF directory to my webroot, I was able to browse this file.  In case you didn&#8217;t know, all OpenBD&#8217;s settings are stored in a single xml file (which I find very convenient, by the way).</p>
+<p>It didn&#8217;t work when going directly through Tomcat, i.e. browsing on port 8080 would not pull it up, I think Tomcat is smart enough to know not to serve files from the WEB-INF directory.  But browsing through Apache on port 80 bypasses Tomcat for anything thats not a .cfm or .cfc file, so it would happily return the xml file.   Datasource passwords are stored encrypted but the administrator password is clear text.  Its easy to lock this down, just add this to your Apache config file:</p>
+<p><code>&lt;location "/WEB-INF/"&gt;<br />
+deny from all<br />
+&lt;/location&gt;</code></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/securing-blue-dragon-settings-file/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>java.lang.NoClassDefFoundError error on OpenBD when consuming a webservice</title>
+		<link>/openbluedragon-webservice-error/</link>
+					<comments>/openbluedragon-webservice-error/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 08 Jun 2009 14:53:49 +0000</pubDate>
+				<category><![CDATA[BlueDragon]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<guid isPermaLink="false">/?p=468</guid>
+
+					<description><![CDATA[If you&#8217;ve ran into this error when consuming a web service in Open BlueDragon, this may help you. Here is what my error looked like: BlueDragon Internal Server Error The page you were executing caused an internal BlueDragon server error Request /shared/rps/twitter.cfm File Trace /www/twitter.cfm Type&#160; &#160; &#160;Internal Tag Context&#160; &#160; &#160;CFSET (/www/twitter.cfm, Line=10, Column=1) [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>If you&#8217;ve ran into this error when consuming a web service in Open BlueDragon, this may help you.  Here is what my error looked like:<br />
+<span id="more-468"></span></p>
+<style><!--
+exampletable.TD {font-family :  Verdana, Geneva, Arial, Helvetica, sans-serif; font-size : 11px!important; } //--></style>
+<table id='exampletable' width='100%' border='1' cellspacing='0' cellpadding='5' style='border-color:black!important;'>
+<tr style='background-color:#ffff00!important;'>
+<td colspan='2' align='left'><font size='+1' color='black'><b>BlueDragon Internal Server Error</b></font></td>
+</tr>
+<tr>
+<td colspan=2><b>The page you were executing caused an internal BlueDragon server error</b></td>
+</tr>
+<tr>
+<td width='1%' nowrap>Request</p>
+<td>/shared/rps/twitter.cfm</td>
+</tr>
+<tr>
+<td width='1%' valign='top' nowrap>File Trace</p>
+<td>/www/twitter.cfm</td>
+</tr>
+</table>
+<table width='100%' border='0' cellspacing='1' cellpadding='2' style='background-color:#f4f4f4!important;'>
+<tr style='border-color:#e0e0e0!important;'>
+<td width='1%' nowrap colspan='2'>Type&nbsp; &nbsp; &nbsp;Internal</td>
+</tr>
+<tr bgcolor='e0e0e0'>
+<td width='1%' valign='top' nowrap colspan="2">Tag Context&nbsp; &nbsp; &nbsp;CFSET (/www/twitter.cfm, Line=10,  Column=1)</td>
+</tr>
+<tr BGCOLOR='E0E0E0'>
+<td WIDTH='1%' VALIGN='TOP' NOWRAP>Source</td>
+</tr>
+<tr>
+<td>
+<pre>7 :
+8 : &lt;body&gt;
+9 :
+<font color='red'>10: &lt;cfset wx = CreateObject(&quot;webservice&quot;,&quot;http://www.webservicex.net/WeatherForecast.asmx?WSDL&quot;)&gt;</font>
+11: &lt;cfdump var=&quot;#wx#&quot;&gt;</pre>
+<p>^ Snippet from underlying CFML source</td>
+</tr>
+<tr bgcolor='e0e0e0'>
+<td width='1%' valign='top' nowrap>Stack Trace</td>
+</tr>
+<tr>
+<td>
+<pre>java.lang.NoClassDefFoundError: sun/tools/javac/Main
+	at com.naryx.tagfusion.cfm.xml.ws.dynws.WSDL2Java.compileOutput(Unknown Source)
+	at com.naryx.tagfusion.cfm.xml.ws.dynws.DynamicWebServiceStubGenerator.buildClientClasses(Unknown Source)
+	at com.naryx.tagfusion.cfm.xml.ws.dynws.DynamicWebServiceStubGenerator.generateStub(Unknown Source)
+	at com.naryx.tagfusion.cfm.xml.ws.dynws.DynamicWebServiceInvoker.getStub(Unknown Source)
+	at com.naryx.tagfusion.cfm.tag.cfINVOKE.prepareWSObjectData(Unknown Source)
+	[snipped]
+Caused by: java.lang.ClassNotFoundException: sun.tools.javac.Main
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1360)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1206)
+	at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:320)
+	... 37 more
+</pre>
+</td>
+</tr>
+</table>
+<p></p>
+<p>This happened when deployed on Tomcat on JDK 1.6 but it can happen on any Java version and servlet container I think.  I also had Adobe ColdFusion 8 deployed on this setup, and I got an error there when running the same code.  The error from Adobe CF looked like:</p>
+<table border="1" cellpadding="3" style="border-color:#000808!important; background-color:#e7e7e7!important;">
+<tr>
+<td bgcolor="#000066">
+            <font style="COLOR: white; FONT: 11pt/13pt verdana" color="white"><br />
+            The following information is meant for the website developer for debugging purposes.<br />
+            </font>
+        </td>
+<tr>
+<tr>
+<td bgcolor="#4646EE">
+            <font style="COLOR: white; FONT: 11pt/13pt verdana" color="white"><br />
+            Error Occurred While Processing Request<br />
+            </font>
+        </td>
+</tr>
+<tr>
+<td>
+            <font style="COLOR: black; FONT: 8pt/11pt verdana!important;"></p>
+<table width="500" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td id="tableProps2" align="left" valign="middle" width="500">
+<h1 id="textSection1" style="COLOR: black; FONT: 13pt/15pt verdana!important; text-align:left!important;">coldfusion.jsp.CompilationFailedException: Errors reported by Java compiler: /www/WEB-INF/cfusion/stubs/WS1167679061/net/webservicex/www/ArrayOfWeatherData.java:10: cannot access java.io.Serializable bad class file: /usr/java/jdk1.6.0_13/jre/lib/rt.jar(java/io/Serializable.class) class file has wrong version 49.0, should be 48.0 Please remove or make sure it appears in the correct subdirectory of the classpath. public class ArrayOfWeatherData  implements java.io.Serializable {<br />
+                                                   ^<br />
+1 error<br />
+.<br />
+            </h1>
+</td>
+</tr>
+<tr>
+<td id="tablePropsWidth" width="400" colspan="2">
+            <font style="COLOR: black; FONT: 8pt/11pt verdana!important"></p>
+<p>            </font>
+        </td>
+</tr>
+<tr>
+<td height>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2">
+            <font style="COLOR: black; FONT: 8pt/11pt verdana!important"><br />
+            Resources:</p>
+<ul>
+<li>Enable Robust Exception Information to provide greater detail about the source of errors.  In the Administrator, click Debugging &#038; Logging > Debug Output Settings, and select the Robust Exception Information option.</li>
+<li>Check the <a href='http://www.macromedia.com/go/proddoc_getdoc' target="new">ColdFusion documentation</a> to verify that you are using the correct syntax.</li>
+<li>Search the <a href='http://www.macromedia.com/support/coldfusion/' target="new">Knowledge Base</a> to find a solution to your problem.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana!important">Browser&nbsp;&nbsp;</td>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana!important">Opera/9.62 (Windows NT 5.1; U; en) Presto/2.1.1</td>
+</tr>
+<tr>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana!important">Remote Address&nbsp;&nbsp;</td>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana!important">10.0.0.1</td>
+</tr>
+<tr>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana">Referrer&nbsp;&nbsp;</td>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana"></td>
+</tr>
+<tr>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana">Date/Time&nbsp;&nbsp;</td>
+<td><font style="COLOR: black; FONT: 8pt/11pt verdana">08-Jun-09 03:28 AM</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>    </font>
+        </td>
+</tr>
+</table>
+<p>The solution was to put the tools.jar file thats located in your installed JDK/lib directory into your CLASSPATH.  I did this just by copying the file into Tomcat&#8217;s &#8220;lib&#8221; directory.  You could also just copy the file to bluedragon&#8217;s WEB-INF/lib directory.  This solved the problem in both OpenBD and Adobe CF8.  I noticed that there was already a tools.jar file in my deployed CF8 directory at ./WEB-INF/cfusion/lib/tools.jar.  I think thats why the Adobe CF error was different &#8211; it wasn&#8217;t complaining about a class not found like OpenBD, it was complaining about a &#8220;wrong version&#8221; problem.  So I&#8217;m guessing the tools.jar file that Adobe includes isn&#8217;t compatible with Tomcat or with my JVM or something.  Maybe thats why Open BlueDragon doesn&#8217;t include a tools.jar file in their distribution (it would also increase their file size by about 50%!)</p>
+<p>When I asked about why this was needed on the <a href="http://groups.google.com/group/openbd">OpenBD</a> mailing this I got this response:</p>
+<blockquote><p>wsdl2java is used to generate Java stubs for the client and end point of<br />
+CFML based web services. This library generates java (not compiled) and<br />
+tools.jar contains the javac compiler, which is needed to compile the java<br />
+that wsdl2java spits out. </p></blockquote>
+<p>Interesting to note that Railo did not need this fix, they must be using a completely different method for consuming web services.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/openbluedragon-webservice-error/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

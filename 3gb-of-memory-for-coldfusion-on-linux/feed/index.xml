@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: 3GB of memory for ColdFusion on Linux	</title>
+	<atom:link href="/3gb-of-memory-for-coldfusion-on-linux/feed/" rel="self" type="application/rss+xml" />
+	<link>/3gb-of-memory-for-coldfusion-on-linux/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 10 Mar 2008 13:04:39 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/3gb-of-memory-for-coldfusion-on-linux/comment-page-1/#comment-370</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Mon, 10 Mar 2008 13:04:39 +0000</pubDate>
+		<guid isPermaLink="false">/2008/03/08/3gb-of-memory-for-coldfusion-on-linux/#comment-370</guid>
+
+					<description><![CDATA[Andy, below is the java.args line for one of our servers.  Nothing special I think.  Things to look at are 1) how much memory do you have on your servers and 2) what else is running on them.  Maybe you don&#039;t have enough memory available to allocate more than 1GB.
+
+java.args=-server  -Xmx1280m -Xms1280m -Dsun.io.useCanonCaches=false -XX:PermSize=64m -XX:+UseConcMarkSweepGC -XX:NewSize=48m -XX:SurvivorRatio=4 -XX:+UseParNewGC -XX:MaxPermSize=192m -Dcoldfusion.rootDir={application.home}/../ -Dcoldfusion.libPath={application.home}/../lib -Dcoldfusion.classPath={application.home}/../lib/updates,{application.home}/../lib,{application.home}/../gateway/lib/,{application.home}/../wwwroot/WEB-INF/flex/jars,{application.home}/../wwwroot/WEB-INF/cfform/jars]]></description>
+			<content:encoded><![CDATA[<p>Andy, below is the java.args line for one of our servers.  Nothing special I think.  Things to look at are 1) how much memory do you have on your servers and 2) what else is running on them.  Maybe you don&#8217;t have enough memory available to allocate more than 1GB.</p>
+<p>java.args=-server  -Xmx1280m -Xms1280m -Dsun.io.useCanonCaches=false -XX:PermSize=64m -XX:+UseConcMarkSweepGC -XX:NewSize=48m -XX:SurvivorRatio=4 -XX:+UseParNewGC -XX:MaxPermSize=192m -Dcoldfusion.rootDir={application.home}/../ -Dcoldfusion.libPath={application.home}/../lib -Dcoldfusion.classPath={application.home}/../lib/updates,{application.home}/../lib,{application.home}/../gateway/lib/,{application.home}/../wwwroot/WEB-INF/flex/jars,{application.home}/../wwwroot/WEB-INF/cfform/jars</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: andy matthews		</title>
+		<link>/3gb-of-memory-for-coldfusion-on-linux/comment-page-1/#comment-372</link>
+
+		<dc:creator><![CDATA[andy matthews]]></dc:creator>
+		<pubDate>Mon, 10 Mar 2008 12:29:07 +0000</pubDate>
+		<guid isPermaLink="false">/2008/03/08/3gb-of-memory-for-coldfusion-on-linux/#comment-372</guid>
+
+					<description><![CDATA[1.5 - 1.8 gigs for Windows? My company is under the impression that the max for Windows 32 bit is 1gig. Do you have some settings we&#039;re missing? We&#039;re under some serious load and having to put in a new web server every 2 or 3 months because of memory issues.]]></description>
+			<content:encoded><![CDATA[<p>1.5 &#8211; 1.8 gigs for Windows? My company is under the impression that the max for Windows 32 bit is 1gig. Do you have some settings we&#8217;re missing? We&#8217;re under some serious load and having to put in a new web server every 2 or 3 months because of memory issues.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/3gb-of-memory-for-coldfusion-on-linux/comment-page-1/#comment-371</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Sun, 09 Mar 2008 19:46:32 +0000</pubDate>
+		<guid isPermaLink="false">/2008/03/08/3gb-of-memory-for-coldfusion-on-linux/#comment-371</guid>
+
+					<description><![CDATA[Not that I&#039;ve ever come across.  My findings were on blogs and a couple ColdFusion discussion lists.]]></description>
+			<content:encoded><![CDATA[<p>Not that I&#8217;ve ever come across.  My findings were on blogs and a couple ColdFusion discussion lists.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Michael Sharman		</title>
+		<link>/3gb-of-memory-for-coldfusion-on-linux/comment-page-1/#comment-369</link>
+
+		<dc:creator><![CDATA[Michael Sharman]]></dc:creator>
+		<pubDate>Sun, 09 Mar 2008 09:00:20 +0000</pubDate>
+		<guid isPermaLink="false">/2008/03/08/3gb-of-memory-for-coldfusion-on-linux/#comment-369</guid>
+
+					<description><![CDATA[Great findings Ryan, you said &quot;findings&quot; were 50/50. Does that mean that Adobe don&#039;t have an &quot;official&quot; memory limit for JRun per OS?]]></description>
+			<content:encoded><![CDATA[<p>Great findings Ryan, you said &#8220;findings&#8221; were 50/50. Does that mean that Adobe don&#8217;t have an &#8220;official&#8221; memory limit for JRun per OS?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: java.lang.NoClassDefFoundError error on OpenBD when consuming a webservice	</title>
+	<atom:link href="/openbluedragon-webservice-error/feed/" rel="self" type="application/rss+xml" />
+	<link>/openbluedragon-webservice-error/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 25 Nov 2011 21:54:54 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Martin		</title>
+		<link>/openbluedragon-webservice-error/comment-page-1/#comment-2636</link>
+
+		<dc:creator><![CDATA[Martin]]></dc:creator>
+		<pubDate>Fri, 25 Nov 2011 21:54:54 +0000</pubDate>
+		<guid isPermaLink="false">/?p=468#comment-2636</guid>
+
+					<description><![CDATA[Thanks so much for this! I have been ages wondering why my web application would not find the sun.tools.javac.Main on Tomcat and JDK 1.5 or 1.6, and adding the tools.jar to Tomcat/common/lib has sorted it! It&#039;s Friday and I can relax knowing this issue is solved for Monday! THANKS!]]></description>
+			<content:encoded><![CDATA[<p>Thanks so much for this! I have been ages wondering why my web application would not find the sun.tools.javac.Main on Tomcat and JDK 1.5 or 1.6, and adding the tools.jar to Tomcat/common/lib has sorted it! It&#8217;s Friday and I can relax knowing this issue is solved for Monday! THANKS!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

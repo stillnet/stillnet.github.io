@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Instantiating Nested Static Java Classes from ColdFusion	</title>
+	<atom:link href="/instantiating-nested-static-java-classes-from-coldfusion/feed/" rel="self" type="application/rss+xml" />
+	<link>/instantiating-nested-static-java-classes-from-coldfusion/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sun, 23 Nov 2008 00:57:55 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Jake		</title>
+		<link>/instantiating-nested-static-java-classes-from-coldfusion/comment-page-1/#comment-462</link>
+
+		<dc:creator><![CDATA[Jake]]></dc:creator>
+		<pubDate>Sun, 23 Nov 2008 00:57:55 +0000</pubDate>
+		<guid isPermaLink="false">/?p=198#comment-462</guid>
+
+					<description><![CDATA[Very nice work!]]></description>
+			<content:encoded><![CDATA[<p>Very nice work!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

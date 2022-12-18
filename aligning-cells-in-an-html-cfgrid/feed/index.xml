@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: aligning cells in an html cfgrid	</title>
+	<atom:link href="/aligning-cells-in-an-html-cfgrid/feed/" rel="self" type="application/rss+xml" />
+	<link>/aligning-cells-in-an-html-cfgrid/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 04 Nov 2009 14:41:49 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Tim		</title>
+		<link>/aligning-cells-in-an-html-cfgrid/comment-page-1/#comment-884</link>
+
+		<dc:creator><![CDATA[Tim]]></dc:creator>
+		<pubDate>Wed, 04 Nov 2009 14:41:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=673#comment-884</guid>
+
+					<description><![CDATA[Is this the case for CF9? If you need to bind your cfgrid you must use html format. If you use html format - then good luck formating your output to look nice. Sorting doesn&amp;apos;t work and removing the sort buttons (sort=&#034;no&#034;) doesn&amp;apos;t change anything.
+
+Sometimes I feel you had to be on the CF development team to make any sense of it.]]></description>
+			<content:encoded><![CDATA[<p>Is this the case for CF9? If you need to bind your cfgrid you must use html format. If you use html format &#8211; then good luck formating your output to look nice. Sorting doesn&apos;t work and removing the sort buttons (sort=&quot;no&quot;) doesn&apos;t change anything.</p>
+<p>Sometimes I feel you had to be on the CF development team to make any sense of it.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Deleting all your .svn directories	</title>
+	<atom:link href="/deleting-svn-dirs-linux-windows/feed/" rel="self" type="application/rss+xml" />
+	<link>/deleting-svn-dirs-linux-windows/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 07 Apr 2011 19:14:23 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Piotr		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-2094</link>
+
+		<dc:creator><![CDATA[Piotr]]></dc:creator>
+		<pubDate>Thu, 07 Apr 2011 19:14:23 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-2094</guid>
+
+					<description><![CDATA[find -name &#034;.svn&#034; &#124; xargs rm -fr]]></description>
+			<content:encoded><![CDATA[<p>find -name &quot;.svn&quot; | xargs rm -fr</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: sandrar		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-719</link>
+
+		<dc:creator><![CDATA[sandrar]]></dc:creator>
+		<pubDate>Thu, 10 Sep 2009 21:43:30 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-719</guid>
+
+					<description><![CDATA[Hi! I was surfing and found your blog post... nice! I love your blog.&#160;&#160;:) Cheers! Sandra. R.]]></description>
+			<content:encoded><![CDATA[<p>Hi! I was surfing and found your blog post&#8230; nice! I love your blog.&nbsp;&nbsp;🙂 Cheers! Sandra. R.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rob Wilkerson		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-407</link>
+
+		<dc:creator><![CDATA[Rob Wilkerson]]></dc:creator>
+		<pubDate>Thu, 03 Jul 2008 15:05:07 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-407</guid>
+
+					<description><![CDATA[@Steve
+
+I&#039;d argue that it&#039;s a delete-existing-right-click op, but that may just be splitting hairs. :-)
+
+You can export from your own working copy or _to_ it?  I know the latter, of course, and the problem is that you may be exporting from a repository to a working directory that has updated code.  That was my concern.  Nonetheless, it&#039;s a 6-of-one-half-dozen-of-the-other thing.  To each his own.]]></description>
+			<content:encoded><![CDATA[<p>@Steve</p>
+<p>I&#8217;d argue that it&#8217;s a delete-existing-right-click op, but that may just be splitting hairs. 🙂</p>
+<p>You can export from your own working copy or _to_ it?  I know the latter, of course, and the problem is that you may be exporting from a repository to a working directory that has updated code.  That was my concern.  Nonetheless, it&#8217;s a 6-of-one-half-dozen-of-the-other thing.  To each his own.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Steve		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-406</link>
+
+		<dc:creator><![CDATA[Steve]]></dc:creator>
+		<pubDate>Thu, 03 Jul 2008 11:58:39 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-406</guid>
+
+					<description><![CDATA[@Rob - I use TortoiseSVN, so for me it is a right-click, context menu op.
+
+@Rob,@Ryan - you can direct svn export to pull from the repo or your current working copy. I&#039;ve only ever used it against my current working copy (so I learned something here!)]]></description>
+			<content:encoded><![CDATA[<p>@Rob &#8211; I use TortoiseSVN, so for me it is a right-click, context menu op.</p>
+<p>@Rob,@Ryan &#8211; you can direct svn export to pull from the repo or your current working copy. I&#8217;ve only ever used it against my current working copy (so I learned something here!)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-405</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Thu, 03 Jul 2008 00:32:26 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-405</guid>
+
+					<description><![CDATA[@Steve, sometimes you can do an export, but sometimes you can&#039;t.  In my case I was working with files that had come from a backup of a working copy.  The files in the repository were NOT what I needed, I needed the files from the backup of the working copy.]]></description>
+			<content:encoded><![CDATA[<p>@Steve, sometimes you can do an export, but sometimes you can&#8217;t.  In my case I was working with files that had come from a backup of a working copy.  The files in the repository were NOT what I needed, I needed the files from the backup of the working copy.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rob Wilkerson		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-404</link>
+
+		<dc:creator><![CDATA[Rob Wilkerson]]></dc:creator>
+		<pubDate>Thu, 03 Jul 2008 00:01:33 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-404</guid>
+
+					<description><![CDATA[@Steve
+
+Sure, you could do that, but it seems like a lot more work than right clicking on a parent folder and selecting an option from a context menu. And what if you have changes in your working copy from what&#039;s in the repository?]]></description>
+			<content:encoded><![CDATA[<p>@Steve</p>
+<p>Sure, you could do that, but it seems like a lot more work than right clicking on a parent folder and selecting an option from a context menu. And what if you have changes in your working copy from what&#8217;s in the repository?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Steve		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-403</link>
+
+		<dc:creator><![CDATA[Steve]]></dc:creator>
+		<pubDate>Wed, 02 Jul 2008 23:58:14 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-403</guid>
+
+					<description><![CDATA[Just curious - couldn&#039;t you just do an SVN Export and then replace the original folder with the exported copy?  The exported copy doesn&#039;t have any of the .svn stuff in it.]]></description>
+			<content:encoded><![CDATA[<p>Just curious &#8211; couldn&#8217;t you just do an SVN Export and then replace the original folder with the exported copy?  The exported copy doesn&#8217;t have any of the .svn stuff in it.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rob Wilkerson		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-402</link>
+
+		<dc:creator><![CDATA[Rob Wilkerson]]></dc:creator>
+		<pubDate>Wed, 02 Jul 2008 17:16:10 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-402</guid>
+
+					<description><![CDATA[I do it slightly differently (very, very slightly) on Mac/Linux and wrote a simple registry entry to allow this to be done from the context menu on Windows.  In case anyone&#039;s interested:
+
+http://robwilkerson.org/2008/02/19/deleting-svn-folders/]]></description>
+			<content:encoded><![CDATA[<p>I do it slightly differently (very, very slightly) on Mac/Linux and wrote a simple registry entry to allow this to be done from the context menu on Windows.  In case anyone&#8217;s interested:</p>
+<p><a href="http://robwilkerson.org/2008/02/19/deleting-svn-folders/" rel="nofollow ugc">http://robwilkerson.org/2008/02/19/deleting-svn-folders/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake Churchill		</title>
+		<link>/deleting-svn-dirs-linux-windows/comment-page-1/#comment-401</link>
+
+		<dc:creator><![CDATA[Jake Churchill]]></dc:creator>
+		<pubDate>Wed, 02 Jul 2008 15:22:40 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/02/deleting-svn-dirs-linux-windows/#comment-401</guid>
+
+					<description><![CDATA[You make my head hurt]]></description>
+			<content:encoded><![CDATA[<p>You make my head hurt</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

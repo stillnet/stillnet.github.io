@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Stillnet Studios  &raquo; Blog Archive   &raquo; Using the Java StringBuffer class ColdFusion &#8211; faster CSV files</title>
+
+<meta name="generator" content="WordPress 6.1.1"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/evanescence-12/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios RSS Feed" href="/feed/">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="robots" content="max-image-preview:large">
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-1413191-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios &raquo; Using the Java StringBuffer class ColdFusion &#8211; faster CSV files Comments Feed" href="/java-strings-in-coldfusion/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"httpwww.stillnetstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/44">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="/java-strings-in-coldfusion/">
+<link rel="shortlink" href="/?p=44">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fjava-strings-in-coldfusion%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fjava-strings-in-coldfusion%2F&#038;format=xml">
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<div><div>	
+	<div class="header-title">
+		<h1><a href="/" title="Stillnet Studios: Web development notes and commentary from Ryan Stille">Stillnet Studios</a></h1>
+		<p>Web development notes and commentary from Ryan Stille</p>
+	</div> 
+	<!-- Search box (If you prefer having search form as a sidebar widget, remove this block) -->
+	<div class="search">
+		<form method="get" id="searchform" action="http://www.stillnetstudios.com/">
+<input type="text" size="12" name="s" id="s" value="search..." onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';">
+</form>
+	</div> 
+	<!-- Search ends here-->
+</div></div>	
+</div>
+<div id="wrapper">
+
+	<div id="content">
+
+			
+		<div class="navigation">
+			<div class="alignleft">&laquo; <a href="/copying-data-into-other-tables-while-eliminating-duplicates/" rel="prev">Copying data into other tables while eliminating duplicates</a>
+</div>
+			<div class="alignright">
+<a href="/find-coldfusion-installation-spool-directories/" rel="next">Programatically finding the ColdFusion installation and mail spool directories</a> &raquo;</div>
+		</div>
+
+		<div class="post" id="post-44">
+			<div class="post-title"><div>
+				<h2><a href="/java-strings-in-coldfusion/" rel="bookmark" title="Permanent Link to Using the Java StringBuffer class ColdFusion &#8211; faster CSV files">Using the Java StringBuffer class ColdFusion &#8211; faster CSV files</a></h2>
+			</div></div>
+			<div class="post-entry">
+				<p>I recently wrote a routine to export a client&#8217;s newsletter subscribers as a CSV file.  There are a little over 7000 records in the database now and that is expected to increase at a steady pace.  I have been wanting a good reason to reach into Java and do some fancy string manipulation, as I&#8217;ve read it can be quite a bit faster than in native CFML.  So this looked like a perfect chance to try it.  Here&#8217;s my first take in plain old CF.  I had some additional quote and comma checking in there but I&#8217;ve left it out for readability.<br>
+<span id="more-44"></span></p>
+<pre><code>&lt;cfset csvstr = "Email Address,First Name,Last Name" &amp; Chr(13) &amp; Chr(10)&gt;
+&lt;cfloop query="qrycowusers"&gt;
+	&lt;cfset csvstr = csvstr &amp; email &amp; ","&gt;
+
+	&lt;cfset csvstr = csvstr &amp; fname &amp; ","&gt;
+
+	&lt;cfset csvstr = csvstr &amp; lname&gt;
+
+	&lt;cfset csvstr = csvstr &amp; Chr(13) &amp; Chr(10)&gt;
+&lt;/cfloop&gt;</code></pre>
+<p>I pushed this code to production and ran it on the larger, production database.   It took <strong>just over 70 seconds!</strong>.  Thats a long time for the client to be waiting for their CSV file.  Next I rewrote this using Java&#8217;s StringBuffer class.</p>
+<pre><code>&lt;cfset csvstr = createObject("java","java.lang.StringBuffer")&gt;
+&lt;cfset csvstr.append("Email Address,First Name,Last Name" &amp; Chr(13) &amp; Chr(10) )&gt;
+
+&lt;cfloop query="qrycowusers"&gt;
+	&lt;cfset csvstr.append(email &amp; ",")&gt;
+
+	&lt;cfset csvstr.append(fname &amp; ",")&gt;
+
+	&lt;cfset csvstr.append(lname)&gt;
+
+	&lt;cfset csvstr.append(Chr(13) &amp; Chr(10))&gt;
+&lt;/cfloop&gt;</code></pre>
+<p>I copied this to production and ran it.  It took less than <strong>1</strong> second.  I ran both versions many times to be sure, and the results were consistent.  I was expecting it to be faster, but not that much faster.  I think the CF version may have been so extremely slow because I was doing 4 separate cfsets there.  If I did it all with one it may have been a good deal faster.  But I wanted to have a cfif around each set that checked for the existence of a comma, and if it found one to surround the value with double quotes.</p>
+<p>The reason the Java way is faster is because ColdFusion strings are based on the Java <em>String</em> object. Java strings are immutable, that means they can&#8217;t be modified.  So every time you do something like <code>mystr = mystr &amp; "appended content"</code>, ColdFusion is creating a new <em>String</em> object.  As you can imagine, this can be very slow once to get into a something that ends up creating a lot of String objects.</p>
+<p>I did run into one snag that took a minute to work around.  I wanted to output this chunk of csv data to the browser as a downloadable file.  This is usually done by by writing the data to a file, then using cfcontent to serve it.  But I wanted to skip the writing to disk step.  New in CFMX 7 was the &#8220;variable&#8221; attribute of cfcontent.  That allows you to pass data to cfcontent and it will serve it to the browser with whatever mime type you specify.  This is great for dynamically creating an image (with cfchart for example), then serving it to the browser.  But it only works with binary data.  Ok &#8211; we can work with that.  So my pure ColdFusion version used this:</p>
+<p><code>&lt;cfheader name="Content-Disposition"<br>
+    value="attachment; filename=ReportUsersExport.csv"&gt;<br>
+&lt;cfcontent type="application/msexcel"<br>
+    variable="#ToBinary( ToBase64(csvstr) )#" reset="Yes"&gt;</code></p>
+<p>But that won&#8217;t work with our StringBuffer object &#8211; CF will throw an error about not being able to convert that object to binary.  The solution is to use the StringBuffer&#8217;s toString() method to turn it into what ColdFusion is expecting:</p>
+<p><code>&lt;cfheader name="Content-Disposition"<br>
+    value="attachment; filename=ReportUsersExport.csv"&gt;<br>
+&lt;cfcontent type="application/msexcel"<br>
+    variable="#ToBinary( ToBase64(csvstr<span style="color: red;">.toString()</span>) )#" reset="Yes"&gt;</code></p>
+<p>For small amounts of data, this Java hybrid is of no consequence.  On my development box with 5 records, the two files took almost the exact same amount of time.  In fact the Java version might even have been slower.  But when you get to a larger record set, this can save you a lot of time.</p>
+							</div>
+	
+			<p class="post-meta">
+					This entry was posted on 7 March 2007 at 11:26 pm					and is filed under <a href="/category/coldfusion/" rel="category tag">ColdFusion</a>, <a href="/category/web-development/" rel="category tag">Web Development</a>.
+					You can follow any responses to this entry through the <a href="/java-strings-in-coldfusion/feed/">RSS 2.0</a> feed.
+
+											Both comments and pings are currently closed.
+
+					
+			</p>
+		</div>
+	
+<!-- You can start editing here. -->
+<div id="comments">
+	<h3>12 Comments</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-184">
+			<h4>Qasim Rasheed says:</h4>
+			<p>I developed a UDF that can convert ColdFusion Query to CSV using Java StringBuffer that you can find here.</p>
+<p><a href="http://www.cflib.org/udf.cfm?ID=1197" rel="nofollow ugc">http://www.cflib.org/udf.cfm?ID=1197</a></p>
+<p>Thanks for an informative post.</p>
+						<small class="commentmetadata"><a href="#comment-184" title="">8 March 2007, 7:30 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-185">
+			<h4>
+<a href="http://axel.cfwebtools.com/" rel="external nofollow ugc" class="url">Axel</a> says:</h4>
+			<p>That is good stuff ryan, I really like your writings</p>
+						<small class="commentmetadata"><a href="#comment-185" title="">8 March 2007, 8:26 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-186">
+			<h4>Ed says:</h4>
+			<p>Good post, thanks! You can also access Java Stringbuffers natively in CF using string concatenation via cfsavecontent instead of &#8216;&amp;&#8217;-driven string concatenation.</p>
+						<small class="commentmetadata"><a href="#comment-186" title="">8 March 2007, 11:32 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-187">
+			<h4>
+<a href="http://rip747.wordpress.com/" rel="external nofollow ugc" class="url">tony petruzzi</a> says:</h4>
+			<p>i remember when I first started using stringbuffer and was floored with how much performance I gained.</p>
+<p>@ed</p>
+<p>Give us an example. I&#8217;ve tried using cfsavecontent both and while it did give a performance increase it was no where&#8217;s near what stringbuffer gave.</p>
+						<small class="commentmetadata"><a href="#comment-187" title="">8 March 2007, 12:06 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-188">
+			<h4>James Moberg says:</h4>
+			<p>I believe a simple cfsavecontent example would look like this (without quote and comma checking):</p>
+<p>Email Address,First Name,Last Name<br>
+#email#,#fname#,#lname#</p>
+<p>How does this method compare to using java stringbuffer?</p>
+<p>On a recent project, I had to be able to export 100,000&#8217;s of records.  Using CFMX, MSSQL and BCP.exe (via CFEXECUTE), the CSV export was almost instantaneous compared to trying to generate the export using CFMX or java (which was timing out and consuming too much RAM.)</p>
+<p>BCP (Bulk Copy Program) for Microsoft SQL Server<br>
+<a href="http://msdn2.microsoft.com/en-us/library/aa174646(SQL.80)" rel="nofollow ugc">http://msdn2.microsoft.com/en-us/library/aa174646(SQL.80)</a>.aspx</p>
+						<small class="commentmetadata"><a href="#comment-188" title="">8 March 2007, 2:24 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-189">
+			<h4>James Moberg says:</h4>
+			<p>Sorry&#8230; it didn&#8217;t keep the HTML and the reply form doesn&#8217;t offer the ability to preview a post (like Slashdot.org does) or automatically escape HTML using HTMLEditFormat()-like function.</p>
+<p>&lt;cfsavecontent variable=&#8221;csvstr&#8221;&gt;Email Address,First Name,Last Name&lt;cfoutput query=&#8221;qrycowusers&#8221;&gt;<br>
+#email#,#fname#,#lname#&lt;/cfoutput&gt;&lt;/cfsavecontent&gt;</p>
+						<small class="commentmetadata"><a href="#comment-189" title="">8 March 2007, 2:28 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-190">
+			<h4>
+<a href="http://www.chapter31.com/" rel="external nofollow ugc" class="url">Michael Sharman</a> says:</h4>
+			<p>Hi Ryan,</p>
+<p>If you method chain the Init() method when creating your StringBuffer object, you don&#8217;t need to use ToString() when outputting your variable.</p>
+<p>i.e.</p>
+<p>csvstr = createObject(&#8220;java&#8221;,&#8221;java.lang.StringBuffer&#8221;).init();</p>
+<p>Great post, keep em&#8217; coming!</p>
+						<small class="commentmetadata"><a href="#comment-190" title="">2 April 2007, 12:58 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-191">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Thats interesting Michael, can you explain why that works?</p>
+						<small class="commentmetadata"><a href="#comment-191" title="">2 April 2007, 9:22 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-192">
+			<h4>
+<a href="http://www.batkid.com/" rel="external nofollow ugc" class="url">Mayoorathen</a> says:</h4>
+			<p>Well this code works with only CF 7. Can any suggest me a code will work with CF 6.1?</p>
+<p>Thanks</p>
+						<small class="commentmetadata"><a href="#comment-192" title="">31 July 2007, 8:17 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-195">
+			<h4>Alex Ismail says:</h4>
+			<p>Great post, which covered exactly what I needed.</p>
+<p>Could you share how to handle fields that contain commas with the Java class solution?</p>
+<p>Thank you very much,</p>
+<p>Alex</p>
+						<small class="commentmetadata"><a href="#comment-195" title="">19 February 2009, 5:43 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-194">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Alex, if the value contains a comma you need to enclose the whole string in double quotes (that is the most common way of handling it).&nbsp;&nbsp;I left this out of the example code for clarity.</p>
+<p>For example you might change this line above:<br>
+&lt;cfset csvstr.append(fname &amp; &quot;,&quot;)&gt;</p>
+<p>To do this instead:<br>
+&lt;cfif Find(&quot;,&quot; , fname)&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset csvstr.append(&quot;&quot;&quot;#fname#&quot;&quot;&quot; &amp; &quot;,&quot;)&gt;<br>
+&lt;cfelse&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset csvstr.append(fname &amp; &quot;,&quot;)&gt;<br>
+&lt;/cfif&gt;</p>
+						<small class="commentmetadata"><a href="#comment-194" title="">20 February 2009, 9:50 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-193">
+			<h4>Alex Ismail says:</h4>
+			<p>Thank you, Ryan.</p>
+<p>Meanwhile I found this version, which works too:</p>
+<p>&lt;cfset csvstr.append(Chr(34) &amp; FirstName &amp; Chr(34) &amp; &quot;,&quot;)&gt;</p>
+						<small class="commentmetadata"><a href="#comment-193" title="">20 February 2009, 4:40 pm</a></small>
+					</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+	<div>
+		<ul>
+			<li id="text-3" class="widget widget_text">			<div class="textwidget"><center><img style="border: 1px solid gray;" src="/wp-content/uploads/2012/06/ryan-headshot-1.jpg" alt="Ryan Stille"></center></div>
+		</li>
+<li id="pages-3" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+
+			<ul>
+				<li class="page_item page-item-228"><a href="/about/">About Me</a></li>
+<li class="page_item page-item-35"><a href="/projects/">My Projects</a></li>
+			</ul>
+
+			</li>
+<li id="categories-3" class="widget widget_categories">
+<h2 class="widgettitle">Article Categories</h2>
+
+			<ul>
+					<li class="cat-item cat-item-3">
+<a href="/category/ajax-javascript/">AJAX / JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/bluedragon/">BlueDragon</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/book-reviews/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/coldfusion/">ColdFusion</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/flex/">Flex</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/misc/">Misc</a>
+</li>
+	<li class="cat-item cat-item-10">
+<a href="/category/railo/">Railo</a>
+</li>
+	<li class="cat-item cat-item-11">
+<a href="/category/sql/">SQL</a>
+</li>
+	<li class="cat-item cat-item-12">
+<a href="/category/system-administration/">System Administration</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/tomcat/">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/web-development/">Web Development</a>
+</li>
+			</ul>
+
+			</li>
+
+		<li id="recent-posts-3" class="widget widget_recent_entries">
+		<h2 class="widgettitle">Recent Posts</h2>
+
+		<ul>
+											<li>
+					<a href="/coldfusion-formfield-as-array-cf10/">Accessing form fields as an array in CF10</a>
+									</li>
+											<li>
+					<a href="/onerror-img-image-tag/">Did you know about the onerror attribute of the img tag?</a>
+									</li>
+											<li>
+					<a href="/copying-sql-studio-excel-headers/">Copying data from SQL Studio to Excel</a>
+									</li>
+											<li>
+					<a href="/dateconvert-utc-not-what-you-expect/">Using DateConvert to get a UTC timestamp may not return what you expect</a>
+									</li>
+											<li>
+					<a href="/get-filename-before-calling-cffile/">Getting the client filename before using cffile</a>
+									</li>
+											<li>
+					<a href="/jquery-snippet-to-get-all-input-values/">jQuery snippet to get all input values</a>
+									</li>
+											<li>
+					<a href="/mura-404-page-not-working-in-iis7-fix-it-in-web-config/">Mura 404 page not working in IIS7 &#8211; fix it in web.config</a>
+									</li>
+											<li>
+					<a href="/free-coldfusion-10-beta-hosting/">Free ColdFusion 10 beta hosting</a>
+									</li>
+											<li>
+					<a href="/remove-spaces-columns-cfspreadsheet/">Removing spaces from columns in cfspreadsheet (or any query)</a>
+									</li>
+											<li>
+					<a href="/online-code-formatters/">Online code formatters</a>
+									</li>
+											<li>
+					<a href="/joining-two-tables-one-id/">Joining to one of two tables with one ID</a>
+									</li>
+											<li>
+					<a href="/formatting-cfgrid-with-javascript/">Formatting CFGRID with JavaScript</a>
+									</li>
+											<li>
+					<a href="/cf-form-array-comma-workaround/">Accessing ColdFusion form values as an array</a>
+									</li>
+											<li>
+					<a href="/loading-fckeditor-dynamically/">Loading CFrichtext / FCKeditor on-the-fly</a>
+									</li>
+											<li>
+					<a href="/url-rewriting-windows-2008-iis7/">Mura URL rewriting on Windows 2008 / IIS7</a>
+									</li>
+					</ul>
+
+		</li>
+<li id="linkcat-2" class="widget widget_links">
+<h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.axelscript.com/" title="AxelScript &#8211; Flex development blog">Axel Jensen</a></li>
+<li><a href="http://jake.cfwebtools.com/" title="ColdFusion/Flex development">Jake Churchill</a></li>
+<li><a href="http://www.coldfusionmuse.com/" title="ColdFusion Muse">Mark Kruger</a></li>
+<li><a href="http://www.henke.ws/" title="ColdFusion, TDD, Ant, Subversion, etc.">Mike Henke</a></li>
+
+	</ul>
+</li>
+
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Donate</h2>
+			<div class="textwidget">If my code has helped you and you'd like give a donation, you can do so using the button below.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="ryan@stillnet.org">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Donation for helpful ColdFusion code">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget">
+<br><br>
+<img src="/wp-content/uploads/2010/01/acp_logo.gif">
+</div>
+		</li>
+			
+		</ul> 
+	</div>
+	</div>
+</div> <!-- wrapper -->
+
+<div id="footer"><div><div><div>
+
+	<a href="/feed/">Entries (RSS)</a> and <a href="/comments/feed/">Comments (RSS)</a>. Valid <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a>.<br>
+
+	Powered by <a href="http://www.wpthemes360.com/">Wordpress Themes</a>. Theme <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> by <a href="http://srinig.com/">Srini G</a>
+
+	</div></div></div></div>
+
+</div> <!-- page -->
+
+</body>
+
+</html>

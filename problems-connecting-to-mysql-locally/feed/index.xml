@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Problems connecting to MySQL locally &#8211; try localhost instead of %	</title>
+	<atom:link href="/problems-connecting-to-mysql-locally/feed/" rel="self" type="application/rss+xml" />
+	<link>/problems-connecting-to-mysql-locally/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sun, 19 Apr 2009 18:12:26 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/problems-connecting-to-mysql-locally/comment-page-1/#comment-411</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Sun, 19 Apr 2009 18:12:26 +0000</pubDate>
+		<guid isPermaLink="false">/2008/08/24/problems-connecting-to-mysql-locally/#comment-411</guid>
+
+					<description><![CDATA[You need to make sure you have a password set for YourUserName connecting from host &amp;apos;cgi0603.int.bizland.net&amp;apos;.&#160;&#160; Maybe you should change your connection settings to specifically connect to &amp;apos;localhost&amp;apos;, if your database server is running locally.]]></description>
+			<content:encoded><![CDATA[<p>You need to make sure you have a password set for YourUserName connecting from host &apos;cgi0603.int.bizland.net&apos;.&nbsp;&nbsp; Maybe you should change your connection settings to specifically connect to &apos;localhost&apos;, if your database server is running locally.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Gaxton		</title>
+		<link>/problems-connecting-to-mysql-locally/comment-page-1/#comment-412</link>
+
+		<dc:creator><![CDATA[Gaxton]]></dc:creator>
+		<pubDate>Sun, 19 Apr 2009 17:43:54 +0000</pubDate>
+		<guid isPermaLink="false">/2008/08/24/problems-connecting-to-mysql-locally/#comment-412</guid>
+
+					<description><![CDATA[Pls I&amp;apos;m experiencing a serious sql problem... i changed the mysql password then did some changes then afterwards the site would nt open, it keeps saying.....
+Access denied for user &amp;apos;v_root&amp;apos;@&amp;apos;cgi0603.int.bizland.net&amp;apos; (using password: YES)]]></description>
+			<content:encoded><![CDATA[<p>Pls I&apos;m experiencing a serious sql problem&#8230; i changed the mysql password then did some changes then afterwards the site would nt open, it keeps saying&#8230;..<br />
+Access denied for user &apos;v_root&apos;@&apos;cgi0603.int.bizland.net&apos; (using password: YES)</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

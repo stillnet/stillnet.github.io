@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Snapshot backups	</title>
+	<atom:link href="/snapshot-backups-howto/feed/" rel="self" type="application/rss+xml" />
+	<link>/snapshot-backups-howto/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 19 Apr 2012 21:06:33 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Clint O		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2805</link>
+
+		<dc:creator><![CDATA[Clint O]]></dc:creator>
+		<pubDate>Thu, 19 Apr 2012 21:06:33 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2805</guid>
+
+					<description><![CDATA[Hi, no worries. I was able to apparently create a hard link (omit -s with ln) and the system seemed to support it, so it would seem that this isn&#039;t a technical obstacle. I&#039;ll see if I can download rsnapshot on my Windows 7 machine with cygwin and get it working!]]></description>
+			<content:encoded><![CDATA[<p>Hi, no worries. I was able to apparently create a hard link (omit -s with ln) and the system seemed to support it, so it would seem that this isn&#8217;t a technical obstacle. I&#8217;ll see if I can download rsnapshot on my Windows 7 machine with cygwin and get it working!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Alex Cavnar		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2804</link>
+
+		<dc:creator><![CDATA[Alex Cavnar]]></dc:creator>
+		<pubDate>Wed, 18 Apr 2012 20:52:53 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2804</guid>
+
+					<description><![CDATA[Looks like I was wrong-- my apologies! 
+
+Heck, worst thing you can do is give it a shot. Or, if rsnapshot&#039;s not installed, you can try doing cp -al to see if it does actually copy with hardlinks.]]></description>
+			<content:encoded><![CDATA[<p>Looks like I was wrong&#8211; my apologies! </p>
+<p>Heck, worst thing you can do is give it a shot. Or, if rsnapshot&#8217;s not installed, you can try doing cp -al to see if it does actually copy with hardlinks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Clint O		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2803</link>
+
+		<dc:creator><![CDATA[Clint O]]></dc:creator>
+		<pubDate>Wed, 18 Apr 2012 20:45:15 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2803</guid>
+
+					<description><![CDATA[Based on a Googling of &quot;Cygwin hard links&quot; it would appear that NTFS supports them (not FAT). So, provided I get beyond that hurdle, am I probably OK?]]></description>
+			<content:encoded><![CDATA[<p>Based on a Googling of &#8220;Cygwin hard links&#8221; it would appear that NTFS supports them (not FAT). So, provided I get beyond that hurdle, am I probably OK?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Alex Cavnar		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2802</link>
+
+		<dc:creator><![CDATA[Alex Cavnar]]></dc:creator>
+		<pubDate>Wed, 18 Apr 2012 20:35:56 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2802</guid>
+
+					<description><![CDATA[I don&#039;t think that&#039;ll work-- Windows doesn&#039;t support a notion of hard links, and there&#039;s nothing Cygwin can do about that, unfortunately.]]></description>
+			<content:encoded><![CDATA[<p>I don&#8217;t think that&#8217;ll work&#8211; Windows doesn&#8217;t support a notion of hard links, and there&#8217;s nothing Cygwin can do about that, unfortunately.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Clint O		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2801</link>
+
+		<dc:creator><![CDATA[Clint O]]></dc:creator>
+		<pubDate>Wed, 18 Apr 2012 20:28:58 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2801</guid>
+
+					<description><![CDATA[Hi:
+
+I&#039;ve used rsnapshot on FreeBSD. I performed purely local backups with it: local disk to local disk. So I was curious if the same could be done entirely with Cygwin on Windows? In other words, is the file system support all there for hard links to make this work?
+
+Thanks,
+
+-Clint]]></description>
+			<content:encoded><![CDATA[<p>Hi:</p>
+<p>I&#8217;ve used rsnapshot on FreeBSD. I performed purely local backups with it: local disk to local disk. So I was curious if the same could be done entirely with Cygwin on Windows? In other words, is the file system support all there for hard links to make this work?</p>
+<p>Thanks,</p>
+<p>-Clint</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Alex		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2637</link>
+
+		<dc:creator><![CDATA[Alex]]></dc:creator>
+		<pubDate>Wed, 30 Nov 2011 20:44:29 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2637</guid>
+
+					<description><![CDATA[@Neo: I don&#039;t think you&#039;d want to do that. What happens if your hard drive dies, then the hard links fail? 
+
+Hard links only work on the same filesystem. Rsnapshot&#039;ing to the same local filesystem doesn&#039;t really make any sense-- you want to have an ENTIRE backup of a point in time (no matter how long it takes), and then hard links in subsequent backups for when files didn&#039;t change between the backup intervals. 
+
+&quot;Backup&quot; is kind of the key part-- redundancy! :)]]></description>
+			<content:encoded><![CDATA[<p>@Neo: I don&#8217;t think you&#8217;d want to do that. What happens if your hard drive dies, then the hard links fail? </p>
+<p>Hard links only work on the same filesystem. Rsnapshot&#8217;ing to the same local filesystem doesn&#8217;t really make any sense&#8211; you want to have an ENTIRE backup of a point in time (no matter how long it takes), and then hard links in subsequent backups for when files didn&#8217;t change between the backup intervals. </p>
+<p>&#8220;Backup&#8221; is kind of the key part&#8211; redundancy! 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Neo		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2388</link>
+
+		<dc:creator><![CDATA[Neo]]></dc:creator>
+		<pubDate>Sat, 25 Jun 2011 17:46:33 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2388</guid>
+
+					<description><![CDATA[I wonder if rsnapshot can work with Mac OSx 10.5.6? I saw all comments above from long long time ago. 
+
+Can I ask a noob question? Can you, who have made rsnapshot, be able to treat the current running system as a root snapshot? Because I don&amp;apos;t want to make a root or base-line backup and then make others snapshot base on this base-line. It takes time! If you can treat the current system is the root snapshot, all you have to do is make first snapshot base on current system and then base on the first snapshot and so on so 4. On the Internet shop pc there is no important things to care about except the OS itself. Or my home pc, which for game only doesn&amp;apos;t need to a root snapshot for system and also doesn&amp;apos;t need to Restart-Restore system (like Deep freeze). I want to restore system when there is some apps do &#034;conflic&#034; the other current on my pc (like Rollback of Horizontal Datasys for Windows only). 
+
+There is an app run on Mac OS x I know very like rsnapshot name, Paragon Volume Snapshot for Mac OS X, but it has a nice GUI and cost some bucks.&#160;&#160;
+
+thanks ;)]]></description>
+			<content:encoded><![CDATA[<p>I wonder if rsnapshot can work with Mac OSx 10.5.6? I saw all comments above from long long time ago. </p>
+<p>Can I ask a noob question? Can you, who have made rsnapshot, be able to treat the current running system as a root snapshot? Because I don&apos;t want to make a root or base-line backup and then make others snapshot base on this base-line. It takes time! If you can treat the current system is the root snapshot, all you have to do is make first snapshot base on current system and then base on the first snapshot and so on so 4. On the Internet shop pc there is no important things to care about except the OS itself. Or my home pc, which for game only doesn&apos;t need to a root snapshot for system and also doesn&apos;t need to Restart-Restore system (like Deep freeze). I want to restore system when there is some apps do &quot;conflic&quot; the other current on my pc (like Rollback of Horizontal Datasys for Windows only). </p>
+<p>There is an app run on Mac OS x I know very like rsnapshot name, Paragon Volume Snapshot for Mac OS X, but it has a nice GUI and cost some bucks.&nbsp;&nbsp;</p>
+<p>thanks 😉</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2307</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 09 May 2011 14:38:43 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2307</guid>
+
+					<description><![CDATA[Ephestione, feel free to translate it, thanks for asking.]]></description>
+			<content:encoded><![CDATA[<p>Ephestione, feel free to translate it, thanks for asking.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ephestione		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-2306</link>
+
+		<dc:creator><![CDATA[Ephestione]]></dc:creator>
+		<pubDate>Mon, 09 May 2011 14:21:34 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-2306</guid>
+
+					<description><![CDATA[I got some headache while trying to test the cwrsync service from ubuntu, since I wasn&amp;apos;t getting a connection timeout.
+Turns out Windows 7&amp;apos;s firewall was in the way, you need to add a rule for inbound connections allowing all connections to the ...\ICW\bin\rsync.exe program
+
+And by the way, would you mind if I translated this guide to italian and published it on my website, obviously giving credit to you as the original author? (admitting I find the time to :D)]]></description>
+			<content:encoded><![CDATA[<p>I got some headache while trying to test the cwrsync service from ubuntu, since I wasn&apos;t getting a connection timeout.<br />
+Turns out Windows 7&apos;s firewall was in the way, you need to add a rule for inbound connections allowing all connections to the &#8230;\ICW\bin\rsync.exe program</p>
+<p>And by the way, would you mind if I translated this guide to italian and published it on my website, obviously giving credit to you as the original author? (admitting I find the time to :D)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Wayne		</title>
+		<link>/snapshot-backups-howto/comment-page-1/#comment-1951</link>
+
+		<dc:creator><![CDATA[Wayne]]></dc:creator>
+		<pubDate>Tue, 07 Dec 2010 04:45:59 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/09/snapshot-backups/#comment-1951</guid>
+
+					<description><![CDATA[I tried using this procedure to backup a Windows system (all disks, all files) but mostly got permission denied error messages.&#160;&#160;I was using the Administator uid/gid.&#160;&#160;Is it possible to backup entire Windows systems with rsnapshot?]]></description>
+			<content:encoded><![CDATA[<p>I tried using this procedure to backup a Windows system (all disks, all files) but mostly got permission denied error messages.&nbsp;&nbsp;I was using the Administator uid/gid.&nbsp;&nbsp;Is it possible to backup entire Windows systems with rsnapshot?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

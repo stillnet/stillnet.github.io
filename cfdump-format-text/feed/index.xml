@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Tip of the day &#8211; cfdump format=&#8217;text&#8217;	</title>
+	<atom:link href="/cfdump-format-text/feed/" rel="self" type="application/rss+xml" />
+	<link>/cfdump-format-text/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 05 Feb 2013 21:12:39 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Dave		</title>
+		<link>/cfdump-format-text/comment-page-1/#comment-3684</link>
+
+		<dc:creator><![CDATA[Dave]]></dc:creator>
+		<pubDate>Tue, 05 Feb 2013 21:12:39 +0000</pubDate>
+		<guid isPermaLink="false">/?p=595#comment-3684</guid>
+
+					<description><![CDATA[Doing a little debugging search and came across this from one Ryan Stille.  Imagine that...]]></description>
+			<content:encoded><![CDATA[<p>Doing a little debugging search and came across this from one Ryan Stille.  Imagine that&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Merritt		</title>
+		<link>/cfdump-format-text/comment-page-1/#comment-587</link>
+
+		<dc:creator><![CDATA[Merritt]]></dc:creator>
+		<pubDate>Thu, 30 Jul 2009 20:07:40 +0000</pubDate>
+		<guid isPermaLink="false">/?p=595#comment-587</guid>
+
+					<description><![CDATA[Thanks for the tip!]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the tip!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iDayDream		</title>
+		<link>/cfdump-format-text/comment-page-1/#comment-584</link>
+
+		<dc:creator><![CDATA[iDayDream]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2009 16:08:12 +0000</pubDate>
+		<guid isPermaLink="false">/?p=595#comment-584</guid>
+
+					<description><![CDATA[Great, great find. I like to use cfdump in emails and have found that those emails have begun to get quite large due to so much HTML. This will be infinitely better.]]></description>
+			<content:encoded><![CDATA[<p>Great, great find. I like to use cfdump in emails and have found that those emails have begun to get quite large due to so much HTML. This will be infinitely better.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

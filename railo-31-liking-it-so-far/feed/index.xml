@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Railo 3.1 &#8211; liking it so far	</title>
+	<atom:link href="/railo-31-liking-it-so-far/feed/" rel="self" type="application/rss+xml" />
+	<link>/railo-31-liking-it-so-far/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 15 Apr 2009 17:38:12 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/railo-31-liking-it-so-far/comment-page-1/#comment-513</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Wed, 15 Apr 2009 17:38:12 +0000</pubDate>
+		<guid isPermaLink="false">/?p=357#comment-513</guid>
+
+					<description><![CDATA[I&amp;apos;ve never used vspider, so don&amp;apos;t know much about it, but I haven&amp;apos;t seen any type of http-based crawler in Railo or BD.&#160;&#160;I do remember seeing how you could index a directory of documents from within the administrator, but nothing about crawling using http.]]></description>
+			<content:encoded><![CDATA[<p>I&apos;ve never used vspider, so don&apos;t know much about it, but I haven&apos;t seen any type of http-based crawler in Railo or BD.&nbsp;&nbsp;I do remember seeing how you could index a directory of documents from within the administrator, but nothing about crawling using http.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Adrian Lynch		</title>
+		<link>/railo-31-liking-it-so-far/comment-page-1/#comment-512</link>
+
+		<dc:creator><![CDATA[Adrian Lynch]]></dc:creator>
+		<pubDate>Wed, 15 Apr 2009 17:27:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=357#comment-512</guid>
+
+					<description><![CDATA[Do you know if there is anything comparable to vspider in Lucene/Railo?]]></description>
+			<content:encoded><![CDATA[<p>Do you know if there is anything comparable to vspider in Lucene/Railo?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

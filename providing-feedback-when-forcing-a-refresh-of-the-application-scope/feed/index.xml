@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Providing feedback when forcing a refresh of the Application scope	</title>
+	<atom:link href="/providing-feedback-when-forcing-a-refresh-of-the-application-scope/feed/" rel="self" type="application/rss+xml" />
+	<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 22 Jun 2009 20:05:10 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: darsane		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-234</link>
+
+		<dc:creator><![CDATA[darsane]]></dc:creator>
+		<pubDate>Mon, 22 Jun 2009 20:05:10 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-234</guid>
+
+					<description><![CDATA[Thanks for the information my friend]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the information my friend</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: olcay		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-230</link>
+
+		<dc:creator><![CDATA[olcay]]></dc:creator>
+		<pubDate>Tue, 07 Apr 2009 06:51:40 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-230</guid>
+
+					<description><![CDATA[very good work man thanks]]></description>
+			<content:encoded><![CDATA[<p>very good work man thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: taksator		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-231</link>
+
+		<dc:creator><![CDATA[taksator]]></dc:creator>
+		<pubDate>Fri, 13 Mar 2009 04:57:26 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-231</guid>
+
+					<description><![CDATA[thanks]]></description>
+			<content:encoded><![CDATA[<p>thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: cep parça kontör		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-232</link>
+
+		<dc:creator><![CDATA[cep parça kontör]]></dc:creator>
+		<pubDate>Sun, 01 Feb 2009 08:16:21 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-232</guid>
+
+					<description><![CDATA[online parça kontör tam kontör yükleme merkezi]]></description>
+			<content:encoded><![CDATA[<p>online parça kontör tam kontör yükleme merkezi</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jyoseph		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-235</link>
+
+		<dc:creator><![CDATA[jyoseph]]></dc:creator>
+		<pubDate>Wed, 28 Jan 2009 01:13:40 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-235</guid>
+
+					<description><![CDATA[Incredibly simple and straight forward instruction on how to reset the application w/ out resetting coldfusion, thank you so much!]]></description>
+			<content:encoded><![CDATA[<p>Incredibly simple and straight forward instruction on how to reset the application w/ out resetting coldfusion, thank you so much!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jules		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-229</link>
+
+		<dc:creator><![CDATA[Jules]]></dc:creator>
+		<pubDate>Sat, 19 Jul 2008 22:54:58 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-229</guid>
+
+					<description><![CDATA[This is a great tip.
+I am reasonably new to CF, I am using CF8 for a couple weeks, after coming from an MS environment - learning how CF deals with common scenarios is great.
+
+This is a great tip and it is good to learn that the Macromendia/Adobe guys have got the logic of this kind of HTML Head management sorted for the lifetime of the request.
+
+I would like to add that in order to deliver absolute XHTML and standards compliance in a consistently reliable manner when you are dealing with dynamic pages (I mostly develop web applications as opposed to sites) is to use cfhtmlhead for ALL clients-script activity - instead of just outputing some script as required and have it appear in the repsonse where you made the output, just simply wrap it in this construct and hey presto - the script is where it should be.  Lovely.
+
+Excellent tip - highly recommendable - this is a massive issue for me when dealing with dev, test, stage and live - the ability to reload the application scope in ASP.NET is brilliant - CF lacks this, but this tip makes up for it.
+
+Cheers]]></description>
+			<content:encoded><![CDATA[<p>This is a great tip.<br />
+I am reasonably new to CF, I am using CF8 for a couple weeks, after coming from an MS environment &#8211; learning how CF deals with common scenarios is great.</p>
+<p>This is a great tip and it is good to learn that the Macromendia/Adobe guys have got the logic of this kind of HTML Head management sorted for the lifetime of the request.</p>
+<p>I would like to add that in order to deliver absolute XHTML and standards compliance in a consistently reliable manner when you are dealing with dynamic pages (I mostly develop web applications as opposed to sites) is to use cfhtmlhead for ALL clients-script activity &#8211; instead of just outputing some script as required and have it appear in the repsonse where you made the output, just simply wrap it in this construct and hey presto &#8211; the script is where it should be.  Lovely.</p>
+<p>Excellent tip &#8211; highly recommendable &#8211; this is a massive issue for me when dealing with dev, test, stage and live &#8211; the ability to reload the application scope in ASP.NET is brilliant &#8211; CF lacks this, but this tip makes up for it.</p>
+<p>Cheers</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Axel		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-228</link>
+
+		<dc:creator><![CDATA[Axel]]></dc:creator>
+		<pubDate>Tue, 19 Jun 2007 16:04:24 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-228</guid>
+
+					<description><![CDATA[Thats hottt...]]></description>
+			<content:encoded><![CDATA[<p>Thats hottt&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan Vega		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-227</link>
+
+		<dc:creator><![CDATA[Dan Vega]]></dc:creator>
+		<pubDate>Tue, 19 Jun 2007 14:14:05 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-227</guid>
+
+					<description><![CDATA[I have to agree with Ben. This is the first time I have actually saw an example of cfhtmlhead used in a position that actually makes sense. I used similar techniques for refreshing the application scope but great tip!]]></description>
+			<content:encoded><![CDATA[<p>I have to agree with Ben. This is the first time I have actually saw an example of cfhtmlhead used in a position that actually makes sense. I used similar techniques for refreshing the application scope but great tip!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ben Nadel		</title>
+		<link>/providing-feedback-when-forcing-a-refresh-of-the-application-scope/comment-page-1/#comment-226</link>
+
+		<dc:creator><![CDATA[Ben Nadel]]></dc:creator>
+		<pubDate>Tue, 19 Jun 2007 11:32:11 +0000</pubDate>
+		<guid isPermaLink="false">/2007/06/18/providing-feedback-when-forcing-a-refresh-of-the-application-scope/#comment-226</guid>
+
+					<description><![CDATA[I have to say, this is the first time I have ever seen a use of CFHtmlHead that I actually agree with. Sweeet tip!]]></description>
+			<content:encoded><![CDATA[<p>I have to say, this is the first time I have ever seen a use of CFHtmlHead that I actually agree with. Sweeet tip!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

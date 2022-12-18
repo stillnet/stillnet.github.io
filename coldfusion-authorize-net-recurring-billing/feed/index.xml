@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Authorize.net recurring billing API CFC	</title>
+	<atom:link href="/coldfusion-authorize-net-recurring-billing/feed/" rel="self" type="application/rss+xml" />
+	<link>/coldfusion-authorize-net-recurring-billing/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 21 Dec 2012 21:05:50 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Phil L.		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-3266</link>
+
+		<dc:creator><![CDATA[Phil L.]]></dc:creator>
+		<pubDate>Fri, 21 Dec 2012 21:05:50 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-3266</guid>
+
+					<description><![CDATA[I found a snippet that just gives you the code, might help better understand the CIM integration:
+http://www.sitekickr.com/coda/coldfusion/authorize-net-createcustomerprofilerequest.html]]></description>
+			<content:encoded><![CDATA[<p>I found a snippet that just gives you the code, might help better understand the CIM integration:<br />
+<a href="http://www.sitekickr.com/coda/coldfusion/authorize-net-createcustomerprofilerequest.html" rel="nofollow ugc">http://www.sitekickr.com/coda/coldfusion/authorize-net-createcustomerprofilerequest.html</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Robin		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-2948</link>
+
+		<dc:creator><![CDATA[Robin]]></dc:creator>
+		<pubDate>Wed, 26 Sep 2012 18:34:03 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-2948</guid>
+
+					<description><![CDATA[There was another question posted asking about specific variables (i.e., customer id) being submitted and returned with the silent post so that the database can be updated.  Is there a way to do this? 
+
+Thank You.]]></description>
+			<content:encoded><![CDATA[<p>There was another question posted asking about specific variables (i.e., customer id) being submitted and returned with the silent post so that the database can be updated.  Is there a way to do this? </p>
+<p>Thank You.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Robin		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-2947</link>
+
+		<dc:creator><![CDATA[Robin]]></dc:creator>
+		<pubDate>Wed, 26 Sep 2012 18:25:13 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-2947</guid>
+
+					<description><![CDATA[Hi Ryan,
+
+I&#039;m not clear on how to output the returned keys (results). 
+ 
+I&#039;m not clear on the variable scope name to be used (i.e., result, returnedXML, or PaymentGateway).
+
+Using the following:
+
+
+
+
+
+Would the returned variables be the following:
+
+
+Result Code: #result.resultcode#
+Result Message: #result.message#
+Result Message Code: #result.messagecode#
+Result Message Text: #result.messagetext#
+Result Returned XML: #result.returnedXml#
+
+
+Thank you!]]></description>
+			<content:encoded><![CDATA[<p>Hi Ryan,</p>
+<p>I&#8217;m not clear on how to output the returned keys (results). </p>
+<p>I&#8217;m not clear on the variable scope name to be used (i.e., result, returnedXML, or PaymentGateway).</p>
+<p>Using the following:</p>
+<p>Would the returned variables be the following:</p>
+<p>Result Code: #result.resultcode#<br />
+Result Message: #result.message#<br />
+Result Message Code: #result.messagecode#<br />
+Result Message Text: #result.messagetext#<br />
+Result Returned XML: #result.returnedXml#</p>
+<p>Thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Abe Stem		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-2621</link>
+
+		<dc:creator><![CDATA[Abe Stem]]></dc:creator>
+		<pubDate>Mon, 14 Nov 2011 15:13:49 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-2621</guid>
+
+					<description><![CDATA[I can email you my code if it would help. i tried to paste it above without success.]]></description>
+			<content:encoded><![CDATA[<p>I can email you my code if it would help. i tried to paste it above without success.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Abe Stem		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-2620</link>
+
+		<dc:creator><![CDATA[Abe Stem]]></dc:creator>
+		<pubDate>Mon, 14 Nov 2011 15:12:08 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-2620</guid>
+
+					<description><![CDATA[Hello Ryan,
+
+I am gald to have found your programming as it is definitely helping a new CF programmer like me with the project i am working on. I do have a question for you though.
+
+Is there a way to pass the invoice ID, Amount, and Customer ID through the returnedXML? I would like this information to carry through to an additional page that uses this data to query a database, but cannot see a way to extract those variables from the returned XML... Any thoughts?
+
+Here is what I have so far, but sure how to get those variables to carry through Authorize:
+
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		&lt;!--- remove the BOM (byte order mark) from the resulting content, if it exists --&gt;
+		
+			
+		 
+		
+		
+			&lt;!--- will also return the sent orignal xml in case they want to do anything else with it --&gt;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+            
+Here 	 --&#062;	
+				
+			
+            
+Here 	 --&#062;    
+				
+			
+            			
+			
+				
+			
+			
+			
+				
+			
+				
+                                     
+			
+			
+			
+				
+				
+				
+				
+				
+				
+			
+		
+
+		
+	
+
+
+Thank you for your time. I know that this is an older project of yours, but I would definitely appreciate any help you can give.
+
+Abe Stem]]></description>
+			<content:encoded><![CDATA[<p>Hello Ryan,</p>
+<p>I am gald to have found your programming as it is definitely helping a new CF programmer like me with the project i am working on. I do have a question for you though.</p>
+<p>Is there a way to pass the invoice ID, Amount, and Customer ID through the returnedXML? I would like this information to carry through to an additional page that uses this data to query a database, but cannot see a way to extract those variables from the returned XML&#8230; Any thoughts?</p>
+<p>Here is what I have so far, but sure how to get those variables to carry through Authorize:</p>
+<p>		<!--- remove the BOM (byte order mark) from the resulting content, if it exists --></p>
+<p>			<!--- will also return the sent orignal xml in case they want to do anything else with it --></p>
+<p>Here 	 &#8211;&gt;	</p>
+<p>Here 	 &#8211;&gt;    </p>
+<p>Thank you for your time. I know that this is an older project of yours, but I would definitely appreciate any help you can give.</p>
+<p>Abe Stem</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-1468</link>
+
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+		<pubDate>Tue, 08 Jun 2010 20:32:48 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-1468</guid>
+
+					<description><![CDATA[Yo, I am pretty sure that I figured out the problem. I&amp;apos;ll update you later on the it if it ends up working. Take it easy man.]]></description>
+			<content:encoded><![CDATA[<p>Yo, I am pretty sure that I figured out the problem. I&apos;ll update you later on the it if it ends up working. Take it easy man.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-1465</link>
+
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+		<pubDate>Tue, 08 Jun 2010 01:33:01 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-1465</guid>
+
+					<description><![CDATA[I am passing the form variables into the cfc like you show here:
+
+&#034;
+&#060;cfset PaymentGateway = CreateObject(&#034;component&#034;,&#034;AuthorizeNetRecurring&#034;).init(
+&#160;&#160;&#160;&#160;loginname = &#034;AuthNetLoginName&#034;,
+&#160;&#160;&#160;&#160;transactionKey = &#034;YourTransactionKey&#034;,
+&#160;&#160;&#160;&#160;mode = &#034;live or test&#034;)&#062;
+
+&#060;cfinvoke component=&#034;#PaymentGateway#&#034; method=&#034;createSubscription&#034; returnvariable=&#034;result&#034;&#062;
+&#160;&#160;&#160;&#160;&#060;cfinvokeargument name=&#034;startDate&#034; value=&#034;#DateFormat(Now(),&#034;yyyy-mm-dd&#034;)#&#034;&#062;
+&#160;&#160;&#160;&#160;&#060;cfinvokeargument name=&#034;customerEmail&#034; value=&#034;#email#&#034;&#062;
+&#160;&#160;&#160;&#160;etc....
+&#060;/cfinvoke&#062;&#160;&#160;
+&#034;
+
+Are you just passing variables into the cfc differently? Or is this stuff on the page after the cfc has inititated?
+
+Thanks!]]></description>
+			<content:encoded><![CDATA[<p>I am passing the form variables into the cfc like you show here:</p>
+<p>&quot;<br />
+&lt;cfset PaymentGateway = CreateObject(&quot;component&quot;,&quot;AuthorizeNetRecurring&quot;).init(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;loginname = &quot;AuthNetLoginName&quot;,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;transactionKey = &quot;YourTransactionKey&quot;,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;mode = &quot;live or test&quot;)&gt;</p>
+<p>&lt;cfinvoke component=&quot;#PaymentGateway#&quot; method=&quot;createSubscription&quot; returnvariable=&quot;result&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfinvokeargument name=&quot;startDate&quot; value=&quot;#DateFormat(Now(),&quot;yyyy-mm-dd&quot;)#&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfinvokeargument name=&quot;customerEmail&quot; value=&quot;#email#&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;etc&#8230;.<br />
+&lt;/cfinvoke&gt;&nbsp;&nbsp;<br />
+&quot;</p>
+<p>Are you just passing variables into the cfc differently? Or is this stuff on the page after the cfc has inititated?</p>
+<p>Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-1460</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 06 Jun 2010 02:34:36 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-1460</guid>
+
+					<description><![CDATA[Chris, your code doesn&amp;apos;t look right, you need to be passing data into the createSubscription() method like
+
+&#060;cfset myObj.createSubscription(startDate = Form.startDate, customerEmail = Form.email, etc...) /&#062;]]></description>
+			<content:encoded><![CDATA[<p>Chris, your code doesn&apos;t look right, you need to be passing data into the createSubscription() method like</p>
+<p>&lt;cfset myObj.createSubscription(startDate = Form.startDate, customerEmail = Form.email, etc&#8230;) /&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-1456</link>
+
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+		<pubDate>Sat, 05 Jun 2010 21:44:39 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-1456</guid>
+
+					<description><![CDATA[Ok, so they weren&amp;apos;t actually blocking anything. What happened was there was a cftry in there (I didn&amp;apos;t write the code and missed it) and errors weren&amp;apos;t showing up.
+
+It is updating on the authorize.net site!
+
+One final question! What would I use to grab the subscriptionid? returnedxml.subscriptionid and retStruct.subscriptionid and result.subscriptionid don&amp;apos;t work for me! 
+
+I tried your &#060;cfset tmp = MyObj.createSubscription(….. all your data here)&#062;
+but wrote it as &#060;cfset tmp = MyObj.createSubscription&#062; and i got the error &#034;CREATESUBSCRIPTION is undefined in MYOBJ.&#034;
+
+Thanks sooooooo much :)]]></description>
+			<content:encoded><![CDATA[<p>Ok, so they weren&apos;t actually blocking anything. What happened was there was a cftry in there (I didn&apos;t write the code and missed it) and errors weren&apos;t showing up.</p>
+<p>It is updating on the authorize.net site!</p>
+<p>One final question! What would I use to grab the subscriptionid? returnedxml.subscriptionid and retStruct.subscriptionid and result.subscriptionid don&apos;t work for me! </p>
+<p>I tried your &lt;cfset tmp = MyObj.createSubscription(….. all your data here)&gt;<br />
+but wrote it as &lt;cfset tmp = MyObj.createSubscription&gt; and i got the error &quot;CREATESUBSCRIPTION is undefined in MYOBJ.&quot;</p>
+<p>Thanks sooooooo much 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/coldfusion-authorize-net-recurring-billing/comment-page-1/#comment-1435</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 02 Jun 2010 02:37:55 +0000</pubDate>
+		<guid isPermaLink="false">/2007/08/18/coldfusion-authorize-net-recurring-billing/#comment-1435</guid>
+
+					<description><![CDATA[Chris I&amp;apos;m not sure what you are asking.&#160;&#160;If you want to dump out whats coming back from the http request to Authorize.net, dump cfhttp on line 425.
+
+&#060;cfdump var=&#034;#cfhttp#&#034; /&#062;]]></description>
+			<content:encoded><![CDATA[<p>Chris I&apos;m not sure what you are asking.&nbsp;&nbsp;If you want to dump out whats coming back from the http request to Authorize.net, dump cfhttp on line 425.</p>
+<p>&lt;cfdump var=&quot;#cfhttp#&quot; /&gt;</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

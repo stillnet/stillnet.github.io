@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Web Development &#8211; Stillnet Studios</title>
+	<atom:link href="/category/web-development/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 11 Jun 2012 03:00:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Mura 404 page not working in IIS7 &#8211; fix it in web.config</title>
+		<link>/mura-404-page-not-working-in-iis7-fix-it-in-web-config/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 11 Jun 2012 16:00:42 +0000</pubDate>
+				<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=1106</guid>
+
+					<description><![CDATA[When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying. This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the onMissingTemplate handler. The fix [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404.gif" alt="" title="IIS7 404" width="600" height="390" class="alignnone size-full wp-image-1107" srcset="/wp-content/uploads/2012/06/IIS7-404.gif 600w, /wp-content/uploads/2012/06/IIS7-404-300x195.gif 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p>This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the <code>onMissingTemplate</code> handler. The fix is easy. Edit the web.config file in the webroot, look for an <code>httpErrors</code> tag. It might look like this:</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404-config.gif" alt="" title="IIS7-404 config" width="543" height="294" class="alignnone size-full wp-image-1111" srcset="/wp-content/uploads/2012/06/IIS7-404-config.gif 543w, /wp-content/uploads/2012/06/IIS7-404-config-300x162.gif 300w" sizes="(max-width: 543px) 100vw, 543px" /></p>
+<p>You need to add <code>existingResponse="PassThrough"</code> to it. If that element is missing completely, just add it with the necessary attribute.</p>
+<p>Fixed!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Trying out the CFWheels framework</title>
+		<link>/playing-with-cfwheels/</link>
+					<comments>/playing-with-cfwheels/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 14 Feb 2010 05:26:47 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=770</guid>
+
+					<description><![CDATA[A few weeks ago, the people at CFWheels announced a contest to get people to try out CFWheels. To enter the contest all you need to do is build a version of litepost in CFWheels.  Really all you need from the litepost project is the database.  Then just build some CRUD for the users, entries, comments, etc.  I've been wanting to learn more about this framework for a while so I thought this contest would be a good excuse to check it out.  The top 3 winners get Amazon gift cards.]]></description>
+										<content:encoded><![CDATA[<p>A few weeks ago, the people at CFWheels <a href="http://cfwheels.org/blog/index.cfm/2010/1/25/Wheels-LitePost-Contest--win-Amazon-Gift-Card">announced a contest</a> to get people to try out <a href="http://www.cfwheels.org/">CFWheels</a>.  To enter the contest all you need to do is build a version of litepost in CFWheels.  If you haven&#8217;t heard of litepost, its a simple blogging app thats been used to demonstrate different ColdFusion frameworks.  Really all you need from the <a href="http://code.google.com/p/litepost/">litepost</a> project is the <a href="http://code.google.com/p/litepost/source/browse/trunk/db/blogTables.sql">database</a>.  Then just build some CRUD for the users, entries, comments, etc.  I&#8217;ve been wanting to learn more about this framework for a while so I thought this contest would be a good excuse to check it out.  The top 3 winners get Amazon gift cards.</p>
+<p>So far I&#8217;ve found this to be a pretty neat framework.  I see a lot of similarity to Rails.  The <a href="http://cfwheels.org/docs">documentation</a> is very good.  The plugins are pretty neat, you just drop a zip file into your plugins directory and you can start using that plugin.</p>
+<p>To start I downloaded cfwheels and setup my database.  I installed the <a href="http://scaffoldwheels.riaforge.org/">scaffolding plugin</a> and used that to generate my CRUD views, models and controllers.  Already I had the basics working!  I tried creating/listing/editing users and it worked great.<br />
+<span id="more-770"></span><br />
+After setting up the scaffolding, I needed to define table relationships (called <em>associations</em> in CFWheels), and add some drop down menus where the scaffolding had put text fields.</p>
+<p>One thing I noticed fairly quickly was that the crud pages were kind of ugly.  I started to write some CSS to clean them up, but right away ran into trouble because the form inputs were nested inside the label tags like this:</p>
+<pre><code>&lt;label for="name"&gt;Name:&lt;input name="name"&gt;&lt;/label&gt;</code></pre>
+<p>I haven&#8217;t seen it done that way before, I usually have the label completely separate from the input like this:</p>
+<pre><code>&lt;label for="name"&gt;Name:&lt;/label&gt;&lt;input name="name"&gt;</code></pre>
+<p>For me at least, that makes it a lot easier to style.  That is also how the <a href="http://www.w3schools.com/tags/tag_label.asp">W3 demonstrates the tag</a>.  At first I thought this was a problem with the scaffolding plugin, but actually its CFWheels.  The scaffolding plugin just writes code like this:</p>
+<p><code>#textField(objectName='user', property='username', label='Username')#</code></p>
+<p>So its the built in textField() method that generates the code this way.  I found this is easy to fix though, you can add this additional attribute:</p>
+<p><code>#textField(objectName='user', property='username', label='Username', labelPlacement='before')#</code></p>
+<p>That will place the <code>&lt;label&gt;</code> tag before the form input, just how I like it.  I didn&#8217;t have to go add the attribute to all by edit pages, either, you can set it in once in your settings.cfm file like this:</p>
+<p><code>&lt;cfset set(functionName="textField", labelPlacement="before")&gt;</code></p>
+<p>But, you&#8217;ll need to do it for all your inputs, like this:</p>
+<pre><code>&lt;cfset set(functionName="textField", labelPlacement="before")&gt;
+&lt;cfset set(functionName="textArea", labelPlacement="before")&gt;
+&lt;cfset set(functionName="select", labelPlacement="before")&gt;
+etc.</code></pre>
+<p>Next I removed the created and updated timestamp fields from the create and edit pages.  The scaffolding had put them on there but I want them to be updated automatically.  CFWheels supports this, if the fields are named createdAt and updatedAt.  Unfortunately the timestamp fields in the litepost database are not named like that.</p>
+<p>After digging through the documentation a little I discovered you can tell cfwheels you are using differently named timestamp columns by putting lines like these in your settings.cfm file:</p>
+<pre><code>&lt;cfset set(timeStampOnCreateProperty = "dateCreated")&gt;
+&lt;cfset set(timeStampOnUpdateProperty = "dateUpdated")&gt;</code></pre>
+<p>I tried that but had some problems.  When trying to create a new entry (a blog article) I got this error:</p>
+<p><code>Error Executing Database Query.  Field 'dateCreated' doesn't have a default value</code>.</p>
+<p>It didn&#8217;t seem like my timeStampOnCreateProperty() call was working.  I finally ended up renaming the fields in my database and related code.</p>
+<p>Unfortunately, I still got an error:<br />
+<code>Field 'updatedAt' doesn't have a default value</code></p>
+<p>I was stuck on this for a while, but one of the guys behind the contest, <a href="http://www.henke.ws/">Mike Henke</a> was nice enough to help (several times in fact).  He pointed out that the error was actually about the updatedAt column now, not about the createdAt field. Hmmm.  It would make sense that updatedAt would be null when the record is first created.  But looking at the database I could see that it didn&#8217;t allow nulls for the updated timestamp.  I changed the database to allow nulls and tried creating an entry again.  This time: Success!</p>
+<p>Some other things I&#8217;ve gone through:</p>
+<p>By default the textField() method will use the column name for the label.  So the page ends up looking like</p>
+<p>Fname: <input></p>
+<p>I would like it to use &#8220;First Name&#8221; for the label.  I found that you can specify a label using the <em>label</em> attribute (hey that makes sense!).</p>
+<p><code>#textField(objectName='user', property='fname', label='First Name')#</code></p>
+<p>I ran into a similar issue with the CFWheels validation code.  Validation is done in your model file like this:</p>
+<p><code>validatesPresenceOf(properties="fname,lname,email,username,password")</code></p>
+<p>This makes sure those fields are not blank.  If you leave fname blank for example, you&#8217;ll get this error &#8220;Fname can&#8217;t be empty&#8221;.  I didn&#8217;t find any easy way to specify the label.  I did find there was a way to specify a custom error message, so I was able to use that and call the validation method for every field:</p>
+<pre><code>&lt;cfset validatesPresenceOf(properties="fname",message="First Name can't be empty")&gt;
+&lt;cfset validatesPresenceOf(properties="lname",message="Last Name can't be empty")&gt;
+etc.</code></pre>
+<p>I thought it would be nice if I could specify just a label to use, something like this:</p>
+<p><code>validatesPresenceOf(properties="fname:First Name,lname:Last Name,email,username,password")</code></p>
+<p>Even better, what if you could define a column&#8217;s label in a central place?  Maybe in the settings file, similar to how you set other column properties.  Then it could automatically use the label everywhere, including the textField() calls. So instead of having to do this:</p>
+<p><code>#textField(objectName='user', property='fname', label='First Name')#</code></p>
+<p>You could just do this:</p>
+<p><code>#textField(objectName='user', property='fname')#</code></p>
+<p>And wheels would know what label to use for fname.  This would make it really easy to change labels across the whole site!</p>
+<p>To wrap it up, I think this is a promising framework that is gaining popularity.  I&#8217;ve even seen some job postings mentioning cfwheels experience desired.  I&#8217;ve done a lot of work with Model Glue, and I find it to be very heavy on configuration.  I&#8217;d like to see some changes to MG to pick up some of the great things from CFWheels.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/playing-with-cfwheels/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Copying environment variables in Apache &#8211; solving the AUTH_USER Apache/IIS issue</title>
+		<link>/copying-env-variables-in-apache/</link>
+					<comments>/copying-env-variables-in-apache/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 09 Jan 2010 21:50:27 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=726</guid>
+
+					<description><![CDATA[A friend asked me for some help the other day. At the place he works at they use IIS on their production servers, but each developer works locally using Apache. Why use different webservers for production and development? He said they do it because its easier to develop locally with Apache. My guess is its [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A friend asked me for some help the other day. At the place he works at they use IIS on their production servers, but each developer works locally using Apache.  Why use different webservers for production and development?  He said they do it because its easier to develop locally with Apache.  My guess is its easier because you can run multiple sites at once with Apache.  With IIS on a desktop machine you can only run one site at a time.  I do the exact same thing at my job, actually.</p>
+<p>Anyway, once in a while this causes issues.  In this case, there was code on the server that required a username and password in order to access the page.  The security was done at the web server level, aka &#8220;HTTP authentication&#8221;, which causes your browser to prompt you for a username and password. These credentials then get sent along in the request headers (its actually a little more complicated than that but I won&#8217;t get into that here).  After authenticating, the username is available to ColdFusion as a CGI variable &#8211; CGI.REMOTE_USER.</p>
+<p>When using IIS, that value is <em>also</em> available as CGI.<strong>AUTH_USER</strong>.  In all CGI variable specs I could find, they all reference REMOTE_USER, not AUTH_USER, I&#8217;m not sure when AUTH_USER started to be used.  Anyway, this ColdFusion code running on the IIS server would look to the CGI.AUTH_USER variable and display some things differently depending on who the user was.</p>
+<p>This posed a problem when trying to run this code locally under apache.  The CGI.AUTH_USER variable did exist, but it was always blank.  One could change the code to use the more multi-platform friendly &#8220;REMOTE_USER&#8221;, but sometimes there are hurdles to changing existing code.</p>
+<p>But there is a way to mimic the behavior of IIS, by copying the REMOTE_USER value into AUTH_USER.  Its only three simple lines but it took me quite a while to figure this out.</p>
+<pre><code>RewriteEngine on
+RewriteCond %{REMOTE_USER} (.*)
+RewriteRule .* - [E=AUTH_USER:%1]</code></pre>
+<p>You&#8217;ll need to have mod_rewrite enabled of course.  Usually all you need to do is uncomment a line that looks like this in httpd.conf:</p>
+<pre><code>LoadModule rewrite_module modules/mod_rewrite.so</code></pre>
+<p>The three magic lines can go into the httpd.conf file, or you could place them in a .htaccess file in the directory you&#8217;re working in.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/copying-env-variables-in-apache/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>CFEclipse tip &#8211; Recovering a deleted file</title>
+		<link>/cfeclipse-recover-deleted-file/</link>
+					<comments>/cfeclipse-recover-deleted-file/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 17 Dec 2009 04:25:21 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=679</guid>
+
+					<description><![CDATA[Today a coworker asked me if I knew how to recover a deleted file in CFEclipse. He had accidentally deleted it before putting into his source control. Since he had been working on this file recently, there is a way to recover it. By default Eclipse keeps a local history of the files you work [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Today a coworker asked me if I knew how to recover a deleted file in CFEclipse.  He had accidentally deleted it before putting into his source control.  Since he had been working on this file recently, there <em>is</em> a way to recover it.</p>
+<p>By default Eclipse keeps a local history of the files you work on.  From within Eclipse, right click on a file and select Team->Show Local History.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2009/12/eclipise-history.png" alt="eclipise file history" title="eclipise file history" width="545" height="615" class="alignnone size-full wp-image-680" style="border: 1px solid black;" srcset="/wp-content/uploads/2009/12/eclipise-history.png 545w, /wp-content/uploads/2009/12/eclipise-history-265x300.png 265w" sizes="(max-width: 545px) 100vw, 545px" /></p>
+<p>From here you will get a list of revisions, generally one is made each time you save the file.  You can open a revision, or even use a built in diff tool to compare it to your current version.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2009/12/eclipise-history-file.png" alt="eclipse history file list" title="eclipse history file list" width="281" height="197" class="alignnone size-full wp-image-688" style="border: 1px solid black;" /></p>
+<p>But in this case we had no current version to even right click on to start the process.  So we simply created a new, empty file in the same location as the old one.  Then we were able to right click on it and pull up the history.</p>
+<p>This local history is stored under your workspace in workspace\.metadata\.plugins\org.eclipse.core.resources\.history, but its not easy to manually browse.  There any many directories and the files in those directories are given nonsense file names.  Much easier to stick with the Eclipse interface.</p>
+<p>Keep in mind that if you haven&#8217;t edited the file in a while there may not be any history to go to.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/cfeclipse-recover-deleted-file/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>aligning cells in an html cfgrid</title>
+		<link>/aligning-cells-in-an-html-cfgrid/</link>
+					<comments>/aligning-cells-in-an-html-cfgrid/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 28 Sep 2009 03:35:26 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=673</guid>
+
+					<description><![CDATA[The other day I had the need to align some data in an html cfgrid. There are some alignment attributes of the cfgriditem tag, but they do not work in html grids. I tried wrapping the data in a span tag with some css aligning it, but that didn&#8217;t work either. But there is a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The other day I had the need to align some data in an html cfgrid.  There are some alignment attributes of the cfgriditem tag, but they do not work in html grids.  I tried wrapping the data in a span tag with some css aligning it, but that didn&#8217;t work either.</p>
+<p>But there is a way.  When CF8 generates the grid it writes out CSS ids and classes that you can use to style the grid.  For example to right align the 5th column you can use this:</p>
+<pre><code>.x-grid-td-5 {text-align:right;}</code></pre>
+<p>The number you need to use in the class name does not always match up with the column.  Sometimes I had to use .x-grid-td-8 to reference the 6th column for example.  I think the number increments for each cfgrid item, even if you have display=no.</p>
+<p>If you have more than one cfgrid on your page and only want to align the nth column in one of them, you can wrap the cfgird in a div with an ID so you can reference only that grid in your CSS.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/aligning-cells-in-an-html-cfgrid/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Wrapping tabs created by cflayout</title>
+		<link>/wrapping-cflayout-tabs/</link>
+					<comments>/wrapping-cflayout-tabs/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 13 Aug 2009 02:09:14 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=626</guid>
+
+					<description><![CDATA[If you&#8217;ve used the new CF8 UI features to create tabs, you may have run into an issue when you have a lot of them. By default the tabs will not wrap. Take this snippet of code for example. I&#8217;ve added a red border on this 300 pixel div so you can see the tabs [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>If you&#8217;ve used the new CF8 UI features to create tabs, you may have run into an issue when you have a lot of them.  By default the tabs will not wrap.  Take this snippet of code for example.  I&#8217;ve added a red border on this 300 pixel div so you can see the tabs won&#8217;t wrap inside of it:</p>
+<pre><code>&lt;div style="font-family: arial; width: 300px; border: 1px solid red;"&gt;
+&lt;cflayout type="tab" name="myTabs"&gt;
+  &lt;cflayoutarea name="january" title="January 2009"&gt;
+     &lt;p&gt;January&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+  &lt;cflayoutarea name="february" title="February 2009"&gt;
+     &lt;p&gt;February&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+  &lt;cflayoutarea name="march" title="March 2009"&gt;
+     &lt;p&gt;March&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+  &lt;cflayoutarea name="april" title="April 2009"&gt;
+     &lt;p&gt;April&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+&lt;/cflayout&gt;
+&lt;/div&gt;</code></pre>
+<p>Imagine that 300 pixel div is your normal content area &#8211; it could be a table or just the width of your browser.  Take a look at what it produces in your browser:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/08/tabs_nowrap.png" alt="cflayout tabs not wrapping example" title="cflayout tabs not wrapping example" width="404" height="93" class="alignnone size-full wp-image-640" srcset="/wp-content/uploads/2009/08/tabs_nowrap.png 404w, /wp-content/uploads/2009/08/tabs_nowrap-300x69.png 300w" sizes="(max-width: 404px) 100vw, 404px" /></p>
+<p>In ColdFusion 8 (this might change in CF9?) the tabs generated by cflayout are table data cells.  It would be pretty hard to cause table data cells to wrap within a set of  <code>&lt;tr&gt;&lt;/tr&gt;</code> tags wouldn&#8217;t you think?  It actually is possible though.  If you add this snippet of CSS:</p>
+<p><code>&lt;style type="text/css"&gt;<br />
+.x-tabs-strip tr {display:block}<br />
+.x-tabs-strip td {display:block; float:left}<br />
+.x-tabs-strip .on .x-tabs-inner {padding-bottom:4px}<br />
+&lt;/style&gt;</code></p>
+<p>You&#8217;ll see the tabs now look like this:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/08/tabs_wrapping.png" alt="example of tabs wrapping" title="example of tabs wrapping" width="316" height="107" class="alignnone size-full wp-image-641" srcset="/wp-content/uploads/2009/08/tabs_wrapping.png 316w, /wp-content/uploads/2009/08/tabs_wrapping-300x101.png 300w" sizes="(max-width: 316px) 100vw, 316px" /></p>
+<p>If you want to force the tabs to be a specific width, add one more line:<br />
+<code>&lt;style type="text/css"&gt;<br />
+.x-tabs-strip tr {display:block}<br />
+.x-tabs-strip td {display:block; float:left}<br />
+.x-tabs-strip .on .x-tabs-inner {padding-bottom:4px}<br />
+<strong><em>.x-tabs-wrap table {width:400px}</em></strong><br />
+&lt;/style&gt;</code></p>
+<p>In most JavaScript frameworks tabs are done using list elements (<code>&lt;li&gt;</code> tags) inside an unordered list (<code>&lt;ul&gt;</code> tag).  This approach is much more flexible.  It will be interesting to see what changes are made to the html generated by the layout tags in ColdFusion9.</p>
+<p><strong>Update 1/4/2010</strong> &#8211; The method described above does NOT work in CF9.  The tabs generated in CF9 are done using a much newer version of EXT.  They are no longer based on table data cells, instead they use list items ( &lt;li&gt; tags), like most tab implementations.  <a href="/wrapping-cflayout-tabs-cf9/">Use this CSS</a> to wrap the tabs in CF9.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/wrapping-cflayout-tabs/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Anonymous arrays in ColdFusion 9</title>
+		<link>/anonymous-arrays-coldfusion9/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 04 Aug 2009 13:08:52 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=610</guid>
+
+					<description><![CDATA[One of the new features I am excited to see in ColdFusion 9 is support for anonymous arrays. I&#8217;ve used these before in PHP, Perl, and other languages, and I&#8217;m glad to see them added to ColdFusion. I blogged about this issue in 2007. I was trying to add a column to an existing array [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>One of the new features I am excited to see in ColdFusion 9 is support for anonymous arrays.  I&#8217;ve used these before in PHP, Perl, and other languages, and I&#8217;m glad to see them added to ColdFusion.</p>
+<p>I <a href="/coldfusion-8-inline-array/">blogged about this issue</a> in 2007.  I was trying to add a column to an existing array that I knew only had one row.  QueryAddColumn() accepts an array of values to add to an existing query &#8211; one element for each row.  So I only needed an array with one element.  So I thought I could use CF8&#8217;s new inline array syntax and just pass it in like this:</p>
+<pre><code>&lt;cfset QueryAddColumn(existingQuery,
+                     "newColName",
+                     "varchar",
+                     ["single new value"])&gt;</code></pre>
+<p>This would throw an error in CF8, but works just fine in CF9!</p>
+<p>By the way this also works just fine in the current version of <a href="http://www.getrailo.org/">Railo</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Tip of the day &#8211; cfdump format=&#8217;text&#8217;</title>
+		<link>/cfdump-format-text/</link>
+					<comments>/cfdump-format-text/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2009 13:03:45 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=595</guid>
+
+					<description><![CDATA[Did you know there is a "format" attribute for the cfdump tag?  The default format is html, but you can also pass in a format of "text".  I've found this useful for putting data structures into plain text emails, logs files, and other things.
+
+For example, this code:]]></description>
+										<content:encoded><![CDATA[<p>Did you know there is a &#8220;format&#8221; attribute for the cfdump tag?  The default format is html, but you can also pass in a format of &#8220;text&#8221;.  I&#8217;ve found this useful for putting data structures into plain text emails, logs files, and other things.</p>
+<p>For example, this code:</p>
+<pre><code>&lt;cfset tmp.fname = "John"&gt;
+&lt;cfset tmp.lname = "Smith"&gt;
+&lt;cfset tmp.age   = 26&gt;
+&lt;cfset tmp.city  = "Omaha"&gt;
+&lt;cfset tmp.state = "Nebraska"&gt;
+&lt;cfdump var="#tmp#" format="text"&gt;</code></pre>
+<p>Produces this output:</p>
+<pre>struct
+AGE: 26
+CITY: Omaha
+FNAME: John
+LNAME: Smith
+STATE: Nebraska
+</pre>
+<p>It works for complex structures, too:</p>
+<pre><code>&lt;cfset tmp.person1.fname = "John"&gt;
+&lt;cfset tmp.person1.lname = "Smith"&gt;
+&lt;cfset tmp.person1.age   = 26&gt;
+&lt;cfset tmp.person1.city  = "Omaha"&gt;
+&lt;cfset tmp.person1.state = "Nebraska"&gt;
+&lt;cfset tmp.person1.pets  = ['Fluffy','Mr. Jingles','Bambi']&gt;
+
+&lt;cfset tmp.person2.fname = "Mary"&gt;
+&lt;cfset tmp.person2.lname = "Doogan"&gt;
+&lt;cfset tmp.person2.age   = 32&gt;
+&lt;cfset tmp.person2.city  = "Kansas City"&gt;
+&lt;cfset tmp.person2.state = "Missouri"&gt;
+&lt;cfset tmp.person2.pets  = []&gt;
+&lt;cfdump var="#tmp#" format="text"&gt;</code></pre>
+<p>Produces this output:</p>
+<pre>Struct
+PERSON2 Struct
+	AGE number 32 
+	LNAME string Doogan 
+	PETS Array
+	STATE string Missouri 
+	CITY string Kansas City 
+	FNAME string Mary 
+
+PERSON1 Struct
+	AGE number 26 
+	LNAME string Smith 
+	PETS Array
+		1 string Fluffy 
+		2 string Mr. Jingles 
+		3 string Bambi 
+	STATE string Nebraska 
+	CITY string Omaha 
+	FNAME string John</pre>
+<p>Railo also supports the &#8220;format&#8221; attribute, but BlueDragon does not.  In fact Railo supports a <a href="http://wiki.getrailo.org/wiki/3-1-Tags:CFDump">bunch of interesting attributes</a> to the cfdump tag.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/cfdump-format-text/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Secure image uploading with ColdFusion</title>
+		<link>/secure-image-uploading-coldfusion/</link>
+					<comments>/secure-image-uploading-coldfusion/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 22 Jul 2009 03:04:22 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=579</guid>
+
+					<description><![CDATA[There have been some attacks recently against ColdFusion servers that allow users to upload files. This is a common feature on many sites &#8211; uploading your profile photo, classified ad pictures, etc. Here is my take on handling file uploads securely. First, make sure you are not uploading files directly into your webroot. For example [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>There have been some attacks recently against ColdFusion servers that allow users to upload files.  This is a common feature on many sites &#8211; uploading your profile photo, classified ad pictures, etc.  Here is my take on handling file uploads securely.</p>
+<p>First, make sure you are not uploading files directly into your webroot.  For example if you store your user&#8217;s profile photos in /images/profilePhotos, <em>don&#8217;t</em> upload your file right into there.  You need to put it somewhere safe first and verify that it really is an image file.  Adding <strong>accept=&#8221;image/jpeg&#8221;</strong> to your cffile tag doesn&#8217;t save you here either.  There are attacks where the mime type is spoofed, making ColdFusion think an image file is being uploaded, when really its a .cfm file.</p>
+<p>So, you need to place the file somewhere outside your webroot.  A convenient place to use is your server&#8217;s temp directory.  You can get the path to a temp directory by calling the built-in getTempDirectory() function.  For example:<br />
+<span id="more-579"></span><code>&lt;cffile action="upload" filefield="userFile" destination="#GetTempDirectory()#" nameconflict="overwrite"  result="uploadResult"&gt;</code></p>
+<p>The next thing I do is make sure the file that was uploaded is an image.  A nice feature is to allow the user to upload any type of image (that ColdFusion supports anyway), so instead of just checking if the file is a jpeg or gif or whatever, I  use the isImageFile() function.  If it thinks its an image, then ColdFusion supports reading it.</p>
+<pre><code>&lt;cfif Not IsImageFile(getTempDirectory() &amp; uploadResult.serverFile)&gt;
+    &lt;cffile action="delete" file="#getTempDirectory()##uploadResult.serverFile#"&gt;
+    &lt;cfset doWhateverErrorHandlingYoudoNow()&gt;
+&lt;/cfif&gt;</code></pre>
+<p>So now that we know the image is good, we can move it into our webroot where it should reside.  This is where we do our image conversion, too.  I only want jpgs on my site, but I want the user to be able to upload a .tiff or whatever.  So instead of using cffile to move the file, we&#8217;ll use cfimage to read it in as-is and write it back out as a jpg.</p>
+<p><code>&lt;cfimage action="WRITE" source="#getTempDirectory()##uploadResult.serverFile#" destination="#application.imageDir#/#uploadResult.serverFileName#.jpg"&gt;<br />
+<!--- then delete the original file ---><br />
+&lt;cffile action="delete" file="#getTempDirectory()##uploadResult.serverFile#"&gt;</code></p>
+<p>Note we use serverFileName here instead of serverFile.  serverFileName omits the file extension so we can tack on .jpg ourself.  The cfimage tag sees this and converts the file to a jpeg.</p>
+<p>You might want to check the file extension first to see if its already a jpeg, and if so just move it with cffile.  I like running it through cfimage regardless because it compresses it a little.  I just ran a test with a file from my digital camera, the original file was 2.3MB but after running it through cfimage its down to 605kb and it still looks great.  You can adjust the compression level by specifying a <em>quality</em> attribute to the cfimage tag.  Valid values are 0-1, the default is .75.</p>
+<p>If you are on Railo this all works great there too.  But if you are on openBD there are some issues.  First there is no isImageFile() function on blue dragon.  I was able to write a basic one using some built in java libraries.  But I&#8217;m having issues with using cfimage to convert the file, too.  It seems cfimage doesn&#8217;t support anything other than png, gifs or jpgs.</p>
+<p>Update: If you are running ColdFusion 9, the new ram disk feature would be another good place to store the image file temporarily before you copy it into the final destination under the webroot.  There is nothing you need to setup, just write the file to &#8220;ram://&#8221;.  So you would receive the uploaded file like this:<br />
+<code>&lt;cffile action="upload" filefield="userFile" destination="ram://" nameconflict="overwrite"  result="uploadResult"&gt;</code></p>
+<p>I tried uploading some huge files (400mb) just to see what would happen.  I got an out of memory error on the page that was uploading the file.  My other pages continued to be served just fine.  There could be other issues of course.  For one thing I&#8217;m guessing that if another process needed a lot of memory at the same time someone was uploading a huge file, the other process might not be able to get the amount of memory it needs.  I don&#8217;t know what CF9 is doing to keep the ram:// area from running the main heap out of space.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/secure-image-uploading-coldfusion/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Running your CFML code through Railo, OpenBD, and Adobe CF all at once</title>
+		<link>/run-code-railo-openbd-adobe-cf-at-once/</link>
+					<comments>/run-code-railo-openbd-adobe-cf-at-once/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 16 Jul 2009 03:28:50 +0000</pubDate>
+				<category><![CDATA[BlueDragon]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<category><![CDATA[Tomcat]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=551</guid>
+
+					<description><![CDATA[If you are developing a ColdFusion application, or even just a stand alone CFC that you plan to distribute, you might want to make sure it runs on all three major CFML engines &#8211; Adobe ColdFusion, Railo, and Open BlueDragon. It can be tedious to always copy code around between your three test sites, but [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>If you are developing a ColdFusion application, or even just a stand alone CFC that you plan to distribute, you might want to make sure it runs on all three major CFML engines &#8211; Adobe ColdFusion, Railo, and Open BlueDragon.  It can be tedious to always copy code around between your three test sites, but there is an easier way.  You can have the same code base run through all three CFML engines at once.</p>
+<p>There are a few caveats:<span id="more-551"></span></p>
+<ol>
+<li>You must be using Tomcat as your J2EE server (I think you can probably do this with JRun if you are using the J2EE/multi-server version of ColdFusion, but I have only done it using Tomcat)</li>
+<li>You must run your code from a subdirectory.  That is, if your local test site is setup like http://localhost:8080/openbd, you will run your code from http://localhost:8080/openbd/&lt;a subdirectory&gt;/</li>
+</ol>
+<p>I&#8217;m not going to go through setting up Tomcat or Railo/OpenBD/AdobeCF, see <a href="http://www.mattwoodward.com/blog/index.cfm?event=showEntry&#038;entryId=60F08421-5F0A-41C9-940B3681A3D09D99">this great blog post by Matt Woodward</a> if you need help with that.</p>
+<p>Once everything is setup, you should have three separate webroots, probably something like:<br />
+C:\Tomcat6\webapps\railo<br />
+C:\Tomcat6\webapps\openbd<br />
+C:\Tomcat6\webapps\cfusion</p>
+<p>Now create a subdirectory in one of those directories, lets just take the first one, railo.  Call the new subdirectory &#8220;shared&#8221;.  Now comes the trick, we will use a <em>junction</em> to make subdirectories named &#8220;shared&#8221; in openbd and cfusion, but really they just point to the shared directory under railo.  This &#8220;junction&#8221; is a feature of the NTFS file system and works much like a <a href="http://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> on Linux.</p>
+<p>If you are running Vista, Windows7, or Windows 2008 you already have a built in tool to create a junction called &#8220;mklink&#8221;.  Otherwise if you are running WindowsXP or Windows2000/2003 you need to download Junction v1.05 from Microsoft&#8217;s site.  Its a sysinternals tool, if you aren&#8217;t familiar with that group, they made lots of great techy tools for Windows.  You can get it from here: <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx">http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx</a>.</p>
+<p>Download the zip file and extract the single .exe file that is inside it.  This is a command line tool so I placed it into my C:\windows\system32 directory so it would be in my path and can be run from any command prompt.  Now open up a DOS command prompt, and change into your railo webroot.  Then create the two junctions named &#8220;shared&#8221; that point back to the real &#8220;shared&#8221; directory.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/cmd-junction.png" alt="command prompt - junction" title="command prompt - junction" width="668" height="319" class="alignnone size-full wp-image-559" srcset="/wp-content/uploads/2009/07/cmd-junction.png 668w, /wp-content/uploads/2009/07/cmd-junction-300x143.png 300w" sizes="(max-width: 668px) 100vw, 668px" /></p>
+<p>Now we have this folder structure, where &#8220;shared&#8221; is really the same folder in each location.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/folders.png" alt="folders - junction example" title="folders - junction example" style="border:1px solid black;" width="160" height="139" class="alignnone size-full wp-image-561" /></p>
+<p>Just drop your files into there and then you can hit them using the three separate URLs you used when setting up Tomcat.  I use railo.dev, openbd.dev, and cfusion.dev as my hostnames.</p>
+<p>If you are on an OS that has the mklink command, the syntax is a little different.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/windows7-cmd.png" alt="windows7 command prompt" title="windows7 command prompt" width="677" height="342" class="alignnone size-full wp-image-562" srcset="/wp-content/uploads/2009/07/windows7-cmd.png 677w, /wp-content/uploads/2009/07/windows7-cmd-300x151.png 300w" sizes="(max-width: 677px) 100vw, 677px" /></p>
+<p>Note how on Windows7 the DIR command is smart enough to recognize that the folder is actually a junction and shows me where it is linked to.</p>
+<p>The folder looks a little different in Windows Explorer, too.  Unfortunately it looks just like a shortcut, which it certainly is not, but at least you can tell its not a regular folder.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/07/windows7-folders.png" alt="windows7-folders" style="border: 1px solid black;" title="windows7-folders" width="471" height="263" class="alignnone size-full wp-image-571" srcset="/wp-content/uploads/2009/07/windows7-folders.png 471w, /wp-content/uploads/2009/07/windows7-folders-300x167.png 300w" sizes="(max-width: 471px) 100vw, 471px" /></p>
+<p>I have this setup on both of my main development machines, and find it very convenient to be able to run my exact same code through all 3 CFML engines just by changing the URL.  I usually keep three browser windows open as I develop so I can easily test stuff on all 3.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/run-code-railo-openbd-adobe-cf-at-once/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

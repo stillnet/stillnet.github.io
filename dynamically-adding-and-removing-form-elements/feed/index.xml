@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Dynamically adding and removing form elements	</title>
+	<atom:link href="/dynamically-adding-and-removing-form-elements/feed/" rel="self" type="application/rss+xml" />
+	<link>/dynamically-adding-and-removing-form-elements/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 13 Apr 2010 13:13:59 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-1267</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 13 Apr 2010 13:13:59 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-1267</guid>
+
+					<description><![CDATA[sumon, try assigning your code as a function, like:
+
+newNode.getElementsByTagName(&#034;input&#034;)[2].onclick = function() { alert(&amp;apos;test&amp;apos;); };
+
+You could also try using the addEventListener method:
+
+newNode.getElementsByTagName(&#034;input&#034;)[2].addEventListener(&amp;apos;click&amp;apos;,myFunction,false);
+
+I think in IE you&amp;apos;ll need to use attachEvent instead of addEventListener.&#160;&#160; 
+
+If you do it that way, I think your function will receive an event as an argument.  You can then look at event.target to see what element was clicked.
+
+You could use jQuery also, it will work the same in IE or FF. If you gave your new element an ID of newelement, you could use this:
+
+$(&amp;apos;#newelement&amp;apos;).click(function () { alert(&amp;apos;test&amp;apos;); });
+
+You might also look into jQuery bubbling events.&#160;&#160;Using bubbling events you might be able to add an click handler to the table, div, etc containing all these links. Then when anything in that area is clicked, your function will fire.&#160;&#160;In the function you can tell which element was clicked on, then handle that appropriately.]]></description>
+			<content:encoded><![CDATA[<p>sumon, try assigning your code as a function, like:</p>
+<p>newNode.getElementsByTagName(&quot;input&quot;)[2].onclick = function() { alert(&apos;test&apos;); };</p>
+<p>You could also try using the addEventListener method:</p>
+<p>newNode.getElementsByTagName(&quot;input&quot;)[2].addEventListener(&apos;click&apos;,myFunction,false);</p>
+<p>I think in IE you&apos;ll need to use attachEvent instead of addEventListener.&nbsp;&nbsp; </p>
+<p>If you do it that way, I think your function will receive an event as an argument.  You can then look at event.target to see what element was clicked.</p>
+<p>You could use jQuery also, it will work the same in IE or FF. If you gave your new element an ID of newelement, you could use this:</p>
+<p>$(&apos;#newelement&apos;).click(function () { alert(&apos;test&apos;); });</p>
+<p>You might also look into jQuery bubbling events.&nbsp;&nbsp;Using bubbling events you might be able to add an click handler to the table, div, etc containing all these links. Then when anything in that area is clicked, your function will fire.&nbsp;&nbsp;In the function you can tell which element was clicked on, then handle that appropriately.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: sumon		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-1265</link>
+
+		<dc:creator><![CDATA[sumon]]></dc:creator>
+		<pubDate>Tue, 13 Apr 2010 10:09:50 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-1265</guid>
+
+					<description><![CDATA[i am using the script and it works fine. But when i need to pass a java script onClick function it does not work. Like: 
+newNode.getElementsByTagName(&#034;input&#034;)[2].onclick = &#034;onoffme(holidayset,&amp;apos;&#034;+ newRowNum +&#034;&amp;apos;);&#034;; 
+
+this onclick does not work. Please help.]]></description>
+			<content:encoded><![CDATA[<p>i am using the script and it works fine. But when i need to pass a java script onClick function it does not work. Like:<br />
+newNode.getElementsByTagName(&quot;input&quot;)[2].onclick = &quot;onoffme(holidayset,&apos;&quot;+ newRowNum +&quot;&apos;);&quot;; </p>
+<p>this onclick does not work. Please help.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Johnny Five		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-463</link>
+
+		<dc:creator><![CDATA[Johnny Five]]></dc:creator>
+		<pubDate>Wed, 22 Apr 2009 04:33:31 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-463</guid>
+
+					<description><![CDATA[WOW!&#160;&#160;I am a believer now. Ajax and JS are the way to go.&#160;&#160;I have been fighting with this now for hours, and finally gave up. But you have given my app new hope again.
+
+Thanks for the wonderful tut.
+
+I kept losing all of the previous input fields data when my create new element function ran.&#160;&#160;Hopefully with a few tweaks from your script this is going to be all fixed.]]></description>
+			<content:encoded><![CDATA[<p>WOW!&nbsp;&nbsp;I am a believer now. Ajax and JS are the way to go.&nbsp;&nbsp;I have been fighting with this now for hours, and finally gave up. But you have given my app new hope again.</p>
+<p>Thanks for the wonderful tut.</p>
+<p>I kept losing all of the previous input fields data when my create new element function ran.&nbsp;&nbsp;Hopefully with a few tweaks from your script this is going to be all fixed.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tom Berman		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-470</link>
+
+		<dc:creator><![CDATA[Tom Berman]]></dc:creator>
+		<pubDate>Thu, 16 Apr 2009 09:51:10 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-470</guid>
+
+					<description><![CDATA[This is a wonderful page and the code works very well.
+
+I am hoping to use this code to interface to a PHP/MYSQL database.&#160;&#160;I have no problems getting the data to an array and storing it.&#160;&#160;I was wondering if there is a reasonably simple way of setting the initial state of the page based on previously entered data?
+
+The steps I image are :
+When the page loads
+
+1. Get previously stored data from a database.
+2. Call a javascript function with the parameters in an array from the database.
+3. User modifies data
+4. It saves to the database - and the process starts again.
+
+Does anyone know how I could do this?&#160;&#160;
+
+Any help will be much appreciated.]]></description>
+			<content:encoded><![CDATA[<p>This is a wonderful page and the code works very well.</p>
+<p>I am hoping to use this code to interface to a PHP/MYSQL database.&nbsp;&nbsp;I have no problems getting the data to an array and storing it.&nbsp;&nbsp;I was wondering if there is a reasonably simple way of setting the initial state of the page based on previously entered data?</p>
+<p>The steps I image are :<br />
+When the page loads</p>
+<p>1. Get previously stored data from a database.<br />
+2. Call a javascript function with the parameters in an array from the database.<br />
+3. User modifies data<br />
+4. It saves to the database &#8211; and the process starts again.</p>
+<p>Does anyone know how I could do this?&nbsp;&nbsp;</p>
+<p>Any help will be much appreciated.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Cool		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-465</link>
+
+		<dc:creator><![CDATA[Cool]]></dc:creator>
+		<pubDate>Wed, 15 Apr 2009 13:28:01 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-465</guid>
+
+					<description><![CDATA[Guys,
+
+&#060;div id=&#034;idone&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;%= fields_for @category do %&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;ul&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;li&#062;&#060;label&#062;Category(optional)&#060;/label&#062;&#060;li&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;li&#062;&#060;%= text_field&#160;&#160;:category_name %&#062;&#060;/li&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;/ul&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;% end =%&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;% for assignment in @category.assignments %&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;%= fields_for @assignment do %&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;li&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;%= text_field&#160;&#160;:name =&#062; &#034;name[]&#034;, :class =&#062; &#034;short&#034; %&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;%= text_field&#160;&#160;:name =&#062; &#034;date[]&#034;, :class =&#062; &#034;short apart&#034; %&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;%= text_field&#160;&#160;:name =&#062; &#034;max_point[]&#034;, :class =&#062; &#034;short apart&#034; %&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;/li&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;% end =%&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#060;% end %&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;input type=&#034;hidden&#034; id=&#034;id&#034; value=&#034;1&#034;&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;div id=&#034;divTxt&#034;&#062;&#060;/div&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;a href=&#034;#&#034;&#160;&#160;class=&#034;add-more&#034;&#160;&#160;onClick=&#034;addFormField(); return false;&#034;&#062;Add More Assignments&#060;/a&#062;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;/div&#062;
+
+I have a link&#160;&#160;down like
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#060;a href=&#034;#&#034;&#160;&#160;class=&#034;add-more&#034;&#160;&#160;onClick=&#034;addcategory(); return false;&#034;&#062;Add Another Category&#060;/a&#062;
+
+If i click on the above link the complete div should appear again. Like that i want to do n times.
+ How can i do that. Please please help me guys i was struck with this issue from 2 days..
+
+badly need a help]]></description>
+			<content:encoded><![CDATA[<p>Guys,</p>
+<p>&lt;div id=&quot;idone&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;%= fields_for @category do %&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;label&gt;Category(optional)&lt;/label&gt;&lt;li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;%= text_field&nbsp;&nbsp;:category_name %&gt;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;% end =%&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;% for assignment in @category.assignments %&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= fields_for @assignment do %&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= text_field&nbsp;&nbsp;:name =&gt; &quot;name[]&quot;, :class =&gt; &quot;short&quot; %&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= text_field&nbsp;&nbsp;:name =&gt; &quot;date[]&quot;, :class =&gt; &quot;short apart&quot; %&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= text_field&nbsp;&nbsp;:name =&gt; &quot;max_point[]&quot;, :class =&gt; &quot;short apart&quot; %&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;% end =%&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;% end %&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; id=&quot;id&quot; value=&quot;1&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;divTxt&quot;&gt;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&nbsp;&nbsp;class=&quot;add-more&quot;&nbsp;&nbsp;onClick=&quot;addFormField(); return false;&quot;&gt;Add More Assignments&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
+<p>I have a link&nbsp;&nbsp;down like<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&nbsp;&nbsp;class=&quot;add-more&quot;&nbsp;&nbsp;onClick=&quot;addcategory(); return false;&quot;&gt;Add Another Category&lt;/a&gt;</p>
+<p>If i click on the above link the complete div should appear again. Like that i want to do n times.<br />
+ How can i do that. Please please help me guys i was struck with this issue from 2 days..</p>
+<p>badly need a help</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jess		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-469</link>
+
+		<dc:creator><![CDATA[Jess]]></dc:creator>
+		<pubDate>Thu, 09 Apr 2009 19:03:53 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-469</guid>
+
+					<description><![CDATA[Love the code but I&amp;apos;m having a few issues and I don&amp;apos;t know much about JavaScript.
+
+Does the page need to reload when you remove an element? Also when I do this it deletes all the rows instead of just the one.
+
+Also the number doesn&amp;apos;t change when I add a row. It says 1 everytime.
+
+I&amp;apos;ve tried this in both Firefox and Safari and same result.
+
+Any suggestions would be much appreciated.]]></description>
+			<content:encoded><![CDATA[<p>Love the code but I&apos;m having a few issues and I don&apos;t know much about JavaScript.</p>
+<p>Does the page need to reload when you remove an element? Also when I do this it deletes all the rows instead of just the one.</p>
+<p>Also the number doesn&apos;t change when I add a row. It says 1 everytime.</p>
+<p>I&apos;ve tried this in both Firefox and Safari and same result.</p>
+<p>Any suggestions would be much appreciated.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: wwwhitney		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-464</link>
+
+		<dc:creator><![CDATA[wwwhitney]]></dc:creator>
+		<pubDate>Mon, 30 Mar 2009 17:24:11 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-464</guid>
+
+					<description><![CDATA[Hi Ryan, first off thanks so much for this, it&amp;apos;s been very helpful. I am having an issue and I wonder if you have encountered it yourself. In Firefox 3, the numberOfInputsEle counter does not reset when the page reloads. It really doesn&amp;apos;t make any sense to me because the numberOfInputsEle variable is of course directly tied to the value of numberOfInputs which is always the same defined static value when the page initially loads. I can only surmise that the numberOfInputs value is not defaulting back to its original value when the page is reloaded and is instead retaining the last newRowNum value.
+
+I don&amp;apos;t have the same problem in IE 8 or Safari and luckily the form I&amp;apos;m creating will be used in IE 8 only, but I was still wondering if you might be able to shed some light on this problem. Thanks again!]]></description>
+			<content:encoded><![CDATA[<p>Hi Ryan, first off thanks so much for this, it&apos;s been very helpful. I am having an issue and I wonder if you have encountered it yourself. In Firefox 3, the numberOfInputsEle counter does not reset when the page reloads. It really doesn&apos;t make any sense to me because the numberOfInputsEle variable is of course directly tied to the value of numberOfInputs which is always the same defined static value when the page initially loads. I can only surmise that the numberOfInputs value is not defaulting back to its original value when the page is reloaded and is instead retaining the last newRowNum value.</p>
+<p>I don&apos;t have the same problem in IE 8 or Safari and luckily the form I&apos;m creating will be used in IE 8 only, but I was still wondering if you might be able to shed some light on this problem. Thanks again!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dirk		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-472</link>
+
+		<dc:creator><![CDATA[Dirk]]></dc:creator>
+		<pubDate>Fri, 30 Jan 2009 14:13:36 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-472</guid>
+
+					<description><![CDATA[i can&amp;apos;t get this fixed in a table.&#160;&#160;dont know much about javascript.
+Also i have a problem with bytagname, since i have more input boxes
+
+can you post some code that fixes this or tell me in what direction i can search]]></description>
+			<content:encoded><![CDATA[<p>i can&apos;t get this fixed in a table.&nbsp;&nbsp;dont know much about javascript.<br />
+Also i have a problem with bytagname, since i have more input boxes</p>
+<p>can you post some code that fixes this or tell me in what direction i can search</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-468</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Wed, 21 Jan 2009 18:09:06 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-468</guid>
+
+					<description><![CDATA[Matt, perhaps there is a problem with DebugBar inspecting the data.  Or with how IE presents its data to DebugBar, vs how it actually submits the form fields.]]></description>
+			<content:encoded><![CDATA[<p>Matt, perhaps there is a problem with DebugBar inspecting the data.  Or with how IE presents its data to DebugBar, vs how it actually submits the form fields.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Matt		</title>
+		<link>/dynamically-adding-and-removing-form-elements/comment-page-1/#comment-467</link>
+
+		<dc:creator><![CDATA[Matt]]></dc:creator>
+		<pubDate>Wed, 21 Jan 2009 17:35:08 +0000</pubDate>
+		<guid isPermaLink="false">/?p=242#comment-467</guid>
+
+					<description><![CDATA[After adding three additional rows, when I inspect the dynamically generated fields in IE7 (using DebugBar), I see all identical input field names &quot;FileHeader_1&quot; as follows:
+
+(Ed: code example removed, it didn&#039;t come through properly)]]></description>
+			<content:encoded><![CDATA[<p>After adding three additional rows, when I inspect the dynamically generated fields in IE7 (using DebugBar), I see all identical input field names &#8220;FileHeader_1&#8221; as follows:</p>
+<p>(Ed: code example removed, it didn&#8217;t come through properly)</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

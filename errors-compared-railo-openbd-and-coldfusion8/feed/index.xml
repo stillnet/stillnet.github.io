@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Error messages on Railo, OpenBD and ColdFusion 8 compared	</title>
+	<atom:link href="/errors-compared-railo-openbd-and-coldfusion8/feed/" rel="self" type="application/rss+xml" />
+	<link>/errors-compared-railo-openbd-and-coldfusion8/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 16 Jul 2009 03:30:29 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Jeff		</title>
+		<link>/errors-compared-railo-openbd-and-coldfusion8/comment-page-1/#comment-565</link>
+
+		<dc:creator><![CDATA[Jeff]]></dc:creator>
+		<pubDate>Wed, 15 Jul 2009 06:24:57 +0000</pubDate>
+		<guid isPermaLink="false">/?p=531#comment-565</guid>
+
+					<description><![CDATA[I had the exact opposite experience in November :)
+
+http://www.digitalrewind.com/blog/2008/11/28/Coldfusion-Debug-and-Heap-Space-Errors
+
+Guess it just depends on the error.]]></description>
+			<content:encoded><![CDATA[<p>I had the exact opposite experience in November 🙂</p>
+<p><a href="http://www.digitalrewind.com/blog/2008/11/28/Coldfusion-Debug-and-Heap-Space-Errors" rel="nofollow ugc">http://www.digitalrewind.com/blog/2008/11/28/Coldfusion-Debug-and-Heap-Space-Errors</a></p>
+<p>Guess it just depends on the error.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Markus Moser		</title>
+		<link>/errors-compared-railo-openbd-and-coldfusion8/comment-page-1/#comment-558</link>
+
+		<dc:creator><![CDATA[Markus Moser]]></dc:creator>
+		<pubDate>Mon, 13 Jul 2009 16:21:10 +0000</pubDate>
+		<guid isPermaLink="false">/?p=531#comment-558</guid>
+
+					<description><![CDATA[Adobe Coldfusion only return the column information for compiler/syntax exception (template exception) not for runtime exception (all others).
+
+when you run code like this, you will not have column info eigther
+&#060;cfthrow message=&#034;&#034;&#062;
+
+greetings Michael]]></description>
+			<content:encoded><![CDATA[<p>Adobe Coldfusion only return the column information for compiler/syntax exception (template exception) not for runtime exception (all others).</p>
+<p>when you run code like this, you will not have column info eigther<br />
+&lt;cfthrow message=&quot;&quot;&gt;</p>
+<p>greetings Michael</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

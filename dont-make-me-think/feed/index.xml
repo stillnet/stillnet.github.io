@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Book review: Don&#8217;t Make Me Think!	</title>
+	<atom:link href="/dont-make-me-think/feed/" rel="self" type="application/rss+xml" />
+	<link>/dont-make-me-think/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 29 Sep 2008 16:30:25 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Tawanna		</title>
+		<link>/dont-make-me-think/comment-page-1/#comment-413</link>
+
+		<dc:creator><![CDATA[Tawanna]]></dc:creator>
+		<pubDate>Mon, 29 Sep 2008 16:30:25 +0000</pubDate>
+		<guid isPermaLink="false">/2008/09/07/dont-make-me-think/#comment-413</guid>
+
+					<description><![CDATA[Great review. I am very much interested in creating the most usable website as possible... some developers I have met could care less. This book seems really interesting. I too had heard of it before and wanted to read it, and now after reading this review I am definitely planning on going out to purchase it.]]></description>
+			<content:encoded><![CDATA[<p>Great review. I am very much interested in creating the most usable website as possible&#8230; some developers I have met could care less. This book seems really interesting. I too had heard of it before and wanted to read it, and now after reading this review I am definitely planning on going out to purchase it.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

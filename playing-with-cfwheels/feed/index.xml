@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Trying out the CFWheels framework	</title>
+	<atom:link href="/playing-with-cfwheels/feed/" rel="self" type="application/rss+xml" />
+	<link>/playing-with-cfwheels/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 25 Feb 2010 16:16:38 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Brian		</title>
+		<link>/playing-with-cfwheels/comment-page-1/#comment-1172</link>
+
+		<dc:creator><![CDATA[Brian]]></dc:creator>
+		<pubDate>Thu, 25 Feb 2010 16:16:38 +0000</pubDate>
+		<guid isPermaLink="false">/?p=770#comment-1172</guid>
+
+					<description><![CDATA[Great write up - thanks Ryan.]]></description>
+			<content:encoded><![CDATA[<p>Great write up &#8211; thanks Ryan.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris Peters		</title>
+		<link>/playing-with-cfwheels/comment-page-1/#comment-1130</link>
+
+		<dc:creator><![CDATA[Chris Peters]]></dc:creator>
+		<pubDate>Sun, 14 Feb 2010 21:15:36 +0000</pubDate>
+		<guid isPermaLink="false">/?p=770#comment-1130</guid>
+
+					<description><![CDATA[Thanks for the honest account, Ryan!
+
+One suggestion that I can offer is to rely more on the &#034;mapping&#034; part of &#034;object relational mapping&#034; to get your data references in plainer English. Then you may end up fighting less with Wheels defaults like error messages.
+
+You can use the property() method on your model to define that &#034;fname&#034; should be mapped to &#034;firstName&#034;. Then Wheels will treat the column like a real adult.
+
+Try this out in init():
+&#060;cfset property(name=&#034;firstName&#034;, column=&#034;fname&#034;)&#062;
+&#060;cfset property(name=&#034;lastName&#034;, column=&#034;lname&#034;)&#062;
+etc...
+
+Good luck with the contest. I&amp;apos;m glad to hear that there&amp;apos;s someone out there working on it!
+
+P.S. If you either create a category or tag in WordPress for &#034;ColdFusion on Wheels,&#034; &#034;CFWheels,&#034; or whatever, I can add your Wheels-related posts to our Wheels Bloggers aggregator on cfwheels.org. It gives your posts a little extra exposure from others interested in the framework.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the honest account, Ryan!</p>
+<p>One suggestion that I can offer is to rely more on the &quot;mapping&quot; part of &quot;object relational mapping&quot; to get your data references in plainer English. Then you may end up fighting less with Wheels defaults like error messages.</p>
+<p>You can use the property() method on your model to define that &quot;fname&quot; should be mapped to &quot;firstName&quot;. Then Wheels will treat the column like a real adult.</p>
+<p>Try this out in init():<br />
+&lt;cfset property(name=&quot;firstName&quot;, column=&quot;fname&quot;)&gt;<br />
+&lt;cfset property(name=&quot;lastName&quot;, column=&quot;lname&quot;)&gt;<br />
+etc&#8230;</p>
+<p>Good luck with the contest. I&apos;m glad to hear that there&apos;s someone out there working on it!</p>
+<p>P.S. If you either create a category or tag in WordPress for &quot;ColdFusion on Wheels,&quot; &quot;CFWheels,&quot; or whatever, I can add your Wheels-related posts to our Wheels Bloggers aggregator on cfwheels.org. It gives your posts a little extra exposure from others interested in the framework.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Raul Riera		</title>
+		<link>/playing-with-cfwheels/comment-page-1/#comment-1129</link>
+
+		<dc:creator><![CDATA[Raul Riera]]></dc:creator>
+		<pubDate>Sun, 14 Feb 2010 20:28:26 +0000</pubDate>
+		<guid isPermaLink="false">/?p=770#comment-1129</guid>
+
+					<description><![CDATA[Phew :)]]></description>
+			<content:encoded><![CDATA[<p>Phew 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/playing-with-cfwheels/comment-page-1/#comment-1128</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 14 Feb 2010 20:12:07 +0000</pubDate>
+		<guid isPermaLink="false">/?p=770#comment-1128</guid>
+
+					<description><![CDATA[Raul: no, my columns were not named createdAt/updatedAt when I ran the scaffolding plugin.&#160;&#160;&#160;&#160; I don&amp;apos;t think your plugin did anything wrong.]]></description>
+			<content:encoded><![CDATA[<p>Raul: no, my columns were not named createdAt/updatedAt when I ran the scaffolding plugin.&nbsp;&nbsp;&nbsp;&nbsp; I don&apos;t think your plugin did anything wrong.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Raul Riera		</title>
+		<link>/playing-with-cfwheels/comment-page-1/#comment-1127</link>
+
+		<dc:creator><![CDATA[Raul Riera]]></dc:creator>
+		<pubDate>Sun, 14 Feb 2010 20:01:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=770#comment-1127</guid>
+
+					<description><![CDATA[Were the columns named createdAt, updatedAt or deletedAt? if so, Scaffold SHOULDN&amp;apos;T place those form helpers in your views]]></description>
+			<content:encoded><![CDATA[<p>Were the columns named createdAt, updatedAt or deletedAt? if so, Scaffold SHOULDN&apos;T place those form helpers in your views</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Raul Riera		</title>
+		<link>/playing-with-cfwheels/comment-page-1/#comment-1126</link>
+
+		<dc:creator><![CDATA[Raul Riera]]></dc:creator>
+		<pubDate>Sun, 14 Feb 2010 19:57:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=770#comment-1126</guid>
+
+					<description><![CDATA[That seems like a bug in my plugin.. I will look right into it :)
+
+Glad to have you on board testing the framework]]></description>
+			<content:encoded><![CDATA[<p>That seems like a bug in my plugin.. I will look right into it 🙂</p>
+<p>Glad to have you on board testing the framework</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

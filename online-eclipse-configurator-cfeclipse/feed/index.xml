@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Online Eclipse configurator and download	</title>
+	<atom:link href="/online-eclipse-configurator-cfeclipse/feed/" rel="self" type="application/rss+xml" />
+	<link>/online-eclipse-configurator-cfeclipse/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sun, 09 Nov 2008 02:02:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Cindy		</title>
+		<link>/online-eclipse-configurator-cfeclipse/comment-page-1/#comment-460</link>
+
+		<dc:creator><![CDATA[Cindy]]></dc:creator>
+		<pubDate>Sun, 09 Nov 2008 02:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=178#comment-460</guid>
+
+					<description><![CDATA[I agree, Yoxos is awesome.
+I also came across a free product called Pulse, made by the same guys who do MyEclipse.
+
+I actually think it&#039;s superior, since it not only configures downloads, but manages your plugins and makes them sharable easily. Anyway, worth a look for sure. They even have pre-made profiles ready to run for CFEclipse!
+
+www.poweredbypulse.com
+
+Best,
+Cindy]]></description>
+			<content:encoded><![CDATA[<p>I agree, Yoxos is awesome.<br />
+I also came across a free product called Pulse, made by the same guys who do MyEclipse.</p>
+<p>I actually think it&#8217;s superior, since it not only configures downloads, but manages your plugins and makes them sharable easily. Anyway, worth a look for sure. They even have pre-made profiles ready to run for CFEclipse!</p>
+<p><a href="http://www.poweredbypulse.com/" rel="nofollow ugc">http://www.poweredbypulse.com/</a></p>
+<p>Best,<br />
+Cindy</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

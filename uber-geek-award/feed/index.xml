@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Ryan takes home the trophy &#8211; Uber Geek of the year	</title>
+	<atom:link href="/uber-geek-award/feed/" rel="self" type="application/rss+xml" />
+	<link>/uber-geek-award/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 08 Sep 2010 00:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan		</title>
+		<link>/uber-geek-award/comment-page-1/#comment-1676</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 08 Sep 2010 00:35:17 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/08/uber-geek-award/#comment-1676</guid>
+
+					<description><![CDATA[Greg I believe it was built by my boss&amp;apos;s kids.]]></description>
+			<content:encoded><![CDATA[<p>Greg I believe it was built by my boss&apos;s kids.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Greg Vena		</title>
+		<link>/uber-geek-award/comment-page-1/#comment-1675</link>
+
+		<dc:creator><![CDATA[Greg Vena]]></dc:creator>
+		<pubDate>Wed, 08 Sep 2010 00:33:33 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/08/uber-geek-award/#comment-1675</guid>
+
+					<description><![CDATA[Fantastic Trophy. Can you put me in touch with the person who designed/produced it.]]></description>
+			<content:encoded><![CDATA[<p>Fantastic Trophy. Can you put me in touch with the person who designed/produced it.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Adrock		</title>
+		<link>/uber-geek-award/comment-page-1/#comment-373</link>
+
+		<dc:creator><![CDATA[Adrock]]></dc:creator>
+		<pubDate>Wed, 09 Apr 2008 13:14:12 +0000</pubDate>
+		<guid isPermaLink="false">/2008/04/08/uber-geek-award/#comment-373</guid>
+
+					<description><![CDATA[Awesome trophy! Congrats!
+
+I think you guys at WebTools may be in danger of having too much fun at work. ;-)]]></description>
+			<content:encoded><![CDATA[<p>Awesome trophy! Congrats!</p>
+<p>I think you guys at WebTools may be in danger of having too much fun at work. 😉</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

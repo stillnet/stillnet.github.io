@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Running your CFML code through Railo, OpenBD, and Adobe CF all at once	</title>
+	<atom:link href="/run-code-railo-openbd-adobe-cf-at-once/feed/" rel="self" type="application/rss+xml" />
+	<link>/run-code-railo-openbd-adobe-cf-at-once/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 02 Jun 2010 13:42:42 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Mike Henke		</title>
+		<link>/run-code-railo-openbd-adobe-cf-at-once/comment-page-1/#comment-1442</link>
+
+		<dc:creator><![CDATA[Mike Henke]]></dc:creator>
+		<pubDate>Wed, 02 Jun 2010 13:42:42 +0000</pubDate>
+		<guid isPermaLink="false">/?p=551#comment-1442</guid>
+
+					<description><![CDATA[Magic Junction is another tool for creating junctions.&#160;&#160;The interface is nice and simple. http://www.rekenwonder.com/linkmagic.htm Works on a wide range of windows versions.]]></description>
+			<content:encoded><![CDATA[<p>Magic Junction is another tool for creating junctions.&nbsp;&nbsp;The interface is nice and simple. <a href="http://www.rekenwonder.com/linkmagic.htm" rel="nofollow ugc">http://www.rekenwonder.com/linkmagic.htm</a> Works on a wide range of windows versions.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: scott conklin		</title>
+		<link>/run-code-railo-openbd-adobe-cf-at-once/comment-page-1/#comment-869</link>
+
+		<dc:creator><![CDATA[scott conklin]]></dc:creator>
+		<pubDate>Tue, 20 Oct 2009 23:27:20 +0000</pubDate>
+		<guid isPermaLink="false">/?p=551#comment-869</guid>
+
+					<description><![CDATA[Nice Posts and very interesting. i was wondering though if it were possible to take it a step further and make your hosts names , in your case railo.dev, openbd.dev, and cfusion.dev&#160;&#160;all render content somehow outside of the context of one of the installed engines. (somehow having the shared subdir refer back to a different context root)
+i am still looking for away to do what you are doing, but have the docbase be wwwroot dir for example where i have all my projects.]]></description>
+			<content:encoded><![CDATA[<p>Nice Posts and very interesting. i was wondering though if it were possible to take it a step further and make your hosts names , in your case railo.dev, openbd.dev, and cfusion.dev&nbsp;&nbsp;all render content somehow outside of the context of one of the installed engines. (somehow having the shared subdir refer back to a different context root)<br />
+i am still looking for away to do what you are doing, but have the docbase be wwwroot dir for example where i have all my projects.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

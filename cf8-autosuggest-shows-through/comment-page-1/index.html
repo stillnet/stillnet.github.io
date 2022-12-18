@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Stillnet Studios  &raquo; Blog Archive   &raquo; ColdFusion 8 auto-suggest shows through other form fields</title>
+
+<meta name="generator" content="WordPress 6.1.1"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/evanescence-12/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios RSS Feed" href="/feed/">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="robots" content="max-image-preview:large">
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-1413191-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios &raquo; ColdFusion 8 auto-suggest shows through other form fields Comments Feed" href="/cf8-autosuggest-shows-through/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"httpwww.stillnetstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/80">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="/cf8-autosuggest-shows-through/comment-page-1/#comments">
+<link rel="shortlink" href="/?p=80">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcf8-autosuggest-shows-through%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcf8-autosuggest-shows-through%2F&#038;format=xml">
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<div><div>	
+	<div class="header-title">
+		<h1><a href="/" title="Stillnet Studios: Web development notes and commentary from Ryan Stille">Stillnet Studios</a></h1>
+		<p>Web development notes and commentary from Ryan Stille</p>
+	</div> 
+	<!-- Search box (If you prefer having search form as a sidebar widget, remove this block) -->
+	<div class="search">
+		<form method="get" id="searchform" action="http://www.stillnetstudios.com/">
+<input type="text" size="12" name="s" id="s" value="search..." onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';">
+</form>
+	</div> 
+	<!-- Search ends here-->
+</div></div>	
+</div>
+<div id="wrapper">
+
+	<div id="content">
+
+			
+		<div class="navigation">
+			<div class="alignleft">&laquo; <a href="/coldfusion-8-inline-array/" rel="prev">ColdFusion 8 inline array syntax doesn&#8217;t work everywhere</a>
+</div>
+			<div class="alignright">
+<a href="/you-can-set-java-system-properties-via-coldfusion/" rel="next">You *can* set Java system properties via ColdFusion</a> &raquo;</div>
+		</div>
+
+		<div class="post" id="post-80">
+			<div class="post-title"><div>
+				<h2><a href="/cf8-autosuggest-shows-through/" rel="bookmark" title="Permanent Link to ColdFusion 8 auto-suggest shows through other form fields">ColdFusion 8 auto-suggest shows through other form fields</a></h2>
+			</div></div>
+			<div class="post-entry">
+				<p>I was creating a form the other day that had 3 form fields, layed out vertically on top of one another.  I switched the first field to be a cfinput, so I could use the autosuggest feature:</p>
+<p><img decoding="async" id="image83" src="/wp-content/uploads/2008/01/cfinput-1.png" alt="cfinput example 1"><br>
+<span id="more-80"></span><br>
+Then I switched the other two fields to be cfinputs so I could add autosuggest to them, too.  And that is where I ran into problems:</p>
+<p><img decoding="async" id="image84" src="/wp-content/uploads/2008/01/cfinput-2.png" alt="cfinput example 2 - showing through"></p>
+<p>This happens in IE 6 and 7, but not FireFox.  The problem occurs because when ColdFusion creates the <code>&lt;input&gt;</code> tag from a <code>&lt;cfinput&gt;</code>, it wraps it in two divs with a bit of related CSS.  There is a conflict with the way ColdFusion sets the CSS float and z-index properties.</p>
+<p>Thanks to my co-worker, CSS guru <a href="http://jake.cfwebtools.com/">Jake Churchill</a>, for figuring out a solution.  All that needs to be done is to re-layer the inputs by setting their zindex.  ColdFusion names the surrounding divs in an consistent way (thankfully they don&#8217;t use random names like some of the other ColdFusion JavaScript functions!), so we can just add a little CSS of our own to fix the problem.  The divs end up named like myformfield1autosuggest, myformfield2autosuggest, etc.  Knowing that, we can place this into our html page:</p>
+<pre><code>&lt;style type="text/css"&gt;
+	#field1autosuggest {
+		z-index:3;
+	}
+	#field2autosuggest {
+		z-index:2;
+	}
+	#test3autosuggest {
+		z-index:1;
+	}
+&lt;/style&gt;</code></pre>
+<p>Even better, here is a JavaScript script file you can reference in your page that will automatically fix these issues (thanks Jake!).</p>
+<p><a id="p85" href="/wp-content/uploads/2008/01/fixautosuggestjs.txt">Download here</a> (note: due to formatting issues that may occur on this page, you really should download the script using this link, instead of copying and pasting from this page)</p>
+<p>The script contents:</p>
+<pre><code>function fixAutoSuggest() {
+	divs = document.getElementsByTagName("div");
+	s = "&lt;style type="text/css"&gt;\n";
+	counter = 1;
+	for (x = divs.length-1; x &gt;= 0; x--) {
+		if ( divs[x].getAttribute("id") &amp;&amp; divs[x].getAttribute("id").indexOf("autosuggest") &gt; -1) {
+			s += "#"+divs[x].getAttribute("id")+" {z-index:"+(counter++)+"!important;}\n";
+		}
+	}
+	s += "&lt;/style&gt;";
+	document.write(s);
+};</code></pre>
+<p>You must then call this function <em>after</em> your form elements have been written to the browser.  So &#8211; after your closing form tag, put this:</p>
+<p><code>&lt;script type="text/javascript"&gt;fixAutoSuggest();&lt;/script&gt;</code></p>
+<p>It does <em>not</em> work to simply call the function in the body&#8217;s onload attribute.</p>
+							</div>
+	
+			<p class="post-meta">
+					This entry was posted on 30 January 2008 at 5:17 pm					and is filed under <a href="/category/ajax-javascript/" rel="category tag">AJAX / JavaScript</a>, <a href="/category/coldfusion/" rel="category tag">ColdFusion</a>, <a href="/category/web-development/" rel="category tag">Web Development</a>.
+					You can follow any responses to this entry through the <a href="/cf8-autosuggest-shows-through/feed/">RSS 2.0</a> feed.
+
+											Both comments and pings are currently closed.
+
+					
+			</p>
+		</div>
+	
+<!-- You can start editing here. -->
+<div id="comments">
+	<h3>26 Comments</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-347">
+			<h4>
+<a href="http://axel.cfwebtools.com/" rel="external nofollow ugc" class="url">Axel</a> says:</h4>
+			<p>Thats Awesome.</p>
+						<small class="commentmetadata"><a href="#comment-347" title="">30 January 2008, 6:16 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-348">
+			<h4>
+<a href="http://www.musicarsenal.com/" rel="external nofollow ugc" class="url">Jimmy</a> says:</h4>
+			<p>I used ColdFusion&#8217;s native Autosuggest for a bit but found jQuery to be much easier and extensible. Its a small footprint and the autosuggest plugin I used is based on ColdFusion examples. Even if you don&#8217;t use it, I think its worth a look:<br>
+<a href="http://www.pengoworks.com/workshop/jquery/autocomplete.htm" rel="nofollow ugc">http://www.pengoworks.com/workshop/jquery/autocomplete.htm</a></p>
+						<small class="commentmetadata"><a href="#comment-348" title="">30 January 2008, 9:17 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-349">
+			<h4>dickbob says:</h4>
+			<p>Great fix guys!</p>
+<p>Any chance you could look at the same thing that happens when you set the type to &#8220;datefield&#8221;?</p>
+<p>The popup calendar that is generated bleeds all over the other input and select form fields. I&#8217;ve tried your technique but either it doesn&#8217;t work or I&#8217;m too dumb. I&#8217;m betting on the latter 🙂</p>
+						<small class="commentmetadata"><a href="#comment-349" title="">31 January 2008, 3:28 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-351">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>We did spend a little time looking at the datefield, and its not an easy fix.  For some reason they are writing the style for the date stuff inline, instead of using a class or ID selector.</p>
+<p>I&#8217;m really surprised Adobe overlooked this issue.  Maybe they didn&#8217;t do any testing with more than one cfinput on a page?</p>
+						<small class="commentmetadata"><a href="#comment-351" title="">31 January 2008, 9:19 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-350">
+			<h4>
+<a href="http://www.unitedspacealliace.com/" rel="external nofollow ugc" class="url">Peter Hopman</a> says:</h4>
+			<p>The issue was documented in the CF 8 release notes.  Thanks for the fix.</p>
+						<small class="commentmetadata"><a href="#comment-350" title="">31 January 2008, 10:56 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-352">
+			<h4>
+<a href="http://www.plunker.com/" rel="external nofollow ugc" class="url">Chris</a> says:</h4>
+			<p>I tried using this but the above code would cause a JS error in FF which would in turn break everything else.</p>
+<p>The problem was with the line:<br>
+<code><br>
+s = "\n";<br>
+</code><br>
+I had to change it to:<br>
+<code><br>
+s = '\n';<br>
+</code></p>
+<p>Thanks for a great fix!</p>
+						<small class="commentmetadata"><a href="#comment-352" title="">8 July 2008, 11:02 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-353">
+			<h4>
+<a href="http://www.plunker.com/" rel="external nofollow ugc" class="url">Chris</a> says:</h4>
+			<p>Well that didn&#8217;t work very well.</p>
+<p>The line in the JS that starts with s = &#8221; i had to replace the outer &#8221; with &#8216;</p>
+						<small class="commentmetadata"><a href="#comment-353" title="">8 July 2008, 11:03 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-354">
+			<h4>George says:</h4>
+			<p>Say, using autosuggest is there a way to populate 2 hidden form fields with different column values based on what is selected in the autosuggest?</p>
+						<small class="commentmetadata"><a href="#comment-354" title="">15 July 2008, 2:49 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-355">
+			<h4>Don Blaire says:</h4>
+			<p>I have read alot about jquery autosuggest, but I was spending way too many hours trying to make it work.  Coldfusion 8 autosuggest is fast and quick, but I ran into the problem you described in your blog.</p>
+<p>You are a real lifesaver. It was the solution to the problem. Thanks for taking the time to blog about the solution to this problem.</p>
+						<small class="commentmetadata"><a href="#comment-355" title="">29 August 2008, 3:53 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-362">
+			<h4>Mike says:</h4>
+			<p>In order to get it to work in IE, I had to change all instances of \\n to \n.  Otherwise, good stuff, thanks!</p>
+						<small class="commentmetadata"><a href="#comment-362" title="">7 November 2008, 11:07 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-356">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Thanks Mike, I don&#8217;t know how those double slashes got in there but I removed them.</p>
+<p>Just an FYI, people may have better luck using the script if they get it from the download link mentioned, rather than copying and pasting from this page.</p>
+						<small class="commentmetadata"><a href="#comment-356" title="">7 November 2008, 11:14 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-357">
+			<h4>Mike says:</h4>
+			<p>For those interested in a solution for the datefield problem, I found a solution that works for me here: <a href="http://www.easycfm.com/forums/printthread.cfm?Forum=12&#038;Topic=13172" rel="nofollow ugc">http://www.easycfm.com/forums/printthread.cfm?Forum=12&#038;Topic=13172</a></p>
+						<small class="commentmetadata"><a href="#comment-357" title="">7 November 2008, 6:17 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-358">
+			<h4>Mike says:</h4>
+			<p>Sorry, I should add that I didn&#8217;t implement my fix just as described, but I did set the z-index to 9999 in my top date field inside the DIV, as he showed.  My lower datefield, I set to 8888.</p>
+						<small class="commentmetadata"><a href="#comment-358" title="">7 November 2008, 6:24 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-359">
+			<h4>Tim says:</h4>
+			<p>Great fix for IE7, FF &amp; Safari with datefield and autosuggest&#8230; didn&#8217;t have any luck with IE6 using an autosuggest above a  tag. The select tag shows thru the dropdown autosuggest list. (Changing to cfselect didn&#8217;t help either.) Any thoughts?</p>
+						<small class="commentmetadata"><a href="#comment-359" title="">10 December 2008, 3:49 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-361">
+			<h4>
+<a href="http://www.broadridge.com/" rel="external nofollow ugc" class="url">Bud HInes</a> says:</h4>
+			<p>I have a slightly different issue. I tried to use autosuggest in my site header &#8211; div = header and it would not work. The Ajax debugger showed that I obtained the results I was looking for but they would not show through the autosuggest box. It appears that the autosuggest box is scrunched. I even tried this with a web page with no styling attached to the header div.&nbsp;&nbsp;I then change the div id to anything else and I could see the results of the autosuggest control. The easy answer is to move the placement of the autosuggest control. But, I want to use the autosuggest at the top of my page to search through my site. Do you have any ideas for this problem?</p>
+<p>Thanks,<br>
+Bud</p>
+						<small class="commentmetadata"><a href="#comment-361" title="">11 June 2009, 4:44 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-360">
+			<h4>
+<a href="http://www.broadridge.com/" rel="external nofollow ugc" class="url">Bud HInes</a> says:</h4>
+			<p>Never mind on my question above. It turns out that I had a header ul with a position of absolute that was preventing the autosuggest results from displaying.</p>
+						<small class="commentmetadata"><a href="#comment-360" title="">11 June 2009, 5:51 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-716">
+			<h4>
+<a href="http://ewpdesign.com/" rel="external nofollow ugc" class="url">Cheryl</a> says:</h4>
+			<p>Hi all,</p>
+<p>I don&apos;t know if this will help anyone, but I was having problems with the CF added floats.&nbsp;&nbsp;I had three fields in a list intending to have one field below another.&nbsp;&nbsp;Because of the CF added floats, they were all on one line.&nbsp;&nbsp;I added an &lt;li class=&quot;clear-floats&quot;&gt;&lt;/li&gt; after each datefield cfinput and it cleared up the problem:</p>
+<p>.clear-floats {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clear: both;<br>
+}</p>
+<p>I hope it helps someone.</p>
+						<small class="commentmetadata"><a href="#comment-716" title="">9 September 2009, 2:35 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-741">
+			<h4>Don Blaire says:</h4>
+			<p>The users were about to hang me over this issue. I kept telling them that Adobe will fix it. I twice reported this problem as a bug to Adobe for ColdFusion 9.</p>
+<p>Though I could not get your script to work, the css example worked fine. Now the users are extremely happy.&nbsp;&nbsp;Thanks for this blog entry.</p>
+						<small class="commentmetadata"><a href="#comment-741" title="">21 September 2009, 5:00 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-814">
+			<h4>
+<a href="http://www.kohler.com/" rel="external nofollow ugc" class="url">Matt</a> says:</h4>
+			<p>This is a good fix for text input fields.<br>
+This won&apos;t fix the z order of a cfselect or select input.</p>
+<p>A select form input control is presented to the web browser in a different way, if i remember rightly its part of the OS whilst other form controls are generated by the client browser. (Please correct me if i&apos;m wrong).</p>
+<p>If there is some magical code to get around this i would be most greatful.</p>
+<p>Matt</p>
+						<small class="commentmetadata"><a href="#comment-814" title="">7 October 2009, 3:00 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-1355">
+			<h4>Aidan Whitehall says:</h4>
+			<p>Fantastic&#8230; great fix &#8212; thanks for sharing.</p>
+						<small class="commentmetadata"><a href="#comment-1355" title="">11 May 2010, 8:16 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-1552">
+			<h4>
+<a href="http://er2000/" rel="external nofollow ugc" class="url">Willene</a> says:</h4>
+			<p>Thank you. Works like a charm in development.</p>
+						<small class="commentmetadata"><a href="#comment-1552" title="">19 July 2010, 10:48 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-1702">
+			<h4>
+<a href="http://parameds.com/" rel="external nofollow ugc" class="url">Joseph Frank</a> says:</h4>
+			<p>My page is hanging up when the function is called &#8211; using IE8, CF9 on a 64bit Win7 machine &#8211; not sure if that is relevant.</p>
+<p>Any ideas?</p>
+						<small class="commentmetadata"><a href="#comment-1702" title="">15 September 2010, 7:13 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-2038">
+			<h4>Michael Kane says:</h4>
+			<p>Your fix worked for me! Glad I kept googling the problem, I don&apos;t have a CSS guru to help. Too bad Adobe can&apos;t fix this, after several years.</p>
+						<small class="commentmetadata"><a href="#comment-2038" title="">28 March 2011, 3:20 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-2468">
+			<h4>Ralf Guttmann says:</h4>
+			<p>Thank you very much for this fix that worked great for me!</p>
+						<small class="commentmetadata"><a href="#comment-2468" title="">25 July 2011, 2:41 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-2511">
+			<h4>Aaron Mclean says:</h4>
+			<p>Worked for me. Just had to replace the double quotes in the style type line with single quotes.</p>
+						<small class="commentmetadata"><a href="#comment-2511" title="">6 September 2011, 7:10 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-2798">
+			<h4>hasan says:</h4>
+			<p>Thank you very much! saved my day!!!!!!!!</p>
+						<small class="commentmetadata"><a href="#comment-2798" title="">11 April 2012, 11:26 am</a></small>
+					</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+	<div>
+		<ul>
+			<li id="text-3" class="widget widget_text">			<div class="textwidget"><center><img style="border: 1px solid gray;" src="/wp-content/uploads/2012/06/ryan-headshot-1.jpg" alt="Ryan Stille"></center></div>
+		</li>
+<li id="pages-3" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+
+			<ul>
+				<li class="page_item page-item-228"><a href="/about/">About Me</a></li>
+<li class="page_item page-item-35"><a href="/projects/">My Projects</a></li>
+			</ul>
+
+			</li>
+<li id="categories-3" class="widget widget_categories">
+<h2 class="widgettitle">Article Categories</h2>
+
+			<ul>
+					<li class="cat-item cat-item-3">
+<a href="/category/ajax-javascript/">AJAX / JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/bluedragon/">BlueDragon</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/book-reviews/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/coldfusion/">ColdFusion</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/flex/">Flex</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/misc/">Misc</a>
+</li>
+	<li class="cat-item cat-item-10">
+<a href="/category/railo/">Railo</a>
+</li>
+	<li class="cat-item cat-item-11">
+<a href="/category/sql/">SQL</a>
+</li>
+	<li class="cat-item cat-item-12">
+<a href="/category/system-administration/">System Administration</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/tomcat/">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/web-development/">Web Development</a>
+</li>
+			</ul>
+
+			</li>
+
+		<li id="recent-posts-3" class="widget widget_recent_entries">
+		<h2 class="widgettitle">Recent Posts</h2>
+
+		<ul>
+											<li>
+					<a href="/coldfusion-formfield-as-array-cf10/">Accessing form fields as an array in CF10</a>
+									</li>
+											<li>
+					<a href="/onerror-img-image-tag/">Did you know about the onerror attribute of the img tag?</a>
+									</li>
+											<li>
+					<a href="/copying-sql-studio-excel-headers/">Copying data from SQL Studio to Excel</a>
+									</li>
+											<li>
+					<a href="/dateconvert-utc-not-what-you-expect/">Using DateConvert to get a UTC timestamp may not return what you expect</a>
+									</li>
+											<li>
+					<a href="/get-filename-before-calling-cffile/">Getting the client filename before using cffile</a>
+									</li>
+											<li>
+					<a href="/jquery-snippet-to-get-all-input-values/">jQuery snippet to get all input values</a>
+									</li>
+											<li>
+					<a href="/mura-404-page-not-working-in-iis7-fix-it-in-web-config/">Mura 404 page not working in IIS7 &#8211; fix it in web.config</a>
+									</li>
+											<li>
+					<a href="/free-coldfusion-10-beta-hosting/">Free ColdFusion 10 beta hosting</a>
+									</li>
+											<li>
+					<a href="/remove-spaces-columns-cfspreadsheet/">Removing spaces from columns in cfspreadsheet (or any query)</a>
+									</li>
+											<li>
+					<a href="/online-code-formatters/">Online code formatters</a>
+									</li>
+											<li>
+					<a href="/joining-two-tables-one-id/">Joining to one of two tables with one ID</a>
+									</li>
+											<li>
+					<a href="/formatting-cfgrid-with-javascript/">Formatting CFGRID with JavaScript</a>
+									</li>
+											<li>
+					<a href="/cf-form-array-comma-workaround/">Accessing ColdFusion form values as an array</a>
+									</li>
+											<li>
+					<a href="/loading-fckeditor-dynamically/">Loading CFrichtext / FCKeditor on-the-fly</a>
+									</li>
+											<li>
+					<a href="/url-rewriting-windows-2008-iis7/">Mura URL rewriting on Windows 2008 / IIS7</a>
+									</li>
+					</ul>
+
+		</li>
+<li id="linkcat-2" class="widget widget_links">
+<h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.axelscript.com/" title="AxelScript &#8211; Flex development blog">Axel Jensen</a></li>
+<li><a href="http://jake.cfwebtools.com/" title="ColdFusion/Flex development">Jake Churchill</a></li>
+<li><a href="http://www.coldfusionmuse.com/" title="ColdFusion Muse">Mark Kruger</a></li>
+<li><a href="http://www.henke.ws/" title="ColdFusion, TDD, Ant, Subversion, etc.">Mike Henke</a></li>
+
+	</ul>
+</li>
+
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Donate</h2>
+			<div class="textwidget">If my code has helped you and you'd like give a donation, you can do so using the button below.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="ryan@stillnet.org">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Donation for helpful ColdFusion code">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget">
+<br><br>
+<img src="/wp-content/uploads/2010/01/acp_logo.gif">
+</div>
+		</li>
+			
+		</ul> 
+	</div>
+	</div>
+</div> <!-- wrapper -->
+
+<div id="footer"><div><div><div>
+
+	<a href="/feed/">Entries (RSS)</a> and <a href="/comments/feed/">Comments (RSS)</a>. Valid <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a>.<br>
+
+	Powered by <a href="http://www.wpthemes360.com/">Wordpress Themes</a>. Theme <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> by <a href="http://srinig.com/">Srini G</a>
+
+	</div></div></div></div>
+
+</div> <!-- page -->
+
+</body>
+
+</html>

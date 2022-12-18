@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>AJAX / JavaScript &#8211; Stillnet Studios</title>
+	<atom:link href="/category/ajax-javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 08 Jan 2013 16:05:08 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Did you know about the onerror attribute of the img tag?</title>
+		<link>/onerror-img-image-tag/</link>
+					<comments>/onerror-img-image-tag/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 16:05:08 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[CSS]]></category>
+		<guid isPermaLink="false">/?p=1162</guid>
+
+					<description><![CDATA[The other day I discovered that the img tag has an error event. This can be used to automatically load a fall back image when the main image fails for some reason. We encounter this in our dev sites sometimes, because the data is often not 100% correct. For example, our application may &#8216;think&#8217; there [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The other day I discovered that the img tag has an error event. This can be used to automatically load a fall back image when the main image fails for some reason. We encounter this in our dev sites sometimes, because the data is often not 100% correct. For example, our application may &#8216;think&#8217; there is an image for a product (according to the database), so it writes out an img tag for it. But the image file does not actually exist. So we may end up with a broken image icon, or depending on the browser there may be no indication at all that something is wrong. The tester may get confused as to what&#8217;s gone wrong. So I added this code to show an &#8216;image file does not exist&#8217; image:</p>
+<p><code>&lt;img src="#productImage#" onerror="this.src='/images/icons/imageDoesNotExist.png'" &gt;</code></p>
+<p>That&#8217;s it. Be careful that in your error handling code you point to an image file that really exists, otherwise you could go into an infinite loop. One way to be safe regarding that would be to call a function, and remove the onerror attribute so that it only gets fired once.</p>
+<pre><code>&lt;script&gt;
+function imageError(element) {
+	element.onerror='';
+	element.src='/images/icons/imageDoesNotExist.png';
+	}
+&lt;/script&gt;
+
+&lt;img src="#productImage#" onerror="imageError(this)"&gt;</code></pre>
+<p>You could even use this to report a broken image:</p>
+<p><code>&lt;img src="#productImage#" onerror="this.src='logBrokenImage.cfm?image=' + this.src" &gt;</code></p>
+<p>The onerror event is supported in all major browsers. The other tags that support onerror are object, script, and style.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/onerror-img-image-tag/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>jQuery snippet to get all input values</title>
+		<link>/jquery-snippet-to-get-all-input-values/</link>
+					<comments>/jquery-snippet-to-get-all-input-values/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 27 Oct 2012 21:40:57 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<guid isPermaLink="false">/?p=1121</guid>
+
+					<description><![CDATA[I thought this was some interesting JavaScript that I used recently to detect if form fields were filled in. This was a case where if any of a particular group of fields were filled in, I needed to validate and make sure they were all passed in. var allValues = $("input.someClass").map(function() { return this.value; }).get().join(''); [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I thought this was some interesting JavaScript that I used recently to detect if form fields were filled in. This was a case where if any of a particular group of fields were filled in, I needed to validate and make sure they were all passed in.</p>
+<pre>
+<code>var allValues = $("input.someClass").map(function() { return this.value; }).get().join('');
+
+if (allValues.length) {
+  // do validation here to make sure all fields are filled in
+  }</code>
+</pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/jquery-snippet-to-get-all-input-values/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Online code formatters</title>
+		<link>/online-code-formatters/</link>
+					<comments>/online-code-formatters/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 14 Jul 2011 01:53:22 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[Misc]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1082</guid>
+
+					<description><![CDATA[Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine. Here is one for formatting XML: http://www.shell-tools.net/index.php?op=xml_format And [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine.</p>
+<p>Here is one for formatting XML: <a href="http://www.shell-tools.net/index.php?op=xml_format">http://www.shell-tools.net/index.php?op=xml_format</a></p>
+<p>And one for JSON from the same site: <a href="http://www.shell-tools.net/index.php?op=json_format">http://www.shell-tools.net/index.php?op=json_format</a></p>
+<p>Here is a SQL one that helped me out a lot tonight: <a href="http://www.dpriver.com/pp/sqlformat.htm">http://www.dpriver.com/pp/sqlformat.htm</a></p>
+<p>I fed it a horrible looking, very complex query and it made it easily readable. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/online-code-formatters/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Formatting CFGRID with JavaScript</title>
+		<link>/formatting-cfgrid-with-javascript/</link>
+					<comments>/formatting-cfgrid-with-javascript/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 14:47:24 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=806</guid>
+
+					<description><![CDATA[A while back I had the need to do some formatting on a cfgrid. I was using a typical product/price table but the prices are stored with 4 decimals and we needed to display that much resolution. The html version of CFGRID does not directly support this. Consider this &#8220;fake&#8221; query set: &#60;cfset materials=QueryNew("ProductCode,Description,Price","VarChar, VarChar, [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A while back I had the need to do some formatting on a cfgrid. I was using a typical product/price table but the prices are stored with 4 decimals and we needed to display that much resolution. The html version of CFGRID does not directly support this.</p>
+<p>Consider this &#8220;fake&#8221; query set:</p>
+<pre><code>&lt;cfset materials=QueryNew("ProductCode,Description,Price","VarChar, VarChar, decimal")&gt;  
+&lt;cfset Temp=QueryAddRow(materials,1)&gt;
+&lt;cfset Temp=QuerySetCell(materials,"ProductCode","MAT1")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Description","Copper Bar")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Price",<strong>3.3400</strong>)&gt;  
+&lt;cfset Temp=QueryAddRow(materials)&gt;
+&lt;cfset Temp=QuerySetCell(materials,"ProductCode","MAT2")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Description","Feeler Gauge")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Price",<strong>2.2900</strong>)&gt;  
+&lt;cfset Temp=QueryAddRow(materials)&gt;
+&lt;cfset Temp=QuerySetCell(materials,"ProductCode","MAT3")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Description","Plastic Retainer")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Price",<strong>1.3201</strong>)&gt;  </code></pre>
+<p>Note the prices have 4 decimal values, this is how they come to us from the database. If you try to display these with this cfgrid code:</p>
+<pre><code>&lt;cfform&gt;
+&lt;cfgrid name="testgrid" format="html" query="materials"&gt;
+&lt;/cfgrid&gt;
+&lt;/cfform&gt;</code></pre>
+<p>You will end up with this:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfgrid-1.png" alt="" title="cfgrid-1" width="302" height="96" class="alignnone size-full wp-image-1014" srcset="/wp-content/uploads/2011/03/cfgrid-1.png 302w, /wp-content/uploads/2011/03/cfgrid-1-300x95.png 300w" sizes="(max-width: 302px) 100vw, 302px" /><br />
+<span id="more-806"></span><br />
+Notice the 3rd material is displayed correctly, but the others are not, we would like them to all have the same number of decimals for consistency. You might think you could use cfgridcolumn tags and the numberformat attribute like this:</p>
+<pre><code>&lt;cfform&gt;
+&lt;cfgrid name="testgrid" format="html" query="materials"&gt;
+	&lt;cfgridcolumn name="ProductCode"&gt;
+	&lt;cfgridcolumn name="Description"&gt;
+	&lt;cfgridcolumn name="Price" numberformat="0.0000"&gt;
+&lt;/cfgrid&gt;
+&lt;/cfform&gt;</code></pre>
+<p>But this will not work, the numberformat attribute only works on Java type cfgrids, not HTML ones. This attempt will silently fail with no error message, leaving you scratching your head for a while.  Lucky for us, ColdFusion creates its grids using the populat EXT JavaScript framework. This means there is a lot of documentation and examples out there on how to work with this code in EXT.  Its pretty easy to hook into the grid with JavaScript and format the data.</p>
+<pre><code>&lt;script&gt;var myFormatter = Ext.util.Format.numberRenderer('.0000');
+mygrid = ColdFusion.Grid.getGridObject('testgrid');
+cm = mygrid.getColumnModel();
+cm.setRenderer(2, myFormatter);  <em>// the 2 here indicates we want to format the 3rd column (JS is zero indexed)</em>
+mygrid.reconfigure(mygrid.getStore(),cm);
+&lt;/script&gt;</code></pre>
+<p>But you can&#8217;t run the JavaScript code when your page loads because the grid takes a few milliseconds to get setup, so if your code runs right away it won&#8217;t find the grid. You could use the JavaScript setTimeout() to delay execution of your code:</p>
+<pre><code>&lt;script language="javaScript"&gt;
+var myFormatter = Ext.util.Format.numberRenderer('.0000');
+formatgrid = function() {
+	mygrid = ColdFusion.Grid.getGridObject('testgrid');
+	cm = mygrid.getColumnModel();
+	cm.setRenderer(2, myFormatter);
+	mygrid.reconfigure(mygrid.getStore(),cm);
+	}
+setTimeout("formatgrid()",500);
+&lt;/script&gt;</code></pre>
+<p>However you would be guessing at how long it will take and its going to vary on each client. I know ColdFusion has the built in ajaxOnLoad function that is supposed to run your code after things like grids have been created, but I have never gotten this to work. I know for sure it won&#8217;t work for content that is loaded secondarily after the base page has finished loading, like many of my pages are. But I can&#8217;t get it work even on a simple test file. So I wrote a little function to watch for the grid, and call the formatting code when the grid exists.</p>
+<pre><code>&lt;script language="javaScript"&gt;
+function lookForGrid() {
+	// keeps checking the page to see if the grid exists yet. When it does, then call the formatter function
+	if (ColdFusion.Grid.getGridObject('testgrid')) {
+		formatgrid();
+		}
+	else {
+		setTimeout(lookForGrid,10);
+		}
+	}
+
+var myFormatter = Ext.util.Format.numberRenderer('.0000');
+formatgrid = function() {
+	mygrid = ColdFusion.Grid.getGridObject('testgrid');
+	cm = mygrid.getColumnModel();
+	cm.setRenderer(2, myFormatter);
+	mygrid.reconfigure(mygrid.getStore(),cm);
+	}
+();
+&lt;/script&gt;</code></pre>
+<p>And this is the result:<br />
+<a href="/wp-content/uploads/2011/03/cfgrid-2.png"><img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfgrid-2.png" alt="cfgrid is now formatted correctly" width="302" height="96" class="alignnone size-full wp-image-1020" srcset="/wp-content/uploads/2011/03/cfgrid-2.png 302w, /wp-content/uploads/2011/03/cfgrid-2-300x95.png 300w" sizes="(max-width: 302px) 100vw, 302px" /></a></p>
+<p>The code could definitely be cleaned up a little, so the grid name isn&#8217;t duplicated at least, but its a good start. There are lots of other formatters available also, we&#8217;ve found the DateRenderer to be useful.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/formatting-cfgrid-with-javascript/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Loading CFrichtext / FCKeditor on-the-fly</title>
+		<link>/loading-fckeditor-dynamically/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 06 Mar 2011 22:20:06 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1003</guid>
+
+					<description><![CDATA[At work we had an issue where we had too many FCKeditor rich text controls on a page at once. We probably had 6 or 7, each on their own tab. For the tabs we are using the &#60;cflayout type="tab"&#62; tag. FireFox would handle the page with no problems, but IE would sometimes fail to [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>At work we had an issue where we had too many FCKeditor rich text controls on a page at once. We probably had 6 or 7, each on their own tab. For the tabs we are using the <code>&lt;cflayout type="tab"&gt;</code> tag. FireFox would handle the page with no problems, but IE would sometimes fail to load one or more of the rich text controls and would not throw any kind of error about it. The controls simply did not display.</p>
+<p>A solution we came up with was to load the rich text controls on demand, when the user needed to use them, rather than load them all when the page first loads. At first I thought we&#8217;d have to install a separate, stand alone copy of FCKeditor (now called &#8220;CKEditor&#8221;) to do this, but we found out this is unnecessary, you use the version that comes with CF to do this.</p>
+<p>First, we manually load the FCKeditor JavaScript:<br />
+<code>&lt;script type="text/javascript" src="/CFIDE/scripts/ajax/FCKeditor/fckeditor.js"&gt;&lt;/script&gt;</code></p>
+<p>Then create a function that can change a regular textarea into a rich text controls:</p>
+<pre><code>&lt;script type="text/javascript"&gt;
+function changeToRichText(elementToHide,id,width,height) {
+	var oFCKeditor = new FCKeditor(id,width,height,'my_toolbar_set') ;
+	oFCKeditor.BasePath = "/CFIDE/scripts/ajax/FCKeditor/";
+	oFCKeditor.ReplaceTextarea();
+	if (elementToHide) elementToHide.style.display = 'none';
+	}
+&lt;/script&gt;</code></pre>
+<p>Then we changed the places on the page that used to have rich text controls to instead use plain textareas. Then placed an link next to each one the user can click on to change the textarea into a rich text. Sometimes they don&#8217;t need the functionality of rich text and will just enter plain text into a textarea. Here is the code:</p>
+<pre><code>&lt;div id="rootCause_outter" style="text-align: left; width: 100%;"&gt;<a href="JavaScript:;" onclick="changeToRichText(document.getElementById('rootCause_outter'),'rootCause',740,290);">click to use editor</a>&lt;br /&gt;&lt;/div&gt;
+&lt;textarea name="rootCause" style="width:740px; height: 290px;"&gt;&lt;/textarea&gt;&lt;br /&gt;</code></pre>
+<p>This is used for creating records only, not editing. But it would not be hard to modify this to make it work on an edit page also.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Making an &#8216;Apply to all&#8217; with jQuery</title>
+		<link>/making-an-apply-to-all-with-jquery/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 06 Jul 2010 16:32:00 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<guid isPermaLink="false">/?p=865</guid>
+
+					<description><![CDATA[Here is a little &#8216;Apply To All&#8217; feature I added to a large form we had. There were many rows of data, each with several columns the user needs to fill out. Most of the time the values they were entering in the top row ended up being what they would set all the subsequent [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Here is a little &#8216;Apply To All&#8217; feature I added to a large form we had.  There were many rows of data, each with several columns the user needs to fill out.  Most of the time the values they were entering in the top row ended up being what they would set all the subsequent rows to.  So I wanted to add an easy way they could set all the later rows to the value of the first.</p>
+<p>This was actually very easy to do with jQuery.  I added a class to each form element, and links on the first row, so my code ended up looking something like this:<br />
+<span id="more-865"></span></p>
+<pre><code>&lt;cfloop query="qryRows"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;input type="checkbox" class="verified" name="verified_#CurrentRow#"&gt;
+      &lt;cfif CurrentRow EQ 1&gt;<a href="JavaScript:;" onclick="applyToAll('verified')">&amp;#8595;</a>&lt;/cfif&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;input type="checkbox"class="reviewed" name="reviewed_#CurrentRow#"&gt;
+      &lt;cfif CurrentRow EQ 1&gt;<a href="JavaScript:;" onclick="applyToAll('verified')">&amp;#8595;</a>&lt;/cfif&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;select class="okToContinue" name="okToContinue_#CurrentRow#"&gt;
+        &lt;option&gt;Yes&lt;/option&gt;
+        &lt;option&gt;No&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;cfif CurrentRow EQ 1&gt;<a href="JavaScript:;" onclick="applyToAll('verified')">&amp;#8595;</a>&lt;/cfif&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/cfloop&gt;</code></pre>
+<p>So now each type of form element is grouped together with a class, and the first row has links next to each element.  If I played around with this a little more I think I could add the link with jQuery too, instead of having to check the CurrentRow variable and do this manually.</p>
+<p>Here is the applyToAll function.  Note you have to copy the values a little differently depending on if the element is a checkbox or a select control.</p>
+<pre><code>// grabs the first element in a class, then applies its value to all elements with that class
+applyToAll = function(classToApplyTo) {
+
+  // need to apply differently depending on if its a select control or a checkbox. We read what kind of element it is by looking at the 'type'
+  switch ( $('.' + classToApplyTo + ':first').attr('type') ) {
+    case 'select-one':
+      var baseValue = $('.' + classToApplyTo + ':first').val();
+      $('.' + classToApplyTo).val(baseValue);
+      // also call the change method, just in case there was an onchange handler set on the element
+      $('.' + classToApplyTo).change();
+      break;
+    case 'checkbox':
+      var baseValue = $('.' + classToApplyTo + ':first').attr('checked');
+      $('.' + classToApplyTo).attr('checked', baseValue);
+      // also call the change method, just in case there was an onchange handler set on the element
+      $('.' + classToApplyTo).change();
+      break;
+    }
+  }</code></pre>
+<p>Here is a demo:</p>
+<form>
+<table>
+<tr>
+<td align="center"><b>A</b></td>
+<td align="center"><b>B</b></td>
+<td align="center"><b>Ok?</b></td>
+</tr>
+<tr>
+<td nowrap="true">
+<input type="checkbox" class="verified" name="verified_1"><a href="JavaScript:;" onclick="applyToAll('verified')">&#8595;</a>
+</td>
+<td nowrap="true">
+<input type="checkbox" class="reviewed" name="reviewed_1"><a href="JavaScript:;" onclick="applyToAll('reviewed')">&#8595;</a>
+</td>
+<td nowrap="true" width="50">
+  <select class="okToContinue" name="okToContinue_1"><option>Yes</option><option>No</option></select>
+</td>
+<td><a href="JavaScript:;" onclick="applyToAll('okToContinue')">&#8595;</a></td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" class="verified" name="verified_2">
+</td>
+<td>
+<input type="checkbox" class="reviewed" name="reviewed_2">
+</td>
+<td colspan="2">
+  <select class="okToContinue" name="okToContinue_2"><option>Yes</option><option>No</option></select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" class="verified" name="verified_3">
+</td>
+<td>
+<input type="checkbox" class="reviewed" name="reviewed_3">
+</td>
+<td colspan="2">
+  <select class="okToContinue" name="okToContinue_3"><option>Yes</option><option>No</option></select>
+</td>
+</tr>
+</table>
+</form>
+<p>Some of the form elements had onchange handlers that made other text show/hide on the screen, so in the applyToAll function I manually call the &#8216;change&#8217; method so those events fire on the elements.</p>
+<p>This change has saved the users time on filling out huge forms.</p>
+<p><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script></p>
+<p><script>
+applyToAll = function(classToApplyTo) {
+  // need to apply differently depending on if its a select control or a checkbox. We read what kind of element it is by looking at the 'type'
+  switch ( $('.' + classToApplyTo + ':first').attr('type') ) {
+    case 'select-one':
+      var baseValue = $('.' + classToApplyTo + ':first').val();
+      $('.' + classToApplyTo).val(baseValue);
+      // also call the change method, just in case there was an onchange handler set on the element
+      $('.' + classToApplyTo).change();
+      break;
+    case 'checkbox':
+      var baseValue = $('.' + classToApplyTo + ':first').attr('checked');
+      $('.' + classToApplyTo).attr('checked', baseValue);
+      // also call the change method, just in case there was an onchange handler set on the element
+      $('.' + classToApplyTo).change();
+      break;
+    }
+  }
+</script></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Using CFWindow within a form</title>
+		<link>/using-cfwindow-within-form/</link>
+					<comments>/using-cfwindow-within-form/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 28 Mar 2010 03:13:21 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=817</guid>
+
+					<description><![CDATA[The CFWindow tag can be useful to prompt for information on a form. We use this sometimes after a user has clicked the submit button. We do some client side validation in JavaScript, and if certain conditions are met, we use CFWindow to prompt for some additional information. Its a little tricky though. If you [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The CFWindow tag can be useful to prompt for information on a form.  We use this sometimes after a user has clicked the submit button.  We do some client side validation in JavaScript, and if certain conditions are met, we use CFWindow to prompt for some additional information.</p>
+<p>Its a little tricky though.  If you try to use a CFWindow tag inside a CFForm tag you will get a ColdFusion error.  If you use it inside a regular form tag you won&#8217;t get an error, but it won&#8217;t work like you expect.  Lets take this code for example:<br />
+<span id="more-817"></span></p>
+<pre><code>&lt;form action="somefile.cfm"&gt;
+	Name: &lt;input name="name"&gt;
+	
+	&lt;cfwindow name="win"&gt;
+		Age:&lt;input name="age"&gt;&lt;br /&gt;
+		&lt;br /&gt;
+		&lt;input type="submit"&gt;
+	&lt;/cfwindow&gt;
+	
+	&lt;br /&gt;&lt;br /&gt;
+	&lt;input type="button" Value="Continue" onclick="ColdFusion.Window.show('win')"&gt;
+&lt;/form&gt;</code></pre>
+<p>In this example we have a simple form that prompts for a name.  When the user clicks the submit button, we use cfwindow to open a popup window and prompt for age.  There is a submit button in the popup window so the user can submit the form from there.</p>
+<p>But when you run this code and click on the submit button in the popup window, nothing happens.  Thats because ColdFusion places the CFWindow code near the end of the file.  It won&#8217;t be inside your FORM tags.  Changing the submit button to a button with an onclick event that submits the form won&#8217;t help either.  It will cause the form to be submitted, but only the name field will be passed in.  Age won&#8217;t be passed because that form element wasn&#8217;t inside the form tags. </p>
+<p>The way around this is to use JavaScript to copy the data from the form fields to hidden fields that are inside the form.  Lets change the code to this:</p>
+<pre><code>&lt;form action="somefile.cfm" id="theForm"&gt;
+	Name: &lt;input name="name"&gt;
+	&lt;input type="hidden" name="age" id="hidden_age"&gt;
+	&lt;cfwindow name="win"&gt;
+		Age:&lt;input name="age" id="age"&gt;&lt;br /&gt;
+		&lt;br /&gt;
+		&lt;input type="button" onclick="doSubmit()"&gt;
+	&lt;/cfwindow&gt;
+	
+	&lt;br /&gt;&lt;br /&gt;
+	&lt;input type="button" Value="Continue" onclick="ColdFusion.Window.show('win')"&gt;
+&lt;/form&gt;</code></pre>
+<p>Here I&#8217;ve added a hidden field for the age, and given IDs to both age fields and the form tag so I can reference them easily.  I&#8217;ve also changed the submit button to a regular button, and gave it an onclick handler of doSubmit.  Here is the code for doSubmit():</p>
+<pre><code>&lt;script language="JavaScript"&gt;
+function doSubmit() {
+  var hiddenAge = document.getElementById("hidden_age");
+  var age = document.getElementById("age");
+  hiddenAge.value = age.value;
+  document.getElementById("theForm").submit();
+}
+&lt;/script&gt;</code></pre>
+<p>Now when the user clicks the button from the popup window, the values from that window are copied to the hidden form elements that exist in the form, and they will be passed to the server.</p>
+<p>I use jQuery, which makes this even easier.  I don&#8217;t have to setup a bunch of hidden fields in the form, I just create them in the doSubmit() function.  You just need to have one element inside the form already that you can reference, so you can add an element after it.  In this example I know the name element is there so I am adding the new form elements after that.</p>
+<pre><code>&lt;script language="JavaScript"&gt;
+function doSubmit() {
+  $('#name').append('&lt;input type="hidden" id="hidden_age" name="age"&gt;');
+  $('#hidden_age').val( $('#age').val() );
+
+  document.getElementById("theForm").submit();
+}
+&lt;/script&gt;</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/using-cfwindow-within-form/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>A secure, ajaxy captcha with cfimage</title>
+		<link>/ajaxy-captcha-cfimage/</link>
+					<comments>/ajaxy-captcha-cfimage/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 12 Jun 2009 03:05:19 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=460</guid>
+
+					<description><![CDATA[A while back I had to implement a captcha on a client&#8217;s site. The site owner wanted a simple small captcha (that ruled out reCAPTCHA). We decided to try the new captcha features of ColdFusion8. What you may not realize is that the new captcha feature does not provide the whole captcha system, instead it [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A while back I had to implement a captcha on a client&#8217;s site.   The site owner wanted a simple small captcha (that ruled out <a href="http://recaptcha.net/">reCAPTCHA</a>).  We decided to try the new captcha features of ColdFusion8.  What you may not realize is that the new captcha feature does not provide the whole captcha <em>system</em>, instead it merely can create captcha images.  Its up to you how you implement your captcha system.</p>
+<p>Before I get too far just let me state for the record that I <em>dislike</em> captchas and will be happy when they are looked upon like we look at the &lt;blink&gt; tag now.  So you don&#8217;t need to leave comments telling me how I shouldn&#8217;t be using a captcha in the first place. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" />  The client specifically wanted this feature at this point in time.</p>
+<p>I&#8217;ve seen some approaches that place the clear text value of the captcha in a hidden field.  Then when the form is submitted they compare that value against what the user had typed in.  I don&#8217;t feel this way is very secure.  It will stop simple bots, but you need to guard against more than just that.  Sometimes spammers code their bots to work against a specific site.  If they find your hidden clear text captcha value, they will easily grab it and use it to submit your form.  If this is a simple contact form then you might not have much to worry about, but if its a &#8220;send to a friend&#8221; feature &#8211; watch out, those are high value targets.</p>
+<p>Encrypting the hidden value doesn&#8217;t help much either.  That adds one more step to what the spammer needs to do.  They will have to manually read one of your captcha images &#8211; then they have the clear text and encrypted values to your captcha system.    Now they can just submit that encrypted/plain text pair over and over again to your form.<br />
+<span id="more-460"></span><br />
+To really be secure you have to keep track of the captcha value on the server side.  I decided to use a database but you could also use an in-memory variable or even use the file system.  One of the requirements was to allow the user to ask for a new captcha image without having to reload the whole form.  That requires ajax, but cfimage has no built in facilities for easily using it through ajax.  But its not too hard to work around.  Here is a cfc I created to wrap all this up.  My storage and retrieval methods in here use a database but you could easily change them to use the application scope or whatever you like.  The important part is to delete the captcha from your system (database, application scope, whatever) after its been solved.  This will prevent an attacker from manually decoding one captcha and then using that is his script.</p>
+<pre><code>&lt;cfcomponent hint="Creates captchas using cfimage. Supports ajax refresh." output="false"&gt;
+
+	&lt;cffunction name="createCaptcha" returntype="struct" hint="Returns a structure containing captcha properties." access="remote"&gt;
+		&lt;cfargument name="minLength" default="6"&gt;
+		&lt;cfargument name="maxLength" default="6"&gt;
+		&lt;cfargument name="id" default="captchaImg" displayname="an ID to be used in the image tag."&gt;
+		&lt;cfargument name="difficulty" default="low" hint="low | medium | high"&gt;
+
+		&lt;cfset var local = {}&gt;
+		&lt;cfset local.retVal = {}&gt;
+
+		&lt;!--- declaring the keys this way ensures they will be delivered to the javascript in lower case, which it expects ---&gt;
+		&lt;cfset local.retval["imgsrc"] = ""&gt;
+		&lt;cfset local.retval["captcha_id"] = ""&gt;
+		&lt;cfset local.retval["imgtag"] = ""&gt;
+
+		&lt;cfset local.captchaText = makeCaptchaString(Arguments.minLength,Arguments.maxlength)&gt;
+
+		&lt;!--- store the the captcha value in the DB. Get the ID so it can be used later to look up the captcha value ---&gt;
+		&lt;cfquery name="local.qryCaptchaID" datasource="#Request.PrimaryDataSource#"&gt;
+		SET NOCOUNT ON
+		INSERT INTO captcha_values (captcha_value) VALUES
+		(&lt;cfqueryparam value="#local.captchaText#" cfsqltype="cf_sql_varchar"&gt;)
+		SELECT SCOPE_IDENTITY() AS captcha_id
+		SET NOCOUNT OFF
+		&lt;/cfquery&gt;
+
+		&lt;!--- need to return the id ---&gt;
+		&lt;cfset local.retval.captcha_id = local.qryCaptchaID.captcha_id&gt;
+
+		&lt;cfsavecontent variable="local.retVal.imgtag"&gt;
+			&lt;cfimage action="captcha" text="#local.captchaText#" difficulty="#Arguments.difficulty#"&gt;
+		&lt;/cfsavecontent&gt;
+
+		&lt;!--- tease out the image url, too.  This can be used to refresh the captcha with ajax. ---&gt;
+		&lt;cfset local.regExResult = ReFind("src=""([^""]*)",local.retVal.imgtag,1,1)&gt;
+		&lt;cfset local.retVal.imgsrc = Mid(local.retVal.imgtag,local.regExResult.pos[2],local.regExResult.len[2])&gt;
+
+		&lt;!--- need to add an ID so we can manipulate with JavaScript. ---&gt;
+		&lt;cfset local.retVal.imgtag = Replace(local.retVal.imgtag,"&lt;img","&lt;img id=""#Arguments.id#""","one")&gt;
+
+		&lt;cfreturn local.retVal&gt;
+
+	&lt;/cffunction&gt;
+
+	&lt;cffunction name="getCaptchaText" returntype="string" hint="Returns the text associated with a captcha_id" access="public"&gt;
+		&lt;cfargument name="captcha_id"&gt;
+
+		&lt;cfset local = {}&gt;
+
+		&lt;cfquery name="local.qryCaptcha" datasource="#Request.PrimaryDataSource#"&gt;
+		SELECT captcha_value FROM captcha_values WHERE
+		captcha_id = &lt;cfqueryparam value="#Arguments.captcha_id#" cfsqltype="cf_sql_integer"&gt;
+		&lt;/cfquery&gt;
+
+		&lt;cfif local.qryCaptcha.RecordCount EQ 0&gt;
+			&lt;cfreturn ""&gt;
+		&lt;/cfif&gt;
+
+		&lt;!--- else we did find a captcha with this ID.  Now delete it, and return the value we found ---&gt;
+		&lt;cfquery datasource="#Request.PrimaryDataSource#"&gt;
+		DELETE FROM captcha_values WHERE
+		captcha_id = &lt;cfqueryparam value="#Arguments.captcha_id#" cfsqltype="cf_sql_integer"&gt;
+		&lt;/cfquery&gt;
+
+		&lt;cfreturn local.qryCaptcha.captcha_value&gt;
+	&lt;/cffunction&gt;
+
+	&lt;cffunction name="makeCaptchaString" returnType="string" output="false" access="private"&gt;
+		&lt;cfargument name="minLength"&gt;
+		&lt;cfargument name="maxLength"&gt;
+
+		&lt;!--- Don't use any characters that can be confused with each other ---&gt;
+		&lt;cfset var chars = "23456789ABCDEFGHJKMNPQRS"&gt;
+		&lt;cfset var length = randRange(Arguments.minLength,Arguments.maxLength)&gt;
+		&lt;cfset var result = ""&gt;
+		&lt;cfset var i = ""&gt;
+		&lt;cfset var char = ""&gt;
+
+		&lt;cfscript&gt;
+		for(i=1; i &lt;= length; i++) {
+			char = mid(chars, randRange(1, len(chars)),1);
+			result&amp;=char;
+		}
+		&lt;/cfscript&gt;
+
+		&lt;cfreturn result&gt;
+	&lt;/cffunction&gt;
+&lt;/cfcomponent&gt;</code></pre>
+<p>Then in your form page you need a little javascript to allow the user to refresh the image.</p>
+<pre><code>&lt;cfajaxproxy cfc="cfimageCaptcha" jsclassname="cfimageCaptcha"&gt;
+&lt;script language="JavaScript"&gt;
+function refreshCaptcha() {
+	var jsCaptcha = new cfimageCaptcha();
+	jsCaptcha.setCallbackHandler(populateCaptcha);
+	jsCaptcha.createCaptcha();
+}
+
+function populateCaptcha(result) {
+	var imgTag = document.getElementById("captchaImg");
+	var hiddenTag = document.getElementById("captcha_id");
+
+	imgTag.src = result.imgsrc;
+	hiddenTag.value = result.captcha_id;
+
+}
+&lt;/script&gt;</code></pre>
+<p>Then display the actual captcha on the page:</p>
+<pre><code>&lt;cfset myCaptcha = CreateObject("component","cfimageCaptcha").createCaptcha()&gt;
+#myCaptcha.imgtag#&lt;a href="JavaScript:refreshCaptcha()"&gt;change code&lt;/a&gt;&lt;br /&gt;
+Type in the letters you see above: &lt;input type="text" name="captcha_value"&gt;
+&lt;!--- need to pass along the ID of the captcha so we can look it up later ---&gt;
+&lt;input type="hidden" name="captcha_id" id="captcha_id" value="#myCaptcha.captcha_id#"&gt;</code></pre>
+<p>With me so far?  Now here is how you validate the captcha on your &#8220;action&#8221; page:</p>
+<pre><code>&lt;cfif Form.captcha_value NEQ CreateObject("component","cfimageCaptcha").getCaptchaText(Form.captcha_id)&gt;
+       &lt;p&gt;Throw your failed captcha error here!&lt;/p&gt;
+&lt;/cfif&gt;</code></pre>
+<p>Here is the SQL I used for my captcha table.</p>
+<pre><code>CREATE TABLE [captcha_values] (
+	[captcha_id] [int] IDENTITY (1, 1) NOT NULL ,
+	[captcha_value] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[date_added] [smalldatetime] NULL CONSTRAINT [DF_captcha_values_date_added] DEFAULT (getdate())
+) ON [PRIMARY]
+GO</code></pre>
+<p>And here is the query I run nightly to clear out abandoned entries that are older than 24 hours:</p>
+<pre><code>DELETE FROM captcha_values WHERE
+DateDiff(hour,date_added,CURRENT_TIMESTAMP) &gt; 24</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/ajaxy-captcha-cfimage/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Programatically adding additional JS onload functions</title>
+		<link>/additional-js-onload-functions/</link>
+					<comments>/additional-js-onload-functions/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 27 Apr 2009 15:47:18 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=415</guid>
+
+					<description><![CDATA[Sometimes when writing JavaScript I need to have something run as soon as the page has finished loading. This is usually done by placing a call to the function in the body&#8217;s onload attribute like: &#60;body onload="myFunc()"&#62; But this is not always possible. For example by the time you get to your logic that decides [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Sometimes when writing JavaScript I need to have something run as soon as the page has finished loading.  This is usually done by placing a call to the function in the body&#8217;s onload attribute like:</p>
+<p><code>&lt;body onload="myFunc()"&gt;</code></p>
+<p>But this is not always possible.  For example by the time you get to your logic that decides it necessary to call a function onload, the header may have already been displayed by a cfinclude or by your framework.</p>
+<p>You could use JavaScript to set the onload event, like</p>
+<p><code>window.onload = myFunc;</code></p>
+<p>But what if there was already something in the onload attribute of the body tag?  The above code will reset whatever was there.  But here is a nice snippet of code that will <em>add</em> functions to the onload event.  I can&#8217;t take credit for it, and I don&#8217;t remember exactly where I found it but its been quite useful to me.  It works in all the popular browsers.</p>
+<pre><code>function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}</code></pre>
+<p>Then you can add as many functions as you want to be called when the page loads.  Note you do not use parenthesis when specifying the function names &#8211; you aren&#8217;t calling then, just referencing them.</p>
+<pre><code>addLoadEvent(myFunc);
+addLoadEvent(myFunc2);
+addLoadEvent(yetAnotherFunction);</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/additional-js-onload-functions/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Dynamically adding and removing form elements</title>
+		<link>/dynamically-adding-and-removing-form-elements/</link>
+					<comments>/dynamically-adding-and-removing-form-elements/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 05 Jan 2009 16:34:16 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=242</guid>
+
+					<description><![CDATA[Sometimes its helpful to allow users to dynamically add or remove elements from a form. An example might be an image upload page, where you want to allow users to upload a varying number of images. Using JavaScript you can easily place more/less links on the page that show and hide form elements. This is [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Sometimes its helpful to allow users to dynamically add or remove elements from a form.  An example might be an image upload page, where you want to allow users to upload a varying number of images.   Using JavaScript you can easily place more/less links on the page that show and hide form elements.</p>
+<p>This is often done by placing a large number of elements on the form, and setting most of them to be initially hidden with CSS.  When the user clicks the &#8220;show&#8221; link, the next element is unhidden.  This is not the best solution however, especially when there is a possibility of having tens of elements &#8211; thats a lot of unnecessary html to send down the pipe and render.</p>
+<p>Another method is to actually create and destroy elements using the DOM functions.  Here&#8217;s how I did this recently on a page that need to have any number of form elements.<br />
+<span id="more-242"></span><br />
+First I setup a hidden form field that would contain the number of elements currently displayed on the form.  This value gets changed as new elements are removed or added, so I can keep track of where to add or remove them from.  Its also very useful when I submit the form, to know how many elements to look for.</p>
+<p>I start out initially showing 5 elements, so I set this hidden field to that number.</p>
+<pre><code>&lt;input type="hidden" name="numberOfInputs" value="5"&gt;</code></pre>
+<p>Here is the form element I needed to replicate:</p>
+<pre><code>&lt;p&gt;
+  &lt;span style="width: 18px; float: left;"&gt;<strong style="color: red;">1</strong>.&lt;/span&gt;
+  &lt;input width="20" type="text" name="FileHeader_<strong style="color: red;">1</strong>" value=""&gt;:&amp;nbsp;&amp;nbsp;
+  &lt;select name="InternalField_<strong style="color: red;">1</strong>"&gt;
+    &lt;option value=""&gt;Ignore&lt;/option&gt;
+    &lt;option value="FirstName"&gt;
+    &lt;option value="LastName"&gt;
+    &lt;option value="Etc..."&gt;
+  &lt;/select&gt;
+&lt;/p&gt;</code></pre>
+<p><em>(the items in red are values that change with each line on the form)</em></p>
+<p>And here is what they looked like on the screen:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/01/form_ele_1.gif" alt="" title="Screenshot of form elements" width="345" height="169" class="alignnone size-full wp-image-250" srcset="/wp-content/uploads/2009/01/form_ele_1.gif 345w, /wp-content/uploads/2009/01/form_ele_1-300x146.gif 300w" sizes="(max-width: 345px) 100vw, 345px" /></p>
+<p>The first thing I did was add an ID to the <code>&lt;p&gt;</code> tags so I could reference them.</p>
+<pre><code>&lt;p <strong style="color: red;">id="row_#RowCount#"</strong>&gt;
+  &lt;span style="width: 18px; float: left;"&gt;1.&lt;/span&gt;
+  &lt;input width="20" type="text" name="FileHeader_1" value=""&gt;:&amp;nbsp;&amp;nbsp;
+  &lt;select name="InternalField_1"&gt;
+    &lt;option value=""&gt;Ignore&lt;/option&gt;
+    &lt;option value="FirstName"&gt;
+    &lt;option value="LastName"&gt;
+    &lt;option value="Etc..."&gt;
+  &lt;/select&gt;
+&lt;/p&gt;</code></pre>
+<p>Then I created two functions, one for removing elements and another for adding them.  The &#8220;Show More&#8221; and &#8220;Show Less&#8221; links shown in the screenshot above then link to these functions.</p>
+<p>The removal one is easy.</p>
+<pre><code>&lt;script language="JavaScript"&gt;
+function ShowLess() {
+    // get a reference to the hidden element that contains the number of inputs counter
+    var numberOfInputsEle = document.getElementById("numberOfInputs");
+
+    // if there is only one input left on the screen, don't let them remove that one
+    if (numberOfInputsEle.value &lt;= 1) { return; }
+
+    // get the actual count value from the hidden element
+    var lastRowNum = numberOfInputsEle.value;
+
+    // now we can get a reference to the form element that needs to be removed
+    var eleToRemove = document.getElementById("row_" + lastRowNum);
+
+    // then remove it
+    eleToRemove.parentNode.removeChild(eleToRemove);
+
+    // and decrement our input counter
+    numberOfInputsEle.value = lastRowNum - 1;
+
+}
+&lt;/script&gt;</code></pre>
+<p>The function to add another element is a little more involved.  Since I know the first line will always be there, I clone that element, along with its children.  Then alter the parts of it that reference &#8220;1&#8221;, changing them to be the counter value for the new element. Then add it at the end of the current list of form elements. I added a div around the whole group of elements with an id of &#8220;formElementsParent&#8221;.  I know the last element inside this div is a paragraph containing the show more/less links, so I can find that and then use the insertBefore() function to add the new element to the DOM.</p>
+<pre><code>&lt;script language="JavaScript"&gt;
+function ShowMore() {
+    // get a reference to the hidden element that contains the number of inputs counter
+    var numberOfInputsEle = document.getElementById("numberOfInputs");
+
+    // read in the value, increment it so we have the correct new counter value
+    var newRowNum = parseInt(numberOfInputsEle.value) + 1;
+
+    // clone the first row, reset it, and use it for the new row
+    var newNode = document.getElementById("row_1").cloneNode(true);
+
+    // change the ID
+    newNode.id = "row_" + newRowNum;
+
+    // need to reset the form elements, as they could have already had values.
+    // I reference them using getElementsByTagName and searching for them. I could
+    // have given them each unique IDs, but then those additional IDs would need
+    // to be changed, too, since they'd have the counter value in them.
+    newNode.getElementsByTagName("span")[0].innerHTML = newRowNum + ".";
+    newNode.getElementsByTagName("input")[0].name = "FileHeader_" + newRowNum;
+    newNode.getElementsByTagName("input")[0].value = "";
+    newNode.getElementsByTagName("select")[0].name = "InternalField_" + newRowNum;
+    newNode.getElementsByTagName("select")[0].selectedIndex = 0;
+
+    // get a reference to the container holding all the form elements
+    var overallParent = document.getElementById("formElementsParent");
+
+    // the &lt;p&gt; that contains the more/less links has an ID of "moreAndLessLinks", so we
+    // can use that to insert our new element just before it.
+    overallParent.insertBefore(newNode,document.getElementById("moreAndLessLinks"));
+
+    // finally, write back the new counter value to the hidden form field
+    numberOfInputsEle.value = newRowNum;
+}
+&lt;/script&gt;</code></pre>
+<p>Try it out below:</p>
+<p>[HTML1]</p>
+<p>I should note that although I&#8217;m using P elements to contain my rows here, I realize many developers still use tables to lay out their forms.  This method works just fine with tables, too, you would just reference your TR in the places I&#8217;m referring to my P.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/dynamically-adding-and-removing-form-elements/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

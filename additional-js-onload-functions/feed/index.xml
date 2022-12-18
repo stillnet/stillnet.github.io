@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Programatically adding additional JS onload functions	</title>
+	<atom:link href="/additional-js-onload-functions/feed/" rel="self" type="application/rss+xml" />
+	<link>/additional-js-onload-functions/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 12 Mar 2010 05:05:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: jh		</title>
+		<link>/additional-js-onload-functions/comment-page-1/#comment-1195</link>
+
+		<dc:creator><![CDATA[jh]]></dc:creator>
+		<pubDate>Fri, 12 Mar 2010 05:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=415#comment-1195</guid>
+
+					<description><![CDATA[thx!]]></description>
+			<content:encoded><![CDATA[<p>thx!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: aniyah		</title>
+		<link>/additional-js-onload-functions/comment-page-1/#comment-903</link>
+
+		<dc:creator><![CDATA[aniyah]]></dc:creator>
+		<pubDate>Mon, 14 Dec 2009 17:48:56 +0000</pubDate>
+		<guid isPermaLink="false">/?p=415#comment-903</guid>
+
+					<description><![CDATA[Nice article thanks for sharing!]]></description>
+			<content:encoded><![CDATA[<p>Nice article thanks for sharing!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Boyan Kostadinov		</title>
+		<link>/additional-js-onload-functions/comment-page-1/#comment-519</link>
+
+		<dc:creator><![CDATA[Boyan Kostadinov]]></dc:creator>
+		<pubDate>Thu, 30 Apr 2009 04:14:40 +0000</pubDate>
+		<guid isPermaLink="false">/?p=415#comment-519</guid>
+
+					<description><![CDATA[Or you can always use the on load facilities provided with Prototype.js or jQuery and those would take care of that problem out of the box.]]></description>
+			<content:encoded><![CDATA[<p>Or you can always use the on load facilities provided with Prototype.js or jQuery and those would take care of that problem out of the box.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake Churchill		</title>
+		<link>/additional-js-onload-functions/comment-page-1/#comment-518</link>
+
+		<dc:creator><![CDATA[Jake Churchill]]></dc:creator>
+		<pubDate>Mon, 27 Apr 2009 16:08:47 +0000</pubDate>
+		<guid isPermaLink="false">/?p=415#comment-518</guid>
+
+					<description><![CDATA[Nice!]]></description>
+			<content:encoded><![CDATA[<p>Nice!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

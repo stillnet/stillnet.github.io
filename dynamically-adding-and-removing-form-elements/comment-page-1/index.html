@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Stillnet Studios  &raquo; Blog Archive   &raquo; Dynamically adding and removing form elements</title>
+
+<meta name="generator" content="WordPress 6.1.1"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/evanescence-12/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios RSS Feed" href="/feed/">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="robots" content="max-image-preview:large">
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-1413191-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios &raquo; Dynamically adding and removing form elements Comments Feed" href="/dynamically-adding-and-removing-form-elements/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"httpwww.stillnetstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/242">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="/dynamically-adding-and-removing-form-elements/comment-page-1/#comments">
+<link rel="shortlink" href="/?p=242">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fdynamically-adding-and-removing-form-elements%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fdynamically-adding-and-removing-form-elements%2F&#038;format=xml">
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<div><div>	
+	<div class="header-title">
+		<h1><a href="/" title="Stillnet Studios: Web development notes and commentary from Ryan Stille">Stillnet Studios</a></h1>
+		<p>Web development notes and commentary from Ryan Stille</p>
+	</div> 
+	<!-- Search box (If you prefer having search form as a sidebar widget, remove this block) -->
+	<div class="search">
+		<form method="get" id="searchform" action="http://www.stillnetstudios.com/">
+<input type="text" size="12" name="s" id="s" value="search..." onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';">
+</form>
+	</div> 
+	<!-- Search ends here-->
+</div></div>	
+</div>
+<div id="wrapper">
+
+	<div id="content">
+
+			
+		<div class="navigation">
+			<div class="alignleft">&laquo; <a href="/instantiating-nested-static-java-classes-from-coldfusion/" rel="prev">Instantiating Nested Static Java Classes from ColdFusion</a>
+</div>
+			<div class="alignright">
+<a href="/query-of-query-bug/" rel="next">A bug with Query of Query and * ?</a> &raquo;</div>
+		</div>
+
+		<div class="post" id="post-242">
+			<div class="post-title"><div>
+				<h2><a href="/dynamically-adding-and-removing-form-elements/" rel="bookmark" title="Permanent Link to Dynamically adding and removing form elements">Dynamically adding and removing form elements</a></h2>
+			</div></div>
+			<div class="post-entry">
+				<p>Sometimes its helpful to allow users to dynamically add or remove elements from a form.  An example might be an image upload page, where you want to allow users to upload a varying number of images.   Using JavaScript you can easily place more/less links on the page that show and hide form elements.</p>
+<p>This is often done by placing a large number of elements on the form, and setting most of them to be initially hidden with CSS.  When the user clicks the &#8220;show&#8221; link, the next element is unhidden.  This is not the best solution however, especially when there is a possibility of having tens of elements &#8211; thats a lot of unnecessary html to send down the pipe and render.</p>
+<p>Another method is to actually create and destroy elements using the DOM functions.  Here&#8217;s how I did this recently on a page that need to have any number of form elements.<br>
+<span id="more-242"></span><br>
+First I setup a hidden form field that would contain the number of elements currently displayed on the form.  This value gets changed as new elements are removed or added, so I can keep track of where to add or remove them from.  Its also very useful when I submit the form, to know how many elements to look for.</p>
+<p>I start out initially showing 5 elements, so I set this hidden field to that number.</p>
+<pre><code>&lt;input type="hidden" name="numberOfInputs" value="5"&gt;</code></pre>
+<p>Here is the form element I needed to replicate:</p>
+<pre><code>&lt;p&gt;
+  &lt;span style="width: 18px; float: left;"&gt;<strong style="color: red;">1</strong>.&lt;/span&gt;
+  &lt;input width="20" type="text" name="FileHeader_<strong style="color: red;">1</strong>" value=""&gt;:&amp;nbsp;&amp;nbsp;
+  &lt;select name="InternalField_<strong style="color: red;">1</strong>"&gt;
+    &lt;option value=""&gt;Ignore&lt;/option&gt;
+    &lt;option value="FirstName"&gt;
+    &lt;option value="LastName"&gt;
+    &lt;option value="Etc..."&gt;
+  &lt;/select&gt;
+&lt;/p&gt;</code></pre>
+<p><em>(the items in red are values that change with each line on the form)</em></p>
+<p>And here is what they looked like on the screen:<br>
+<img decoding="async" src="/wp-content/uploads/2009/01/form_ele_1.gif" alt="" title="Screenshot of form elements" width="345" height="169" class="alignnone size-full wp-image-250" srcset="/wp-content/uploads/2009/01/form_ele_1.gif 345w, /wp-content/uploads/2009/01/form_ele_1-300x146.gif 300w" sizes="(max-width: 345px) 100vw, 345px"></p>
+<p>The first thing I did was add an ID to the <code>&lt;p&gt;</code> tags so I could reference them.</p>
+<pre><code>&lt;p <strong style="color: red;">id="row_#RowCount#"</strong>&gt;
+  &lt;span style="width: 18px; float: left;"&gt;1.&lt;/span&gt;
+  &lt;input width="20" type="text" name="FileHeader_1" value=""&gt;:&amp;nbsp;&amp;nbsp;
+  &lt;select name="InternalField_1"&gt;
+    &lt;option value=""&gt;Ignore&lt;/option&gt;
+    &lt;option value="FirstName"&gt;
+    &lt;option value="LastName"&gt;
+    &lt;option value="Etc..."&gt;
+  &lt;/select&gt;
+&lt;/p&gt;</code></pre>
+<p>Then I created two functions, one for removing elements and another for adding them.  The &#8220;Show More&#8221; and &#8220;Show Less&#8221; links shown in the screenshot above then link to these functions.</p>
+<p>The removal one is easy.</p>
+<pre><code>&lt;script language="JavaScript"&gt;
+function ShowLess() {
+    // get a reference to the hidden element that contains the number of inputs counter
+    var numberOfInputsEle = document.getElementById("numberOfInputs");
+
+    // if there is only one input left on the screen, don't let them remove that one
+    if (numberOfInputsEle.value &lt;= 1) { return; }
+
+    // get the actual count value from the hidden element
+    var lastRowNum = numberOfInputsEle.value;
+
+    // now we can get a reference to the form element that needs to be removed
+    var eleToRemove = document.getElementById("row_" + lastRowNum);
+
+    // then remove it
+    eleToRemove.parentNode.removeChild(eleToRemove);
+
+    // and decrement our input counter
+    numberOfInputsEle.value = lastRowNum - 1;
+
+}
+&lt;/script&gt;</code></pre>
+<p>The function to add another element is a little more involved.  Since I know the first line will always be there, I clone that element, along with its children.  Then alter the parts of it that reference &#8220;1&#8221;, changing them to be the counter value for the new element. Then add it at the end of the current list of form elements. I added a div around the whole group of elements with an id of &#8220;formElementsParent&#8221;.  I know the last element inside this div is a paragraph containing the show more/less links, so I can find that and then use the insertBefore() function to add the new element to the DOM.</p>
+<pre><code>&lt;script language="JavaScript"&gt;
+function ShowMore() {
+    // get a reference to the hidden element that contains the number of inputs counter
+    var numberOfInputsEle = document.getElementById("numberOfInputs");
+
+    // read in the value, increment it so we have the correct new counter value
+    var newRowNum = parseInt(numberOfInputsEle.value) + 1;
+
+    // clone the first row, reset it, and use it for the new row
+    var newNode = document.getElementById("row_1").cloneNode(true);
+
+    // change the ID
+    newNode.id = "row_" + newRowNum;
+
+    // need to reset the form elements, as they could have already had values.
+    // I reference them using getElementsByTagName and searching for them. I could
+    // have given them each unique IDs, but then those additional IDs would need
+    // to be changed, too, since they'd have the counter value in them.
+    newNode.getElementsByTagName("span")[0].innerHTML = newRowNum + ".";
+    newNode.getElementsByTagName("input")[0].name = "FileHeader_" + newRowNum;
+    newNode.getElementsByTagName("input")[0].value = "";
+    newNode.getElementsByTagName("select")[0].name = "InternalField_" + newRowNum;
+    newNode.getElementsByTagName("select")[0].selectedIndex = 0;
+
+    // get a reference to the container holding all the form elements
+    var overallParent = document.getElementById("formElementsParent");
+
+    // the &lt;p&gt; that contains the more/less links has an ID of "moreAndLessLinks", so we
+    // can use that to insert our new element just before it.
+    overallParent.insertBefore(newNode,document.getElementById("moreAndLessLinks"));
+
+    // finally, write back the new counter value to the hidden form field
+    numberOfInputsEle.value = newRowNum;
+}
+&lt;/script&gt;</code></pre>
+<p>Try it out below:</p>
+<p>[HTML1]</p>
+<p>I should note that although I&#8217;m using P elements to contain my rows here, I realize many developers still use tables to lay out their forms.  This method works just fine with tables, too, you would just reference your TR in the places I&#8217;m referring to my P.</p>
+							</div>
+	
+			<p class="post-meta">
+					This entry was posted on 5 January 2009 at 11:34 am					and is filed under <a href="/category/ajax-javascript/" rel="category tag">AJAX / JavaScript</a>, <a href="/category/web-development/" rel="category tag">Web Development</a>.
+					You can follow any responses to this entry through the <a href="/dynamically-adding-and-removing-form-elements/feed/">RSS 2.0</a> feed.
+
+											Both comments and pings are currently closed.
+
+					
+			</p>
+		</div>
+	
+<!-- You can start editing here. -->
+<div id="comments">
+	<h3>18 Comments</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-474">
+			<h4>
+<a href="http://www.reynacho.com/" rel="external nofollow ugc" class="url">Jake Churchill</a> says:</h4>
+			<p>This is awesome!</p>
+						<small class="commentmetadata"><a href="#comment-474" title="">5 January 2009, 11:38 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-475">
+			<h4>Thomas says:</h4>
+			<p>Your example is very good. I am wondering how to validate each text box when adding more than 1 text box. i.e., each text box shouldn&#8217;t be empty.</p>
+						<small class="commentmetadata"><a href="#comment-475" title="">12 January 2009, 2:39 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-476">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Validating additional text boxes how?  In ColdFusion?  You need to loop from 1 to Form.numberOfInputs (in my example) and also have your fields named in such a way that you can reference them (with a number in the name).   So, looking at my example again, if I wanted to make sure column name wasn&#8217;t blank for any of the fields, I would have something like this:</p>
+<p>cfloop from=&#8221;1&#8243; to=&#8221;#Form.numberOfInputs#&#8221; index=&#8221;j&#8221;<br>
+&nbsp;&nbsp;cfif Form[&#8220;FileHeader_&#8221; &#038; j] EQ &#8220;&#8221;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then throw error here however you usually do<br>
+&nbsp;&nbsp;/cfif<br>
+/cfloop</p>
+						<small class="commentmetadata"><a href="#comment-476" title="">12 January 2009, 2:44 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-477">
+			<h4>Thomas says:</h4>
+			<p>Good points. When I click on the submit button, the error message is shown in the next page and when go back to the page, the additional form elements is disappeared so I think it is best to use JavaScript client-side than CF server-side validation. Do you have any idea how to validate using JS? Thanks.</p>
+						<small class="commentmetadata"><a href="#comment-477" title="">12 January 2009, 3:03 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-473">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Yes, using the BACK button works fine in some browers, in others it wants to reset the form to the state it was in before the JavaScript modified it.  Its best NOT to have your users use their back button.  Instead on the server side, redisplay the form again with error messages at the top.</p>
+<p>As far as client side validation, it will be similar to what was done in CF.  Loop from 1 to document.getElementById(&#8220;numberOfInputs&#8221;), then something like</p>
+<p>if (document.yourFormName[&#8220;FileHeader_&#8221; + x].value == &#8220;&#8221;) {<br>
+&nbsp;&nbsp;&nbsp;alert(&#8216;File Header &#8216; + x + &#8216; cannot be blank&#8217;);<br>
+}</p>
+						<small class="commentmetadata"><a href="#comment-473" title="">16 January 2009, 10:12 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-478">
+			<h4>Matt says:</h4>
+			<p>Sorry but this does not work in IE (just tested in IE7). Sure it looks like it works, but you will find that IE does not actually change the &#8220;name&#8221; attribute of your dynamically created input fields (although FireFox does as expected).</p>
+<p>See: <a href="http://www.easy-reader.net/archives/2005/09/02/death-to-bad-dom-implementations/" rel="nofollow ugc">http://www.easy-reader.net/archives/2005/09/02/death-to-bad-dom-implementations/</a></p>
+<p>Inspect your dynamically created input elements in IE and you will find they all have a name of &#8220;FileHeader_1&#8221;. Changing the value of the &#8220;name&#8221; attribute for a dynamically created elements in IE does not work. You need to create these elements from scratch to get unique name attributes in IE.</p>
+						<small class="commentmetadata"><a href="#comment-478" title="">20 January 2009, 9:35 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-471">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>It works for me in IE7 (7.0.5730.13) on WinXP.</p>
+<p>I just changed the example form so that it posts to a page where the form values are dumped for display.  Try it for yourself.</p>
+						<small class="commentmetadata"><a href="#comment-471" title="">20 January 2009, 11:24 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-466">
+			<h4>Thomas says:</h4>
+			<p>It works fine in IE7 and FF. Also, it works well with JS Client-side and CF Server-side. The validation code for JS is:</p>
+<p>function validate(form)<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var num = parseInt(document.getElementById(&#8220;numberOfInputs&#8221;).value);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var i = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;=num; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.getElementById(&#8220;TitleField_&#8221; + i))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var title = document.getElementById(&#8220;TitleField_&#8221; + i).value;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (title.length == 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&#8220;Please enter the title&#8221; + i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Big Thanks to Ryan.</p>
+						<small class="commentmetadata"><a href="#comment-466" title="">21 January 2009, 10:47 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-467">
+			<h4>Matt says:</h4>
+			<p>After adding three additional rows, when I inspect the dynamically generated fields in IE7 (using DebugBar), I see all identical input field names &#8220;FileHeader_1&#8221; as follows:</p>
+<p>(Ed: code example removed, it didn&#8217;t come through properly)</p>
+						<small class="commentmetadata"><a href="#comment-467" title="">21 January 2009, 12:35 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-468">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Matt, perhaps there is a problem with DebugBar inspecting the data.  Or with how IE presents its data to DebugBar, vs how it actually submits the form fields.</p>
+						<small class="commentmetadata"><a href="#comment-468" title="">21 January 2009, 1:09 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-472">
+			<h4>Dirk says:</h4>
+			<p>i can&apos;t get this fixed in a table.&nbsp;&nbsp;dont know much about javascript.<br>
+Also i have a problem with bytagname, since i have more input boxes</p>
+<p>can you post some code that fixes this or tell me in what direction i can search</p>
+						<small class="commentmetadata"><a href="#comment-472" title="">30 January 2009, 9:13 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-464">
+			<h4>
+<a href="http://www.hanahattori.com/" rel="external nofollow ugc" class="url">wwwhitney</a> says:</h4>
+			<p>Hi Ryan, first off thanks so much for this, it&apos;s been very helpful. I am having an issue and I wonder if you have encountered it yourself. In Firefox 3, the numberOfInputsEle counter does not reset when the page reloads. It really doesn&apos;t make any sense to me because the numberOfInputsEle variable is of course directly tied to the value of numberOfInputs which is always the same defined static value when the page initially loads. I can only surmise that the numberOfInputs value is not defaulting back to its original value when the page is reloaded and is instead retaining the last newRowNum value.</p>
+<p>I don&apos;t have the same problem in IE 8 or Safari and luckily the form I&apos;m creating will be used in IE 8 only, but I was still wondering if you might be able to shed some light on this problem. Thanks again!</p>
+						<small class="commentmetadata"><a href="#comment-464" title="">30 March 2009, 12:24 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-469">
+			<h4>Jess says:</h4>
+			<p>Love the code but I&apos;m having a few issues and I don&apos;t know much about JavaScript.</p>
+<p>Does the page need to reload when you remove an element? Also when I do this it deletes all the rows instead of just the one.</p>
+<p>Also the number doesn&apos;t change when I add a row. It says 1 everytime.</p>
+<p>I&apos;ve tried this in both Firefox and Safari and same result.</p>
+<p>Any suggestions would be much appreciated.</p>
+						<small class="commentmetadata"><a href="#comment-469" title="">9 April 2009, 2:03 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-465">
+			<h4>Cool says:</h4>
+			<p>Guys,</p>
+<p>&lt;div id=&quot;idone&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;%= fields_for @category do %&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;label&gt;Category(optional)&lt;/label&gt;&lt;li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;%= text_field&nbsp;&nbsp;:category_name %&gt;&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;% end =%&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;% for assignment in @category.assignments %&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= fields_for @assignment do %&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= text_field&nbsp;&nbsp;:name =&gt; &quot;name[]&quot;, :class =&gt; &quot;short&quot; %&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= text_field&nbsp;&nbsp;:name =&gt; &quot;date[]&quot;, :class =&gt; &quot;short apart&quot; %&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= text_field&nbsp;&nbsp;:name =&gt; &quot;max_point[]&quot;, :class =&gt; &quot;short apart&quot; %&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;% end =%&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;% end %&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; id=&quot;id&quot; value=&quot;1&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;divTxt&quot;&gt;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&nbsp;&nbsp;class=&quot;add-more&quot;&nbsp;&nbsp;onClick=&quot;addFormField(); return false;&quot;&gt;Add More Assignments&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>
+<p>I have a link&nbsp;&nbsp;down like<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&nbsp;&nbsp;class=&quot;add-more&quot;&nbsp;&nbsp;onClick=&quot;addcategory(); return false;&quot;&gt;Add Another Category&lt;/a&gt;</p>
+<p>If i click on the above link the complete div should appear again. Like that i want to do n times.<br>
+ How can i do that. Please please help me guys i was struck with this issue from 2 days..</p>
+<p>badly need a help</p>
+						<small class="commentmetadata"><a href="#comment-465" title="">15 April 2009, 8:28 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-470">
+			<h4>Tom Berman says:</h4>
+			<p>This is a wonderful page and the code works very well.</p>
+<p>I am hoping to use this code to interface to a PHP/MYSQL database.&nbsp;&nbsp;I have no problems getting the data to an array and storing it.&nbsp;&nbsp;I was wondering if there is a reasonably simple way of setting the initial state of the page based on previously entered data?</p>
+<p>The steps I image are :<br>
+When the page loads</p>
+<p>1. Get previously stored data from a database.<br>
+2. Call a javascript function with the parameters in an array from the database.<br>
+3. User modifies data<br>
+4. It saves to the database &#8211; and the process starts again.</p>
+<p>Does anyone know how I could do this?&nbsp;&nbsp;</p>
+<p>Any help will be much appreciated.</p>
+						<small class="commentmetadata"><a href="#comment-470" title="">16 April 2009, 4:51 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-463">
+			<h4>
+<a href="http://www.toastboy.com/" rel="external nofollow ugc" class="url">Johnny Five</a> says:</h4>
+			<p>WOW!&nbsp;&nbsp;I am a believer now. Ajax and JS are the way to go.&nbsp;&nbsp;I have been fighting with this now for hours, and finally gave up. But you have given my app new hope again.</p>
+<p>Thanks for the wonderful tut.</p>
+<p>I kept losing all of the previous input fields data when my create new element function ran.&nbsp;&nbsp;Hopefully with a few tweaks from your script this is going to be all fixed.</p>
+						<small class="commentmetadata"><a href="#comment-463" title="">21 April 2009, 11:33 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-1265">
+			<h4>sumon says:</h4>
+			<p>i am using the script and it works fine. But when i need to pass a java script onClick function it does not work. Like:<br>
+newNode.getElementsByTagName(&quot;input&quot;)[2].onclick = &quot;onoffme(holidayset,&apos;&quot;+ newRowNum +&quot;&apos;);&quot;; </p>
+<p>this onclick does not work. Please help.</p>
+						<small class="commentmetadata"><a href="#comment-1265" title="">13 April 2010, 4:09 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-1267">
+			<h4>Ryan says:</h4>
+			<p>sumon, try assigning your code as a function, like:</p>
+<p>newNode.getElementsByTagName(&quot;input&quot;)[2].onclick = function() { alert(&apos;test&apos;); };</p>
+<p>You could also try using the addEventListener method:</p>
+<p>newNode.getElementsByTagName(&quot;input&quot;)[2].addEventListener(&apos;click&apos;,myFunction,false);</p>
+<p>I think in IE you&apos;ll need to use attachEvent instead of addEventListener.&nbsp;&nbsp; </p>
+<p>If you do it that way, I think your function will receive an event as an argument.  You can then look at event.target to see what element was clicked.</p>
+<p>You could use jQuery also, it will work the same in IE or FF. If you gave your new element an ID of newelement, you could use this:</p>
+<p>$(&apos;#newelement&apos;).click(function () { alert(&apos;test&apos;); });</p>
+<p>You might also look into jQuery bubbling events.&nbsp;&nbsp;Using bubbling events you might be able to add an click handler to the table, div, etc containing all these links. Then when anything in that area is clicked, your function will fire.&nbsp;&nbsp;In the function you can tell which element was clicked on, then handle that appropriately.</p>
+						<small class="commentmetadata"><a href="#comment-1267" title="">13 April 2010, 7:13 am</a></small>
+					</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+	<div>
+		<ul>
+			<li id="text-3" class="widget widget_text">			<div class="textwidget"><center><img style="border: 1px solid gray;" src="/wp-content/uploads/2012/06/ryan-headshot-1.jpg" alt="Ryan Stille"></center></div>
+		</li>
+<li id="pages-3" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+
+			<ul>
+				<li class="page_item page-item-228"><a href="/about/">About Me</a></li>
+<li class="page_item page-item-35"><a href="/projects/">My Projects</a></li>
+			</ul>
+
+			</li>
+<li id="categories-3" class="widget widget_categories">
+<h2 class="widgettitle">Article Categories</h2>
+
+			<ul>
+					<li class="cat-item cat-item-3">
+<a href="/category/ajax-javascript/">AJAX / JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/bluedragon/">BlueDragon</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/book-reviews/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/coldfusion/">ColdFusion</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/flex/">Flex</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/misc/">Misc</a>
+</li>
+	<li class="cat-item cat-item-10">
+<a href="/category/railo/">Railo</a>
+</li>
+	<li class="cat-item cat-item-11">
+<a href="/category/sql/">SQL</a>
+</li>
+	<li class="cat-item cat-item-12">
+<a href="/category/system-administration/">System Administration</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/tomcat/">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/web-development/">Web Development</a>
+</li>
+			</ul>
+
+			</li>
+
+		<li id="recent-posts-3" class="widget widget_recent_entries">
+		<h2 class="widgettitle">Recent Posts</h2>
+
+		<ul>
+											<li>
+					<a href="/coldfusion-formfield-as-array-cf10/">Accessing form fields as an array in CF10</a>
+									</li>
+											<li>
+					<a href="/onerror-img-image-tag/">Did you know about the onerror attribute of the img tag?</a>
+									</li>
+											<li>
+					<a href="/copying-sql-studio-excel-headers/">Copying data from SQL Studio to Excel</a>
+									</li>
+											<li>
+					<a href="/dateconvert-utc-not-what-you-expect/">Using DateConvert to get a UTC timestamp may not return what you expect</a>
+									</li>
+											<li>
+					<a href="/get-filename-before-calling-cffile/">Getting the client filename before using cffile</a>
+									</li>
+											<li>
+					<a href="/jquery-snippet-to-get-all-input-values/">jQuery snippet to get all input values</a>
+									</li>
+											<li>
+					<a href="/mura-404-page-not-working-in-iis7-fix-it-in-web-config/">Mura 404 page not working in IIS7 &#8211; fix it in web.config</a>
+									</li>
+											<li>
+					<a href="/free-coldfusion-10-beta-hosting/">Free ColdFusion 10 beta hosting</a>
+									</li>
+											<li>
+					<a href="/remove-spaces-columns-cfspreadsheet/">Removing spaces from columns in cfspreadsheet (or any query)</a>
+									</li>
+											<li>
+					<a href="/online-code-formatters/">Online code formatters</a>
+									</li>
+											<li>
+					<a href="/joining-two-tables-one-id/">Joining to one of two tables with one ID</a>
+									</li>
+											<li>
+					<a href="/formatting-cfgrid-with-javascript/">Formatting CFGRID with JavaScript</a>
+									</li>
+											<li>
+					<a href="/cf-form-array-comma-workaround/">Accessing ColdFusion form values as an array</a>
+									</li>
+											<li>
+					<a href="/loading-fckeditor-dynamically/">Loading CFrichtext / FCKeditor on-the-fly</a>
+									</li>
+											<li>
+					<a href="/url-rewriting-windows-2008-iis7/">Mura URL rewriting on Windows 2008 / IIS7</a>
+									</li>
+					</ul>
+
+		</li>
+<li id="linkcat-2" class="widget widget_links">
+<h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.axelscript.com/" title="AxelScript &#8211; Flex development blog">Axel Jensen</a></li>
+<li><a href="http://jake.cfwebtools.com/" title="ColdFusion/Flex development">Jake Churchill</a></li>
+<li><a href="http://www.coldfusionmuse.com/" title="ColdFusion Muse">Mark Kruger</a></li>
+<li><a href="http://www.henke.ws/" title="ColdFusion, TDD, Ant, Subversion, etc.">Mike Henke</a></li>
+
+	</ul>
+</li>
+
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Donate</h2>
+			<div class="textwidget">If my code has helped you and you'd like give a donation, you can do so using the button below.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="ryan@stillnet.org">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Donation for helpful ColdFusion code">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget">
+<br><br>
+<img src="/wp-content/uploads/2010/01/acp_logo.gif">
+</div>
+		</li>
+			
+		</ul> 
+	</div>
+	</div>
+</div> <!-- wrapper -->
+
+<div id="footer"><div><div><div>
+
+	<a href="/feed/">Entries (RSS)</a> and <a href="/comments/feed/">Comments (RSS)</a>. Valid <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a>.<br>
+
+	Powered by <a href="http://www.wpthemes360.com/">Wordpress Themes</a>. Theme <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> by <a href="http://srinig.com/">Srini G</a>
+
+	</div></div></div></div>
+
+</div> <!-- page -->
+
+</body>
+
+</html>

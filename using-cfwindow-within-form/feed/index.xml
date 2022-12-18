@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Using CFWindow within a form	</title>
+	<atom:link href="/using-cfwindow-within-form/feed/" rel="self" type="application/rss+xml" />
+	<link>/using-cfwindow-within-form/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 23 Jul 2012 04:57:15 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: praveen		</title>
+		<link>/using-cfwindow-within-form/comment-page-1/#comment-2931</link>
+
+		<dc:creator><![CDATA[praveen]]></dc:creator>
+		<pubDate>Mon, 23 Jul 2012 04:57:15 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-2931</guid>
+
+					<description><![CDATA[hi i am trying to use CFwindow function in OBD, but its not supported..
+is there any alternative tag]]></description>
+			<content:encoded><![CDATA[<p>hi i am trying to use CFwindow function in OBD, but its not supported..<br />
+is there any alternative tag</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: lakshmi		</title>
+		<link>/using-cfwindow-within-form/comment-page-1/#comment-2809</link>
+
+		<dc:creator><![CDATA[lakshmi]]></dc:creator>
+		<pubDate>Wed, 09 May 2012 10:35:09 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-2809</guid>
+
+					<description><![CDATA[
+function doSubmit() {
+  var hiddenAge = document.getElementById(&quot;hidden_age&quot;);
+  var age = document.getElementById(&quot;age&quot;);
+  hiddenAge.value = age.value;
+  document.getElementById(&quot;theForm&quot;).submit();
+}
+
+
+The above code still carries the age value as null.]]></description>
+			<content:encoded><![CDATA[<p>function doSubmit() {<br />
+  var hiddenAge = document.getElementById(&#8220;hidden_age&#8221;);<br />
+  var age = document.getElementById(&#8220;age&#8221;);<br />
+  hiddenAge.value = age.value;<br />
+  document.getElementById(&#8220;theForm&#8221;).submit();<br />
+}</p>
+<p>The above code still carries the age value as null.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

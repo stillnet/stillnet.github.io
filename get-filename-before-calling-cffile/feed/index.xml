@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Getting the client filename before using cffile	</title>
+	<atom:link href="/get-filename-before-calling-cffile/feed/" rel="self" type="application/rss+xml" />
+	<link>/get-filename-before-calling-cffile/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 12 Dec 2012 22:14:31 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Mark		</title>
+		<link>/get-filename-before-calling-cffile/comment-page-1/#comment-3185</link>
+
+		<dc:creator><![CDATA[Mark]]></dc:creator>
+		<pubDate>Wed, 12 Dec 2012 22:14:31 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1132#comment-3185</guid>
+
+					<description><![CDATA[Thanks so much!!! I&#039;ve been trying to find a way to detect if a file was uploaded with a &#039;?&#039; in the file name (which causes the cffile tag to error), and this is it! Now I can detect the question mark and modify the file save path to remove the question marks on a windows server!]]></description>
+			<content:encoded><![CDATA[<p>Thanks so much!!! I&#8217;ve been trying to find a way to detect if a file was uploaded with a &#8216;?&#8217; in the file name (which causes the cffile tag to error), and this is it! Now I can detect the question mark and modify the file save path to remove the question marks on a windows server!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake Churchill		</title>
+		<link>/get-filename-before-calling-cffile/comment-page-1/#comment-3130</link>
+
+		<dc:creator><![CDATA[Jake Churchill]]></dc:creator>
+		<pubDate>Tue, 04 Dec 2012 16:32:52 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1132#comment-3130</guid>
+
+					<description><![CDATA[This is awesome.  I gotta remember to try this.]]></description>
+			<content:encoded><![CDATA[<p>This is awesome.  I gotta remember to try this.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tim Leach		</title>
+		<link>/get-filename-before-calling-cffile/comment-page-1/#comment-3126</link>
+
+		<dc:creator><![CDATA[Tim Leach]]></dc:creator>
+		<pubDate>Tue, 04 Dec 2012 14:37:15 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1132#comment-3126</guid>
+
+					<description><![CDATA[This is an awesome tip. Feels so much cleaner than the typical upload check delete, especially when trying to make your file uploads secure.]]></description>
+			<content:encoded><![CDATA[<p>This is an awesome tip. Feels so much cleaner than the typical upload check delete, especially when trying to make your file uploads secure.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

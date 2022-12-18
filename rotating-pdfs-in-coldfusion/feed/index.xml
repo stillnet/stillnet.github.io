@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Rotating PDFs in ColdFusion	</title>
+	<atom:link href="/rotating-pdfs-in-coldfusion/feed/" rel="self" type="application/rss+xml" />
+	<link>/rotating-pdfs-in-coldfusion/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 14 Mar 2008 14:49:26 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Rolf Staflin		</title>
+		<link>/rotating-pdfs-in-coldfusion/comment-page-1/#comment-366</link>
+
+		<dc:creator><![CDATA[Rolf Staflin]]></dc:creator>
+		<pubDate>Fri, 14 Mar 2008 14:49:26 +0000</pubDate>
+		<guid isPermaLink="false">/2008/02/24/rotating-pdfs-in-coldfusion/#comment-366</guid>
+
+					<description><![CDATA[I think you are right about the rotation. Bruno Lowagie, the man behind iText, wrote this code to rotate pages 90 degrees (I cut out the error handling for clarity):
+
+            PdfDictionary pageDict;
+            int rot;
+            PdfReader reader = new PdfReader(&quot;test.pdf&quot;);
+            int n = reader.getNumberOfPages();
+            for (int i = 1; i [ TRUNCATED FOR SOME REASON?? - sorry, - ed.]
+
+The short version, then, is that a PdfDictionary stores values in a HashMap, so when you call
+
+dictionary.put( PdfName.ROTATE, PdfNumber.init(degreesToRotate) );
+
+you are replacing the old value with the new one. To implement a cumulative rotation, call dictionary.get(PdfName.ROTATE) first to get the current rotation. Then just add that number to degreesToRotate.
+
+Cheers,
+/Rolf]]></description>
+			<content:encoded><![CDATA[<p>I think you are right about the rotation. Bruno Lowagie, the man behind iText, wrote this code to rotate pages 90 degrees (I cut out the error handling for clarity):</p>
+<p>            PdfDictionary pageDict;<br />
+            int rot;<br />
+            PdfReader reader = new PdfReader(&#8220;test.pdf&#8221;);<br />
+            int n = reader.getNumberOfPages();<br />
+            for (int i = 1; i [ TRUNCATED FOR SOME REASON?? &#8211; sorry, &#8211; ed.]</p>
+<p>The short version, then, is that a PdfDictionary stores values in a HashMap, so when you call</p>
+<p>dictionary.put( PdfName.ROTATE, PdfNumber.init(degreesToRotate) );</p>
+<p>you are replacing the old value with the new one. To implement a cumulative rotation, call dictionary.get(PdfName.ROTATE) first to get the current rotation. Then just add that number to degreesToRotate.</p>
+<p>Cheers,<br />
+/Rolf</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

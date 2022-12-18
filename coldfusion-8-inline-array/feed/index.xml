@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: ColdFusion 8 inline array syntax doesn&#8217;t work everywhere	</title>
+	<atom:link href="/coldfusion-8-inline-array/feed/" rel="self" type="application/rss+xml" />
+	<link>/coldfusion-8-inline-array/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sun, 11 Oct 2009 10:21:45 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Steve Fentriss		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-840</link>
+
+		<dc:creator><![CDATA[Steve Fentriss]]></dc:creator>
+		<pubDate>Sun, 11 Oct 2009 10:21:45 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-840</guid>
+
+					<description><![CDATA[Aha!&#160;&#160;Here&amp;apos;s a surefire solution to the problem of inline array syntax in Coldfusion 8.
+
+SUMMARY:
+Use the&#160;&#160;listToArray(list [, delimiters ])&#160;&#160;function.
+
+SHORT EXAMPLE:
+&#060;cfset queryAddColumn(myQuery,&#034;fav_pokemon&#034;,listToArray(&#034;Pikachu,Bulbasaur,Venomoth,Dewgong,Snorlax&#034;))&#062;
+
+-- LONG EXAMPLE: --
+&#060;!--- create a query which has a &#034;title&#034; column,
+&#160;&#160;&#160;&#160;but lacks a &#034;notes&#034; column: ---&#062;
+&#160;&#160;&#160;&#160;&#060;cfset Q = queryNew(&amp;apos;title&amp;apos;)&#062;
+&#060;!--- stock the query with two rows,
+&#160;&#160;&#160;&#160;regarding apples and oranges: ---&#062;
+&#160;&#160;&#160;&#160;&#060;cfset queryAddRow(Q)&#062;&#060;!--- first row ---&#062;
+&#160;&#160;&#160;&#160;&#060;cfset querySetCell(Q,&#034;title&#034;,&#034;Apples&#034;)&#062;
+&#160;&#160;&#160;&#160;&#060;cfset queryAddRow(Q)&#062;&#060;!--- second row ---&#062;
+&#160;&#160;&#160;&#160;&#060;cfset querySetCell(Q,&#034;title&#034;,&#034;Oranges&#034;)&#062;
+&#060;!--- NOW, ADD A NEW COLUMN called &#034;notes&#034;,
+&#160;&#160;&#160;&#160;FROM AN INLINE ARRAY containing values ---&#062;
+&#160;&#160;&#160;&#160;&#060;cfset queryAddColumn(Q,&#034;notes&#034;,listToArray(&#034;Apples are great , Unless compared to oranges&#034;))&#062;
+&#060;!--- see if it worked: ---&#062;
+&#060;cfdump var=&#034;#Q#&#034;&#062;
+-- :LONG EXAMPLE --
+
+
+Hope that helps!
+- Steve]]></description>
+			<content:encoded><![CDATA[<p>Aha!&nbsp;&nbsp;Here&apos;s a surefire solution to the problem of inline array syntax in Coldfusion 8.</p>
+<p>SUMMARY:<br />
+Use the&nbsp;&nbsp;listToArray(list [, delimiters ])&nbsp;&nbsp;function.</p>
+<p>SHORT EXAMPLE:<br />
+&lt;cfset queryAddColumn(myQuery,&quot;fav_pokemon&quot;,listToArray(&quot;Pikachu,Bulbasaur,Venomoth,Dewgong,Snorlax&quot;))&gt;</p>
+<p>&#8212; LONG EXAMPLE: &#8212;<br />
+&lt;!&#8212; create a query which has a &quot;title&quot; column,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;but lacks a &quot;notes&quot; column: &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Q = queryNew(&apos;title&apos;)&gt;<br />
+&lt;!&#8212; stock the query with two rows,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;regarding apples and oranges: &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset queryAddRow(Q)&gt;&lt;!&#8212; first row &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset querySetCell(Q,&quot;title&quot;,&quot;Apples&quot;)&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset queryAddRow(Q)&gt;&lt;!&#8212; second row &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset querySetCell(Q,&quot;title&quot;,&quot;Oranges&quot;)&gt;<br />
+&lt;!&#8212; NOW, ADD A NEW COLUMN called &quot;notes&quot;,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;FROM AN INLINE ARRAY containing values &#8212;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset queryAddColumn(Q,&quot;notes&quot;,listToArray(&quot;Apples are great , Unless compared to oranges&quot;))&gt;<br />
+&lt;!&#8212; see if it worked: &#8212;&gt;<br />
+&lt;cfdump var=&quot;#Q#&quot;&gt;<br />
+&#8212; :LONG EXAMPLE &#8212;</p>
+<p>Hope that helps!<br />
+&#8211; Steve</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-346</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Thu, 29 May 2008 15:43:32 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-346</guid>
+
+					<description><![CDATA[I have been told that this issue should be fixed in CF9, or possibly even sooner in an updater for CF8.  Whooo!]]></description>
+			<content:encoded><![CDATA[<p>I have been told that this issue should be fixed in CF9, or possibly even sooner in an updater for CF8.  Whooo!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tom		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-345</link>
+
+		<dc:creator><![CDATA[Tom]]></dc:creator>
+		<pubDate>Sat, 12 Apr 2008 13:29:35 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-345</guid>
+
+					<description><![CDATA[Here is a link that explores CF 8&#039;s inline array syntax a bit more with regards to structs and arrays.
+
+http://www.bennadel.com/blog/740-Learning-ColdFusion-8-Implicit-Struct-And-Array-Creation.htm
+
+For me personally, I&#039;m using it as follows for loading static data into arrays.
+
+&#060;script&#062;
+aSet=arraynew(2);
+i=0;
+i++; aSet[i]=[ &quot;Illinois&quot;, &quot;IL&quot;, 21, &quot;Mississippi River; 279 feet, 33rd&quot; ];
+i++; aSet[i]=[ &quot;California&quot;, &quot;CA&quot;, 31, &quot;DeathValley; 282 feet below sea level, 1st&quot; ];
+
+// and so on....
+&#060;/script&#062;
+
+There are some glaring deficiencies with this feature, but I&#039;m glad they finally put it in and hopeful they improve on it in the future.]]></description>
+			<content:encoded><![CDATA[<p>Here is a link that explores CF 8&#8217;s inline array syntax a bit more with regards to structs and arrays.</p>
+<p><a href="http://www.bennadel.com/blog/740-Learning-ColdFusion-8-Implicit-Struct-And-Array-Creation.htm" rel="nofollow ugc">http://www.bennadel.com/blog/740-Learning-ColdFusion-8-Implicit-Struct-And-Array-Creation.htm</a></p>
+<p>For me personally, I&#8217;m using it as follows for loading static data into arrays.</p>
+<p>&lt;script&gt;<br />
+aSet=arraynew(2);<br />
+i=0;<br />
+i++; aSet[i]=[ &#8220;Illinois&#8221;, &#8220;IL&#8221;, 21, &#8220;Mississippi River; 279 feet, 33rd&#8221; ];<br />
+i++; aSet[i]=[ &#8220;California&#8221;, &#8220;CA&#8221;, 31, &#8220;DeathValley; 282 feet below sea level, 1st&#8221; ];</p>
+<p>// and so on&#8230;.<br />
+&lt;/script&gt;</p>
+<p>There are some glaring deficiencies with this feature, but I&#8217;m glad they finally put it in and hopeful they improve on it in the future.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: çeviri		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-344</link>
+
+		<dc:creator><![CDATA[çeviri]]></dc:creator>
+		<pubDate>Sun, 09 Mar 2008 19:09:23 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-344</guid>
+
+					<description><![CDATA[thanks for codes]]></description>
+			<content:encoded><![CDATA[<p>thanks for codes</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-343</link>
+
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+		<pubDate>Sun, 24 Feb 2008 17:21:56 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-343</guid>
+
+					<description><![CDATA[@Rob: I believe Java, JavaScript, C++, and PHP all allow anonymous arrays.  The array value is simply assigned to the variable name given to its corresponding argument in the function/method source.]]></description>
+			<content:encoded><![CDATA[<p>@Rob: I believe Java, JavaScript, C++, and PHP all allow anonymous arrays.  The array value is simply assigned to the variable name given to its corresponding argument in the function/method source.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Todd Rafferty		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-342</link>
+
+		<dc:creator><![CDATA[Todd Rafferty]]></dc:creator>
+		<pubDate>Wed, 16 Jan 2008 23:18:31 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-342</guid>
+
+					<description><![CDATA[Blargh.  Java, get out of my head for 2 minutes.  Sorry, CF index begins at 1.  But, anyway...
+
+&#060;cfset test = arrayNew(1)&#062;
+&#060;cfset test[1] = &quot;foo&quot;&#062;
+&#060;cfset test[arrayLen(test)] = {name=&quot;Dan&quot;,age=27,state=&quot;VA&quot;}&#062;
+&#060;cfdump var=&quot;#test#&quot;&#062;
+
+That works.  So, the issue is the evaluation of the arrayLen() +1 in there.]]></description>
+			<content:encoded><![CDATA[<p>Blargh.  Java, get out of my head for 2 minutes.  Sorry, CF index begins at 1.  But, anyway&#8230;</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br />
+&lt;cfset test[1] = &#8220;foo&#8221;&gt;<br />
+&lt;cfset test[arrayLen(test)] = {name=&#8221;Dan&#8221;,age=27,state=&#8221;VA&#8221;}&gt;<br />
+&lt;cfdump var=&#8221;#test#&#8221;&gt;</p>
+<p>That works.  So, the issue is the evaluation of the arrayLen() +1 in there.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Todd Rafferty		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-341</link>
+
+		<dc:creator><![CDATA[Todd Rafferty]]></dc:creator>
+		<pubDate>Wed, 16 Jan 2008 23:08:48 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-341</guid>
+
+					<description><![CDATA[The 4th attribute of QueryAddRow is a rowcolumn, why would you expect an array to work there?
+
+Also, why would you use:
+
+
+When you can ArrayAppend()?
+
+Also, your test above isn&#039;t accurate.  Array index in CF -starts- at zero.  Your code is telling it to bypass zero and set 1...?]]></description>
+			<content:encoded><![CDATA[<p>The 4th attribute of QueryAddRow is a rowcolumn, why would you expect an array to work there?</p>
+<p>Also, why would you use:</p>
+<p>When you can ArrayAppend()?</p>
+<p>Also, your test above isn&#8217;t accurate.  Array index in CF -starts- at zero.  Your code is telling it to bypass zero and set 1&#8230;?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan Roberts		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-340</link>
+
+		<dc:creator><![CDATA[Dan Roberts]]></dc:creator>
+		<pubDate>Sat, 22 Dec 2007 16:30:31 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-340</guid>
+
+					<description><![CDATA[by the way, you would also expect to be able use arraylength + 1 for the index but that doesn&#039;t work either though it work fine for other values and variables
+
+&#060;cfset test = arrayNew(1)&#062;
+&#060;cfset test[arrayLen(test)+1] = {name=”Dan”,age=27,state=”VA”}&#062;
+
+*boom.... error*]]></description>
+			<content:encoded><![CDATA[<p>by the way, you would also expect to be able use arraylength + 1 for the index but that doesn&#8217;t work either though it work fine for other values and variables</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br />
+&lt;cfset test[arrayLen(test)+1] = {name=”Dan”,age=27,state=”VA”}&gt;</p>
+<p>*boom&#8230;. error*</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan Roberts		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-339</link>
+
+		<dc:creator><![CDATA[Dan Roberts]]></dc:creator>
+		<pubDate>Sat, 22 Dec 2007 04:19:09 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-339</guid>
+
+					<description><![CDATA[Here the code from my post with the greater than and less thans escaped:
+===
+
+This would be awesome but doesn&#039;t work:
+
+&#060;cfset test = [{name=&quot;Dan&quot;,age=30,state=&quot;VA&quot;},
+{name=&quot;Chris&quot;,age=23,state=&quot;DC&quot;},
+{name=&quot;Todd&quot;,age=53,state=&quot;MA&quot;}]&#062;
+
+Instead you have to either expressly set the array indexes:
+
+&#060;cfset test = arrayNew(1)&#062;
+&#060;cfset test[1] = {name=&quot;Dan&quot;,age=30,state=&quot;VA&quot;}&#062;
+*repeated for 2 and 3
+
+or use a temporary variable:
+
+&#060;cfset test = arrayNew(1)&#062;
+&#060;cfset tmp = {name=&quot;Dan&quot;,age=30,state=&quot;VA&quot;}&#062;
+&#060;cfset arrayAppend(test,tmp)&#062;
+* repeated two more times
+
+===
+
+Rob,
+
+The array is an argument for another function which does not perform an action on that array. It uses the array as a source of values to add a new column to a query variable.
+
+I think Adobe will make this available in the future.]]></description>
+			<content:encoded><![CDATA[<p>Here the code from my post with the greater than and less thans escaped:<br />
+===</p>
+<p>This would be awesome but doesn&#8217;t work:</p>
+<p>&lt;cfset test = [{name=&#8221;Dan&#8221;,age=30,state=&#8221;VA&#8221;},<br />
+{name=&#8221;Chris&#8221;,age=23,state=&#8221;DC&#8221;},<br />
+{name=&#8221;Todd&#8221;,age=53,state=&#8221;MA&#8221;}]&gt;</p>
+<p>Instead you have to either expressly set the array indexes:</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br />
+&lt;cfset test[1] = {name=&#8221;Dan&#8221;,age=30,state=&#8221;VA&#8221;}&gt;<br />
+*repeated for 2 and 3</p>
+<p>or use a temporary variable:</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br />
+&lt;cfset tmp = {name=&#8221;Dan&#8221;,age=30,state=&#8221;VA&#8221;}&gt;<br />
+&lt;cfset arrayAppend(test,tmp)&gt;<br />
+* repeated two more times</p>
+<p>===</p>
+<p>Rob,</p>
+<p>The array is an argument for another function which does not perform an action on that array. It uses the array as a source of values to add a new column to a query variable.</p>
+<p>I think Adobe will make this available in the future.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan Roberts		</title>
+		<link>/coldfusion-8-inline-array/comment-page-1/#comment-338</link>
+
+		<dc:creator><![CDATA[Dan Roberts]]></dc:creator>
+		<pubDate>Sat, 22 Dec 2007 04:07:30 +0000</pubDate>
+		<guid isPermaLink="false">/2007/12/21/coldfusion-8-inline-array/#comment-338</guid>
+
+					<description><![CDATA[I put in a bug report / feature request a few weeks ago about this. There are so many places where this could be used but just doesn&#039;t function. There is also no nesting of the array/struct syntax to create an array of structs, which I often build up for configuration or test values.
+
+This would be awesome but doesn&#039;t work:
+
+
+
+Instead you have to either expressly set the array indexes:
+
+
+
+*repeated for 2 and 3
+
+or use a temporary variable:
+
+
+
+
+* repeated two more times]]></description>
+			<content:encoded><![CDATA[<p>I put in a bug report / feature request a few weeks ago about this. There are so many places where this could be used but just doesn&#8217;t function. There is also no nesting of the array/struct syntax to create an array of structs, which I often build up for configuration or test values.</p>
+<p>This would be awesome but doesn&#8217;t work:</p>
+<p>Instead you have to either expressly set the array indexes:</p>
+<p>*repeated for 2 and 3</p>
+<p>or use a temporary variable:</p>
+<p>* repeated two more times</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

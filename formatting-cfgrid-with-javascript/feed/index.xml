@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Formatting CFGRID with JavaScript	</title>
+	<atom:link href="/formatting-cfgrid-with-javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>/formatting-cfgrid-with-javascript/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 22 Sep 2011 06:48:12 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Misty		</title>
+		<link>/formatting-cfgrid-with-javascript/comment-page-1/#comment-2529</link>
+
+		<dc:creator><![CDATA[Misty]]></dc:creator>
+		<pubDate>Thu, 22 Sep 2011 06:48:12 +0000</pubDate>
+		<guid isPermaLink="false">/?p=806#comment-2529</guid>
+
+					<description><![CDATA[i have the 4 headers which are static and underneath i have 20 columns to be display so in each static header, i had to display 5 columns with having 5 headers in that specific static header.
+
+it is like this
+
+               Header 1                                                                      Header2                                                                                                   Header3
+Sub-Head1 Subhead2 subhead3 subhead4 subhead5       Sub-Head6 Subhead7 subhead8 subhead9 subhead10                    Sub-Head11 Subhead12 subhead13 subhead14 subhead15
+Dynamaic Data of Sub-Rows Goes here for all the Sub-headers until it is finished
+
+In cfgrid we can create sub-headings and underneath them the row Data, but how i create a main heading which has sub-heading defined.]]></description>
+			<content:encoded><![CDATA[<p>i have the 4 headers which are static and underneath i have 20 columns to be display so in each static header, i had to display 5 columns with having 5 headers in that specific static header.</p>
+<p>it is like this</p>
+<p>               Header 1                                                                      Header2                                                                                                   Header3<br />
+Sub-Head1 Subhead2 subhead3 subhead4 subhead5       Sub-Head6 Subhead7 subhead8 subhead9 subhead10                    Sub-Head11 Subhead12 subhead13 subhead14 subhead15<br />
+Dynamaic Data of Sub-Rows Goes here for all the Sub-headers until it is finished</p>
+<p>In cfgrid we can create sub-headings and underneath them the row Data, but how i create a main heading which has sub-heading defined.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

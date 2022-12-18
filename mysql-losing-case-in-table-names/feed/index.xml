@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: MySQL losing case in table names	</title>
+	<atom:link href="/mysql-losing-case-in-table-names/feed/" rel="self" type="application/rss+xml" />
+	<link>/mysql-losing-case-in-table-names/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 13 Apr 2011 13:59:29 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Mark		</title>
+		<link>/mysql-losing-case-in-table-names/comment-page-1/#comment-2191</link>
+
+		<dc:creator><![CDATA[Mark]]></dc:creator>
+		<pubDate>Wed, 13 Apr 2011 13:59:29 +0000</pubDate>
+		<guid isPermaLink="false">/?p=699#comment-2191</guid>
+
+					<description><![CDATA[I had no clue this existed. It pissed me off many time but I guess it didn&amp;apos;t bother me enough to lookup a solution for it :)]]></description>
+			<content:encoded><![CDATA[<p>I had no clue this existed. It pissed me off many time but I guess it didn&apos;t bother me enough to lookup a solution for it 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jake		</title>
+		<link>/mysql-losing-case-in-table-names/comment-page-1/#comment-952</link>
+
+		<dc:creator><![CDATA[Jake]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2010 15:21:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=699#comment-952</guid>
+
+					<description><![CDATA[I&amp;apos;m really glad you found this.&#160;&#160;It helps a lot]]></description>
+			<content:encoded><![CDATA[<p>I&apos;m really glad you found this.&nbsp;&nbsp;It helps a lot</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

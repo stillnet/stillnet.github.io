@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Resetting the DOM and JavaScript when using the &#8216;Back&#8217; button in FireFox	</title>
+	<atom:link href="/reset-javascript-firefox-back-button/feed/" rel="self" type="application/rss+xml" />
+	<link>/reset-javascript-firefox-back-button/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Fri, 27 Jul 2012 19:02:27 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Luiz Doná		</title>
+		<link>/reset-javascript-firefox-back-button/comment-page-1/#comment-2933</link>
+
+		<dc:creator><![CDATA[Luiz Doná]]></dc:creator>
+		<pubDate>Fri, 27 Jul 2012 19:02:27 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/23/reset-javascript-firefox-back-button/#comment-2933</guid>
+
+					<description><![CDATA[Works for me!]]></description>
+			<content:encoded><![CDATA[<p>Works for me!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike Harrison		</title>
+		<link>/reset-javascript-firefox-back-button/comment-page-1/#comment-1679</link>
+
+		<dc:creator><![CDATA[Mike Harrison]]></dc:creator>
+		<pubDate>Wed, 08 Sep 2010 11:37:37 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/23/reset-javascript-firefox-back-button/#comment-1679</guid>
+
+					<description><![CDATA[Thank you so much! This solved a major problem I was having with a jQuery drop down menu.]]></description>
+			<content:encoded><![CDATA[<p>Thank you so much! This solved a major problem I was having with a jQuery drop down menu.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: BA		</title>
+		<link>/reset-javascript-firefox-back-button/comment-page-1/#comment-400</link>
+
+		<dc:creator><![CDATA[BA]]></dc:creator>
+		<pubDate>Fri, 03 Oct 2008 09:32:55 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/23/reset-javascript-firefox-back-button/#comment-400</guid>
+
+					<description><![CDATA[Cheers dude, i was pulling out what was left of my hair with this problem!!]]></description>
+			<content:encoded><![CDATA[<p>Cheers dude, i was pulling out what was left of my hair with this problem!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Martin		</title>
+		<link>/reset-javascript-firefox-back-button/comment-page-1/#comment-399</link>
+
+		<dc:creator><![CDATA[Martin]]></dc:creator>
+		<pubDate>Wed, 25 Jun 2008 12:53:30 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/23/reset-javascript-firefox-back-button/#comment-399</guid>
+
+					<description><![CDATA[These events may be defined in the body tag too, like here :
+
+
+function noBack(){window.history.forward();}
+
+
+
+... blabla...
+
+This works flawlessly in FireFox as MSIE.]]></description>
+			<content:encoded><![CDATA[<p>These events may be defined in the body tag too, like here :</p>
+<p>function noBack(){window.history.forward();}</p>
+<p>&#8230; blabla&#8230;</p>
+<p>This works flawlessly in FireFox as MSIE.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Stephen		</title>
+		<link>/reset-javascript-firefox-back-button/comment-page-1/#comment-398</link>
+
+		<dc:creator><![CDATA[Stephen]]></dc:creator>
+		<pubDate>Tue, 24 Jun 2008 09:17:37 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/23/reset-javascript-firefox-back-button/#comment-398</guid>
+
+					<description><![CDATA[Hi - this behaviour is due to Firefox 1.5+&#039;s bfcache, as you found out.
+New events were introduced to be able to deal with the kinds of problems you found.
+Check out this page http://developer.mozilla.org/en/docs/Using_Firefox_1.5_caching
+Essentially you need to do window.addEventListener(&quot;pageshow&quot;, someFunction)]]></description>
+			<content:encoded><![CDATA[<p>Hi &#8211; this behaviour is due to Firefox 1.5+&#8217;s bfcache, as you found out.<br />
+New events were introduced to be able to deal with the kinds of problems you found.<br />
+Check out this page <a href="http://developer.mozilla.org/en/docs/Using_Firefox_1.5_caching" rel="nofollow ugc">http://developer.mozilla.org/en/docs/Using_Firefox_1.5_caching</a><br />
+Essentially you need to do window.addEventListener(&#8220;pageshow&#8221;, someFunction)</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

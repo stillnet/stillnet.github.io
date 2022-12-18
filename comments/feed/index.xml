@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments for Stillnet Studios	</title>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 28 May 2013 22:20:33 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		Comment on Elegant pagination with MS SQL 2005 by Mike Henke		</title>
+		<link>/pagination-mssql-2005/comment-page-1/#comment-3881</link>
+
+		<dc:creator><![CDATA[Mike Henke]]></dc:creator>
+		<pubDate>Tue, 28 May 2013 22:20:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=188#comment-3881</guid>
+
+					<description><![CDATA[Who is this guy?]]></description>
+			<content:encoded><![CDATA[<p>Who is this guy?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Online code formatters by Chris Waller		</title>
+		<link>/online-code-formatters/comment-page-1/#comment-3878</link>
+
+		<dc:creator><![CDATA[Chris Waller]]></dc:creator>
+		<pubDate>Wed, 15 May 2013 14:09:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1082#comment-3878</guid>
+
+					<description><![CDATA[I would also recommend one free online sql beautifier - http://www.sql-format.com/ works solid and has plenty of formatting options.]]></description>
+			<content:encoded><![CDATA[<p>I would also recommend one free online sql beautifier &#8211; <a href="http://www.sql-format.com/" rel="nofollow ugc">http://www.sql-format.com/</a> works solid and has plenty of formatting options.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Concatenating child rows in SQL &#8211; Cross Apply / FOR XML PATH by Ryan		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-3859</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 10 Apr 2013 14:32:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-3859</guid>
+
+					<description><![CDATA[Great tip Oscar, thanks!]]></description>
+			<content:encoded><![CDATA[<p>Great tip Oscar, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Concatenating child rows in SQL &#8211; Cross Apply / FOR XML PATH by Oscar		</title>
+		<link>/concatenating-child-rows/comment-page-1/#comment-3858</link>
+
+		<dc:creator><![CDATA[Oscar]]></dc:creator>
+		<pubDate>Wed, 10 Apr 2013 14:21:09 +0000</pubDate>
+		<guid isPermaLink="false">/?p=764#comment-3858</guid>
+
+					<description><![CDATA[to get rid of the comma you can use STUFF... in Ryan&#039;s example you would basically declare your columns and &#039;STUFF&#039; the one with the results of the CROSS APPLY like this:
+
+SELECT OrderID, OrderNotes, STUFF(listOfLineNotes,1,1,&#039;&#039;) as listOfLineNotes
+FROM orders AS o
+CROSS APPLY (
+	SELECT linenotes + &#039;,&#039;
+	FROM orderLines AS ol
+	WHERE ol.orderID = o.orderID 
+	FOR XML PATH(&#039;&#039;) )
+temp ( listOfLineNotes )]]></description>
+			<content:encoded><![CDATA[<p>to get rid of the comma you can use STUFF&#8230; in Ryan&#8217;s example you would basically declare your columns and &#8216;STUFF&#8217; the one with the results of the CROSS APPLY like this:</p>
+<p>SELECT OrderID, OrderNotes, STUFF(listOfLineNotes,1,1,&#8221;) as listOfLineNotes<br />
+FROM orders AS o<br />
+CROSS APPLY (<br />
+	SELECT linenotes + &#8216;,&#8217;<br />
+	FROM orderLines AS ol<br />
+	WHERE ol.orderID = o.orderID<br />
+	FOR XML PATH(&#8221;) )<br />
+temp ( listOfLineNotes )</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Wrapping tabs in ColdFusion 9 by KS		</title>
+		<link>/wrapping-cflayout-tabs-cf9/comment-page-1/#comment-3747</link>
+
+		<dc:creator><![CDATA[KS]]></dc:creator>
+		<pubDate>Thu, 21 Feb 2013 20:55:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=716#comment-3747</guid>
+
+					<description><![CDATA[Thanks - My nested tabs were blowing out the page and this simple fixed saved my day!]]></description>
+			<content:encoded><![CDATA[<p>Thanks &#8211; My nested tabs were blowing out the page and this simple fixed saved my day!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on CFID and CFToken are now httpOnly in CF 9.0.1 updater by Ryan		</title>
+		<link>/coldfusion-9-0-1-httponly-cookies/comment-page-1/#comment-3692</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 17 Feb 2013 18:32:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=898#comment-3692</guid>
+
+					<description><![CDATA[Peter - no I don&#039;t see how this would cause any issues with CFGRID.]]></description>
+			<content:encoded><![CDATA[<p>Peter &#8211; no I don&#8217;t see how this would cause any issues with CFGRID.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on CFID and CFToken are now httpOnly in CF 9.0.1 updater by Peter Lorimer		</title>
+		<link>/coldfusion-9-0-1-httponly-cookies/comment-page-1/#comment-3691</link>
+
+		<dc:creator><![CDATA[Peter Lorimer]]></dc:creator>
+		<pubDate>Sun, 17 Feb 2013 12:45:26 +0000</pubDate>
+		<guid isPermaLink="false">/?p=898#comment-3691</guid>
+
+					<description><![CDATA[Could this issue cause CFGRID to stop populating from a query after the 9.0.1 update?]]></description>
+			<content:encoded><![CDATA[<p>Could this issue cause CFGRID to stop populating from a query after the 9.0.1 update?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Tip of the day &#8211; cfdump format=&#8217;text&#8217; by Dave		</title>
+		<link>/cfdump-format-text/comment-page-1/#comment-3684</link>
+
+		<dc:creator><![CDATA[Dave]]></dc:creator>
+		<pubDate>Tue, 05 Feb 2013 21:12:39 +0000</pubDate>
+		<guid isPermaLink="false">/?p=595#comment-3684</guid>
+
+					<description><![CDATA[Doing a little debugging search and came across this from one Ryan Stille.  Imagine that...]]></description>
+			<content:encoded><![CDATA[<p>Doing a little debugging search and came across this from one Ryan Stille.  Imagine that&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Elegant pagination with MS SQL 2005 by negablog		</title>
+		<link>/pagination-mssql-2005/comment-page-1/#comment-3682</link>
+
+		<dc:creator><![CDATA[negablog]]></dc:creator>
+		<pubDate>Tue, 05 Feb 2013 09:44:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=188#comment-3682</guid>
+
+					<description><![CDATA[Great solution for getting total number of records using Count(*) Over(). The over() solves the purpose, without it aggregate function error will throw..
+Thanks a lot for writting.]]></description>
+			<content:encoded><![CDATA[<p>Great solution for getting total number of records using Count(*) Over(). The over() solves the purpose, without it aggregate function error will throw..<br />
+Thanks a lot for writting.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Did you know about the onerror attribute of the img tag? by Wayne		</title>
+		<link>/onerror-img-image-tag/comment-page-1/#comment-3547</link>
+
+		<dc:creator><![CDATA[Wayne]]></dc:creator>
+		<pubDate>Tue, 15 Jan 2013 21:56:28 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1162#comment-3547</guid>
+
+					<description><![CDATA[Just read: http://jquery-howto.blogspot.de/2013/01/8-methods-that-will-not-work-in-jquery.html
+
+.error() added in v1.0, deprecated in v1.8. Not to be confused with $.error() method, that throws new Error(msg);]]></description>
+			<content:encoded><![CDATA[<p>Just read: <a href="http://jquery-howto.blogspot.de/2013/01/8-methods-that-will-not-work-in-jquery.html" rel="nofollow ugc">http://jquery-howto.blogspot.de/2013/01/8-methods-that-will-not-work-in-jquery.html</a></p>
+<p>.error() added in v1.0, deprecated in v1.8. Not to be confused with $.error() method, that throws new Error(msg);</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

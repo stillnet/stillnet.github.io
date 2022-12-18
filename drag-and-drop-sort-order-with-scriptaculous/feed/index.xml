@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Drag and drop sort order with Scriptaculous	</title>
+	<atom:link href="/drag-and-drop-sort-order-with-scriptaculous/feed/" rel="self" type="application/rss+xml" />
+	<link>/drag-and-drop-sort-order-with-scriptaculous/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 22 Apr 2010 01:14:02 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Pleski		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-1319</link>
+
+		<dc:creator><![CDATA[Pleski]]></dc:creator>
+		<pubDate>Thu, 22 Apr 2010 01:14:02 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-1319</guid>
+
+					<description><![CDATA[I&amp;apos;m afraid it doesn&amp;apos;t work for me. I&amp;apos;m on IE 7]]></description>
+			<content:encoded><![CDATA[<p>I&apos;m afraid it doesn&apos;t work for me. I&apos;m on IE 7</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: dave		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-59</link>
+
+		<dc:creator><![CDATA[dave]]></dc:creator>
+		<pubDate>Wed, 17 Jun 2009 14:43:38 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-59</guid>
+
+					<description><![CDATA[Great article, and very informative.
+
+One issue I encountered was using a cfloop to go over the list returned by javascript.&#160;&#160;The space added after the comma (code: getAttribute(&amp;apos;recordid&amp;apos;) + &amp;apos;, &amp;apos;;) induces an error in the cfloop process (it loops over the list the appropriate number of times, but it only uses the first item in the list each time).&#160;&#160;Thought I would point that out for any one else having problems with it.
+
+Also replace &#034;alert(orderList);&#034; with &#034;document.formname.hiddenField.value = orderList;&#034; (where formname is the form&amp;apos;s name, and hiddenField is the name of the hidden form field) to input the data into a hidden form field. (For those asking the question so long ago.)]]></description>
+			<content:encoded><![CDATA[<p>Great article, and very informative.</p>
+<p>One issue I encountered was using a cfloop to go over the list returned by javascript.&nbsp;&nbsp;The space added after the comma (code: getAttribute(&apos;recordid&apos;) + &apos;, &apos;;) induces an error in the cfloop process (it loops over the list the appropriate number of times, but it only uses the first item in the list each time).&nbsp;&nbsp;Thought I would point that out for any one else having problems with it.</p>
+<p>Also replace &quot;alert(orderList);&quot; with &quot;document.formname.hiddenField.value = orderList;&quot; (where formname is the form&apos;s name, and hiddenField is the name of the hidden form field) to input the data into a hidden form field. (For those asking the question so long ago.)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Johnny Five		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-58</link>
+
+		<dc:creator><![CDATA[Johnny Five]]></dc:creator>
+		<pubDate>Tue, 05 May 2009 17:58:00 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-58</guid>
+
+					<description><![CDATA[I am a newbie in Ajax type stuff so this may be a stupid question. That aside here goes.
+
+I have a div populated with available images from the database, and i can drag them into a selected images div. but i cannot rearrange the selected images div after they are dropped.
+
+also if i come back to this particular image selection the availble models are only populated with the images that are available minus the ones that are already in the selected images div.
+
+i keep going around in circles.
+
+i have the php code to load the images into their appropriate divs based on wheter they were previously added to the selected images div or not, and then i can make them sort individually but as soon as i drag an available image into the selected images div the sorting stops working, and the already selected images cannot be removed from that div.
+
+help me, am i trying to do something that cannot be done.]]></description>
+			<content:encoded><![CDATA[<p>I am a newbie in Ajax type stuff so this may be a stupid question. That aside here goes.</p>
+<p>I have a div populated with available images from the database, and i can drag them into a selected images div. but i cannot rearrange the selected images div after they are dropped.</p>
+<p>also if i come back to this particular image selection the availble models are only populated with the images that are available minus the ones that are already in the selected images div.</p>
+<p>i keep going around in circles.</p>
+<p>i have the php code to load the images into their appropriate divs based on wheter they were previously added to the selected images div or not, and then i can make them sort individually but as soon as i drag an available image into the selected images div the sorting stops working, and the already selected images cannot be removed from that div.</p>
+<p>help me, am i trying to do something that cannot be done.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: axel f.		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-61</link>
+
+		<dc:creator><![CDATA[axel f.]]></dc:creator>
+		<pubDate>Tue, 24 Feb 2009 17:34:44 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-61</guid>
+
+					<description><![CDATA[hey there,
+is it possible to make two lists sortable?
+i&amp;apos;m having a left and a right ul (so two columns) and now want to be able to drag the elements in between those lists...
+Is this possible?
+
+Thx, axel]]></description>
+			<content:encoded><![CDATA[<p>hey there,<br />
+is it possible to make two lists sortable?<br />
+i&apos;m having a left and a right ul (so two columns) and now want to be able to drag the elements in between those lists&#8230;<br />
+Is this possible?</p>
+<p>Thx, axel</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor Lettman		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-62</link>
+
+		<dc:creator><![CDATA[Trevor Lettman]]></dc:creator>
+		<pubDate>Tue, 27 Jan 2009 21:57:37 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-62</guid>
+
+					<description><![CDATA[Great tutorial!&#160;&#160;This probably saved me a whole day of mucking around.&#160;&#160;Just in case there are other php/mysql developers looking for a solution to do this in multiple lists, I thought I would post some code... hopefully this will work as I don&amp;apos;t see a &#034;preview&#034; option here.
+
+I needed a solution to sort multiple categories of items from the same table, so I created a script that creates the list via php and assigns each a unique id and calls the Sortable.create() function as well.&#160;&#160;The js function is passed the list id as an argument - and subsequently passes it on to the server-side php script that sets the new sort_order for each row.
+
+The php that creates the list from the mysql database:
+
+&#060;?php
+/* connection script removed - connect to your db here */
+$r = mysql_query (&#034;SELECT * FROM sometable ORDER BY sort_order ASC&#034;);
+$listname = &amp;apos;list_&amp;apos; . rand(&amp;apos;111111&amp;apos;,&amp;apos;999999&amp;apos;);
+print &amp;apos;&#060;ul id=&#034;&amp;apos; . $listname . &amp;apos;&#034; onMouseUp=&#034;getOrder(\&amp;apos;&amp;apos; . $listname . &amp;apos;\&amp;apos;)&#034;&#062;&amp;apos;;
+while ($row = mysql_fetch_array($r))
+{
+extract($row);
+print &amp;apos;&#060;li id=&#034;item_&amp;apos; . $id . &amp;apos;&#034;&#062;$title&#060;/li&#062;&#034;;
+}
+print &amp;apos;&#060;/ul&#062;&amp;apos;;
+#create the sortable list via scriptaculous
+print &amp;apos;&#060;script&#062;Sortable.create(&#034;&amp;apos; . $listname . &amp;apos;&#034;);&#060;/script&#062;&amp;apos;;
+?&#062;
+
+The js function - note the listname arg:
+
+&#060;script language=&#034;JavaScript&#034;&#062;
+var url = &amp;apos;/thepathtomybackendscript/script.php&amp;apos;;
+function getOrder(listname) {
+var orderList = Sortable.serialize(listname);
+sendRequest(url + &amp;apos;?listname=&amp;apos; + listname + &amp;apos;&#038;&amp;apos; + orderList);
+}
+makeRequest(url);
+&#060;/script&#062;
+
+The server-side script called via AJAX:
+
+&#060;?php
+/* connection script removed - connect to your db here */
+if ($array = $_SERVER[&amp;apos;QUERY_STRING&amp;apos;])
+{
+$listname = $_GET[&amp;apos;listname&amp;apos;];
+parse_str($_SERVER[&amp;apos;QUERY_STRING&amp;apos;],$newSortorderArray);
+foreach ($newSortorderArray[$listname] as $key =&#062; $value)
+{
+mysql_query(&#034;UPDATE sometable SET sort_order=&amp;apos;$key&amp;apos; WHERE id=&amp;apos;$value&amp;apos;&#034;);
+}
+/* string to be returned, if any: print_r ($newSortorderArray[$listname); */
+}
+?&#062;
+
+The only component missing here is the actual AJAX javascript, which is pretty basic.&#160;&#160;If you&amp;apos;re new to this here is a good place to start:&#160;&#160;https://developer.mozilla.org/En/AJAX:Getting_Started
+
+Hope this helps someone.&#160;&#160;Thanks again for the tute!]]></description>
+			<content:encoded><![CDATA[<p>Great tutorial!&nbsp;&nbsp;This probably saved me a whole day of mucking around.&nbsp;&nbsp;Just in case there are other php/mysql developers looking for a solution to do this in multiple lists, I thought I would post some code&#8230; hopefully this will work as I don&apos;t see a &quot;preview&quot; option here.</p>
+<p>I needed a solution to sort multiple categories of items from the same table, so I created a script that creates the list via php and assigns each a unique id and calls the Sortable.create() function as well.&nbsp;&nbsp;The js function is passed the list id as an argument &#8211; and subsequently passes it on to the server-side php script that sets the new sort_order for each row.</p>
+<p>The php that creates the list from the mysql database:</p>
+<p>&lt;?php<br />
+/* connection script removed &#8211; connect to your db here */<br />
+$r = mysql_query (&quot;SELECT * FROM sometable ORDER BY sort_order ASC&quot;);<br />
+$listname = &apos;list_&apos; . rand(&apos;111111&apos;,&apos;999999&apos;);<br />
+print &apos;&lt;ul id=&quot;&apos; . $listname . &apos;&quot; onMouseUp=&quot;getOrder(\&apos;&apos; . $listname . &apos;\&apos;)&quot;&gt;&apos;;<br />
+while ($row = mysql_fetch_array($r))<br />
+{<br />
+extract($row);<br />
+print &apos;&lt;li id=&quot;item_&apos; . $id . &apos;&quot;&gt;$title&lt;/li&gt;&quot;;<br />
+}<br />
+print &apos;&lt;/ul&gt;&apos;;<br />
+#create the sortable list via scriptaculous<br />
+print &apos;&lt;script&gt;Sortable.create(&quot;&apos; . $listname . &apos;&quot;);&lt;/script&gt;&apos;;<br />
+?&gt;</p>
+<p>The js function &#8211; note the listname arg:</p>
+<p>&lt;script language=&quot;JavaScript&quot;&gt;<br />
+var url = &apos;/thepathtomybackendscript/script.php&apos;;<br />
+function getOrder(listname) {<br />
+var orderList = Sortable.serialize(listname);<br />
+sendRequest(url + &apos;?listname=&apos; + listname + &apos;&amp;&apos; + orderList);<br />
+}<br />
+makeRequest(url);<br />
+&lt;/script&gt;</p>
+<p>The server-side script called via AJAX:</p>
+<p>&lt;?php<br />
+/* connection script removed &#8211; connect to your db here */<br />
+if ($array = $_SERVER[&apos;QUERY_STRING&apos;])<br />
+{<br />
+$listname = $_GET[&apos;listname&apos;];<br />
+parse_str($_SERVER[&apos;QUERY_STRING&apos;],$newSortorderArray);<br />
+foreach ($newSortorderArray[$listname] as $key =&gt; $value)<br />
+{<br />
+mysql_query(&quot;UPDATE sometable SET sort_order=&apos;$key&apos; WHERE id=&apos;$value&apos;&quot;);<br />
+}<br />
+/* string to be returned, if any: print_r ($newSortorderArray[$listname); */<br />
+}<br />
+?&gt;</p>
+<p>The only component missing here is the actual AJAX javascript, which is pretty basic.&nbsp;&nbsp;If you&apos;re new to this here is a good place to start:&nbsp;&nbsp;<a href="https://developer.mozilla.org/En/AJAX:Getting_Started" rel="nofollow ugc">https://developer.mozilla.org/En/AJAX:Getting_Started</a></p>
+<p>Hope this helps someone.&nbsp;&nbsp;Thanks again for the tute!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Stille		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-60</link>
+
+		<dc:creator><![CDATA[Ryan Stille]]></dc:creator>
+		<pubDate>Wed, 21 Jan 2009 18:26:53 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-60</guid>
+
+					<description><![CDATA[Richard you certainly could use the ID.&#160;&#160;I didn&amp;apos;t because it just didn&amp;apos;t feel right.&#160;&#160;The ID is for being referenced in CSS and to get a handle on from the DOM.&#160;&#160;Here I just wanted to store my database record key.]]></description>
+			<content:encoded><![CDATA[<p>Richard you certainly could use the ID.&nbsp;&nbsp;I didn&apos;t because it just didn&apos;t feel right.&nbsp;&nbsp;The ID is for being referenced in CSS and to get a handle on from the DOM.&nbsp;&nbsp;Here I just wanted to store my database record key.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Richard Sweet		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-57</link>
+
+		<dc:creator><![CDATA[Richard Sweet]]></dc:creator>
+		<pubDate>Wed, 21 Jan 2009 17:25:13 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-57</guid>
+
+					<description><![CDATA[Great easy to follow tutorial, thanks.
+
+One thing. - When you use your own propriety attribute (recordid), why not just use id instead?]]></description>
+			<content:encoded><![CDATA[<p>Great easy to follow tutorial, thanks.</p>
+<p>One thing. &#8211; When you use your own propriety attribute (recordid), why not just use id instead?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jonathan Marsh		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-63</link>
+
+		<dc:creator><![CDATA[Jonathan Marsh]]></dc:creator>
+		<pubDate>Wed, 14 Jan 2009 12:18:30 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-63</guid>
+
+					<description><![CDATA[Hi,
+
+I&#039;m looking to create a drag and drop form. Any ideas on how this can be done? The idea would be that I can drag between 1 and 10 sub forms onto a droppable object, edit each of the forms, and then post the information from each form.
+
+Thanks.
+
+Jonathan]]></description>
+			<content:encoded><![CDATA[<p>Hi,</p>
+<p>I&#8217;m looking to create a drag and drop form. Any ideas on how this can be done? The idea would be that I can drag between 1 and 10 sub forms onto a droppable object, edit each of the forms, and then post the information from each form.</p>
+<p>Thanks.</p>
+<p>Jonathan</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: PJ		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-56</link>
+
+		<dc:creator><![CDATA[PJ]]></dc:creator>
+		<pubDate>Tue, 19 Aug 2008 14:49:37 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-56</guid>
+
+					<description><![CDATA[I am a little new to javascript. I find 1001 versions of how to do this breezily with PHP. I&#039;m delighted you gave an example with CFML. But I wish you had a cut&#038;paste example of the full code because I&#039;m struggling with how to write this to a &#039;hidden form field&#039; for CFML submission, instead of your alert, and it doesn&#039;t seem to be working (I&#039;d give a code example but I&#039;ve tried half a dozen things. I obviously just don&#039;t know how to do it, and many of the things I find via google must be leaving out something critical).  If you had that little tip included it would sure make it helpful. Thanks for a neat article anyway, the sorting bit is great. PJ]]></description>
+			<content:encoded><![CDATA[<p>I am a little new to javascript. I find 1001 versions of how to do this breezily with PHP. I&#8217;m delighted you gave an example with CFML. But I wish you had a cut&amp;paste example of the full code because I&#8217;m struggling with how to write this to a &#8216;hidden form field&#8217; for CFML submission, instead of your alert, and it doesn&#8217;t seem to be working (I&#8217;d give a code example but I&#8217;ve tried half a dozen things. I obviously just don&#8217;t know how to do it, and many of the things I find via google must be leaving out something critical).  If you had that little tip included it would sure make it helpful. Thanks for a neat article anyway, the sorting bit is great. PJ</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jess		</title>
+		<link>/drag-and-drop-sort-order-with-scriptaculous/comment-page-1/#comment-55</link>
+
+		<dc:creator><![CDATA[Jess]]></dc:creator>
+		<pubDate>Sat, 09 Aug 2008 00:16:25 +0000</pubDate>
+		<guid isPermaLink="false">http://ryan.cfwebtools.com/2006/12/31/drag-and-drop-sort-order-with-scriptaculous/#comment-55</guid>
+
+					<description><![CDATA[This drag and drop sort order has a problem if the list of items is very long and you want to drag one item down through the list but your window doesn&#039;t automatically scroll down. Does anyone have a solution to fix this problem? Even better, if someone can show me how i can put those items within a DIV with an overflow setting. I want the items to stay within the DIV box and if i drag an item down through the list, i&#039;d like the scroll bar in my DIV to automatically scroll down as I drag the item.
+Thank you.]]></description>
+			<content:encoded><![CDATA[<p>This drag and drop sort order has a problem if the list of items is very long and you want to drag one item down through the list but your window doesn&#8217;t automatically scroll down. Does anyone have a solution to fix this problem? Even better, if someone can show me how i can put those items within a DIV with an overflow setting. I want the items to stay within the DIV box and if i drag an item down through the list, i&#8217;d like the scroll bar in my DIV to automatically scroll down as I drag the item.<br />
+Thank you.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

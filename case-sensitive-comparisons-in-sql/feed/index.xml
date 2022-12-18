@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Case sensitive comparisons in SQL	</title>
+	<atom:link href="/case-sensitive-comparisons-in-sql/feed/" rel="self" type="application/rss+xml" />
+	<link>/case-sensitive-comparisons-in-sql/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 14 Apr 2009 11:54:51 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Sanjat		</title>
+		<link>/case-sensitive-comparisons-in-sql/comment-page-1/#comment-240</link>
+
+		<dc:creator><![CDATA[Sanjat]]></dc:creator>
+		<pubDate>Tue, 14 Apr 2009 11:54:51 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/03/case-sensitive-comparisons-in-sql/#comment-240</guid>
+
+					<description><![CDATA[Check Password in sql
+SELECT&#160;&#160;&#160;&#160; U_Name, U_Print_Name, U_Code, U_Pass
+FROM&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; M_USER
+WHERE&#160;&#160;&#160;&#160; (U_Name = &amp;apos;v&amp;apos;)&#160;&#160;AND (CONVERT(varbinary(255), &amp;apos;v&amp;apos;) = CONVERT(varbinary(255), U_Pass))]]></description>
+			<content:encoded><![CDATA[<p>Check Password in sql<br />
+SELECT&nbsp;&nbsp;&nbsp;&nbsp; U_Name, U_Print_Name, U_Code, U_Pass<br />
+FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M_USER<br />
+WHERE&nbsp;&nbsp;&nbsp;&nbsp; (U_Name = &apos;v&apos;)&nbsp;&nbsp;AND (CONVERT(varbinary(255), &apos;v&apos;) = CONVERT(varbinary(255), U_Pass))</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sanjat		</title>
+		<link>/case-sensitive-comparisons-in-sql/comment-page-1/#comment-239</link>
+
+		<dc:creator><![CDATA[Sanjat]]></dc:creator>
+		<pubDate>Tue, 14 Apr 2009 11:53:26 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/03/case-sensitive-comparisons-in-sql/#comment-239</guid>
+
+					<description><![CDATA[SELECT&#160;&#160;&#160;&#160; U_Name, U_Print_Name, U_Code, U_Pass
+FROM&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; M_USER
+WHERE&#160;&#160;&#160;&#160; (U_Name = &amp;apos;v&amp;apos;)&#160;&#160;AND (CONVERT(varbinary(255), &amp;apos;v&amp;apos;) = CONVERT(varbinary(255), U_Pass))]]></description>
+			<content:encoded><![CDATA[<p>SELECT&nbsp;&nbsp;&nbsp;&nbsp; U_Name, U_Print_Name, U_Code, U_Pass<br />
+FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M_USER<br />
+WHERE&nbsp;&nbsp;&nbsp;&nbsp; (U_Name = &apos;v&apos;)&nbsp;&nbsp;AND (CONVERT(varbinary(255), &apos;v&apos;) = CONVERT(varbinary(255), U_Pass))</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lango		</title>
+		<link>/case-sensitive-comparisons-in-sql/comment-page-1/#comment-238</link>
+
+		<dc:creator><![CDATA[Lango]]></dc:creator>
+		<pubDate>Tue, 27 May 2008 13:36:23 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/03/case-sensitive-comparisons-in-sql/#comment-238</guid>
+
+					<description><![CDATA[My suggestion would be to change your where clause to only compare user id and then do your password comparison  after.  Assuming your are doing this in stored procedure so you are not passing around passwords.
+
+For example:
+
+CREATE PROCEDURE [dbo].[AuthenticateUser]
+(@UserName varchar(15),@Password varchar(15))AS
+BEGIN
+	SET NOCOUNT ON
+	DECLARE @Result int	--0: failed
+						--1: success
+	DECLARE @ActualPassword varchar(12)
+	SELECT	@ActualPassword = [Password]
+	FROM	MyUsers
+	WHERE	Username = LTRIM(RTRIM(@UserName))
+	if @@RowCount&#062;0
+	BEGIN
+	if convert(varbinary(255),@Password) = convert(varbinary(255),@ActualPassword)
+	  select @Result = 1
+	END
+	return @Result;
+END]]></description>
+			<content:encoded><![CDATA[<p>My suggestion would be to change your where clause to only compare user id and then do your password comparison  after.  Assuming your are doing this in stored procedure so you are not passing around passwords.</p>
+<p>For example:</p>
+<p>CREATE PROCEDURE [dbo].[AuthenticateUser]<br />
+(@UserName varchar(15),@Password varchar(15))AS<br />
+BEGIN<br />
+	SET NOCOUNT ON<br />
+	DECLARE @Result int	&#8211;0: failed<br />
+						&#8211;1: success<br />
+	DECLARE @ActualPassword varchar(12)<br />
+	SELECT	@ActualPassword = [Password]<br />
+	FROM	MyUsers<br />
+	WHERE	Username = LTRIM(RTRIM(@UserName))<br />
+	if @@RowCount&gt;0<br />
+	BEGIN<br />
+	if convert(varbinary(255),@Password) = convert(varbinary(255),@ActualPassword)<br />
+	  select @Result = 1<br />
+	END<br />
+	return @Result;<br />
+END</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Seb		</title>
+		<link>/case-sensitive-comparisons-in-sql/comment-page-1/#comment-237</link>
+
+		<dc:creator><![CDATA[Seb]]></dc:creator>
+		<pubDate>Mon, 24 Sep 2007 13:34:23 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/03/case-sensitive-comparisons-in-sql/#comment-237</guid>
+
+					<description><![CDATA[&quot;WHERE (L.UserID = @UserID) AND (L.[Password] = @Password)&quot;
+
+I have a stored proceudre that does a password check using WHERE statement (above), so isnt case sensitve.  Would prefer not to do a non-case sensitive WHERE statement because of performance.
+
+Do you have a method where after a the non-case sensitive WHERE statement is used, could then be followed by a case sensitive verification that it indeed matches?]]></description>
+			<content:encoded><![CDATA[<p>&#8220;WHERE (L.UserID = @UserID) AND (L.[Password] = @Password)&#8221;</p>
+<p>I have a stored proceudre that does a password check using WHERE statement (above), so isnt case sensitve.  Would prefer not to do a non-case sensitive WHERE statement because of performance.</p>
+<p>Do you have a method where after a the non-case sensitive WHERE statement is used, could then be followed by a case sensitive verification that it indeed matches?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mark Kruger		</title>
+		<link>/case-sensitive-comparisons-in-sql/comment-page-1/#comment-236</link>
+
+		<dc:creator><![CDATA[Mark Kruger]]></dc:creator>
+		<pubDate>Tue, 03 Jul 2007 16:24:12 +0000</pubDate>
+		<guid isPermaLink="false">/2007/07/03/case-sensitive-comparisons-in-sql/#comment-236</guid>
+
+					<description><![CDATA[Ryan,
+
+that&#039;s an outstanding tip. I love it.
+
+-Mark]]></description>
+			<content:encoded><![CDATA[<p>Ryan,</p>
+<p>that&#8217;s an outstanding tip. I love it.</p>
+<p>-Mark</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

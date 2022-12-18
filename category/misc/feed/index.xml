@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Misc &#8211; Stillnet Studios</title>
+	<atom:link href="/category/misc/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 14 Jul 2011 01:53:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Online code formatters</title>
+		<link>/online-code-formatters/</link>
+					<comments>/online-code-formatters/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 14 Jul 2011 01:53:22 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[Misc]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1082</guid>
+
+					<description><![CDATA[Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine. Here is one for formatting XML: http://www.shell-tools.net/index.php?op=xml_format And [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine.</p>
+<p>Here is one for formatting XML: <a href="http://www.shell-tools.net/index.php?op=xml_format">http://www.shell-tools.net/index.php?op=xml_format</a></p>
+<p>And one for JSON from the same site: <a href="http://www.shell-tools.net/index.php?op=json_format">http://www.shell-tools.net/index.php?op=json_format</a></p>
+<p>Here is a SQL one that helped me out a lot tonight: <a href="http://www.dpriver.com/pp/sqlformat.htm">http://www.dpriver.com/pp/sqlformat.htm</a></p>
+<p>I fed it a horrible looking, very complex query and it made it easily readable. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/online-code-formatters/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Craigslist Spam Buttons updated &#8211; version 1.3</title>
+		<link>/craigslist-spam-buttons-v13/</link>
+					<comments>/craigslist-spam-buttons-v13/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 14 Oct 2008 01:56:55 +0000</pubDate>
+				<category><![CDATA[Misc]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=136</guid>
+
+					<description><![CDATA[I&#8217;ve released an update to my Craigslist Spam Buttons greasemonkey script. (If you don’t know what this is about, see my original post). This new version works completely differently, it flags items in the background using a hidden iframe. This should fix the problems people were having with the old version. Special thanks to Steve [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve released an update to my Craigslist Spam Buttons greasemonkey script. (If you don’t know what this is about, see my <a href="/2007/02/08/my-greasemonkey-script-craigslist-spam-buttons/">original post</a>).</p>
+<p>This new version works completely differently, it flags items in the background using a hidden iframe.  This should fix the problems people were having with the old version.   Special thanks to Steve Sweet for his help on this version.</p>
+<p><del datetime="2008-10-30T02:14:48+00:00">I&#8217;m not 100% sure this is working perfectly yet, so please try it out and let me know what you think.</del></p>
+<p>Update 10/29/2008 &#8211; this is now working great!  And it keeps the [spam] links marked as visited, even after reloading the page, so you can see which posts you&#8217;ve already marked.</p>
+<p>The latest version can always be downloaded from <a href="http://userscripts.org/scripts/show/7399">http://userscripts.org/scripts/show/7399</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/craigslist-spam-buttons-v13/feed/</wfw:commentRss>
+			<slash:comments>51</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Ryan takes home the trophy &#8211; Uber Geek of the year</title>
+		<link>/uber-geek-award/</link>
+					<comments>/uber-geek-award/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 09 Apr 2008 01:00:57 +0000</pubDate>
+				<category><![CDATA[Misc]]></category>
+		<guid isPermaLink="false">/2008/04/08/uber-geek-award/</guid>
+
+					<description><![CDATA[Last weekend was my annual company dinner. We had a wonderful meal at Colton&#8217;s Woodfired Grill. Several awards were handed out, and somehow I was chosen to receive the grand prize &#8211; Uber Geek of the Year. I was told my achievements that led up to this were: Always working through a large stack of [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Last weekend was my annual company dinner.  We had a <i>wonderful</i> meal at Colton&#8217;s Woodfired Grill.  Several awards were handed out, and somehow I was chosen to receive the grand prize &#8211; <em>Uber Geek of the Year</em>.  I was told my achievements that led up to this were:<br />
+<span id="more-96"></span></p>
+<ul>
+<li>Always working through a large stack of programming books on my desk</li>
+<li>Attending several user groups in the area</li>
+<li>Sometimes driving over 100 miles to attend neighboring user groups</li>
+<li>Running the Nebraska ColdFusion Users Group</li>
+<li>My gadget compulsion &#8211; For the last few months I have been receiving several shipments each week from around the world: HD cameras, RC airplanes, helicopters, batteries, parts, etc.</li>
+</ul>
+<p>The trophy was made out of computer parts from the very first servers used when CF WebTools was founded.</p>
+<p>This beautiful hand-crafted trophy will sit with pride on my shelf until next year.  I thought about trying to mod it so the fans spin, or the LEDs light up, but I figure that will only guarantee I win this <em>prestigious</em> award again next year&#8230;</p>
+<p><img decoding="async" id="image95" src="/wp-content/uploads/2008/04/ryan_award.jpg" alt="Ryan with the Uber Geek award" /></p>
+<p><img decoding="async" id="image94" src="/wp-content/uploads/2008/04/geek_button.jpg" alt="Uber Geek button" /></p>
+<p><a class="imagelink" href="/wp-content/uploads/2008/04/award_large.jpg" title="Uber Geek Award"><img decoding="async" id="image93" src="/blog/wp-content/uploads/2008/04/award_small.jpg" alt="Uber Geek Award - full size" /></a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/uber-geek-award/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Craigslist spam buttons script updated</title>
+		<link>/greasemonkey-craigslist-spam/</link>
+					<comments>/greasemonkey-craigslist-spam/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 09 Nov 2007 04:08:06 +0000</pubDate>
+				<category><![CDATA[Misc]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2007/11/08/greasemonkey-craigslist-spam/</guid>
+
+					<description><![CDATA[Tonight I published an update to my Craigslist Spam Buttons greasemonkey script. (If you don&#8217;t know what this is about, see my earlier post). I&#8217;ve had some feedback on the script, and I was able to incorporate those requests. Now the [spam] buttons are displayed at the front of item link. And when you click [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Tonight I published an update to my Craigslist Spam Buttons greasemonkey script. (If you don&#8217;t know what this is about, see my <a href="/2007/02/08/my-greasemonkey-script-craigslist-spam-buttons/">earlier post</a>).  I&#8217;ve had some feedback on the script, and I was able to incorporate those requests.  Now the [spam] buttons are displayed at the front of item link.  <em>And</em> when you click on the link, a request is made in the background to mark the item as spam.  You no longer have to jump to the flag-spam page, then click the continue browsing button to get back to where you were.  Instead the [spam] button changes to a red check mark to indicate that it has been marked.</p>
+<p>This is more difficult than you would think, you can&#8217;t just do a simple AJAX request because your browser will only make requests to the same site you are on.  In this case you are browsing on yourcity.craigslist.org, but the flag-spam page is on flag.craigslist.org.</p>
+<p>The greasemonkey extension does provide a built in method to make http calls to external sites, but that would break my Opera compatibility.  So instead I load the flag-spam page as the src of a JavaScript-created image object.</p>
+<p>It was fun to figure out, I really enjoy programming in JavaScript.</p>
+<p>You can get the script from <a href="http://userscripts.org/scripts/show/7399">userscripts.org</a>.  Here is a screen shot:</p>
+<p align="center"><img decoding="async" style="border: 1px solid black;" id="image74" src="/wp-content/uploads/2007/11/craigslist.gif" alt="Craigslist spam buttons, v1.1" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/greasemonkey-craigslist-spam/feed/</wfw:commentRss>
+			<slash:comments>81</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Happy Halloween &#8211; check out this awesome CF pumpkin</title>
+		<link>/happy-halloween/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 31 Oct 2007 14:46:13 +0000</pubDate>
+				<category><![CDATA[Misc]]></category>
+		<guid isPermaLink="false">/2007/10/31/happy-halloween/</guid>
+
+					<description><![CDATA[Check out this awesome pumpkin carving done by my boss, Mark Kruger. It&#8217;s a perfect depiction of our company logo. (click the image for a hi res picture) Here is the actual logo:]]></description>
+										<content:encoded><![CDATA[<p>Check out this awesome pumpkin carving done by my boss, <a href="http://www.coldfusionmuse.com/">Mark Kruger</a>.  It&#8217;s a perfect depiction of our company logo.</p>
+<p><center><br />
+<a class="imagelink" href="/blog/wp-content/uploads/2007/10/cfwt-pumpkin-lg.jpg" title="CFWT Pumpkin"><img decoding="async" id="image72" src="/blog/wp-content/uploads/2007/10/cfwt-pumpkin.jpg" alt="CFWT Pumpkin" /></a><br />
+(click the image for a hi res picture)</p>
+<p>Here is the actual logo:<br />
+<img decoding="async" src="http://mkruger.cfwebtools.com/images/cfwt_tiny.jpg"><br />
+</center></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

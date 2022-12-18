@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Tip of the day &#8211; IsDebugMode()	</title>
+	<atom:link href="/coldfusion-isdebugmode-function/feed/" rel="self" type="application/rss+xml" />
+	<link>/coldfusion-isdebugmode-function/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 27 Jul 2010 17:15:55 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan		</title>
+		<link>/coldfusion-isdebugmode-function/comment-page-1/#comment-1572</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 27 Jul 2010 17:15:55 +0000</pubDate>
+		<guid isPermaLink="false">/?p=902#comment-1572</guid>
+
+					<description><![CDATA[Yes, in that case you&amp;apos;d definitely want to use the debugging IP list.]]></description>
+			<content:encoded><![CDATA[<p>Yes, in that case you&apos;d definitely want to use the debugging IP list.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike K		</title>
+		<link>/coldfusion-isdebugmode-function/comment-page-1/#comment-1571</link>
+
+		<dc:creator><![CDATA[Mike K]]></dc:creator>
+		<pubDate>Tue, 27 Jul 2010 15:27:41 +0000</pubDate>
+		<guid isPermaLink="false">/?p=902#comment-1571</guid>
+
+					<description><![CDATA[Good tip, didn&amp;apos;t know that function existed.&#160;&#160;I would have to use with caution, however, as there are times during debugging certain issues that I have to turn on debugging in a production environment.&#160;&#160;While this action would otherwise be invisible to the user, having this code throughout and seeing dumps everywhere would send most users into cardiac arrest!]]></description>
+			<content:encoded><![CDATA[<p>Good tip, didn&apos;t know that function existed.&nbsp;&nbsp;I would have to use with caution, however, as there are times during debugging certain issues that I have to turn on debugging in a production environment.&nbsp;&nbsp;While this action would otherwise be invisible to the user, having this code throughout and seeing dumps everywhere would send most users into cardiac arrest!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/coldfusion-isdebugmode-function/comment-page-1/#comment-1570</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 27 Jul 2010 14:48:06 +0000</pubDate>
+		<guid isPermaLink="false">/?p=902#comment-1570</guid>
+
+					<description><![CDATA[Past performance does not predict future results.
+
+Maybe 1 day a month.]]></description>
+			<content:encoded><![CDATA[<p>Past performance does not predict future results.</p>
+<p>Maybe 1 day a month.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike Henke		</title>
+		<link>/coldfusion-isdebugmode-function/comment-page-1/#comment-1569</link>
+
+		<dc:creator><![CDATA[Mike Henke]]></dc:creator>
+		<pubDate>Tue, 27 Jul 2010 14:44:40 +0000</pubDate>
+		<guid isPermaLink="false">/?p=902#comment-1569</guid>
+
+					<description><![CDATA[So will we see a &#034;tip of the day&#034; daily?]]></description>
+			<content:encoded><![CDATA[<p>So will we see a &quot;tip of the day&quot; daily?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

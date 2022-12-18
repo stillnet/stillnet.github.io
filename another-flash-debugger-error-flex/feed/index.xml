@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: The &#8216;Another flash debugger may be running&#8217; error in Flex Builder 3	</title>
+	<atom:link href="/another-flash-debugger-error-flex/feed/" rel="self" type="application/rss+xml" />
+	<link>/another-flash-debugger-error-flex/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sat, 19 Sep 2009 16:52:04 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Raya		</title>
+		<link>/another-flash-debugger-error-flex/comment-page-1/#comment-737</link>
+
+		<dc:creator><![CDATA[Raya]]></dc:creator>
+		<pubDate>Sat, 19 Sep 2009 16:52:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=167#comment-737</guid>
+
+					<description><![CDATA[That&amp;apos;d worked just fine for me, thank you very much!]]></description>
+			<content:encoded><![CDATA[<p>That&apos;d worked just fine for me, thank you very much!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Philoo		</title>
+		<link>/another-flash-debugger-error-flex/comment-page-1/#comment-573</link>
+
+		<dc:creator><![CDATA[Philoo]]></dc:creator>
+		<pubDate>Tue, 21 Jul 2009 23:49:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=167#comment-573</guid>
+
+					<description><![CDATA[Great post thanks. 
+Also, if you are running the Flex plug in from Zend Studio, just add -Djava.net.preferIPv4Stack=true to the ZendStudio.ini file. Adding it to the shortcut did not work for me.]]></description>
+			<content:encoded><![CDATA[<p>Great post thanks.<br />
+Also, if you are running the Flex plug in from Zend Studio, just add -Djava.net.preferIPv4Stack=true to the ZendStudio.ini file. Adding it to the shortcut did not work for me.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

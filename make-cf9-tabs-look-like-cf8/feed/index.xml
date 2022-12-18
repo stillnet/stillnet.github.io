@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Making ColdFusion 9 tabs look similar to CF8 tabs	</title>
+	<atom:link href="/make-cf9-tabs-look-like-cf8/feed/" rel="self" type="application/rss+xml" />
+	<link>/make-cf9-tabs-look-like-cf8/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Mon, 03 May 2010 03:46:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Kevin Ford		</title>
+		<link>/make-cf9-tabs-look-like-cf8/comment-page-1/#comment-1145</link>
+
+		<dc:creator><![CDATA[Kevin Ford]]></dc:creator>
+		<pubDate>Tue, 16 Feb 2010 17:32:42 +0000</pubDate>
+		<guid isPermaLink="false">/?p=722#comment-1145</guid>
+
+					<description><![CDATA[I was a little baffled by the new background strip myself until I realized that there&amp;apos;s an attribute (&#034;tabStrip&#034;) of the cflayout tag to turn it on/off. For example:
+
+&#060;cflayout name=&#034;foo&#034; type=&#034;tab&#034; tabStrip=&#034;false&#034;&#062;
+&#160;&#160; Blah
+&#060;/cflayout&#062;]]></description>
+			<content:encoded><![CDATA[<p>I was a little baffled by the new background strip myself until I realized that there&apos;s an attribute (&quot;tabStrip&quot;) of the cflayout tag to turn it on/off. For example:</p>
+<p>&lt;cflayout name=&quot;foo&quot; type=&quot;tab&quot; tabStrip=&quot;false&quot;&gt;<br />
+&nbsp;&nbsp; Blah<br />
+&lt;/cflayout&gt;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: JP		</title>
+		<link>/make-cf9-tabs-look-like-cf8/comment-page-1/#comment-1081</link>
+
+		<dc:creator><![CDATA[JP]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2010 22:04:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=722#comment-1081</guid>
+
+					<description><![CDATA[Have you figured out how to get rid of the gray background of the active tab?
+
+Also, I had to add:
+
+ul.x-tab-strip li {margin-bottom:0;}
+
+in order to get the tab to sit directly on top of the body. So my CSS is:
+
+div.x-tab-panel-header, ul.x-tab-strip-top {
+&#160;&#160;&#160;&#160;background-image: none;
+&#160;&#160;&#160;&#160;background-color: transparent;
+&#160;&#160;&#160;&#160;padding-bottom: 0px;
+}
+div.x-tab-panel-header {
+&#160;&#160;&#160;&#160;border: 0px;
+}
+ul.x-tab-strip li {margin-bottom:0;}]]></description>
+			<content:encoded><![CDATA[<p>Have you figured out how to get rid of the gray background of the active tab?</p>
+<p>Also, I had to add:</p>
+<p>ul.x-tab-strip li {margin-bottom:0;}</p>
+<p>in order to get the tab to sit directly on top of the body. So my CSS is:</p>
+<p>div.x-tab-panel-header, ul.x-tab-strip-top {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;background-image: none;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: transparent;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 0px;<br />
+}<br />
+div.x-tab-panel-header {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;border: 0px;<br />
+}<br />
+ul.x-tab-strip li {margin-bottom:0;}</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,376 @@
+/*
+Theme Name: Evanescence
+Theme URI: http://srinig.com/wordpress-themes/evanescence/
+Description: <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> is a simple fluid width theme with two column layout. Right hand sidebar, widgets supported. XHTML and CSS validated.
+Version: 1.3.1
+Author: Srini G
+Author URI: http://srinig.com/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+body {
+	background:#fff;
+	color:black;
+	font-size: 62.5%; /* Resets 1em to 10px */
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	margin:5px;
+	text-align:center;
+}
+
+p, blockquote {
+	text-align:justify;
+}
+
+a {
+	color:#579;
+	text-decoration:none;
+}
+a:hover {
+	background-color:#ffc;
+}
+
+ul {
+	list-style:square;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:#8ac;
+}
+
+blockquote {
+	background:url('/wp-content/themes/evanescence-12/images/hborder_right.png') repeat-y left;
+	color:#888;
+	font-size:0.9em;
+	padding:0.2em 2em;
+}
+blockquote blockquote {
+	background:none;
+	margin:0;
+	font-size:1em;
+}
+
+input, textarea{
+	background:transparent;
+	border:1px solid #aaa;
+}
+input:focus, textarea:focus {
+	background:#ffc;
+}
+
+#subscribe2 input[type="submit"] {
+	background-color:#cce;
+	font-size:.9em;
+}
+img {
+	margin:0.2em;
+	border:0;
+}
+
+img.wp-smiley {	
+	margin:0;
+}
+
+code {
+	font: 1.1em 'Courier New', Courier, Fixed;
+    	color: #008099;
+    	background: #FFFF99;
+	}
+
+/* Layout */
+#page {
+	min-width:760px;
+	margin:0 auto;
+	text-align:left;
+}
+#wrapper {
+	clear:both;
+	margin:1em 5%;
+}
+#content {
+	width:75%;
+	float:left;
+}
+#sidebar {
+	width:22%;
+	float:right;
+}
+#footer { 
+	clear:both;
+	margin:0 5em;
+}
+
+/* Header */
+#header {
+	height:96px;
+	background: url("/wp-content/themes/evanescence-12/images/header_bg.png") repeat-x;
+}
+
+#header div {
+	height:96px;
+	background:url('/wp-content/themes/evanescence-12/images/header_bg_left.png') no-repeat top left;
+}
+
+#header div div {
+	height:96px;
+	background:url('/wp-content/themes/evanescence-12/images/header_bg_right.png') no-repeat top right;
+}
+
+#header div div div {
+	height:auto;
+	background:none;
+}
+
+.header-title {
+	float:left;
+	position:absolute;
+	top:25px;
+	left:5%;
+	margin:5px;
+}
+
+.header-title h1 {
+	margin:0;
+	font-size:2.8em;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+.header-title h1 a {
+	background:transparent;
+	color:#fff;
+}
+.header-title h1 a:hover {
+	background:transparent;
+	color:#ffc;
+}
+.header-title p {
+	margin:0;
+	background:transparent;
+	color:#fff;
+	font-size: 1.1em;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.more-link {
+	font-size:1.2em;
+	}
+
+#header .search {
+	width:20%;
+	float:right;
+	padding:36px 5% 0 0 ;
+}
+
+#header #searchform input {
+	width:100%;
+	background:#acc4db;
+	color:#fff;
+	border:1px solid #fff;
+	padding:0 0.2em;
+}
+
+#header #searchform input:focus {
+	color:#666;
+}
+/* Header ends here */
+
+
+/* Sidebar*/
+#sidebar {
+	background: url('/wp-content/themes/evanescence-12/images/border.png') repeat-y top left;
+	color:#888;
+	overflow:hidden;
+}
+
+#sidebar div {
+	padding:2em 2em 4em 2em;
+	background: url('/wp-content/themes/evanescence-12/images/vborder_bottom.png') no-repeat bottom left;
+}
+
+#sidebar div div {
+	padding:0;
+	background:none;
+}
+
+
+#sidebar #searchform {
+	text-align:center;
+}
+
+#sidebar h2 {
+	color:#469;
+	font-size:1.2em;
+	font-weight:bold;
+	font-variant:small-caps;
+	margin-top:2em;
+	margin-bottom:0;
+}
+
+#sidebar p {
+	margin-top:0;
+	color:#666;
+}
+
+#sidebar ul {
+	list-style:none;
+	margin-left:0;
+	padding-left:0;
+}
+
+#sidebar ul ul ul{
+	padding-left:1em;
+}
+
+#sidebar li li a {
+	color:#557;
+	text-decoration:none;
+}
+
+#sidebar li li a:hover {
+	color:#68a;
+}
+/* Sidebar ends */
+
+#content {
+	text-align:justify;
+}
+
+h2.archive-title {
+	font-size:1.4em;
+}
+h2.pagetitle {
+	font-size:2em;
+}
+
+/* Post */
+.post {
+	margin:0 0 4em 0;
+	clear:both;
+}
+
+.post-title {
+	background: url('/wp-content/themes/evanescence-12/images/border.png') repeat-x bottom;
+}
+
+.post-title div {
+	background: url('/wp-content/themes/evanescence-12/images/hborder_right.png') no-repeat bottom right;
+}
+.post-title h2, .post-title h3 {
+	font-size:2em;
+	font-weight:bold;
+	margin:1em 1em 0 0;
+}
+
+.post-title h2 a, .post-title h3 a{
+	color:#68a;
+}
+
+.post-entry, .archives {
+	font:1.2em/1.5em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	color: black;
+}
+
+.post-meta {
+	margin-top:1.6em;
+	color:#555;
+}
+/* Post ends */
+
+
+/* Comments */
+#comments {
+	margin:0 7%;
+	font-size:1.2em;
+}
+#comments h3 {
+	font-size:1.4em;
+}
+.commentlist {
+	list-style:none;
+	margin:0;
+	padding:0;
+	text-indent:0;
+}
+
+.commentlist li {
+	margin:2em 0;
+	overflow:auto;
+}
+.commentlist p {
+	margin:0.5em 0;
+}
+.commentlist h4 {
+	font-size:1.2em;
+	margin:0;
+	color:#68a;
+}
+textarea#comment {
+	width:100%;
+}
+/* Comment ends */
+
+
+/* Search results */
+.searchresult {
+	clear:both;
+}
+.searchresult h3 {
+	font-size:1.2em;
+	margin:0;
+	padding:1em 0 0 0;
+}
+.searchresult p {
+	margin:0;
+	padding:0 0 1em 0;
+}
+/* Search ends */
+ 
+/* Footer */
+
+#footer { 
+	background:url('/wp-content/themes/evanescence-12/images/border.png') repeat-x top;
+}
+
+#footer div {
+	background:url('/wp-content/themes/evanescence-12/images/hborder_left.png') no-repeat top left;
+}
+
+#footer div div {
+	background:url('/wp-content/themes/evanescence-12/images/hborder_right.png') no-repeat top right;
+}
+
+#footer div div div {
+	padding:3em;
+	color:#888;
+	text-align:center;
+	font-size:1em;
+}
+/* Footer ends */
+
+
+/* Calendar */
+#wp-calendar caption {
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#469;
+}
+#wp-calendar thead th {
+	font-weight:bold;
+	color:#888;
+	text-align:center;
+}
+#wp-calendar tbody td {
+	text-align:center;
+}
+#wp-calendar tbody td a {
+	font-weight:bold;
+}
+/* Calendar ends */
+
+.alignleft {
+	float:left;
+}
+.alignright {
+	float:right;
+}

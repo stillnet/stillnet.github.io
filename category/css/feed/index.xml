@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CSS &#8211; Stillnet Studios</title>
+	<atom:link href="/category/css/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 08 Jan 2013 16:05:08 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Did you know about the onerror attribute of the img tag?</title>
+		<link>/onerror-img-image-tag/</link>
+					<comments>/onerror-img-image-tag/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 16:05:08 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[CSS]]></category>
+		<guid isPermaLink="false">/?p=1162</guid>
+
+					<description><![CDATA[The other day I discovered that the img tag has an error event. This can be used to automatically load a fall back image when the main image fails for some reason. We encounter this in our dev sites sometimes, because the data is often not 100% correct. For example, our application may &#8216;think&#8217; there [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The other day I discovered that the img tag has an error event. This can be used to automatically load a fall back image when the main image fails for some reason. We encounter this in our dev sites sometimes, because the data is often not 100% correct. For example, our application may &#8216;think&#8217; there is an image for a product (according to the database), so it writes out an img tag for it. But the image file does not actually exist. So we may end up with a broken image icon, or depending on the browser there may be no indication at all that something is wrong. The tester may get confused as to what&#8217;s gone wrong. So I added this code to show an &#8216;image file does not exist&#8217; image:</p>
+<p><code>&lt;img src="#productImage#" onerror="this.src='/images/icons/imageDoesNotExist.png'" &gt;</code></p>
+<p>That&#8217;s it. Be careful that in your error handling code you point to an image file that really exists, otherwise you could go into an infinite loop. One way to be safe regarding that would be to call a function, and remove the onerror attribute so that it only gets fired once.</p>
+<pre><code>&lt;script&gt;
+function imageError(element) {
+	element.onerror='';
+	element.src='/images/icons/imageDoesNotExist.png';
+	}
+&lt;/script&gt;
+
+&lt;img src="#productImage#" onerror="imageError(this)"&gt;</code></pre>
+<p>You could even use this to report a broken image:</p>
+<p><code>&lt;img src="#productImage#" onerror="this.src='logBrokenImage.cfm?image=' + this.src" &gt;</code></p>
+<p>The onerror event is supported in all major browsers. The other tags that support onerror are object, script, and style.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/onerror-img-image-tag/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>ColdFusion 9 disabling bold text</title>
+		<link>/cf9-disable-bold-tex/</link>
+					<comments>/cf9-disable-bold-tex/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2010 02:45:00 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[CSS]]></category>
+		<guid isPermaLink="false">/?p=787</guid>
+
+					<description><![CDATA[One of the problems I looked into this week was why some items on our site that used to be in bold were no longer displaying as such. Viewing the source showed me that the text was indeed surrounded by &#60;strong&#62; tags. Using the awesome Firebug extension for Firefox, I could see that the ext-all.css [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>One of the problems I looked into this week was why some items on our site that used to be in bold were no longer displaying as such.  Viewing the source showed me that the text was indeed surrounded by <code>&lt;strong&gt;</code> tags. </p>
+<p>Using the awesome Firebug extension for Firefox, I could see that the ext-all.css file was disabling the font-weight on the strong tag.  This was quite surprising to me!</p>
+<p>The ext-all.css file will automatically be included on your page whenever you use almost any of the UI features such as cfgrid, cflayout, etc.</p>
+<p>You can easily reproduce the problem with this minimal code:</p>
+<pre><code>&lt;cflayout type="tab"&gt;&lt;/cflayout&gt;	
+&lt;strong&gt;This should be bold but its not.&lt;/strong&gt;</code></pre>
+<p>You can fix the problem by adding this to your site&#8217;s style sheet, if you have one:</p>
+<p><code>strong { font-weight: bold; }</code></p>
+<p>If you don&#8217;t use a separate style sheet you can just put it directly into your page like this:</p>
+<pre><code>&lt;style type="text/css"&gt;
+strong { font-weight: bold; }
+&lt;/style&gt;</code></pre>
+<p>Hopefully this can be fixed before 9.01 comes out.  I think its a pretty big deal, it disabled tons of bold content on our site.  A lot of our content is created using the FCK rich text editor, which uses strong tags to indicate bold.  I&#8217;ve file a bug report with Adobe, you can vote for this bug here:  <a href="http://cfbugs.adobe.com/cfbugreport/flexbugui/cfbugtracker/main.html#bugId=82156">http://cfbugs.adobe.com/cfbugreport/flexbugui/cfbugtracker/main.html#bugId=82156</a></p>
+<p>After looking through the EXT documentation, I think this css originates with the EXT group.  But when Adobe repackages EXT into CF, they need to either override this style it or take it out of the css file completely.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/cf9-disable-bold-tex/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Wrapping tabs in ColdFusion 9</title>
+		<link>/wrapping-cflayout-tabs-cf9/</link>
+					<comments>/wrapping-cflayout-tabs-cf9/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 24 Jan 2010 03:16:22 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[CSS]]></category>
+		<guid isPermaLink="false">/?p=716</guid>
+
+					<description><![CDATA[A while back I wrote a post explaining how to wrap the tabs generated by the new cflayout tab in ColdFusion 8. The tabs generated by ColdFusion 9 are completely different, since they use Ext version 3. ColdFusion 8 used Ext 1. The tabs in ColdFusion 9 do not wrap by default, but they do [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A while back I <a href="/wrapping-cflayout-tabs/">wrote a post</a> explaining how to wrap the tabs generated by the new cflayout tab in ColdFusion 8.</p>
+<p>The tabs generated by ColdFusion 9 are completely different, since they use Ext version 3.  ColdFusion 8 used Ext 1.</p>
+<p>The tabs in ColdFusion 9 do not wrap by default, but they do automatically add scroll controls so you can scroll through the long horizontal line of tabs.  If you&#8217;d rather have them wrap into multiple lines, this little bit of CSS will do it:</p>
+<pre><code>.x-tab-panel ul.x-tab-strip {
+    width: auto !important;
+}</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/wrapping-cflayout-tabs-cf9/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Making ColdFusion 9 tabs look similar to CF8 tabs</title>
+		<link>/make-cf9-tabs-look-like-cf8/</link>
+					<comments>/make-cf9-tabs-look-like-cf8/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 17 Jan 2010 04:12:36 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[CSS]]></category>
+		<guid isPermaLink="false">/?p=722</guid>
+
+					<description><![CDATA[One of the things I&#8217;ve noticed as I&#8217;ve been working on our ColdFusion 9 upgrade is that many of the UI components look different than they did in ColdFusion 8. In many cases I&#8217;m sure this won&#8217;t be a problem. But my user base is fairly picky, and I think the CF8 to CF9 transition [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>One of the things I&#8217;ve noticed as I&#8217;ve been working on our ColdFusion 9 upgrade is that many of the UI components look different than they did in ColdFusion 8.  In many cases I&#8217;m sure this won&#8217;t be a problem.  But my user base is fairly picky, and I think the CF8 to CF9 transition should be seamless to them.  The tabs in CF9 look quite a bit different than they do in CF8.<br />
+<span id="more-722"></span><br />
+Given this bit of code:</p>
+<pre><code>&lt;cflayout name="tabtest" type="tab"&gt;
+	&lt;cflayoutarea name="tab1" title="tab one"&gt;
+		&lt;p&gt;this is tab number one.&lt;/p&gt;
+	&lt;/cflayoutarea&gt;
+	&lt;cflayoutarea name="tab2" title="tab two"&gt;
+		&lt;p&gt;And here is tab two.&lt;/p&gt;
+	&lt;/cflayoutarea&gt;
+&lt;/cflayout&gt;</code></pre>
+<p>ColdFusion 8 generates a set of tabs that look like this:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2010/01/cf8tabs.png" alt="ColdFusion8 tab example" title="ColdFusion8 tab example" width="325" height="81" class="alignnone size-full wp-image-736" srcset="/wp-content/uploads/2010/01/cf8tabs.png 325w, /wp-content/uploads/2010/01/cf8tabs-300x74.png 300w" sizes="(max-width: 325px) 100vw, 325px" /></p>
+<p>Here is what that same code generates in ColdFusion 9.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2010/01/cf9tabs.png" alt="ColdFusion 9 tabs example" title="ColdFusion 9 tabs example" width="325" height="81" class="alignnone size-full wp-image-743" srcset="/wp-content/uploads/2010/01/cf9tabs.png 325w, /wp-content/uploads/2010/01/cf9tabs-300x74.png 300w" sizes="(max-width: 325px) 100vw, 325px" /></p>
+<p>This is quite a bit different, and in our early user testing they liked the old look better.  So I came up with this CSS:</p>
+<pre><code>div.x-tab-panel-header, ul.x-tab-strip-top {
+    background-image: none;
+    background-color: transparent;
+    padding-bottom: 0px;
+}
+
+div.x-tab-panel-header {
+	border: 0px;
+}</code></pre>
+<p>With that applied, the ColdFusion9 tabs come out like this:</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2010/01/cf9tabs_with_css.png" alt="ColdFusion 9 tabs with CSS applied" title="ColdFusion 9 tabs with CSS applied" width="325" height="81" class="alignnone size-full wp-image-745" srcset="/wp-content/uploads/2010/01/cf9tabs_with_css.png 325w, /wp-content/uploads/2010/01/cf9tabs_with_css-300x74.png 300w" sizes="(max-width: 325px) 100vw, 325px" /></p>
+<p>I still don&#8217;t like that in CF9 the tabs jump around as you select different tabs.  This happens because the current selected tab is indicated by a bold label.  The bold text takes up more room, so as you select different tabs everything gets shifted around.   This is especially odd when you are wrapping tabs &#8211; sometimes the wrap point changes when switching between tabs, so a whole tab will jump from one line to another.  I think this could be fixed, too, if you came up with a different way to indicate the current tab.  If someone figures this out and wants to send it to me I&#8217;d appreciate it.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/make-cf9-tabs-look-like-cf8/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Wrapping tabs created by cflayout</title>
+		<link>/wrapping-cflayout-tabs/</link>
+					<comments>/wrapping-cflayout-tabs/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 13 Aug 2009 02:09:14 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=626</guid>
+
+					<description><![CDATA[If you&#8217;ve used the new CF8 UI features to create tabs, you may have run into an issue when you have a lot of them. By default the tabs will not wrap. Take this snippet of code for example. I&#8217;ve added a red border on this 300 pixel div so you can see the tabs [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>If you&#8217;ve used the new CF8 UI features to create tabs, you may have run into an issue when you have a lot of them.  By default the tabs will not wrap.  Take this snippet of code for example.  I&#8217;ve added a red border on this 300 pixel div so you can see the tabs won&#8217;t wrap inside of it:</p>
+<pre><code>&lt;div style="font-family: arial; width: 300px; border: 1px solid red;"&gt;
+&lt;cflayout type="tab" name="myTabs"&gt;
+  &lt;cflayoutarea name="january" title="January 2009"&gt;
+     &lt;p&gt;January&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+  &lt;cflayoutarea name="february" title="February 2009"&gt;
+     &lt;p&gt;February&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+  &lt;cflayoutarea name="march" title="March 2009"&gt;
+     &lt;p&gt;March&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+  &lt;cflayoutarea name="april" title="April 2009"&gt;
+     &lt;p&gt;April&lt;/p&gt;
+  &lt;/cflayoutarea&gt;
+&lt;/cflayout&gt;
+&lt;/div&gt;</code></pre>
+<p>Imagine that 300 pixel div is your normal content area &#8211; it could be a table or just the width of your browser.  Take a look at what it produces in your browser:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/08/tabs_nowrap.png" alt="cflayout tabs not wrapping example" title="cflayout tabs not wrapping example" width="404" height="93" class="alignnone size-full wp-image-640" srcset="/wp-content/uploads/2009/08/tabs_nowrap.png 404w, /wp-content/uploads/2009/08/tabs_nowrap-300x69.png 300w" sizes="(max-width: 404px) 100vw, 404px" /></p>
+<p>In ColdFusion 8 (this might change in CF9?) the tabs generated by cflayout are table data cells.  It would be pretty hard to cause table data cells to wrap within a set of  <code>&lt;tr&gt;&lt;/tr&gt;</code> tags wouldn&#8217;t you think?  It actually is possible though.  If you add this snippet of CSS:</p>
+<p><code>&lt;style type="text/css"&gt;<br />
+.x-tabs-strip tr {display:block}<br />
+.x-tabs-strip td {display:block; float:left}<br />
+.x-tabs-strip .on .x-tabs-inner {padding-bottom:4px}<br />
+&lt;/style&gt;</code></p>
+<p>You&#8217;ll see the tabs now look like this:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/08/tabs_wrapping.png" alt="example of tabs wrapping" title="example of tabs wrapping" width="316" height="107" class="alignnone size-full wp-image-641" srcset="/wp-content/uploads/2009/08/tabs_wrapping.png 316w, /wp-content/uploads/2009/08/tabs_wrapping-300x101.png 300w" sizes="(max-width: 316px) 100vw, 316px" /></p>
+<p>If you want to force the tabs to be a specific width, add one more line:<br />
+<code>&lt;style type="text/css"&gt;<br />
+.x-tabs-strip tr {display:block}<br />
+.x-tabs-strip td {display:block; float:left}<br />
+.x-tabs-strip .on .x-tabs-inner {padding-bottom:4px}<br />
+<strong><em>.x-tabs-wrap table {width:400px}</em></strong><br />
+&lt;/style&gt;</code></p>
+<p>In most JavaScript frameworks tabs are done using list elements (<code>&lt;li&gt;</code> tags) inside an unordered list (<code>&lt;ul&gt;</code> tag).  This approach is much more flexible.  It will be interesting to see what changes are made to the html generated by the layout tags in ColdFusion9.</p>
+<p><strong>Update 1/4/2010</strong> &#8211; The method described above does NOT work in CF9.  The tabs generated in CF9 are done using a much newer version of EXT.  They are no longer based on table data cells, instead they use list items ( &lt;li&gt; tags), like most tab implementations.  <a href="/wrapping-cflayout-tabs-cf9/">Use this CSS</a> to wrap the tabs in CF9.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/wrapping-cflayout-tabs/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

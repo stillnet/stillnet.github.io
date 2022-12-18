@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Stillnet Studios</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 20 Feb 2013 00:26:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Accessing form fields as an array in CF10</title>
+		<link>/coldfusion-formfield-as-array-cf10/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 20 Feb 2013 00:20:44 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1189</guid>
+
+					<description><![CDATA[A while back I wrote a post about accessing form fields in ColdFusion as an array. This is useful when you have several fields with the same name, and there is a chance they could contain a comma. Working with the data as an array is much more robust. But after updating to CF10 I [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A while back I wrote a post about accessing form fields in ColdFusion <a href="/cf-form-array-comma-workaround/">as an array</a>. This is useful when you have several fields with the same name, and there is a chance they could contain a comma. Working with the data as an array is much more robust.</p>
+<p>But after updating to CF10 I realized this didn&#8217;t work anymore! I was surprised, since I thought the getPageContext() stuff was pretty standard, and not undocumented. So anyway I&#8217;ve rewritten my function to work in CF10. The code is much simpler now.</p>
+<pre><code>&lt;cffunction name="formFieldAsArray" returntype="array" output="false" hint="Returns a Form/URL variable as an array."&gt;
+	&lt;cfargument name="fieldName" required="true" type="string" hint="Name of the Form or URL field" /&gt;
+	
+	&lt;cfset var content = getHTTPRequestData().content /&gt;
+	&lt;cfset var returnArray = arrayNew(1) /&gt;
+	
+	&lt;cfloop list="#content#" delimiters="&amp;" index="local.parameter"&gt;
+		&lt;cfif listFirst(local.parameter,"=") EQ arguments.fieldName&gt;
+			&lt;cfif ListLen(local.parameter,"=") EQ 2&gt;
+				&lt;cfset arrayAppend(returnArray,URLDecode(listLast(local.parameter,"="))) /&gt;
+			&lt;cfelse&gt;
+				&lt;cfset arrayAppend(returnArray,"") /&gt;
+			&lt;/cfif&gt;
+		&lt;/cfif&gt;
+	&lt;/cfloop&gt;
+	
+	&lt;cfreturn returnArray /&gt;
+
+&lt;/cffunction&gt;</code></pre>
+<p>You may have heard about the new <strong><a href="http://www.raymondcamden.com/index.cfm/2012/6/19/ColdFusion-10-Missing-Feature--Form-Fields-and-Arrays">sameformfieldsasarray</a></strong> setting in CF10. This is another option. But it is application-wide. That is, anytime you have form fields with the same name they will come through as an array. This may or may not work for you. In my application, enabling that would break a lot of code so I wrote this separate function to handle when I need the values as an array.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Did you know about the onerror attribute of the img tag?</title>
+		<link>/onerror-img-image-tag/</link>
+					<comments>/onerror-img-image-tag/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 16:05:08 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[CSS]]></category>
+		<guid isPermaLink="false">/?p=1162</guid>
+
+					<description><![CDATA[The other day I discovered that the img tag has an error event. This can be used to automatically load a fall back image when the main image fails for some reason. We encounter this in our dev sites sometimes, because the data is often not 100% correct. For example, our application may &#8216;think&#8217; there [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The other day I discovered that the img tag has an error event. This can be used to automatically load a fall back image when the main image fails for some reason. We encounter this in our dev sites sometimes, because the data is often not 100% correct. For example, our application may &#8216;think&#8217; there is an image for a product (according to the database), so it writes out an img tag for it. But the image file does not actually exist. So we may end up with a broken image icon, or depending on the browser there may be no indication at all that something is wrong. The tester may get confused as to what&#8217;s gone wrong. So I added this code to show an &#8216;image file does not exist&#8217; image:</p>
+<p><code>&lt;img src="#productImage#" onerror="this.src='/images/icons/imageDoesNotExist.png'" &gt;</code></p>
+<p>That&#8217;s it. Be careful that in your error handling code you point to an image file that really exists, otherwise you could go into an infinite loop. One way to be safe regarding that would be to call a function, and remove the onerror attribute so that it only gets fired once.</p>
+<pre><code>&lt;script&gt;
+function imageError(element) {
+	element.onerror='';
+	element.src='/images/icons/imageDoesNotExist.png';
+	}
+&lt;/script&gt;
+
+&lt;img src="#productImage#" onerror="imageError(this)"&gt;</code></pre>
+<p>You could even use this to report a broken image:</p>
+<p><code>&lt;img src="#productImage#" onerror="this.src='logBrokenImage.cfm?image=' + this.src" &gt;</code></p>
+<p>The onerror event is supported in all major browsers. The other tags that support onerror are object, script, and style.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/onerror-img-image-tag/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Copying data from SQL Studio to Excel</title>
+		<link>/copying-sql-studio-excel-headers/</link>
+					<comments>/copying-sql-studio-excel-headers/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 02 Jan 2013 15:14:04 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1164</guid>
+
+					<description><![CDATA[I often need to write ad-hoc reports in MS SQL Studio, and then provide those results in an Excel spreadsheet. This has usually been a little tedious, I copy &#038; paste the results from SQL Studio into Excel, then have to manually add column names to the Excel spreadsheet. So I finally spent some time [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I often need to write ad-hoc reports in MS SQL Studio, and then provide those results in an Excel spreadsheet. This has usually been a little tedious, I copy &#038; paste the results from SQL Studio into Excel, then have to manually add column names to the Excel spreadsheet. So I finally spent some time figuring out how to do this better, and discovered that it is possible to have the column names come over automatically. I&#8217;m sure many of you already knew about this, but I didn&#8217;t so I thought it might be worth sharing. I had tried googling this in the past and didn&#8217;t come up with anything, so maybe it&#8217;s not widely known.<br />
+<span id="more-1164"></span><br />
+It&#8217;s as simple as checking a box in the settings of MS SQL Studio. These instructions are for SQL Studio 2005, it may be different in later versions. Go Tools->Options and then Query Results->Results To Grid. Then check the box for <em>Include column headers when copying or saving the results</em>.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/12/SQLStudioIncludeColumnHeaders.png" alt="Screenshot of options" title="" width="643" height="374" class="alignnone size-full wp-image-1168" srcset="/wp-content/uploads/2012/12/SQLStudioIncludeColumnHeaders.png 643w, /wp-content/uploads/2012/12/SQLStudioIncludeColumnHeaders-300x174.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></p>
+<p>There are a few ways to get these results into Excel, but this is what I do. After running the query, I click on the blank box that intersects the row numbers and the column headers. This causes all the rows &#038; columns to be selected. You could also press Ctrl+A to do the same thing.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/12/SQLStudioResults.png" alt="SQL Studio Results" title="" width="505" height="200" class="alignnone size-full wp-image-1170" srcset="/wp-content/uploads/2012/12/SQLStudioResults.png 505w, /wp-content/uploads/2012/12/SQLStudioResults-300x118.png 300w" sizes="(max-width: 505px) 100vw, 505px" /></p>
+<p>Then I copy the results using Ctrl+C, then switch over to my Excel window and paste the results in. And voilà, the column headers are there.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/12/ExcelResults.png" alt="Excel has column headers" title="" width="406" height="157" class="alignnone size-full wp-image-1171" srcset="/wp-content/uploads/2012/12/ExcelResults.png 406w, /wp-content/uploads/2012/12/ExcelResults-300x116.png 300w" sizes="(max-width: 406px) 100vw, 406px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/copying-sql-studio-excel-headers/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Using DateConvert to get a UTC timestamp may not return what you expect</title>
+		<link>/dateconvert-utc-not-what-you-expect/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 13 Dec 2012 18:57:56 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1143</guid>
+
+					<description><![CDATA[I ran into an interesting issue today. Our database timestamps are all stored in UTC. So when a user runs a report from a webpage, we convert the time they entered into a UTC timestamp. If we didn&#8217;t do this, the report may miss some records. For example, a customer buys a product at 11:00pm [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I ran into an interesting issue today. Our database timestamps are all stored in UTC. So when a user runs a report from a webpage, we convert the time they entered into a UTC timestamp. If we didn&#8217;t do this, the report may miss some records.</p>
+<p>For example, a customer buys a product at 11:00pm our time on the 1st of the month. The timestamp in the database for this record will be 5:00am on the <em>2nd</em>, since we are -6 hours from UTC here in the Central timezone.</p>
+<p>So we modify timestamps in our reporting queries like this:</p>
+<pre><code>...  WHERE
+order.createDate &gt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.startDate)#" cfsqltype="cf_sql_timestamp"&gt;
+AND
+order.createDate &lt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.endDate)#" cfsqltype="cf_sql_timestamp"&gt;</code></pre>
+<p>There is an issue with this in CF10. Take this code:</p>
+<pre><code>&lt;cfset arguments.startDate = CreateDateTime(2012,1,1,00,00,00) /&gt;
+&lt;cfquery&gt;
+...
+WHERE order.createDate &gt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.startDate)#" cfsqltype="cf_sql_timestamp"&gt;
+....
+&lt;/cfquery&gt;
+&lt;cflog text="I think I passed #DateConvert('local2utc', arguments.startDate)# to the database" /&gt;</code></pre>
+<p>If you look in your log you&#8217;ll see <code>I think I passed {ts '2012-01-02 6:00:00'} to the database</code> (since I am -6 from UTC). But if you look in the debugging information for this query, or use SQL Server Profiler to view it, you&#8217;ll see it gets sent to the database as <b>2012-01-01 00:00:00:000</b>!<br />
+<span id="more-1143"></span><br />
+My guess is that the DateConvert() method doesn&#8217;t actually change the value. Instead it does something like adjust the timezone or offset inside the date object. And I think the cfqueryparam tag isn&#8217;t paying attention to whatever DateConvert has changed. I further confirmed this by trying to add .toString() on the method result, inside the cfqueryparam tag. This causes the expected behavior.</p>
+<p>After tracking this down my coworker Jason Troy discovered there is a bug report for this already. From reading through these bug reports it doesn&#8217;t sound like Adobe is going to make any changes, however. They do point out that you can set this JVM argument to return to the previous behavior of CF9: <code>-Dcoldfusion.preserveTimeZoneOnPersist=true</code>.</p>
+<p>More info:<br />
+<a href="https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3338974">https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3338974</a><br />
+<a href="https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3347145">https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3347145</a></p>
+<p>So for now what I&#8217;ve done is change my code to this:</p>
+<pre><code>...  WHERE
+order.createDate &gt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.startDate)<strong style="color: red;">.toString()</strong>#" cfsqltype="cf_sql_timestamp"&gt;
+AND
+order.createDate &lt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.endDate)<strong style="color: red;">.toString()</strong>#" cfsqltype="cf_sql_timestamp"&gt;</code></pre>
+<p>You may wonder what&#8217;s the reason for this change in behavior? It&#8217;s alluded to in the bug reports above. I think there is a different way we are supposed to be doing this now, I haven&#8217;t got it completely figured out yet. One of the bug report comments from <a href="http://www.adobe.com/devnet/author_bios/himavanth-rachamsetty.html">Himavanth Rachamsetty</a>, who is on ColdFusion team, says this:</p>
+<blockquote><p>The current CF 10 behavior included in the update 4 is correct because when you move the time from one timezone to another, date.getTime() should not change at all.<br />
+The way date object is defined in Java, the time elapsed since Epoch should not change at all no matter which timezone the date is in. CF 9 and the earlier versions were violating this definition of Java date and were changing the time elapsed since epoch. This caused few issues which we fixed in CF 10.<br />
+When the date is persisted and retrieved from DB, the JVM automatically converts it back to local timezone. While retrieving a date, we don’t have any mechanism to find out that a date was converted to UTC when it was first inserted and therefore we would not be able to do any conversion ourselves. It is actually the application&#8217;s responsibility to convert the date/time to appropriate timezone after it is retrieved. Another option to work with date and DB is &#8211; you always store date as string in DB and when it is retrieved, convert it back to date.<br />
+Since this change of behavior in CF 10 could break a lot of applications, we have fixed this by introducing a flag so that the applications can run without any issues. Since this flag changes the way date is defined in Java, we will keep it disabled by default.</p></blockquote>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Getting the client filename before using cffile</title>
+		<link>/get-filename-before-calling-cffile/</link>
+					<comments>/get-filename-before-calling-cffile/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 04 Dec 2012 06:41:47 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<guid isPermaLink="false">/?p=1132</guid>
+
+					<description><![CDATA[When accepting uploads from a browser, it can sometimes be handy to have access to the filename before using CFFILE to &#8220;upload&#8221; the file onto the file system. For example say you want to show an error message if the file is not a PDF. In that case what I&#8217;ve usually done is use CFFILE [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When accepting uploads from a browser, it can sometimes be handy to have access to the filename before using CFFILE to &#8220;upload&#8221; the file onto the file system. For example say you want to show an error message if the file is not a PDF. In that case what I&#8217;ve usually done is use CFFILE to place the file onto the file system, and then check the extension. If its not in my allowed list, then I delete the file and send an error message to the client. But using the code below I can check the file extension without having to use CFFILE first. For example you could do something like this:</p>
+<pre><code>&lt;cfset theClientFilename = getClientFileName("myFormField")&gt;
+&lt;cfif ListLast(theClientFilename,".") NEQ "pdf"&gt;
+   // do your error handling here
+&lt;cfelse&gt;
+  // else the extension is ok. Use cffile to handle the upload and proceed
+&lt;/cfif&gt;</code></pre>
+<p>Here is the getClientFileName function,  both in cfscript and regular tag formats.<br />
+<span id="more-1132"></span></p>
+<pre><code>&lt;cfscript&gt;
+function getClientFileName(fieldName) {
+	var tmpPartsArray = Form.getPartsArray();
+	var clientFileName = "";
+
+	if (IsDefined("tmpPartsArray")) {
+		for (local.tmpPart in tmpPartsArray) {
+			if (local.tmpPart.isFile() AND local.tmpPart.getName() EQ arguments.fieldName) {
+				return local.tmpPart.getFileName();
+				}
+			}
+		}
+	
+	return "";
+	}
+&lt;/cfscript&gt;</code></pre>
+<pre><code>&lt;cffunction name="getClientFileName" returntype="string" output="false" hint=""&gt;
+	&lt;cfargument name="fieldName" required="true" type="string" hint="Name of the Form field" /&gt;
+
+	&lt;cfset var tmpPartsArray = Form.getPartsArray() /&gt;
+
+	&lt;cfif IsDefined("tmpPartsArray")&gt;
+		&lt;cfloop array="#tmpPartsArray#" index="local.tmpPart"&gt;
+			&lt;cfif local.tmpPart.isFile() AND local.tmpPart.getName() EQ arguments.fieldName&gt; <!---   --->
+				&lt;cfreturn local.tmpPart.getFileName() /&gt;
+			&lt;/cfif&gt;
+		&lt;/cfloop&gt;
+	&lt;/cfif&gt;
+	
+	&lt;cfreturn "" /&gt;
+&lt;/cffunction&gt;</code></pre>
+<p>I wrote and tested this on CF10, but it will probably work all the way back to CF7. I tried this on Railo and it did <b>not</b> work, it errored on the getPartsArray() method. If you need to do this on Railo, this code will work (tested on 4.0.2): <code>GetPageContext().formScope().getUploadResource("myFormField").getName()</code></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/get-filename-before-calling-cffile/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>jQuery snippet to get all input values</title>
+		<link>/jquery-snippet-to-get-all-input-values/</link>
+					<comments>/jquery-snippet-to-get-all-input-values/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 27 Oct 2012 21:40:57 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<guid isPermaLink="false">/?p=1121</guid>
+
+					<description><![CDATA[I thought this was some interesting JavaScript that I used recently to detect if form fields were filled in. This was a case where if any of a particular group of fields were filled in, I needed to validate and make sure they were all passed in. var allValues = $("input.someClass").map(function() { return this.value; }).get().join(''); [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I thought this was some interesting JavaScript that I used recently to detect if form fields were filled in. This was a case where if any of a particular group of fields were filled in, I needed to validate and make sure they were all passed in.</p>
+<pre>
+<code>var allValues = $("input.someClass").map(function() { return this.value; }).get().join('');
+
+if (allValues.length) {
+  // do validation here to make sure all fields are filled in
+  }</code>
+</pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/jquery-snippet-to-get-all-input-values/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Mura 404 page not working in IIS7 &#8211; fix it in web.config</title>
+		<link>/mura-404-page-not-working-in-iis7-fix-it-in-web-config/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 11 Jun 2012 16:00:42 +0000</pubDate>
+				<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=1106</guid>
+
+					<description><![CDATA[When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying. This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the onMissingTemplate handler. The fix [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When I migrated our Mura site to our new IIS7 servers, one problem I noticed is that the Mura 404 handler was no longer showing. Instead the default IIS 404 page was displaying.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404.gif" alt="" title="IIS7 404" width="600" height="390" class="alignnone size-full wp-image-1107" srcset="/wp-content/uploads/2012/06/IIS7-404.gif 600w, /wp-content/uploads/2012/06/IIS7-404-300x195.gif 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p>This problem doesn&#8217;t only apply to Mura, it will crop up with framework or code that uses the <code>onMissingTemplate</code> handler. The fix is easy. Edit the web.config file in the webroot, look for an <code>httpErrors</code> tag. It might look like this:</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/06/IIS7-404-config.gif" alt="" title="IIS7-404 config" width="543" height="294" class="alignnone size-full wp-image-1111" srcset="/wp-content/uploads/2012/06/IIS7-404-config.gif 543w, /wp-content/uploads/2012/06/IIS7-404-config-300x162.gif 300w" sizes="(max-width: 543px) 100vw, 543px" /></p>
+<p>You need to add <code>existingResponse="PassThrough"</code> to it. If that element is missing completely, just add it with the necessary attribute.</p>
+<p>Fixed!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Free ColdFusion 10 beta hosting</title>
+		<link>/free-coldfusion-10-beta-hosting/</link>
+					<comments>/free-coldfusion-10-beta-hosting/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 05 Mar 2012 03:47:22 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1101</guid>
+
+					<description><![CDATA[Wanting to try out the new ColdFusion 10 beta without downloading and installing it? Hostek is offering free CF 10 beta hosting. You&#8217;ll get 5GB of storage space, and 200GB of transfer. Plenty of resources to play around with. You&#8217;ll get your own subdomain to use, and access to a MySQL database. Get it here: [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Wanting to try out the new ColdFusion 10 beta without downloading and installing it? Hostek is offering free CF 10 beta hosting. You&#8217;ll get 5GB of storage space, and 200GB of transfer. Plenty of resources to play around with. You&#8217;ll get your own subdomain to use, and access to a MySQL database.</p>
+<p>Get it here: <a href="http://hostek.com/hosting/coldfusion/coldfusion10-hosting.asp">http://hostek.com/hosting/coldfusion/coldfusion10-hosting.asp</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/free-coldfusion-10-beta-hosting/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Removing spaces from columns in cfspreadsheet (or any query)</title>
+		<link>/remove-spaces-columns-cfspreadsheet/</link>
+					<comments>/remove-spaces-columns-cfspreadsheet/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2011 02:33:07 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1086</guid>
+
+					<description><![CDATA[I love the CFSPREADSHEET tag that was added to ColdFusion9. It makes working with spread sheet data so easy. The spreadsheets I am given to work with often contain descriptive column names that contain spaces like &#8220;First Name&#8221; or &#8220;Home Phone&#8221;. This causes a problem when you try to work with the data in a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I love the CFSPREADSHEET tag that was added to ColdFusion9. It makes working with spread sheet data so easy. The spreadsheets I am given to work with often contain descriptive column names that contain spaces like &#8220;First Name&#8221; or &#8220;Home Phone&#8221;. This causes a problem when you try to work with the data in a QoQ (query of a query).</p>
+<p>Lets say you have a spread sheet containing these columns: Name, City, State, Postal Code. Then pull it into a query using the cfspreadsheet tag:<br />
+<code>&lt;cfspreadsheet action="read" src="c:\Customers.xls" query="customers" headerrow="1" rows="2-65536" sheetname="Customers"&gt;</code></p>
+<p>Now try to narrow down the results to only those in a certain postal code. This won&#8217;t work of course:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE [Postal Code] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>Neither will this:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE [Postal\ Code] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>Or this:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE ['Postal Code'] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>I have not found any way to escape a space in a column name inside QoQ. But, thankfully there is a way we can manipulate the column names to remove the space.</p>
+<pre><code>&lt;cfset colNameArray = customers.getColumnNames() /&gt;
+&lt;cfloop from="1" to="#arrayLen(colNameArray)#" index="i"&gt;
+	&lt;cfset colNameArray[i] = colNameArray[i].replace(' ','') /&gt;
+&lt;/cfloop&gt;
+&lt;cfset customers.setColumnNames(colNameArray) /&gt;</code></pre>
+<p>You could use this to completely rename column names if you wanted to. This isn&#8217;t just useful for working with cfspreadsheet either, I could see this being used in other circumstances to change the column names.</p>
+<p>Thanks to <a href="http://www.neiland.net/blog/article/using-java-to-rename-columns-in-a-coldfusion-query-object/" title="Steven Neiland">Steven Neiland</a> for pointing me in this direction.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/remove-spaces-columns-cfspreadsheet/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Online code formatters</title>
+		<link>/online-code-formatters/</link>
+					<comments>/online-code-formatters/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 14 Jul 2011 01:53:22 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[Misc]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1082</guid>
+
+					<description><![CDATA[Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine. Here is one for formatting XML: http://www.shell-tools.net/index.php?op=xml_format And [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine.</p>
+<p>Here is one for formatting XML: <a href="http://www.shell-tools.net/index.php?op=xml_format">http://www.shell-tools.net/index.php?op=xml_format</a></p>
+<p>And one for JSON from the same site: <a href="http://www.shell-tools.net/index.php?op=json_format">http://www.shell-tools.net/index.php?op=json_format</a></p>
+<p>Here is a SQL one that helped me out a lot tonight: <a href="http://www.dpriver.com/pp/sqlformat.htm">http://www.dpriver.com/pp/sqlformat.htm</a></p>
+<p>I fed it a horrible looking, very complex query and it made it easily readable. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/online-code-formatters/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

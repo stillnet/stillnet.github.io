@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: No border on a linked image created with CFIMAGE	</title>
+	<atom:link href="/no-border-on-a-linked-image-created-with-cfimage/feed/" rel="self" type="application/rss+xml" />
+	<link>/no-border-on-a-linked-image-created-with-cfimage/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 02 Dec 2008 00:59:13 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Hagerdash		</title>
+		<link>/no-border-on-a-linked-image-created-with-cfimage/comment-page-1/#comment-409</link>
+
+		<dc:creator><![CDATA[Hagerdash]]></dc:creator>
+		<pubDate>Tue, 02 Dec 2008 00:59:13 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/28/no-border-on-a-linked-image-created-with-cfimage/#comment-409</guid>
+
+					<description><![CDATA[I just read your posts and have a question. If you visit my website and click on the banner image, a new window opens. But if you then go back to my webiste, there&#039;s an annoying small dashed border surrounding my image. I&#039;ve had no problems addressing this in the past, but some reason everything I&#039;ve tried isn&#039;t working. Would you happen to have any suggestions? I researched this on various websites and yet the border won&#039;t go away.]]></description>
+			<content:encoded><![CDATA[<p>I just read your posts and have a question. If you visit my website and click on the banner image, a new window opens. But if you then go back to my webiste, there&#8217;s an annoying small dashed border surrounding my image. I&#8217;ve had no problems addressing this in the past, but some reason everything I&#8217;ve tried isn&#8217;t working. Would you happen to have any suggestions? I researched this on various websites and yet the border won&#8217;t go away.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: dharma		</title>
+		<link>/no-border-on-a-linked-image-created-with-cfimage/comment-page-1/#comment-410</link>
+
+		<dc:creator><![CDATA[dharma]]></dc:creator>
+		<pubDate>Mon, 03 Nov 2008 10:35:31 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/28/no-border-on-a-linked-image-created-with-cfimage/#comment-410</guid>
+
+					<description><![CDATA[thank u so much..... its nice  :-)]]></description>
+			<content:encoded><![CDATA[<p>thank u so much&#8230;.. its nice  🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rachel Lehman		</title>
+		<link>/no-border-on-a-linked-image-created-with-cfimage/comment-page-1/#comment-408</link>
+
+		<dc:creator><![CDATA[Rachel Lehman]]></dc:creator>
+		<pubDate>Mon, 11 Aug 2008 19:23:13 +0000</pubDate>
+		<guid isPermaLink="false">/2008/07/28/no-border-on-a-linked-image-created-with-cfimage/#comment-408</guid>
+
+					<description><![CDATA[I personally use the universal-no-border-image rule in almost every style sheet I write, I just put it near the top of the style sheet so that subsequent rules overwrite it, and it works really well for me. Another alternative to the universal img tag rule is to use child/descendant selectors which don&#039;t require you to apply a class name to your images. For instance, if my layout has header, nav, sidebar and body blocks, I can declare that header img, nav img, and sidebar img all to have border:none, but my body block can still has images with borders. HTH!]]></description>
+			<content:encoded><![CDATA[<p>I personally use the universal-no-border-image rule in almost every style sheet I write, I just put it near the top of the style sheet so that subsequent rules overwrite it, and it works really well for me. Another alternative to the universal img tag rule is to use child/descendant selectors which don&#8217;t require you to apply a class name to your images. For instance, if my layout has header, nav, sidebar and body blocks, I can declare that header img, nav img, and sidebar img all to have border:none, but my body block can still has images with borders. HTH!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

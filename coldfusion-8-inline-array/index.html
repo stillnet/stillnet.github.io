@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Stillnet Studios  &raquo; Blog Archive   &raquo; ColdFusion 8 inline array syntax doesn&#8217;t work everywhere</title>
+
+<meta name="generator" content="WordPress 6.1.1"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/evanescence-12/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios RSS Feed" href="/feed/">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="robots" content="max-image-preview:large">
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-1413191-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios &raquo; ColdFusion 8 inline array syntax doesn&#8217;t work everywhere Comments Feed" href="/coldfusion-8-inline-array/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"httpwww.stillnetstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/79">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="/coldfusion-8-inline-array/">
+<link rel="shortlink" href="/?p=79">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcoldfusion-8-inline-array%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fcoldfusion-8-inline-array%2F&#038;format=xml">
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<div><div>	
+	<div class="header-title">
+		<h1><a href="/" title="Stillnet Studios: Web development notes and commentary from Ryan Stille">Stillnet Studios</a></h1>
+		<p>Web development notes and commentary from Ryan Stille</p>
+	</div> 
+	<!-- Search box (If you prefer having search form as a sidebar widget, remove this block) -->
+	<div class="search">
+		<form method="get" id="searchform" action="http://www.stillnetstudios.com/">
+<input type="text" size="12" name="s" id="s" value="search..." onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';">
+</form>
+	</div> 
+	<!-- Search ends here-->
+</div></div>	
+</div>
+<div id="wrapper">
+
+	<div id="content">
+
+			
+		<div class="navigation">
+			<div class="alignleft">&laquo; <a href="/2d-barcodes-coldfusion/" rel="prev">CFC for generating and reading 2D barcodes in ColdFusion</a>
+</div>
+			<div class="alignright">
+<a href="/cf8-autosuggest-shows-through/" rel="next">ColdFusion 8 auto-suggest shows through other form fields</a> &raquo;</div>
+		</div>
+
+		<div class="post" id="post-79">
+			<div class="post-title"><div>
+				<h2><a href="/coldfusion-8-inline-array/" rel="bookmark" title="Permanent Link to ColdFusion 8 inline array syntax doesn&#8217;t work everywhere">ColdFusion 8 inline array syntax doesn&#8217;t work everywhere</a></h2>
+			</div></div>
+			<div class="post-entry">
+				<p>I was trying to use QueryAddColumn() today to add an additional column to a single-row array I&#8217;m working with.  The 4th parameter to QueryAddColumn is an array of values to add to the query &#8211; 1 element in the array for each row in the query.   Since my query only has on row in it, I thought this would be a good place to use ColdFusion 8&#8217;s new inline array syntax.</p>
+<pre><code>&lt;cfset QueryAddColumn(qryFoo,
+                     "newColName",
+                     "varchar",
+                     ["my additional value"])&gt;</code></pre>
+<p>But this throws an unhelpful &#8220;Missing argument name&#8221; error:</p>
+<p><code>Missing argument name. When using named parameters to a function, every parameter must have a name.</code></p>
+<p>It took me a while to figure out it just didn&#8217;t like using the new array syntax inside the function.  Doing it this way worked fine:</p>
+<pre><code>&lt;cfset myArray = ["my additional value"]&gt;
+&lt;cfset QueryAddColumn(qryFoo,"newColName","varchar",myArray)&gt;</code></pre>
+<p>But having to do it that way kind of defeats the point, it doesn&#8217;t use any less lines than the old CF7 syntax:</p>
+<pre><code>&lt;cfset myArray[0] = "my additional value"&gt;
+&lt;cfset QueryAddColumn(qryFoo,"newColName","varchar",myArray)&gt;</code></pre>
+<p>And it means I have to &#8220;var&#8221; the myArray variable at the top of my function now.  Hopefully Adobe will get this straightened out at some point.</p>
+							</div>
+	
+			<p class="post-meta">
+					This entry was posted on 21 December 2007 at 11:54 am					and is filed under <a href="/category/coldfusion/" rel="category tag">ColdFusion</a>, <a href="/category/web-development/" rel="category tag">Web Development</a>.
+					You can follow any responses to this entry through the <a href="/coldfusion-8-inline-array/feed/">RSS 2.0</a> feed.
+
+											Both comments and pings are currently closed.
+
+					
+			</p>
+		</div>
+	
+<!-- You can start editing here. -->
+<div id="comments">
+	<h3>11 Comments</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-337">
+			<h4>Rob Huddleston says:</h4>
+			<p>I don&#8217;t think there&#8217;s anything that needs straightening out. The correct way of doing it makes perfect sense, while your shortcut doesn&#8217;t. You&#8217;re trying to toss a value into an array within the QueryAddColumn function &#8230; but you aren&#8217;t giving that array a name. How could CF possibly know into which array you want to value added? How could you refer to that value later? I can&#8217;t think of any programming language that would let you add a value to an unnamed array, or any unnamed variable for that matter.</p>
+						<small class="commentmetadata"><a href="#comment-337" title="">21 December 2007, 7:06 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-338">
+			<h4>Dan Roberts says:</h4>
+			<p>I put in a bug report / feature request a few weeks ago about this. There are so many places where this could be used but just doesn&#8217;t function. There is also no nesting of the array/struct syntax to create an array of structs, which I often build up for configuration or test values.</p>
+<p>This would be awesome but doesn&#8217;t work:</p>
+<p>Instead you have to either expressly set the array indexes:</p>
+<p>*repeated for 2 and 3</p>
+<p>or use a temporary variable:</p>
+<p>* repeated two more times</p>
+						<small class="commentmetadata"><a href="#comment-338" title="">21 December 2007, 10:07 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-339">
+			<h4>Dan Roberts says:</h4>
+			<p>Here the code from my post with the greater than and less thans escaped:<br>
+===</p>
+<p>This would be awesome but doesn&#8217;t work:</p>
+<p>&lt;cfset test = [{name=&#8221;Dan&#8221;,age=30,state=&#8221;VA&#8221;},<br>
+{name=&#8221;Chris&#8221;,age=23,state=&#8221;DC&#8221;},<br>
+{name=&#8221;Todd&#8221;,age=53,state=&#8221;MA&#8221;}]&gt;</p>
+<p>Instead you have to either expressly set the array indexes:</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br>
+&lt;cfset test[1] = {name=&#8221;Dan&#8221;,age=30,state=&#8221;VA&#8221;}&gt;<br>
+*repeated for 2 and 3</p>
+<p>or use a temporary variable:</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br>
+&lt;cfset tmp = {name=&#8221;Dan&#8221;,age=30,state=&#8221;VA&#8221;}&gt;<br>
+&lt;cfset arrayAppend(test,tmp)&gt;<br>
+* repeated two more times</p>
+<p>===</p>
+<p>Rob,</p>
+<p>The array is an argument for another function which does not perform an action on that array. It uses the array as a source of values to add a new column to a query variable.</p>
+<p>I think Adobe will make this available in the future.</p>
+						<small class="commentmetadata"><a href="#comment-339" title="">21 December 2007, 10:19 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-340">
+			<h4>Dan Roberts says:</h4>
+			<p>by the way, you would also expect to be able use arraylength + 1 for the index but that doesn&#8217;t work either though it work fine for other values and variables</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br>
+&lt;cfset test[arrayLen(test)+1] = {name=”Dan”,age=27,state=”VA”}&gt;</p>
+<p>*boom&#8230;. error*</p>
+						<small class="commentmetadata"><a href="#comment-340" title="">22 December 2007, 10:30 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-341">
+			<h4>
+<a href="http://www.web-rat.com/" rel="external nofollow ugc" class="url">Todd Rafferty</a> says:</h4>
+			<p>The 4th attribute of QueryAddRow is a rowcolumn, why would you expect an array to work there?</p>
+<p>Also, why would you use:</p>
+<p>When you can ArrayAppend()?</p>
+<p>Also, your test above isn&#8217;t accurate.  Array index in CF -starts- at zero.  Your code is telling it to bypass zero and set 1&#8230;?</p>
+						<small class="commentmetadata"><a href="#comment-341" title="">16 January 2008, 5:08 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-342">
+			<h4>
+<a href="http://www.web-rat.com/" rel="external nofollow ugc" class="url">Todd Rafferty</a> says:</h4>
+			<p>Blargh.  Java, get out of my head for 2 minutes.  Sorry, CF index begins at 1.  But, anyway&#8230;</p>
+<p>&lt;cfset test = arrayNew(1)&gt;<br>
+&lt;cfset test[1] = &#8220;foo&#8221;&gt;<br>
+&lt;cfset test[arrayLen(test)] = {name=&#8221;Dan&#8221;,age=27,state=&#8221;VA&#8221;}&gt;<br>
+&lt;cfdump var=&#8221;#test#&#8221;&gt;</p>
+<p>That works.  So, the issue is the evaluation of the arrayLen() +1 in there.</p>
+						<small class="commentmetadata"><a href="#comment-342" title="">16 January 2008, 5:18 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-343">
+			<h4>Chris says:</h4>
+			<p>@Rob: I believe Java, JavaScript, C++, and PHP all allow anonymous arrays.  The array value is simply assigned to the variable name given to its corresponding argument in the function/method source.</p>
+						<small class="commentmetadata"><a href="#comment-343" title="">24 February 2008, 11:21 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-344">
+			<h4>
+<a href="http://www.e-ceviri.org/" rel="external nofollow ugc" class="url">çeviri</a> says:</h4>
+			<p>thanks for codes</p>
+						<small class="commentmetadata"><a href="#comment-344" title="">9 March 2008, 1:09 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-345">
+			<h4>
+<a href="http://prositenow.com/" rel="external nofollow ugc" class="url">Tom</a> says:</h4>
+			<p>Here is a link that explores CF 8&#8217;s inline array syntax a bit more with regards to structs and arrays.</p>
+<p><a href="http://www.bennadel.com/blog/740-Learning-ColdFusion-8-Implicit-Struct-And-Array-Creation.htm" rel="nofollow ugc">http://www.bennadel.com/blog/740-Learning-ColdFusion-8-Implicit-Struct-And-Array-Creation.htm</a></p>
+<p>For me personally, I&#8217;m using it as follows for loading static data into arrays.</p>
+<p>&lt;script&gt;<br>
+aSet=arraynew(2);<br>
+i=0;<br>
+i++; aSet[i]=[ &#8220;Illinois&#8221;, &#8220;IL&#8221;, 21, &#8220;Mississippi River; 279 feet, 33rd&#8221; ];<br>
+i++; aSet[i]=[ &#8220;California&#8221;, &#8220;CA&#8221;, 31, &#8220;DeathValley; 282 feet below sea level, 1st&#8221; ];</p>
+<p>// and so on&#8230;.<br>
+&lt;/script&gt;</p>
+<p>There are some glaring deficiencies with this feature, but I&#8217;m glad they finally put it in and hopeful they improve on it in the future.</p>
+						<small class="commentmetadata"><a href="#comment-345" title="">12 April 2008, 7:29 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-346">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>I have been told that this issue should be fixed in CF9, or possibly even sooner in an updater for CF8.  Whooo!</p>
+						<small class="commentmetadata"><a href="#comment-346" title="">29 May 2008, 9:43 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-840">
+			<h4>
+<a href="http://fentriss.com/" rel="external nofollow ugc" class="url">Steve Fentriss</a> says:</h4>
+			<p>Aha!&nbsp;&nbsp;Here&apos;s a surefire solution to the problem of inline array syntax in Coldfusion 8.</p>
+<p>SUMMARY:<br>
+Use the&nbsp;&nbsp;listToArray(list [, delimiters ])&nbsp;&nbsp;function.</p>
+<p>SHORT EXAMPLE:<br>
+&lt;cfset queryAddColumn(myQuery,&quot;fav_pokemon&quot;,listToArray(&quot;Pikachu,Bulbasaur,Venomoth,Dewgong,Snorlax&quot;))&gt;</p>
+<p>&#8212; LONG EXAMPLE: &#8212;<br>
+&lt;!&#8212; create a query which has a &quot;title&quot; column,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;but lacks a &quot;notes&quot; column: &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Q = queryNew(&apos;title&apos;)&gt;<br>
+&lt;!&#8212; stock the query with two rows,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;regarding apples and oranges: &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset queryAddRow(Q)&gt;&lt;!&#8212; first row &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset querySetCell(Q,&quot;title&quot;,&quot;Apples&quot;)&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset queryAddRow(Q)&gt;&lt;!&#8212; second row &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset querySetCell(Q,&quot;title&quot;,&quot;Oranges&quot;)&gt;<br>
+&lt;!&#8212; NOW, ADD A NEW COLUMN called &quot;notes&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FROM AN INLINE ARRAY containing values &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset queryAddColumn(Q,&quot;notes&quot;,listToArray(&quot;Apples are great , Unless compared to oranges&quot;))&gt;<br>
+&lt;!&#8212; see if it worked: &#8212;&gt;<br>
+&lt;cfdump var=&quot;#Q#&quot;&gt;<br>
+&#8212; :LONG EXAMPLE &#8212;</p>
+<p>Hope that helps!<br>
+&#8211; Steve</p>
+						<small class="commentmetadata"><a href="#comment-840" title="">11 October 2009, 4:21 am</a></small>
+					</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+	<div>
+		<ul>
+			<li id="text-3" class="widget widget_text">			<div class="textwidget"><center><img style="border: 1px solid gray;" src="/wp-content/uploads/2012/06/ryan-headshot-1.jpg" alt="Ryan Stille"></center></div>
+		</li>
+<li id="pages-3" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+
+			<ul>
+				<li class="page_item page-item-228"><a href="/about/">About Me</a></li>
+<li class="page_item page-item-35"><a href="/projects/">My Projects</a></li>
+			</ul>
+
+			</li>
+<li id="categories-3" class="widget widget_categories">
+<h2 class="widgettitle">Article Categories</h2>
+
+			<ul>
+					<li class="cat-item cat-item-3">
+<a href="/category/ajax-javascript/">AJAX / JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/bluedragon/">BlueDragon</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/book-reviews/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/coldfusion/">ColdFusion</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/flex/">Flex</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/misc/">Misc</a>
+</li>
+	<li class="cat-item cat-item-10">
+<a href="/category/railo/">Railo</a>
+</li>
+	<li class="cat-item cat-item-11">
+<a href="/category/sql/">SQL</a>
+</li>
+	<li class="cat-item cat-item-12">
+<a href="/category/system-administration/">System Administration</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/tomcat/">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/web-development/">Web Development</a>
+</li>
+			</ul>
+
+			</li>
+
+		<li id="recent-posts-3" class="widget widget_recent_entries">
+		<h2 class="widgettitle">Recent Posts</h2>
+
+		<ul>
+											<li>
+					<a href="/coldfusion-formfield-as-array-cf10/">Accessing form fields as an array in CF10</a>
+									</li>
+											<li>
+					<a href="/onerror-img-image-tag/">Did you know about the onerror attribute of the img tag?</a>
+									</li>
+											<li>
+					<a href="/copying-sql-studio-excel-headers/">Copying data from SQL Studio to Excel</a>
+									</li>
+											<li>
+					<a href="/dateconvert-utc-not-what-you-expect/">Using DateConvert to get a UTC timestamp may not return what you expect</a>
+									</li>
+											<li>
+					<a href="/get-filename-before-calling-cffile/">Getting the client filename before using cffile</a>
+									</li>
+											<li>
+					<a href="/jquery-snippet-to-get-all-input-values/">jQuery snippet to get all input values</a>
+									</li>
+											<li>
+					<a href="/mura-404-page-not-working-in-iis7-fix-it-in-web-config/">Mura 404 page not working in IIS7 &#8211; fix it in web.config</a>
+									</li>
+											<li>
+					<a href="/free-coldfusion-10-beta-hosting/">Free ColdFusion 10 beta hosting</a>
+									</li>
+											<li>
+					<a href="/remove-spaces-columns-cfspreadsheet/">Removing spaces from columns in cfspreadsheet (or any query)</a>
+									</li>
+											<li>
+					<a href="/online-code-formatters/">Online code formatters</a>
+									</li>
+											<li>
+					<a href="/joining-two-tables-one-id/">Joining to one of two tables with one ID</a>
+									</li>
+											<li>
+					<a href="/formatting-cfgrid-with-javascript/">Formatting CFGRID with JavaScript</a>
+									</li>
+											<li>
+					<a href="/cf-form-array-comma-workaround/">Accessing ColdFusion form values as an array</a>
+									</li>
+											<li>
+					<a href="/loading-fckeditor-dynamically/">Loading CFrichtext / FCKeditor on-the-fly</a>
+									</li>
+											<li>
+					<a href="/url-rewriting-windows-2008-iis7/">Mura URL rewriting on Windows 2008 / IIS7</a>
+									</li>
+					</ul>
+
+		</li>
+<li id="linkcat-2" class="widget widget_links">
+<h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.axelscript.com/" title="AxelScript &#8211; Flex development blog">Axel Jensen</a></li>
+<li><a href="http://jake.cfwebtools.com/" title="ColdFusion/Flex development">Jake Churchill</a></li>
+<li><a href="http://www.coldfusionmuse.com/" title="ColdFusion Muse">Mark Kruger</a></li>
+<li><a href="http://www.henke.ws/" title="ColdFusion, TDD, Ant, Subversion, etc.">Mike Henke</a></li>
+
+	</ul>
+</li>
+
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Donate</h2>
+			<div class="textwidget">If my code has helped you and you'd like give a donation, you can do so using the button below.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="ryan@stillnet.org">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Donation for helpful ColdFusion code">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget">
+<br><br>
+<img src="/wp-content/uploads/2010/01/acp_logo.gif">
+</div>
+		</li>
+			
+		</ul> 
+	</div>
+	</div>
+</div> <!-- wrapper -->
+
+<div id="footer"><div><div><div>
+
+	<a href="/feed/">Entries (RSS)</a> and <a href="/comments/feed/">Comments (RSS)</a>. Valid <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a>.<br>
+
+	Powered by <a href="http://www.wpthemes360.com/">Wordpress Themes</a>. Theme <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> by <a href="http://srinig.com/">Srini G</a>
+
+	</div></div></div></div>
+
+</div> <!-- page -->
+
+</body>
+
+</html>

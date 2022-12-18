@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Online code formatters	</title>
+	<atom:link href="/online-code-formatters/feed/" rel="self" type="application/rss+xml" />
+	<link>/online-code-formatters/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 15 May 2013 14:09:04 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Chris Waller		</title>
+		<link>/online-code-formatters/comment-page-1/#comment-3878</link>
+
+		<dc:creator><![CDATA[Chris Waller]]></dc:creator>
+		<pubDate>Wed, 15 May 2013 14:09:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1082#comment-3878</guid>
+
+					<description><![CDATA[I would also recommend one free online sql beautifier - http://www.sql-format.com/ works solid and has plenty of formatting options.]]></description>
+			<content:encoded><![CDATA[<p>I would also recommend one free online sql beautifier &#8211; <a href="http://www.sql-format.com/" rel="nofollow ugc">http://www.sql-format.com/</a> works solid and has plenty of formatting options.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

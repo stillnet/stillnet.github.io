@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Wrapping tabs created by cflayout	</title>
+	<atom:link href="/wrapping-cflayout-tabs/feed/" rel="self" type="application/rss+xml" />
+	<link>/wrapping-cflayout-tabs/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 13 May 2010 13:04:49 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: college essays		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-1365</link>
+
+		<dc:creator><![CDATA[college essays]]></dc:creator>
+		<pubDate>Thu, 13 May 2010 13:04:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-1365</guid>
+
+					<description><![CDATA[It worked in Firefox, but not in Opera, have you any ideas? thnks]]></description>
+			<content:encoded><![CDATA[<p>It worked in Firefox, but not in Opera, have you any ideas? thnks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: setare		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-1335</link>
+
+		<dc:creator><![CDATA[setare]]></dc:creator>
+		<pubDate>Sun, 02 May 2010 08:32:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-1335</guid>
+
+					<description><![CDATA[Thank you for your answer,Best wishes to you..]]></description>
+			<content:encoded><![CDATA[<p>Thank you for your answer,Best wishes to you..</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-1334</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 02 May 2010 00:50:17 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-1334</guid>
+
+					<description><![CDATA[setare you are right, its not working in IE8. I&amp;apos;m not sure if I had some additional CSS in there when it was working in IE8 for me, or if I was just mistaken.
+
+We&amp;apos;ve since upgraded to CF9 and this is no longer an issue for us, so I really haven&amp;apos;t put any more time into it.&#160;&#160;You could use an alternate tab library (like jQuery UI or Spry) or try the EXT forums, since that is what ColdFusion is using under the hood to make the tabs.]]></description>
+			<content:encoded><![CDATA[<p>setare you are right, its not working in IE8. I&apos;m not sure if I had some additional CSS in there when it was working in IE8 for me, or if I was just mistaken.</p>
+<p>We&apos;ve since upgraded to CF9 and this is no longer an issue for us, so I really haven&apos;t put any more time into it.&nbsp;&nbsp;You could use an alternate tab library (like jQuery UI or Spry) or try the EXT forums, since that is what ColdFusion is using under the hood to make the tabs.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: setare		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-1333</link>
+
+		<dc:creator><![CDATA[setare]]></dc:creator>
+		<pubDate>Sat, 01 May 2010 04:41:57 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-1333</guid>
+
+					<description><![CDATA[thanks Ryan,i checked it with IE8 But does not work:(]]></description>
+			<content:encoded><![CDATA[<p>thanks Ryan,i checked it with IE8 But does not work:(</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-1274</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 14 Apr 2010 13:09:57 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-1274</guid>
+
+					<description><![CDATA[setare, what version if IE is it not working in?
+
+It will only work in IE8. I don&amp;apos;t think its possible to make CF8 tabs wrap in IE6 7.]]></description>
+			<content:encoded><![CDATA[<p>setare, what version if IE is it not working in?</p>
+<p>It will only work in IE8. I don&apos;t think its possible to make CF8 tabs wrap in IE6 7.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: setare		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-1273</link>
+
+		<dc:creator><![CDATA[setare]]></dc:creator>
+		<pubDate>Wed, 14 Apr 2010 11:50:16 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-1273</guid>
+
+					<description><![CDATA[It worked for me in Firefox but not in IE,can you help me?]]></description>
+			<content:encoded><![CDATA[<p>It worked for me in Firefox but not in IE,can you help me?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-846</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 14 Oct 2009 14:00:42 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-846</guid>
+
+					<description><![CDATA[It works in IE8, but not 6 or 7.&#160;&#160;I don&amp;apos;t think its possible to make the CF8 (and 9?) tabs wrap in IE 6 or 7.]]></description>
+			<content:encoded><![CDATA[<p>It works in IE8, but not 6 or 7.&nbsp;&nbsp;I don&apos;t think its possible to make the CF8 (and 9?) tabs wrap in IE 6 or 7.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Deborah		</title>
+		<link>/wrapping-cflayout-tabs/comment-page-1/#comment-845</link>
+
+		<dc:creator><![CDATA[Deborah]]></dc:creator>
+		<pubDate>Wed, 14 Oct 2009 13:27:29 +0000</pubDate>
+		<guid isPermaLink="false">/?p=626#comment-845</guid>
+
+					<description><![CDATA[this only worked for me in Firefox. It does not wrap in IE.]]></description>
+			<content:encoded><![CDATA[<p>this only worked for me in Firefox. It does not wrap in IE.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

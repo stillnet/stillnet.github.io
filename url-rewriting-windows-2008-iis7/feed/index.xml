@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Mura URL rewriting on Windows 2008 / IIS7	</title>
+	<atom:link href="/url-rewriting-windows-2008-iis7/feed/" rel="self" type="application/rss+xml" />
+	<link>/url-rewriting-windows-2008-iis7/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 03 Aug 2011 05:25:15 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ronnie		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2481</link>
+
+		<dc:creator><![CDATA[Ronnie]]></dc:creator>
+		<pubDate>Wed, 03 Aug 2011 05:25:15 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2481</guid>
+
+					<description><![CDATA[Still happening...If you go to http://www.themodmedia.com,/ the URL will add /index.cfm to the end of it.
+
+Other pages like http://www.themodmedia.com/about-mod-media work just fine. It&amp;apos;s just on the home page.
+
+Any suggestions?]]></description>
+			<content:encoded><![CDATA[<p>Still happening&#8230;If you go to <a href="http://www.themodmedia.com/" rel="nofollow ugc">http://www.themodmedia.com/</a>, the URL will add /index.cfm to the end of it.</p>
+<p>Other pages like <a href="http://www.themodmedia.com/about-mod-media" rel="nofollow ugc">http://www.themodmedia.com/about-mod-media</a> work just fine. It&apos;s just on the home page.</p>
+<p>Any suggestions?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ronnie		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2394</link>
+
+		<dc:creator><![CDATA[Ronnie]]></dc:creator>
+		<pubDate>Mon, 27 Jun 2011 19:15:23 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2394</guid>
+
+					<description><![CDATA[Either when I click the home page from the live site or even when I just type in www.domain.com it adds the index.cfm to the end.]]></description>
+			<content:encoded><![CDATA[<p>Either when I click the home page from the live site or even when I just type in <a href="http://www.domain.com/" rel="nofollow ugc">http://www.domain.com/</a> it adds the index.cfm to the end.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Greg Moser		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2393</link>
+
+		<dc:creator><![CDATA[Greg Moser]]></dc:creator>
+		<pubDate>Mon, 27 Jun 2011 15:20:11 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2393</guid>
+
+					<description><![CDATA[@Ronnie
+
+When you say that it still adds index.cfm to the home page... where are you clicking that link from?&#160;&#160;If you are clicking on the site name from the admin, that could be a bug in an older version of Mura that no longer exists (I think i submitted the fix about 2 months ago).&#160;&#160;Try updating your core and testing again.
+
+-Greg]]></description>
+			<content:encoded><![CDATA[<p>@Ronnie</p>
+<p>When you say that it still adds index.cfm to the home page&#8230; where are you clicking that link from?&nbsp;&nbsp;If you are clicking on the site name from the admin, that could be a bug in an older version of Mura that no longer exists (I think i submitted the fix about 2 months ago).&nbsp;&nbsp;Try updating your core and testing again.</p>
+<p>-Greg</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ronnie		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2389</link>
+
+		<dc:creator><![CDATA[Ronnie]]></dc:creator>
+		<pubDate>Sun, 26 Jun 2011 19:15:17 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2389</guid>
+
+					<description><![CDATA[I used this, and it works great for the interior pages (www.domain.com/about-us), yet the home page still adds &#034;index.cfm&#034; (www.domain.com/index.cfm). 
+
+Any thoughts?]]></description>
+			<content:encoded><![CDATA[<p>I used this, and it works great for the interior pages (www.domain.com/about-us), yet the home page still adds &quot;index.cfm&quot; (www.domain.com/index.cfm). </p>
+<p>Any thoughts?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Josen Ruiseco		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2372</link>
+
+		<dc:creator><![CDATA[Josen Ruiseco]]></dc:creator>
+		<pubDate>Sun, 19 Jun 2011 23:28:28 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2372</guid>
+
+					<description><![CDATA[I&amp;apos;ve been plugging away and come up with the following:
+
+RewriteEngine &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ON
+RewriteCond &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%{DOCUMENT_ROOT}%{REQUEST_URI} &#160;&#160;&#160;&#160;!-d
+RewriteRule &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;^([\x20a-zA-Z0-9/-]+)$ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;/index.cfm%{REQUEST_URI}
+
+The rules work everywhere I&amp;apos;ve tried except for searches:
+
+http://www.domain.com/test-page/tag/Page/?Keywords=test&#038;display=search&#038;newSearch=true&#038;noCache=1
+
+When I manually add in index.cfm into the URL, the search page displays properly:
+
+http://......../index.cfm/test-page/tag/Page/?Keywords=test&#038;display=search&#038;newSearch=true&#038;noCache=1
+
+It seems clear that the rule is not capturing this condition. Any thoughts?]]></description>
+			<content:encoded><![CDATA[<p>I&apos;ve been plugging away and come up with the following:</p>
+<p>RewriteEngine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON<br />
+RewriteCond &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%{DOCUMENT_ROOT}%{REQUEST_URI} &nbsp;&nbsp;&nbsp;&nbsp;!-d<br />
+RewriteRule &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^([\x20a-zA-Z0-9/-]+)$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/index.cfm%{REQUEST_URI}</p>
+<p>The rules work everywhere I&apos;ve tried except for searches:</p>
+<p><a href="http://www.domain.com/test-page/tag/Page/?Keywords=test&#038;display=search&#038;newSearch=true&#038;noCache=1" rel="nofollow ugc">http://www.domain.com/test-page/tag/Page/?Keywords=test&#038;display=search&#038;newSearch=true&#038;noCache=1</a></p>
+<p>When I manually add in index.cfm into the URL, the search page displays properly:</p>
+<p><a href="http://" rel="nofollow ugc">http://</a>&#8230;&#8230;../index.cfm/test-page/tag/Page/?Keywords=test&amp;display=search&amp;newSearch=true&amp;noCache=1</p>
+<p>It seems clear that the rule is not capturing this condition. Any thoughts?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Josen Ruiseco		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2370</link>
+
+		<dc:creator><![CDATA[Josen Ruiseco]]></dc:creator>
+		<pubDate>Sun, 19 Jun 2011 14:15:46 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2370</guid>
+
+					<description><![CDATA[Apparently this file is not included in the installer but exists in the standard download file set. 
+It appears to be a set of rules for IIS7. 
+
+Does anyone have the exact rule set for Ionic Rewriter on IIS 6.5?]]></description>
+			<content:encoded><![CDATA[<p>Apparently this file is not included in the installer but exists in the standard download file set.<br />
+It appears to be a set of rules for IIS7. </p>
+<p>Does anyone have the exact rule set for Ionic Rewriter on IIS 6.5?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Josen Ruiseco		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2369</link>
+
+		<dc:creator><![CDATA[Josen Ruiseco]]></dc:creator>
+		<pubDate>Sun, 19 Jun 2011 13:26:10 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2369</guid>
+
+					<description><![CDATA[I just downloaded and installed the latest version of Mura using the installer. There is no web.config or web.config.txt included. Does someone know where I could get a copy of that file?]]></description>
+			<content:encoded><![CDATA[<p>I just downloaded and installed the latest version of Mura using the installer. There is no web.config or web.config.txt included. Does someone know where I could get a copy of that file?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Greg Moser		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2289</link>
+
+		<dc:creator><![CDATA[Greg Moser]]></dc:creator>
+		<pubDate>Fri, 29 Apr 2011 20:42:39 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2289</guid>
+
+					<description><![CDATA[For any future readers, in the latest version of mura it now automatically creates a web.config file with rewrite rules that will do the rewrite for you in IIS.&#160;&#160;All you need to do is go to the web root folder and and change web.config.txt to web.config.
+
+-Greg]]></description>
+			<content:encoded><![CDATA[<p>For any future readers, in the latest version of mura it now automatically creates a web.config file with rewrite rules that will do the rewrite for you in IIS.&nbsp;&nbsp;All you need to do is go to the web root folder and and change web.config.txt to web.config.</p>
+<p>-Greg</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Fluid		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2238</link>
+
+		<dc:creator><![CDATA[Fluid]]></dc:creator>
+		<pubDate>Mon, 18 Apr 2011 01:51:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2238</guid>
+
+					<description><![CDATA[@Ryan - Seriously appreciate this post! Up and running faster than I could copy and paste!
+
+@Greg Moser - Thanks for leading me here via the Mura forums!]]></description>
+			<content:encoded><![CDATA[<p>@Ryan &#8211; Seriously appreciate this post! Up and running faster than I could copy and paste!</p>
+<p>@Greg Moser &#8211; Thanks for leading me here via the Mura forums!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Scott		</title>
+		<link>/url-rewriting-windows-2008-iis7/comment-page-1/#comment-2053</link>
+
+		<dc:creator><![CDATA[Scott]]></dc:creator>
+		<pubDate>Fri, 01 Apr 2011 18:46:55 +0000</pubDate>
+		<guid isPermaLink="false">/?p=973#comment-2053</guid>
+
+					<description><![CDATA[It appears you&amp;apos;re also missing _ characters in the regex.]]></description>
+			<content:encoded><![CDATA[<p>It appears you&apos;re also missing _ characters in the regex.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

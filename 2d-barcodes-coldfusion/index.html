@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Stillnet Studios  &raquo; Blog Archive   &raquo; CFC for generating and reading 2D barcodes in ColdFusion</title>
+
+<meta name="generator" content="WordPress 6.1.1"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/evanescence-12/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios RSS Feed" href="/feed/">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="robots" content="max-image-preview:large">
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-1413191-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios &raquo; CFC for generating and reading 2D barcodes in ColdFusion Comments Feed" href="/2d-barcodes-coldfusion/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"httpwww.stillnetstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/76">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="/2d-barcodes-coldfusion/">
+<link rel="shortlink" href="/?p=76">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2d-barcodes-coldfusion%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2d-barcodes-coldfusion%2F&#038;format=xml">
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<div><div>	
+	<div class="header-title">
+		<h1><a href="/" title="Stillnet Studios: Web development notes and commentary from Ryan Stille">Stillnet Studios</a></h1>
+		<p>Web development notes and commentary from Ryan Stille</p>
+	</div> 
+	<!-- Search box (If you prefer having search form as a sidebar widget, remove this block) -->
+	<div class="search">
+		<form method="get" id="searchform" action="http://www.stillnetstudios.com/">
+<input type="text" size="12" name="s" id="s" value="search..." onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';">
+</form>
+	</div> 
+	<!-- Search ends here-->
+</div></div>	
+</div>
+<div id="wrapper">
+
+	<div id="content">
+
+			
+		<div class="navigation">
+			<div class="alignleft">&laquo; <a href="/greasemonkey-craigslist-spam/" rel="prev">Craigslist spam buttons script updated</a>
+</div>
+			<div class="alignright">
+<a href="/coldfusion-8-inline-array/" rel="next">ColdFusion 8 inline array syntax doesn&#8217;t work everywhere</a> &raquo;</div>
+		</div>
+
+		<div class="post" id="post-76">
+			<div class="post-title"><div>
+				<h2><a href="/2d-barcodes-coldfusion/" rel="bookmark" title="Permanent Link to CFC for generating and reading 2D barcodes in ColdFusion">CFC for generating and reading 2D barcodes in ColdFusion</a></h2>
+			</div></div>
+			<div class="post-entry">
+				<p>One of the projects I&#8217;ve been working on recently requires the ability to receive faxes and place them into a customer&#8217;s account.  At first we looked at using optical character recognition to scan out the customer&#8217;s ID from the cover sheet, but this route was looking expensive and time consuming, and we weren&#8217;t sure we would be able to reliably read the customer IDs, since faxes are sometimes hard to read even with the human eye.  We are providing a pre-filled out cover sheet, so the customer ID would be printed, not hand written, but I think it would still be difficult to read.</p>
+<p>Just around this time I saw <a href="http://www.jimrising.com/">Jim Rising</a>&#8216;s post on cf-talk saying that if you need to do this kind of thing, you really should be looking at using a 2D barcode instead of trying to OCR a number.  So I did.  He mentioned Java4Less, a company that sells reasonably priced (~$100) java libraries for reading and writing barcodes, including data matrix barcodes.   A datamatrix barcode is a 2D barcode that can encode more data in less space than a traditional barcode.  Its also much more durable, and can be read even when faxed several times.  They look like this:</p>
+<p></p>
+<center><img decoding="async" id="image78" src="/wp-content/uploads/2007/12/test.gif" alt="datamatrix barcode example"></center>
+<br>
+<span id="more-76"></span><br>
+I&#8217;ve finally got this all working, and have packaged it up as a CFC. Here&#8217;s how its used:
+<pre><code>&lt;cfset BarCoder = CreateObject("component","2DBarCode_j4l").init()&gt;</code></pre>
+<p><strong>Reading Barcodes</strong></p>
+<pre><code>&lt;cfset results = BarCoder.readFromImage(myImageObject)&gt;
+or
+&lt;cfset results = BarCoder.readFromFile("myFile.png")&gt;</code></pre>
+<p>		These methods return an array of barcodes that were found in the image. Each element in	the array contains the following structure:</p>
+<table border cellpadding="3">
+<tr>
+<td><b>Key</b></td>
+<td><b>Description</b></td>
+</tr>
+<tr>
+<td>x</td>
+<td>The x coordinate of where the barcode was found on the image.</td>
+</tr>
+<tr>
+<td>y</td>
+<td>The y coordinate of where the barcode was found on the image.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>The value that was read from the barcode.</td>
+</tr>
+</table>
+<p>		If no barcodes were found, an empty array is returned.</p>
+<p><strong>Creating Barcodes</strong></p>
+<p>Basic example:<br>
+<code>&lt;cfset BCImage = BarCoder.createBarCode(text='my text to place into barcode')&gt;</code></p>
+<p>BCImage now contains a ColdFusion image object that you can write to file or send it to the browser or whatever you need to do.  There are several other options you can pass to createBarCode(), they described in the readme file included in the download.</p>
+<p>To make this all work you&#8217;ll need to get three jar files from Java4Less and place them into your {coldfusion-install-dir}/lib directory, or place them somewhere else and add the path to them in your java.class.path setting in jvm.config.  The three files are rdmvision.jar, rbarcode.jar, and rvision.jar.  These come from a combination of two Java4Less products: <a href="http://java4less.com/order/order-datamatrix-java.shtml">RDataMatrix</a> and <a href="http://java4less.com/order/order-rvisionDM-java.shtml">J4L Datamatrix Vision</a>.</p>
+<p><a href="http://www.java4less.com/">Java4Less.com</a> does have evaluation versions of these libraries available for download, so you can play with this before spending any money.  My cfc only deals with 2D/Data Matrix barcodes. Java4Less offers libraries for working with regular barcodes, but I have not used them.</p>
+<p>I have to say that being on ColdFusion 8 made this project <em>much</em> easier.  I think it may have still been possible to do in CF7, but it would have required a lot more psudo-java code to be written in CF.</p>
+<p>You can download the cfc from RiaForge:</p>
+<p></p>
+<center><a href="http://2dbarcode.riaforge.org/">http://2dbarcode.riaforge.org/</a></center>
+							</div>
+	
+			<p class="post-meta">
+					This entry was posted on 15 December 2007 at 2:01 pm					and is filed under <a href="/category/coldfusion/" rel="category tag">ColdFusion</a>, <a href="/category/web-development/" rel="category tag">Web Development</a>.
+					You can follow any responses to this entry through the <a href="/2d-barcodes-coldfusion/feed/">RSS 2.0</a> feed.
+
+											Both comments and pings are currently closed.
+
+					
+			</p>
+		</div>
+	
+<!-- You can start editing here. -->
+<div id="comments">
+	<h3>25 Comments</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-320">
+			<h4>
+<a href="http://www.colfusionmuse.com/" rel="external nofollow ugc" class="url">mark Kruger</a> says:</h4>
+			<p>Ryan,</p>
+<p>Awesome stuff&#8230;. nice job on this.</p>
+<p>-mark</p>
+						<small class="commentmetadata"><a href="#comment-320" title="">15 December 2007, 2:56 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-321">
+			<h4>
+<a href="http://www.musicarsenal.com/" rel="external nofollow ugc" class="url">Jimmy Winter</a> says:</h4>
+			<p>Very cool! I was working with some basic barcode stuff this spring so I can see how this could really come in handy.</p>
+<p>Jimmy</p>
+						<small class="commentmetadata"><a href="#comment-321" title="">15 December 2007, 3:18 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-322">
+			<h4>
+<a href="http://phillyun.blogspot.com/" rel="external nofollow ugc" class="url">Jason Troy</a> says:</h4>
+			<p>Thanks for publishing and sharing this! I can see some interesting possibilities here. Please let us know if anyone extends this and uses it with CF 7!</p>
+						<small class="commentmetadata"><a href="#comment-322" title="">17 December 2007, 8:49 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-319">
+			<h4>Troy Allen says:</h4>
+			<p>Great job&#8230;Thanks for SHARING it with the world!</p>
+<p>Regards,<br>
+Troy</p>
+						<small class="commentmetadata"><a href="#comment-319" title="">17 December 2007, 12:31 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-323">
+			<h4>
+<a href="http://www.mobilevillage.se/" rel="external nofollow ugc" class="url">Göran</a> says:</h4>
+			<p>Would it be easy to make the cfc to work with CF 7 or BlueDragon?</p>
+						<small class="commentmetadata"><a href="#comment-323" title="">30 December 2007, 11:02 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-324">
+			<h4>Darken says:</h4>
+			<p>In case anyone was wondering what the barcode said.</p>
+<p>X-2E7EAB12-28BB-4095-97-86-9299CA865AD7</p>
+						<small class="commentmetadata"><a href="#comment-324" title="">25 July 2008, 3:38 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-325">
+			<h4>Marco Antonio says:</h4>
+			<p>Really awesome. I&#8217;ll want to use j4less Barcode1DReader Java class with CF 7. Your example for 2D help me so much. Do you have another example for CF 7?</p>
+						<small class="commentmetadata"><a href="#comment-325" title="">13 August 2008, 10:29 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-326">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>I do not have any examples for CF7 or Blue Dragon.  It should be possible, you&#8217;ll just have to code around the CF8 image stuff.  Some of the java methods require passing in a BufferedImage object, and there may be some other things to watch for.   Its not as simple as just swapping in ImageCFC for the reads and writes.</p>
+						<small class="commentmetadata"><a href="#comment-326" title="">13 August 2008, 12:01 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-330">
+			<h4>
+<a href="http://charlie.griefer.com/" rel="external nofollow ugc" class="url">charlie griefer</a> says:</h4>
+			<p>hey ryan&#8230; this rocks!  i&#8217;ve had a client request a datamatrix implementation, for the same reasons you&#8217;re using it (fax cover pages).  never worked with it before and i&#8217;m sure this will help me to get it done.  thanks for making it available.</p>
+<p>quick question if you don&#8217;t mind&#8230; we&#8217;d like the barcode to be as inconspicuous as possible, while at the same time being aware of keeping it legible over multiple instances of being faxed.  have you done any tests on your own to determine what a decent size is to meet those requirements?</p>
+<p>thanks again!<br>
+charlie</p>
+						<small class="commentmetadata"><a href="#comment-330" title="">4 September 2008, 12:02 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-331">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Charlie, to keep the barcode reading reliable, we were forced to use a barcode thats about 1.5 inches square.  I would not characterize it as inconspicuous, but I think it looks ok at that size.    🙂</p>
+<p>We had the need to read barcodes after they had been faxed at least twice, if you are only planning on faxing them once you may be able to get by with a smaller barcode.</p>
+						<small class="commentmetadata"><a href="#comment-331" title="">4 September 2008, 12:47 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-332">
+			<h4>Brad says:</h4>
+			<p>Hi<br>
+I have no idea about the tech side of it but I am looking for a solution to do something like this.<br>
+we setting up the paperless office and I want all the staff to fax the documents to a number with a coversheet and then the fax automatically goes to where it should go in the database(we use Zoho CRM) for that client.</p>
+<p>how can I do this ,how much would it cost,..</p>
+<p>Thanks<br>
+Brad</p>
+						<small class="commentmetadata"><a href="#comment-332" title="">4 September 2008, 7:11 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-333">
+			<h4>Dmitriy Goltseker says:</h4>
+			<p>I&#8217;m just curious, what is the recognition rate?</p>
+						<small class="commentmetadata"><a href="#comment-333" title="">5 September 2008, 1:51 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-334">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>I believe its around 90%.  Usually the ones that failed were ones that had a slight paper jam as the fax was going through.  You aren&#8217;t going to be able to read that no matter what the size.  Or ones that had been faxes many times, so that the squares were really no longer square.</p>
+<p>Don&#8217;t forget that some of your faxes will come in upside down.  I was originally only scanning the upper right (where we had placed our barcode), but that lead to not reading faxes that were sent upside down.  Scanning the entire page is more time consuming by several seconds, so I changed it to first look in the upper right corner, then the lower left corner.  You don&#8217;t need to worry about rotating the barcode or anything, the decoder will work no matter what orientation the barcode is in.</p>
+						<small class="commentmetadata"><a href="#comment-334" title="">5 September 2008, 1:56 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-328">
+			<h4>jurli says:</h4>
+			<p>hi</p>
+<p>what is the correct url on <a href="http://www.java4less.com/" rel="nofollow ugc">http://www.java4less.com</a> to download the right trial package?</p>
+<p><a href="http://www.java4less.com/barcodes/barcodes.php?info=download" rel="nofollow ugc">http://www.java4less.com/barcodes/barcodes.php?info=download</a></p>
+<p>what is the name of the two .jar files?</p>
+<p>i have always the same error: Class not found: com.java4less.vision.datamatrix.DatamatrixReader</p>
+<p>thanks</p>
+						<small class="commentmetadata"><a href="#comment-328" title="">18 September 2008, 12:27 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-329">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>jurli, I&#8217;m not positive but I think you need the first package listed on the page you linked to, rbard10.zip &#8211; in there you will find the rbarcode.jar file thats used for generating the barcodes.</p>
+<p>Then from this page: <a href="http://www.java4less.com/vision/vision.php?info=download" rel="nofollow ugc">http://www.java4less.com/vision/vision.php?info=download</a>  you&#8217;ll need the &#8220;Datamatrix Vision for Java&#8221; package (RDMVisionJava.zip)  for reading the 2d barcodes.    In the zip file you&#8217;ll find two jar files you need, rvision.jar and rdmvision.jar.</p>
+<p>Update: Actually you need to have *three* jar files installed: rdmvision.jar, rbarcode.jar, and rvision.jar.</p>
+						<small class="commentmetadata"><a href="#comment-329" title="">18 September 2008, 12:53 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-327">
+			<h4>Natalie says:</h4>
+			<p>I downloaded the RBarcode (1D, Post 4 state barcodes, PDF417 and RDataMatrix) trial version.  Now I&#8217;m ready to buy it, but I wanted to make sure I&#8217;m choosing the right one to purchase.  I am guessing it&#8217;s the  RDataMatrix Binary (and J4L Datamatrix Vision (Java) to read).    Do you need the versions with source code?</p>
+						<small class="commentmetadata"><a href="#comment-327" title="">30 September 2008, 7:55 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-335">
+			<h4>Natalie says:</h4>
+			<p>How many characters does this encode?  Mine does not seem to read the barcode if there are more than 230 characters in the string.  Is this the maximum?</p>
+						<small class="commentmetadata"><a href="#comment-335" title="">6 October 2008, 10:44 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-336">
+			<h4>Simon Harper says:</h4>
+			<p>Great stuff, Ryan, thanks. Saved us a fortune!</p>
+						<small class="commentmetadata"><a href="#comment-336" title="">14 January 2009, 10:59 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-571">
+			<h4>Mike D says:</h4>
+			<p>Thanks Ryan, this package is very helpful and nicely written.&nbsp;&nbsp; I seem to have encountered a probelm though&#8230;&nbsp;&nbsp; When testing with the attached code it does not always produce consistent results.&nbsp;&nbsp; For example #results# is, only sometimes, missing the &quot;my&quot; from the bc string.&nbsp;&nbsp;Likewise, #results2# is missing, only sometimes, the &quot;Th&quot; from &quot;The&quot;.&nbsp;&nbsp;Is this something I&apos;m doing wrong, or maybe an issue with the demo versions of the jar files?</p>
+<p>Thanks.</p>
+<p>&lt;cfset objBarCoder = CreateObject(&quot;component&quot;,&quot;#APPLICATION.componentPath#/2DBarCode_j4l&quot;).init()&gt;<br>
+&lt;cfset BCImage = objBarCoder.createBarCode(text=&apos;my text to place into barcode&apos;,margin=50)&gt;<br>
+&lt;cfimage action = &quot;writeToBrowser&quot; source = &quot;#BCImage#&quot; &gt;<br>
+&lt;br /&gt;<br>
+&lt;cfset results = objBarCoder.readFromImage(#BCImage#)&gt;<br>
+&lt;cfdump var=#results# /&gt;&lt;br /&gt;<br>
+&lt;cfset BCImage2 = objBarCoder.createBarCode(text=&apos;The quick brown fox jumps over the lazy dog&apos;,margin=50)&gt;<br>
+&lt;cfimage action = &quot;writeToBrowser&quot; source = &quot;#BCImage2#&quot; &gt;<br>
+&lt;br /&gt;<br>
+&lt;cfset results2 = objBarCoder.readFromImage(#BCImage2#)&gt;<br>
+&lt;cfdump var=#results2# /&gt;&lt;br /&gt;<br>
+&lt;cfimage action = &quot;writeToBrowser&quot; source = &quot;#BCImage2#&quot; &gt;<br>
+&lt;br /&gt;<br>
+&lt;cfset results2 = objBarCoder.readFromImage(#BCImage2#)&gt;<br>
+&lt;cfdump var=#results2# /&gt;&lt;br /&gt;</p>
+						<small class="commentmetadata"><a href="#comment-571" title="">21 July 2009, 10:05 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-742">
+			<h4>Christian says:</h4>
+			<p>Ryan,</p>
+<p>I&apos;m trying to run this in Railo (v 3.1.1.000) and getting the following error:</p>
+<p>&quot;can&apos;t assign value to a Object of this type [com.java4less.rdatamatrix.RDataMatrix] with key DOTPIXELS&quot;</p>
+<p>for this source code line in your CFC:<br>
+&lt;cfset Writer.dotPixels = Arguments.dotPixels&gt;</p>
+<p>The code is just the demo code from above. Any idea what I&apos;m doing wrong?</p>
+						<small class="commentmetadata"><a href="#comment-742" title="">22 September 2009, 2:15 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-766">
+			<h4>
+<a href="http://www.londonbarandkitchen.com/" rel="external nofollow ugc" class="url">David</a> says:</h4>
+			<p>Hi Ryan, firstly thanks for the tutorial&#8230; great work!</p>
+<p>Right now I am working on modifying your cf code to write PDF417 barcodes, simple right, just change the java class and the correct param names/values… but no, I have hit a brick-wall and I would really appreciate your help if possible.</p>
+<p>For writing matrix barcodes in your example, you specify the following input parameters, but I can&apos;t see how this is working, ie. the names you use are different to those as specified in the J4L documentation (help: <a href="http://www.java4less.com/barcodes/barcodes.php?info=guide#dm" rel="nofollow ugc">http://www.java4less.com/barcodes/barcodes.php?info=guide#dm</a>): </p>
+<p>&lt;cfset var Writer = CreateObject(&apos;java&apos;,&quot;com.java4less.rdatamatrix.RDataMatrix&quot;).init()&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.code = Arguments.text&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.dotPixels = Arguments.dotPixels&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.encoding = Writer[Arguments.encoding]&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.preferredFormat = Writer[Arguments.preferredFormat]&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.margin = Arguments.margin&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.setSize(Arguments.width,Arguments.height)&gt;</p>
+<p>ie. you specify &apos;dotPixels&apos; and &apos;code&apos; but the J4L documentation specifies the Parameters and properties of the Java Class as<br>
+&apos;DOT_PIXELS&apos; and &apos;BARCODE&apos;. There are others but I am just showing these examples.<br>
+Perhaps the J4L documentation wrong?</p>
+<p>Also confusing: The J4L documentation (help url as above) specifies the 3 main RBarcode classes:</p>
+<p>com.java4less.rbarcode.BarCode: for 1D symbologies<br>
+com.java4less.rbarcode.BarCode2D: for PDF417 and Macro PDF417 symbologies<br>
+com.java4less.rdatamatrix.DataMatrix: for Datamatrix symbology </p>
+<p>But when you create the java object for a matrix barcode, you use:<br>
+com.java4less.rdatamatrix.RDataMatrix<br>
+ie. *R*DataMatrix, with an &apos;R&apos;.</p>
+<p>Could it be possible that your matrix barcode example uses different RBarcode java classes? Perhaps an earlier version to those as current on their site now?</p>
+<p>Also…. if you could show a working example, writing a PDF417 barcode, I would be more than happy to make a nice donation via paypal.</p>
+<p>Thanks in advance,<br>
+David</p>
+						<small class="commentmetadata"><a href="#comment-766" title="">29 September 2009, 9:21 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-770">
+			<h4>
+<a href="http://www.londonbarandkitchen.com/" rel="external nofollow ugc" class="url">David</a> says:</h4>
+			<p>PDF417 update&#8230;</p>
+<p>OK, I got this working for PDF417 barcodes. From what I can tell, the input params as specified in this J4L doc are incorrect (or I am missing the point there!): <a href="http://www.java4less.com/barcodes/barcodes.php?info=guide" rel="nofollow ugc">http://www.java4less.com/barcodes/barcodes.php?info=guide</a></p>
+<p>The correct PDF417 input params are listed in the Java doc html page BarCode2D.html, in example 1. This html doc is located in the rbard10.zip file: location: rbard10\javadoc\com\java4less\rbarcode\BarCode2D.html.</p>
+<p>To clarify, to create PDF417 barcodes you need only this jar file:<br>
+<a href="http://www.java4less.com/rbard10.zip" rel="nofollow ugc">http://www.java4less.com/rbard10.zip</a> copy only this file rbarcode.jar to the coldfusion8 lib folder as Ryan describes.</p>
+<p>&#8212;&#8212;&#8211;<br>
+CODE: there are 2 files:</p>
+<p>1) The CFC: save as PDF417BarCode_j4l.cfc</p>
+<p>&lt;cfcomponent displayname=&quot;Wrapper for Java4Less 2D BarCode PDF417&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cffunction name=&quot;init&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; used below, see comment there. &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var sys = &apos;&apos;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; create a temporary instance of the writer, just to make sure it is available.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can&apos;t create a persistance instance of this because it is not thread safe. &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var Writer = CreateObject(&apos;java&apos;,&quot;com.java4less.rdatamatrix.RDataMatrix&quot;).init()&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfreturn this&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cffunction&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cffunction name=&quot;createBarCode&quot; access=&quot;public&quot; returntype=&quot;Any&quot; output=&quot;yes&quot; hint=&quot;Creates a barcode and returns a ColdFusion image object containing the barcode.&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;width&quot; default=&quot;90&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;height&quot; default=&quot;250&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;resolution&quot; default=&quot;1&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFECLevel&quot; default=&quot;4&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; PDF_TEXT, PDF_BYTE, PDF_NUMERIC &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFMode&quot; default=&quot;PDF_TEXT&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;barType&quot; default=&quot;PDF417&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;code&quot; hint=&quot;Text to encode in barcode&quot; required=&quot;yes&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; dont know max? &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFMaxRows&quot; default=&quot;30&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; 1 &#8211; 30 &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFColumns&quot; default=&quot;10&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212;&nbsp;&nbsp;3 &#8211; 90 &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;PDFRows&quot; default=&quot;10&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfargument name=&quot;rotate&quot; default=&quot;90&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; create an image to place this barcode into &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var ReturnImage = ImageNew(&apos;&apos;,90,250,&apos;grayscale&apos;)&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; the writer is not thread safe, so we must create an instance of it for each request &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset var Writer = CreateObject(&apos;java&apos;,&quot;com.java4less.rbarcode.BarCode2D&quot;).init()&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.setSize(Arguments.width,Arguments.height)&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.resolution = Arguments.resolution&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFECLevel = Arguments.PDFECLevel&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFMode = Writer[Arguments.PDFMode]&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.barType = Writer[Arguments.barType]&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.code = Arguments.code&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFMaxRows = Arguments.PDFMaxRows&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFColumns = Arguments.PDFColumns&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.PDFRows = Arguments.PDFRows&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.rotate = Arguments.rotate&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!&#8212; now &apos;paint&apos; the barcode into our ColdFusion image object &#8212;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfset Writer.paint(ImageGetBufferedImage(ReturnImage).createGraphics())&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cfreturn ReturnImage&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cffunction&gt;</p>
+<p>&lt;/cfcomponent&gt;</p>
+<p>2) The cfm file: save as test.cfm (in the same folder as the CFC above).</p>
+<p>&lt;cfset BarCoder = CreateObject(&quot;component&quot;,&quot;PDF417BarCode_j4l&quot;).init()&gt;</p>
+<p>&lt;cfset ImageObjContainingBarcode = BarCoder.createBarCode(code=&apos;My text to encode&apos;)&gt;</p>
+<p>&lt;p&gt;<br>
+&lt;cfimage action=&quot;writetobrowser&quot; source=&quot;#ImageObjContainingBarcode#&quot;&gt;<br>
+&lt;/p&gt;<br>
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>Nb. i have rotated the barcode, but you can change the rotate angle as you wish, see above in the CFC &lt;cfargument name=&quot;rotate&quot; default=&quot;90&quot;&gt;</p>
+<p>also note, in setting the input params there are 2 methods used above:<br>
+1. &lt;cfset Writer.barType = Writer[Arguments.barType]&gt;<br>
+2. &lt;cfset Writer.code = Arguments.code&gt;</p>
+<p>1 used when selecting an option from an array of possible types.<br>
+2 used when setting a simple value like the code (text to encode).</p>
+<p>good luck&#8230; and thanks again Ryan.</p>
+						<small class="commentmetadata"><a href="#comment-770" title="">30 September 2009, 3:26 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-818">
+			<h4>
+<a href="http://www.cflove.org/examples/barcode/datamatrix.cfm" rel="external nofollow ugc" class="url">cflove</a> says:</h4>
+			<p>A similar, but free, solution can be found here:&nbsp;&nbsp;<a href="http://www.cflove.org/examples/barcode/datamatrix.cfm" rel="nofollow ugc">http://www.cflove.org/examples/barcode/datamatrix.cfm</a></p>
+<p>The source code can be found here: <a href="http://www.cflove.org/examples/barcode/bc.rar" rel="nofollow ugc">http://www.cflove.org/examples/barcode/bc.rar</a></p>
+						<small class="commentmetadata"><a href="#comment-818" title="">7 October 2009, 11:13 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-904">
+			<h4>Andy says:</h4>
+			<p>Hi Cfloe</p>
+<p>code did not work with french.</p>
+<p>Illegal character: `&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;<br>
+The error occurred in D:\iis\cflove.org\examples\barcode\datamatrix.cfc: line 57</p>
+<p>55 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;/cfswitch&gt;<br>
+56 :&nbsp;&nbsp;&nbsp;&nbsp;<br>
+57 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;cfset Reader.generateBarcode(canvas, JavaCast(&apos;string&apos;,value))&gt;<br>
+58 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;cfset canvas.finish()&gt;<br>
+59 :&nbsp;&nbsp;&nbsp;&nbsp; &lt;cfset out.close()&gt;</p>
+						<small class="commentmetadata"><a href="#comment-904" title="">15 December 2009, 6:35 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-1302">
+			<h4>Dave says:</h4>
+			<p>I get crazy results back. It seems I get results that I did the last time I ran the script? Also, now I am getting 08:07:02.002 &#8211; java.lang.ArrayIndexOutOfBoundsException &#8211; in : line -1</p>
+						<small class="commentmetadata"><a href="#comment-1302" title="">18 April 2010, 6:08 am</a></small>
+					</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+	<div>
+		<ul>
+			<li id="text-3" class="widget widget_text">			<div class="textwidget"><center><img style="border: 1px solid gray;" src="/wp-content/uploads/2012/06/ryan-headshot-1.jpg" alt="Ryan Stille"></center></div>
+		</li>
+<li id="pages-3" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+
+			<ul>
+				<li class="page_item page-item-228"><a href="/about/">About Me</a></li>
+<li class="page_item page-item-35"><a href="/projects/">My Projects</a></li>
+			</ul>
+
+			</li>
+<li id="categories-3" class="widget widget_categories">
+<h2 class="widgettitle">Article Categories</h2>
+
+			<ul>
+					<li class="cat-item cat-item-3">
+<a href="/category/ajax-javascript/">AJAX / JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/bluedragon/">BlueDragon</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/book-reviews/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/coldfusion/">ColdFusion</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/flex/">Flex</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/misc/">Misc</a>
+</li>
+	<li class="cat-item cat-item-10">
+<a href="/category/railo/">Railo</a>
+</li>
+	<li class="cat-item cat-item-11">
+<a href="/category/sql/">SQL</a>
+</li>
+	<li class="cat-item cat-item-12">
+<a href="/category/system-administration/">System Administration</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/tomcat/">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/web-development/">Web Development</a>
+</li>
+			</ul>
+
+			</li>
+
+		<li id="recent-posts-3" class="widget widget_recent_entries">
+		<h2 class="widgettitle">Recent Posts</h2>
+
+		<ul>
+											<li>
+					<a href="/coldfusion-formfield-as-array-cf10/">Accessing form fields as an array in CF10</a>
+									</li>
+											<li>
+					<a href="/onerror-img-image-tag/">Did you know about the onerror attribute of the img tag?</a>
+									</li>
+											<li>
+					<a href="/copying-sql-studio-excel-headers/">Copying data from SQL Studio to Excel</a>
+									</li>
+											<li>
+					<a href="/dateconvert-utc-not-what-you-expect/">Using DateConvert to get a UTC timestamp may not return what you expect</a>
+									</li>
+											<li>
+					<a href="/get-filename-before-calling-cffile/">Getting the client filename before using cffile</a>
+									</li>
+											<li>
+					<a href="/jquery-snippet-to-get-all-input-values/">jQuery snippet to get all input values</a>
+									</li>
+											<li>
+					<a href="/mura-404-page-not-working-in-iis7-fix-it-in-web-config/">Mura 404 page not working in IIS7 &#8211; fix it in web.config</a>
+									</li>
+											<li>
+					<a href="/free-coldfusion-10-beta-hosting/">Free ColdFusion 10 beta hosting</a>
+									</li>
+											<li>
+					<a href="/remove-spaces-columns-cfspreadsheet/">Removing spaces from columns in cfspreadsheet (or any query)</a>
+									</li>
+											<li>
+					<a href="/online-code-formatters/">Online code formatters</a>
+									</li>
+											<li>
+					<a href="/joining-two-tables-one-id/">Joining to one of two tables with one ID</a>
+									</li>
+											<li>
+					<a href="/formatting-cfgrid-with-javascript/">Formatting CFGRID with JavaScript</a>
+									</li>
+											<li>
+					<a href="/cf-form-array-comma-workaround/">Accessing ColdFusion form values as an array</a>
+									</li>
+											<li>
+					<a href="/loading-fckeditor-dynamically/">Loading CFrichtext / FCKeditor on-the-fly</a>
+									</li>
+											<li>
+					<a href="/url-rewriting-windows-2008-iis7/">Mura URL rewriting on Windows 2008 / IIS7</a>
+									</li>
+					</ul>
+
+		</li>
+<li id="linkcat-2" class="widget widget_links">
+<h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.axelscript.com/" title="AxelScript &#8211; Flex development blog">Axel Jensen</a></li>
+<li><a href="http://jake.cfwebtools.com/" title="ColdFusion/Flex development">Jake Churchill</a></li>
+<li><a href="http://www.coldfusionmuse.com/" title="ColdFusion Muse">Mark Kruger</a></li>
+<li><a href="http://www.henke.ws/" title="ColdFusion, TDD, Ant, Subversion, etc.">Mike Henke</a></li>
+
+	</ul>
+</li>
+
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Donate</h2>
+			<div class="textwidget">If my code has helped you and you'd like give a donation, you can do so using the button below.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="ryan@stillnet.org">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Donation for helpful ColdFusion code">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget">
+<br><br>
+<img src="/wp-content/uploads/2010/01/acp_logo.gif">
+</div>
+		</li>
+			
+		</ul> 
+	</div>
+	</div>
+</div> <!-- wrapper -->
+
+<div id="footer"><div><div><div>
+
+	<a href="/feed/">Entries (RSS)</a> and <a href="/comments/feed/">Comments (RSS)</a>. Valid <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a>.<br>
+
+	Powered by <a href="http://www.wpthemes360.com/">Wordpress Themes</a>. Theme <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> by <a href="http://srinig.com/">Srini G</a>
+
+	</div></div></div></div>
+
+</div> <!-- page -->
+
+</body>
+
+</html>

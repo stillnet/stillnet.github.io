@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Require subversion comments &#8211; a perl pre-commit hook	</title>
+	<atom:link href="/require-subversion-comments-minimum/feed/" rel="self" type="application/rss+xml" />
+	<link>/require-subversion-comments-minimum/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sat, 22 Sep 2012 07:28:59 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: suma ramesh		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-2946</link>
+
+		<dc:creator><![CDATA[suma ramesh]]></dc:creator>
+		<pubDate>Sat, 22 Sep 2012 07:28:59 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-2946</guid>
+
+					<description><![CDATA[HI
+
+I want to include Pre commit script..
+
+I have renamed the file from pre-commit to pre-commit.html.
+
+REPOS=&quot;$1&quot;
+TXN=&quot;$2&quot;
+
+# Make sure that the log message contains some text.
+SVNLOOK=/usr/bin/svnlook
+$SVNLOOK log -t &quot;$TXN&quot; &quot;$REPOS&quot; &#124; \
+   grep &quot;[a-zA-Z0-9]&quot; &#062; /dev/null &#124;&#124; exit 1
+
+# Check that the author of this commit has the rights to perform
+# the commit on the files and directories being modified.
+commit-access-control.pl &quot;$REPOS&quot; &quot;$TXN&quot; commit-access-control.cfg &#124;&#124; exit 1
+
+# All checks passed, so allow the commit.
+exit 0
+
+
+Kindly tell me what are the changes i need to do...]]></description>
+			<content:encoded><![CDATA[<p>HI</p>
+<p>I want to include Pre commit script..</p>
+<p>I have renamed the file from pre-commit to pre-commit.html.</p>
+<p>REPOS=&#8221;$1&#8243;<br />
+TXN=&#8221;$2&#8243;</p>
+<p># Make sure that the log message contains some text.<br />
+SVNLOOK=/usr/bin/svnlook<br />
+$SVNLOOK log -t &#8220;$TXN&#8221; &#8220;$REPOS&#8221; | \<br />
+   grep &#8220;[a-zA-Z0-9]&#8221; &gt; /dev/null || exit 1</p>
+<p># Check that the author of this commit has the rights to perform<br />
+# the commit on the files and directories being modified.<br />
+commit-access-control.pl &#8220;$REPOS&#8221; &#8220;$TXN&#8221; commit-access-control.cfg || exit 1</p>
+<p># All checks passed, so allow the commit.<br />
+exit 0</p>
+<p>Kindly tell me what are the changes i need to do&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Johnny C		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-2936</link>
+
+		<dc:creator><![CDATA[Johnny C]]></dc:creator>
+		<pubDate>Wed, 08 Aug 2012 19:24:54 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-2936</guid>
+
+					<description><![CDATA[Thank you all. The STDERR thing is the tricky part that I was looking for.]]></description>
+			<content:encoded><![CDATA[<p>Thank you all. The STDERR thing is the tricky part that I was looking for.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Keshav		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-2673</link>
+
+		<dc:creator><![CDATA[Keshav]]></dc:creator>
+		<pubDate>Tue, 10 Jan 2012 13:33:00 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-2673</guid>
+
+					<description><![CDATA[Hello all, 
+I want to mandate a specific pattern(Should start with AS- ) in the commit message while I commit to SVN . Could someone help me in writing a script for this ? 
+Any help on this would be greatly appreciated ... 
+
+Thanks,
+K]]></description>
+			<content:encoded><![CDATA[<p>Hello all,<br />
+I want to mandate a specific pattern(Should start with AS- ) in the commit message while I commit to SVN . Could someone help me in writing a script for this ?<br />
+Any help on this would be greatly appreciated &#8230; </p>
+<p>Thanks,<br />
+K</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: sagar		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-2662</link>
+
+		<dc:creator><![CDATA[sagar]]></dc:creator>
+		<pubDate>Tue, 03 Jan 2012 13:31:51 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-2662</guid>
+
+					<description><![CDATA[hello i m using webfaction hosting and i put that script as pre-commit.sh ..but its not executable ???..can u plz suggest me..??]]></description>
+			<content:encoded><![CDATA[<p>hello i m using webfaction hosting and i put that script as pre-commit.sh ..but its not executable ???..can u plz suggest me..??</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: shag		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-2649</link>
+
+		<dc:creator><![CDATA[shag]]></dc:creator>
+		<pubDate>Tue, 13 Dec 2011 09:27:57 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-2649</guid>
+
+					<description><![CDATA[can i able to force commands only for cpp files in svn]]></description>
+			<content:encoded><![CDATA[<p>can i able to force commands only for cpp files in svn</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Shah		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-2196</link>
+
+		<dc:creator><![CDATA[Shah]]></dc:creator>
+		<pubDate>Thu, 14 Apr 2011 10:24:31 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-2196</guid>
+
+					<description><![CDATA[many thanks :)
+I am trying to included code reviewer test as well, but being newbie not able to write perl code :(]]></description>
+			<content:encoded><![CDATA[<p>many thanks 🙂<br />
+I am trying to included code reviewer test as well, but being newbie not able to write perl code 🙁</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Neil		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-1921</link>
+
+		<dc:creator><![CDATA[Neil]]></dc:creator>
+		<pubDate>Wed, 10 Nov 2010 05:45:54 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-1921</guid>
+
+					<description><![CDATA[Thanks so much! Beautiful script]]></description>
+			<content:encoded><![CDATA[<p>Thanks so much! Beautiful script</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan Walker		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-1475</link>
+
+		<dc:creator><![CDATA[Dan Walker]]></dc:creator>
+		<pubDate>Wed, 09 Jun 2010 20:48:20 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-1475</guid>
+
+					<description><![CDATA[Nice, clean Perl script.&#160;&#160;Thanks!]]></description>
+			<content:encoded><![CDATA[<p>Nice, clean Perl script.&nbsp;&nbsp;Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dave Schinkel		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-604</link>
+
+		<dc:creator><![CDATA[Dave Schinkel]]></dc:creator>
+		<pubDate>Wed, 05 Aug 2009 20:00:36 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-604</guid>
+
+					<description><![CDATA[I was also told by a former collegue that you can just use the property tsvn:logminsize on your entire repository]]></description>
+			<content:encoded><![CDATA[<p>I was also told by a former collegue that you can just use the property tsvn:logminsize on your entire repository</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dave Schinkel		</title>
+		<link>/require-subversion-comments-minimum/comment-page-1/#comment-602</link>
+
+		<dc:creator><![CDATA[Dave Schinkel]]></dc:creator>
+		<pubDate>Wed, 05 Aug 2009 15:43:58 +0000</pubDate>
+		<guid isPermaLink="false">/2008/06/16/require-subversion-comments-minimum/#comment-602</guid>
+
+					<description><![CDATA[Nice, thank you!]]></description>
+			<content:encoded><![CDATA[<p>Nice, thank you!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

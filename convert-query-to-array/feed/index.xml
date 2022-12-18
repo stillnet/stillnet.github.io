@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Converting a ColdFusion query to an array	</title>
+	<atom:link href="/convert-query-to-array/feed/" rel="self" type="application/rss+xml" />
+	<link>/convert-query-to-array/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sat, 12 Jan 2013 13:26:48 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: David		</title>
+		<link>/convert-query-to-array/comment-page-1/#comment-3509</link>
+
+		<dc:creator><![CDATA[David]]></dc:creator>
+		<pubDate>Sat, 12 Jan 2013 13:26:48 +0000</pubDate>
+		<guid isPermaLink="false">/?p=845#comment-3509</guid>
+
+					<description><![CDATA[What would happen to black or null values in the query col?
+
+Would valuelist ignore them?]]></description>
+			<content:encoded><![CDATA[<p>What would happen to black or null values in the query col?</p>
+<p>Would valuelist ignore them?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ghalstead		</title>
+		<link>/convert-query-to-array/comment-page-1/#comment-2666</link>
+
+		<dc:creator><![CDATA[Ghalstead]]></dc:creator>
+		<pubDate>Thu, 05 Jan 2012 16:36:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=845#comment-2666</guid>
+
+					<description><![CDATA[Thank you for the nice info.]]></description>
+			<content:encoded><![CDATA[<p>Thank you for the nice info.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

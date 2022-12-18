@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Removing spaces from columns in cfspreadsheet (or any query)	</title>
+	<atom:link href="/remove-spaces-columns-cfspreadsheet/feed/" rel="self" type="application/rss+xml" />
+	<link>/remove-spaces-columns-cfspreadsheet/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Thu, 20 Sep 2012 19:39:21 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Derek		</title>
+		<link>/remove-spaces-columns-cfspreadsheet/comment-page-1/#comment-2945</link>
+
+		<dc:creator><![CDATA[Derek]]></dc:creator>
+		<pubDate>Thu, 20 Sep 2012 19:39:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1086#comment-2945</guid>
+
+					<description><![CDATA[Thanks for this!!]]></description>
+			<content:encoded><![CDATA[<p>Thanks for this!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/remove-spaces-columns-cfspreadsheet/comment-page-1/#comment-2645</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 10 Dec 2011 17:24:38 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1086#comment-2645</guid>
+
+					<description><![CDATA[Sunisa that is a good tip, thank you. If you are working with a predictable order of columns that would work well.]]></description>
+			<content:encoded><![CDATA[<p>Sunisa that is a good tip, thank you. If you are working with a predictable order of columns that would work well.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sunisa		</title>
+		<link>/remove-spaces-columns-cfspreadsheet/comment-page-1/#comment-2644</link>
+
+		<dc:creator><![CDATA[Sunisa]]></dc:creator>
+		<pubDate>Sat, 10 Dec 2011 08:22:30 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1086#comment-2644</guid>
+
+					<description><![CDATA[To easily refer to QoQ from cfspreadsheet query, you could remove the &#039;headerrow&#039; attribute. The query will then refer the 1st column name as &#039;col_1&#039;, 2nd as &#039;col_2&#039; ...as default. You could use these default column names in your QoQ without worrying the actual column name with space or without spaces.]]></description>
+			<content:encoded><![CDATA[<p>To easily refer to QoQ from cfspreadsheet query, you could remove the &#8216;headerrow&#8217; attribute. The query will then refer the 1st column name as &#8216;col_1&#8217;, 2nd as &#8216;col_2&#8217; &#8230;as default. You could use these default column names in your QoQ without worrying the actual column name with space or without spaces.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

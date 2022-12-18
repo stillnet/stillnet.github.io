@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Free Railo CFML Hosting	</title>
+	<atom:link href="/free-railo-hosting/feed/" rel="self" type="application/rss+xml" />
+	<link>/free-railo-hosting/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 29 Jun 2010 18:01:40 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Russ		</title>
+		<link>/free-railo-hosting/comment-page-1/#comment-1513</link>
+
+		<dc:creator><![CDATA[Russ]]></dc:creator>
+		<pubDate>Tue, 29 Jun 2010 18:01:40 +0000</pubDate>
+		<guid isPermaLink="false">/?p=494#comment-1513</guid>
+
+					<description><![CDATA[You can now get free railo hosting from www.cfmldeveloper.com as well as ColdFusion9 if you want to compare/migrate.]]></description>
+			<content:encoded><![CDATA[<p>You can now get free railo hosting from <a href="http://www.cfmldeveloper.com/" rel="nofollow ugc">http://www.cfmldeveloper.com/</a> as well as ColdFusion9 if you want to compare/migrate.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mike		</title>
+		<link>/free-railo-hosting/comment-page-1/#comment-532</link>
+
+		<dc:creator><![CDATA[Mike]]></dc:creator>
+		<pubDate>Wed, 10 Jun 2009 01:59:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=494#comment-532</guid>
+
+					<description><![CDATA[You are the man!!!]]></description>
+			<content:encoded><![CDATA[<p>You are the man!!!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

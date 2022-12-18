@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: ColdFusion / MySQL Error: Cannot convert value &#8216;0000-00-00 00:00:00&#8217; from column X to TIMESTAMP.	</title>
+	<atom:link href="/coldfusion-convert-value-from-column-timestamp/feed/" rel="self" type="application/rss+xml" />
+	<link>/coldfusion-convert-value-from-column-timestamp/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 19 Oct 2010 01:02:40 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ameen		</title>
+		<link>/coldfusion-convert-value-from-column-timestamp/comment-page-1/#comment-1828</link>
+
+		<dc:creator><![CDATA[Ameen]]></dc:creator>
+		<pubDate>Tue, 19 Oct 2010 01:02:40 +0000</pubDate>
+		<guid isPermaLink="false">/?p=214#comment-1828</guid>
+
+					<description><![CDATA[Thanks Man .. you saved me a lot a lot of time.]]></description>
+			<content:encoded><![CDATA[<p>Thanks Man .. you saved me a lot a lot of time.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Eident		</title>
+		<link>/coldfusion-convert-value-from-column-timestamp/comment-page-1/#comment-1607</link>
+
+		<dc:creator><![CDATA[Eident]]></dc:creator>
+		<pubDate>Thu, 05 Aug 2010 21:08:45 +0000</pubDate>
+		<guid isPermaLink="false">/?p=214#comment-1607</guid>
+
+					<description><![CDATA[Thanks for the tip.&#160;&#160;Saved me a ton of time.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the tip.&nbsp;&nbsp;Saved me a ton of time.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Stillnet Studios  &raquo; Blog Archive   &raquo; Problems installing the ColdFusion connector on Linux/Apache</title>
+
+<meta name="generator" content="WordPress 6.1.1"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/evanescence-12/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios RSS Feed" href="/feed/">
+<link rel="pingback" href="/xmlrpc.php">
+
+<meta name="robots" content="max-image-preview:large">
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-1413191-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Stillnet Studios &raquo; Problems installing the ColdFusion connector on Linux/Apache Comments Feed" href="/problems-installing-the-coldfusion-connector-on-linuxapache/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"httpwww.stillnetstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/46">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="/problems-installing-the-coldfusion-connector-on-linuxapache/">
+<link rel="shortlink" href="/?p=46">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fproblems-installing-the-coldfusion-connector-on-linuxapache%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fproblems-installing-the-coldfusion-connector-on-linuxapache%2F&#038;format=xml">
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<div><div>	
+	<div class="header-title">
+		<h1><a href="/" title="Stillnet Studios: Web development notes and commentary from Ryan Stille">Stillnet Studios</a></h1>
+		<p>Web development notes and commentary from Ryan Stille</p>
+	</div> 
+	<!-- Search box (If you prefer having search form as a sidebar widget, remove this block) -->
+	<div class="search">
+		<form method="get" id="searchform" action="http://www.stillnetstudios.com/">
+<input type="text" size="12" name="s" id="s" value="search..." onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';">
+</form>
+	</div> 
+	<!-- Search ends here-->
+</div></div>	
+</div>
+<div id="wrapper">
+
+	<div id="content">
+
+			
+		<div class="navigation">
+			<div class="alignleft">&laquo; <a href="/union-queries-automatically-filter-duplicates/" rel="prev">SQL &#8216;UNION&#8217; queries automatically filter out duplicates</a>
+</div>
+			<div class="alignright">
+<a href="/attend-the-scorpio-tour/" rel="next">If you can make it to a Scorpio Tour event &#8211; Do it!</a> &raquo;</div>
+		</div>
+
+		<div class="post" id="post-46">
+			<div class="post-title"><div>
+				<h2><a href="/problems-installing-the-coldfusion-connector-on-linuxapache/" rel="bookmark" title="Permanent Link to Problems installing the ColdFusion connector on Linux/Apache">Problems installing the ColdFusion connector on Linux/Apache</a></h2>
+			</div></div>
+			<div class="post-entry">
+				<p>Some people have encountered problems during the ColdFusion MX 7 install on Linux/Apache.  When you first start the ColdFusion server, you may see something like this:</p>
+<p><code>Configuring the web server connector (Launched on the first run of the ColdFusion MX 7 start script)<br>
+Running apache connector wizard...<br>
+=======================================<br>
+There was an error while running the connector wizard<br>
+Connector installation was not successful</code><br>
+<span id="more-46"></span><br>
+The connector may or may not actually be installed.  In some cases it is, but you still get this error.  If it is installed, you should know it.  Restart apache to make the httpd.conf changes take effect, then try browsing to a .cfm page.  If it displays correctly, the connector was installed.</p>
+<p>In this case, all you need to do to get rid of the error message is rename the <code>/opt/coldfusionmx7/bin/cfmx-connectors.sh</code> script.  Thats normally what happens when the connector is successfully installed &#8211; ColdFusion renames that script to &#8220;cfmx-connectors-run.sh&#8221;.</p>
+<p>If your connector did <em>not</em> successfully install, there are a few additional steps to get it properly installed.  Change into the /opt/coldfusionmx7/bin/connectors directory.  Open the apache_connector.sh file, and fix the paths to be correct to your system.</p>
+<p>By default the file contains these lines (among others):<br>
+<code>../../runtime/bin/wsconfig \<br>
+        -server coldfusion \<br>
+    -ws apache \<br>
+        -dir /usr/local/apache2/conf \<br>
+        -bin /usr/local/apache2/bin/httpd \<br>
+        -script /usr/local/apache2/bin/apachectl \<br>
+        -coldfusion</code></p>
+<p>On RedHat/CentOS, they should usually look like this:</p>
+<p><code>../../runtime/bin/wsconfig \<br>
+        -server coldfusion \<br>
+    -ws apache \<br>
+        -dir /etc/httpd/conf \<br>
+        -bin /usr/sbin/httpd \<br>
+        -script /etc/rc.d/init.d/httpd \<br>
+        -coldfusion</code></p>
+<p>Even though those are the values I entered during the install, they don&#8217;t always make it to this connector script for some reason.</p>
+<p>Save the script and run it.  Restart apache, and browse to a .cfm file, or to the Administrator to verify that it is installed properly.</p>
+							</div>
+	
+			<p class="post-meta">
+					This entry was posted on 5 April 2007 at 9:20 pm					and is filed under <a href="/category/linux/" rel="category tag">Linux</a>, <a href="/category/system-administration/" rel="category tag">System Administration</a>, <a href="/category/web-development/" rel="category tag">Web Development</a>.
+					You can follow any responses to this entry through the <a href="/problems-installing-the-coldfusion-connector-on-linuxapache/feed/">RSS 2.0</a> feed.
+
+											Both comments and pings are currently closed.
+
+					
+			</p>
+		</div>
+	
+<!-- You can start editing here. -->
+<div id="comments">
+	<h3>27 Comments</h3>
+
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-202">
+			<h4>John Moore says:</h4>
+			<p>Thanks mucho!</p>
+						<small class="commentmetadata"><a href="#comment-202" title="">16 October 2007, 1:52 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-203">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>FYI, I just confirmed the problem still exists in ColdFusion 8.  I&#8217;m going to file a bug report with Adobe.</p>
+						<small class="commentmetadata"><a href="#comment-203" title="">10 November 2007, 11:28 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-204">
+			<h4>
+<a href="http://www.gametimearcade.com/" rel="external nofollow ugc" class="url">ana</a> says:</h4>
+			<p>And with Vista also.</p>
+						<small class="commentmetadata"><a href="#comment-204" title="">3 January 2008, 3:38 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-205">
+			<h4>Greg M says:</h4>
+			<p>I had this issue, too (Fedora 8, Coldfusion 8). In addition to the apache_connector.sh script requiring a change, I needed to install the httpd-devel package. That allows the apache_connector.sh to modify and rebuild Apache to work with Coldfusion.  That was “Coldfusion 8″</p>
+						<small class="commentmetadata"><a href="#comment-205" title="">13 February 2008, 5:21 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-206">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>You were probably installing onto Apache 2.2.x then, instead of 2.0.2x which was more common.  A recompile of the Apache module is needed when using 2.2.x.</p>
+						<small class="commentmetadata"><a href="#comment-206" title="">13 February 2008, 5:25 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-207">
+			<h4>
+<a href="http://www.hotelicia.es/" rel="external nofollow ugc" class="url">mika aste</a> says:</h4>
+			<p>With Vista it is really diificult for me.</p>
+						<small class="commentmetadata"><a href="#comment-207" title="">29 April 2008, 7:02 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-208">
+			<h4>Arthur says:</h4>
+			<p>I have just attempted to install Coldfusion8 Standard on RedHat 5.1running Apache 2.2</p>
+<p>The problem has not been fixed. Everytime I start up /opt/coldfusion8/bin/confusion, it reports that the connector installation was not successful.</p>
+<p>May 9, 2008</p>
+						<small class="commentmetadata"><a href="#comment-208" title="">10 May 2008, 9:43 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-209">
+			<h4>WeBoat says:</h4>
+			<p>CF 8 Apache 2.2 here&#8230; CentOS 5 All 64 Bit</p>
+<p>Greg M hit it&#8230;</p>
+<p>Do the file changes<br>
+Stop CF8<br>
+yum install httpd-devel<br>
+restart httpd<br>
+start CF8</p>
+<p>Everything works fine now!</p>
+<p>Thanks everyone. Easy fix</p>
+						<small class="commentmetadata"><a href="#comment-209" title="">23 June 2008, 7:19 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-210">
+			<h4>
+<a href="http://www.hoteles.es/" rel="external nofollow ugc" class="url">hoteles.es</a> says:</h4>
+			<p>We had the same problems but it seemed to be fixed in CF*</p>
+						<small class="commentmetadata"><a href="#comment-210" title="">25 June 2008, 3:28 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-211">
+			<h4>Carlos Cruz says:</h4>
+			<p>I&#8217;m trying to install CF8 onto redhat 9 / fedora 6.0.52.<br>
+I did all the above steps and i still get the error that the Connector installation was not successful, can anyone give me any further guidance/ideas?<br>
+Thanks in advance!!!</p>
+						<small class="commentmetadata"><a href="#comment-211" title="">24 July 2008, 1:39 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-212">
+			<h4>Tristan Lee says:</h4>
+			<p>I am getting this error and none of the methods above fix my problem. When I run the apache-connector.sh file directly, I get this:</p>
+<p>[root@ns1 connectors]# ./apache_connector.sh<br>
+Fedora release 9 (Sulphur)<br>
+Server&#8217;s Module Magic Number: 20051115:11.  Supported major magic numbers on this platform are 20020628 and 20020903.<br>
+Attempting to build connector from sources<br>
+Server version: Apache/2.2.8 (Unix)<br>
+/usr/lib/apr-1/build/libtool &#8211;silent &#8211;mode=compile gcc -prefer-pic -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector &#8211;param=ssp-buffer-size=4 -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables  -DLINUX=2 -D_REENTRANT -D_GNU_SOURCE -D_LARGEFILE64_SOURCE -pthread -I/usr/include/httpd  -I/usr/include/apr-1   -I/usr/include/apr-1 -I/usr/include/mysql -w  -c -o /opt/coldfusion8/runtime/lib/wsconfig/1/mod_jrun22.lo /opt/coldfusion8/runtime/lib/wsconfig/1/mod_jrun22.c &amp;&amp; touch /opt/coldfusion8/runtime/lib/wsconfig/1/mod_jrun22.slo<br>
+cc1: error: unrecognized command line option &#8220;-fstack-protector&#8221;<br>
+cc1: error: invalid parameter `ssp-buffer-size&#8217;<br>
+/opt/coldfusion8/runtime/lib/wsconfig/1/mod_jrun22.c:1: error: bad value (generError running &#8220;/opt/coldfusion8/runtime/lib/wsconfig/1/build_jrun22&#8221;: exit code was 1<br>
+Could not build Apache2 web server connector from source.  Use build script /opt/coldfusion8/runtime/lib/wsconfig/1/build_jrun22.<br>
+ic) for -mtune= switch<br>
+apxs:Error: Command failed with rc=65536<br>
+.</p>
+						<small class="commentmetadata"><a href="#comment-212" title="">24 July 2008, 10:38 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-213">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Tristan, first of all just to be clear the error you are getting is not related at all to the problem I&#8217;m addressing in this blog post.</p>
+<p>Secondly, you are aware you are installing on an unsupported platform?  Adobe says CF8 runs on RedHat Enterprise 3, 4, or 5.  RHEL 5 is based on Fedora 6, so you are a few versions newer.  Not that it won&#8217;t run, but some issues are to be expected.</p>
+<p>I would start by googling for the error message you are getting.  Searching for &#8220;apxs:Error: Command failed with rc=65536&#8221; turns up a lot of stuff, not ColdFusion related, but I don&#8217;t think your issue is specifically ColdFusion related.</p>
+						<small class="commentmetadata"><a href="#comment-213" title="">24 July 2008, 10:50 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-214">
+			<h4>Tristan Lee says:</h4>
+			<p>I believe I had this working correctly on Fedora 8 by simply changing the paths as mentioned above and then the connector worked. I&#8217;m updating my libraries right now in hopes that will work.</p>
+						<small class="commentmetadata"><a href="#comment-214" title="">24 July 2008, 11:28 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-215">
+			<h4>Sergio Felix says:</h4>
+			<p>Hi folks, just to let you know, I have RHEL5 and CF8 Enterprise on Apache 2.2.3 and I also had to do the path update inside the apache_connector.sh file.</p>
+<p>My connector name was cf-connectors.sh I just renamed that to cfmx-connectors.sh and voilá, no more boot errors!</p>
+<p>Btw, this wasn&#8217;t working on CF 8.0 and it&#8217;s still NOT fixed even after installing the CF 8.0.1 upgrade either.</p>
+<p>Anyway, thanks a lot for this post, It gave me like a four straight day&#8217;s headache. 🙂</p>
+						<small class="commentmetadata"><a href="#comment-215" title="">26 August 2008, 4:47 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-221">
+			<h4>Aarni Da Octopus says:</h4>
+			<p>Hi,</p>
+<p>I had this error too, both with CF7 on CentOS 4 some time ago and now with CF8 on CentOS 5. All I had to do was rename the connector scripts, cfmx-connectors.sh and cf-connectors.sh, respectively.</p>
+<p>Best regards to all!</p>
+						<small class="commentmetadata"><a href="#comment-221" title="">25 September 2008, 5:31 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-222">
+			<h4>tgs says:</h4>
+			<p>This thread really saved me a lot of time and headaches. I got coldfusion 8.1 up and running on Fedora 7 in about 30 minutes.</p>
+<p>Thanks to all who contributed.</p>
+						<small class="commentmetadata"><a href="#comment-222" title="">15 October 2008, 10:00 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-219">
+			<h4>
+<a href="http://aaronshufelt.blogspot.com/" rel="external nofollow ugc" class="url">Aaron</a> says:</h4>
+			<p>I am running Cent OS 5 and CF7 Dev edition.</p>
+<p>After receiving the JRUN/ColdFusion error I changed the pathing of apache_connectors.sh.  However, when I attempt to run the script I still get the aforementioned error.</p>
+<p>I&#8217;ve tried so many different methods to fix this that I&#8217;m beginning to forget them.</p>
+<p>For anyone else&#8217; consideration, here are 2 technotes that may help.</p>
+<p><a href="http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_19575&#038;sliceId=2#apache" rel="nofollow ugc">http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_19575&#038;sliceId=2#apache</a></p>
+<p><a href="http://kb.adobe.com/selfservice/viewContent.do?externalId=8001e97" rel="nofollow ugc">http://kb.adobe.com/selfservice/viewContent.do?externalId=8001e97</a></p>
+						<small class="commentmetadata"><a href="#comment-219" title="">10 December 2008, 5:22 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-220">
+			<h4>
+<a href="http://aaronshufelt.blogspot.com/" rel="external nofollow ugc" class="url">Aaron</a> says:</h4>
+			<p>Whoops, just realized that I posted something that may be irrelevant&#8230;i&#8217;m getting my pages confused.</p>
+						<small class="commentmetadata"><a href="#comment-220" title="">10 December 2008, 5:58 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-216">
+			<h4>Diane says:</h4>
+			<p>I am having problems with CF8 on RHEL5 Apache2.&nbsp;&nbsp;I have updated the connectors file per everyone&apos;s instructions with no change.&nbsp;&nbsp;I get the trying to connect 12 times and no luck.&nbsp;&nbsp;Did the post from Felix above mean that I need to change cf-connectors.sh to cfmx-connectors.sh even on a cf8 install.&nbsp;&nbsp;</p>
+<p>I am so frustrated&#8230;.</p>
+						<small class="commentmetadata"><a href="#comment-216" title="">28 April 2009, 5:43 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-217">
+			<h4>
+<a href="http://ryan.cfwebtools.com/" rel="external nofollow ugc" class="url">Ryan Stille</a> says:</h4>
+			<p>Diane, you are not giving us a lot to go on.&nbsp;&nbsp;When you manually run the command that is in the connector script, do you get an error?&nbsp;&nbsp;What is the error?</p>
+						<small class="commentmetadata"><a href="#comment-217" title="">28 April 2009, 10:09 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-218">
+			<h4>
+<a href="http://blog.reevestech.net/" rel="external nofollow ugc" class="url">Tad Reeves</a> says:</h4>
+			<p>Same problem with me here &#8211; Fedora 10 x64, running Apache 2.2.&nbsp;&nbsp;Needed to install the httpd-devel package due to error logged in ConnectorInstall0.txt in the main CF install directory.&nbsp;&nbsp;</p>
+<p>It throws the error: &quot;Could not find the required apxs (Apache Extension Tool) binary /usr/sbin/apxs. Check that package httpd-devel package is installed.Could not build Apache2 web server connector from source.&nbsp;&nbsp;Use build script /opt/coldfusion8/runtime/lib/wsconfig/1/build_jrun22.&quot;</p>
+						<small class="commentmetadata"><a href="#comment-218" title="">18 May 2009, 12:21 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-615">
+			<h4>dillon says:</h4>
+			<p>centos 5.3 cf8 apache2<br>
+thnaks WeBoat and Greg M<br>
+Stop CF8<br>
+yum install httpd-devel<br>
+restart httpd<br>
+start CF8<br>
+Shazam</p>
+						<small class="commentmetadata"><a href="#comment-615" title="">11 August 2009, 10:22 am</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-918">
+			<h4>Jason says:</h4>
+			<p>Hi,</p>
+<p>I have CF 8.01 and CentOS 5.4. I have done all of this, but I get an internal server error when I try to hit a .cfm page after. I checked cfserver.log and I do have some permission denied errors.</p>
+<p>/opt/coldfusion8 is set to apache:root and some directories apache:apache (as done by the install.</p>
+<p>Would I need to chmod anything?</p>
+						<small class="commentmetadata"><a href="#comment-918" title="">22 December 2009, 6:00 pm</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-919">
+			<h4>Ryan says:</h4>
+			<p>Usually you don&apos;t need to chmod anything.&nbsp;&nbsp;Do the permission denied errors tell you where its failing?&nbsp;&nbsp;Also look at the other log files, they are under runtime/bin I think.&nbsp;&nbsp;Also check the apache log.</p>
+						<small class="commentmetadata"><a href="#comment-919" title="">22 December 2009, 10:43 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-965">
+			<h4>
+<a href="http://jyoseph.com/" rel="external nofollow ugc" class="url">jyoseph</a> says:</h4>
+			<p>Had the same issues decribed here w/ the connector trying 12 times. Coldfusion 8 on fresh install of CentOS 5.4.</p>
+<p>Pretty much followed your instruction, along with instructions to yum install httpd-devel by greg m/weboat/dillon and I&apos;m in business.</p>
+<p>I appreciate your time to document this and for everyone who contributed.</p>
+						<small class="commentmetadata"><a href="#comment-965" title="">6 January 2010, 12:15 am</a></small>
+					</li>
+
+	
+	
+		<li class="" id="comment-1248">
+			<h4>Christopher Jazinski says:</h4>
+			<p>Awesome! CF 9 on CentOS 5.4 I needed the httpd-devel before i could run the cf-connectors.sh. Thanks</p>
+						<small class="commentmetadata"><a href="#comment-1248" title="">2 April 2010, 1:05 pm</a></small>
+					</li>
+
+	
+	
+		<li class="alt" id="comment-2927">
+			<h4>
+<a href="http://hea-www-dmz.cfa.harvard.edu/" rel="external nofollow ugc" class="url">Wendy Roberts</a> says:</h4>
+			<p>Thank you!  Helped with my Coldfusion 9 installation &#8211; also had to install httpd-devel and correct the paths.</p>
+<p>Cheers.</p>
+						<small class="commentmetadata"><a href="#comment-2927" title="">12 July 2012, 4:00 pm</a></small>
+					</li>
+
+	
+	
+	</ol>
+
+ 
+</div>
+
+	
+	</div>
+
+	<div id="sidebar">
+	<div>
+		<ul>
+			<li id="text-3" class="widget widget_text">			<div class="textwidget"><center><img style="border: 1px solid gray;" src="/wp-content/uploads/2012/06/ryan-headshot-1.jpg" alt="Ryan Stille"></center></div>
+		</li>
+<li id="pages-3" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+
+			<ul>
+				<li class="page_item page-item-228"><a href="/about/">About Me</a></li>
+<li class="page_item page-item-35"><a href="/projects/">My Projects</a></li>
+			</ul>
+
+			</li>
+<li id="categories-3" class="widget widget_categories">
+<h2 class="widgettitle">Article Categories</h2>
+
+			<ul>
+					<li class="cat-item cat-item-3">
+<a href="/category/ajax-javascript/">AJAX / JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/bluedragon/">BlueDragon</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/book-reviews/">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/coldfusion/">ColdFusion</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/flex/">Flex</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/misc/">Misc</a>
+</li>
+	<li class="cat-item cat-item-10">
+<a href="/category/railo/">Railo</a>
+</li>
+	<li class="cat-item cat-item-11">
+<a href="/category/sql/">SQL</a>
+</li>
+	<li class="cat-item cat-item-12">
+<a href="/category/system-administration/">System Administration</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/tomcat/">Tomcat</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/web-development/">Web Development</a>
+</li>
+			</ul>
+
+			</li>
+
+		<li id="recent-posts-3" class="widget widget_recent_entries">
+		<h2 class="widgettitle">Recent Posts</h2>
+
+		<ul>
+											<li>
+					<a href="/coldfusion-formfield-as-array-cf10/">Accessing form fields as an array in CF10</a>
+									</li>
+											<li>
+					<a href="/onerror-img-image-tag/">Did you know about the onerror attribute of the img tag?</a>
+									</li>
+											<li>
+					<a href="/copying-sql-studio-excel-headers/">Copying data from SQL Studio to Excel</a>
+									</li>
+											<li>
+					<a href="/dateconvert-utc-not-what-you-expect/">Using DateConvert to get a UTC timestamp may not return what you expect</a>
+									</li>
+											<li>
+					<a href="/get-filename-before-calling-cffile/">Getting the client filename before using cffile</a>
+									</li>
+											<li>
+					<a href="/jquery-snippet-to-get-all-input-values/">jQuery snippet to get all input values</a>
+									</li>
+											<li>
+					<a href="/mura-404-page-not-working-in-iis7-fix-it-in-web-config/">Mura 404 page not working in IIS7 &#8211; fix it in web.config</a>
+									</li>
+											<li>
+					<a href="/free-coldfusion-10-beta-hosting/">Free ColdFusion 10 beta hosting</a>
+									</li>
+											<li>
+					<a href="/remove-spaces-columns-cfspreadsheet/">Removing spaces from columns in cfspreadsheet (or any query)</a>
+									</li>
+											<li>
+					<a href="/online-code-formatters/">Online code formatters</a>
+									</li>
+											<li>
+					<a href="/joining-two-tables-one-id/">Joining to one of two tables with one ID</a>
+									</li>
+											<li>
+					<a href="/formatting-cfgrid-with-javascript/">Formatting CFGRID with JavaScript</a>
+									</li>
+											<li>
+					<a href="/cf-form-array-comma-workaround/">Accessing ColdFusion form values as an array</a>
+									</li>
+											<li>
+					<a href="/loading-fckeditor-dynamically/">Loading CFrichtext / FCKeditor on-the-fly</a>
+									</li>
+											<li>
+					<a href="/url-rewriting-windows-2008-iis7/">Mura URL rewriting on Windows 2008 / IIS7</a>
+									</li>
+					</ul>
+
+		</li>
+<li id="linkcat-2" class="widget widget_links">
+<h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.axelscript.com/" title="AxelScript &#8211; Flex development blog">Axel Jensen</a></li>
+<li><a href="http://jake.cfwebtools.com/" title="ColdFusion/Flex development">Jake Churchill</a></li>
+<li><a href="http://www.coldfusionmuse.com/" title="ColdFusion Muse">Mark Kruger</a></li>
+<li><a href="http://www.henke.ws/" title="ColdFusion, TDD, Ant, Subversion, etc.">Mike Henke</a></li>
+
+	</ul>
+</li>
+
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Donate</h2>
+			<div class="textwidget">If my code has helped you and you'd like give a donation, you can do so using the button below.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="ryan@stillnet.org">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Donation for helpful ColdFusion code">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget">
+<br><br>
+<img src="/wp-content/uploads/2010/01/acp_logo.gif">
+</div>
+		</li>
+			
+		</ul> 
+	</div>
+	</div>
+</div> <!-- wrapper -->
+
+<div id="footer"><div><div><div>
+
+	<a href="/feed/">Entries (RSS)</a> and <a href="/comments/feed/">Comments (RSS)</a>. Valid <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a>.<br>
+
+	Powered by <a href="http://www.wpthemes360.com/">Wordpress Themes</a>. Theme <a href="http://srinig.com/wordpress-themes/evanescence/">Evanescence</a> by <a href="http://srinig.com/">Srini G</a>
+
+	</div></div></div></div>
+
+</div> <!-- page -->
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Book Reviews &#8211; Stillnet Studios</title>
+	<atom:link href="/category/book-reviews/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sat, 09 Oct 2010 01:15:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Great book on usability testing: Rocket Surgery Made Easy</title>
+		<link>/usability-testing-book-review/</link>
+					<comments>/usability-testing-book-review/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 09 Oct 2010 01:14:22 +0000</pubDate>
+				<category><![CDATA[Book Reviews]]></category>
+		<guid isPermaLink="false">/?p=932</guid>
+
+					<description><![CDATA[In a meeting the other day we decided to bring in some of our customers and have them take a look at a new website we are building for them. I immediately thought of this book so I got it and read in a weekend. Rocket Surgery Made Easy by Steve Krug is &#8220;The Do-it-Yourself [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p><a href="http://www.amazon.com/dp/0321657292"><img decoding="async" style="margin-right: 15px; margin-bottom: 35px;" border: 0px; src="http://img.usabilitypost.com/books/rocketsurgery_large.jpg" align="left" /></a>In a meeting the other day we decided to bring in some of our customers and have them take a look at a new website we are building for them.  I immediately thought of this book so I got it and read in a weekend.  <a href="http://www.amazon.com/dp/0321657292"><em>Rocket Surgery Made Easy</em></a> by Steve Krug is &#8220;The Do-it-Yourself Guide to Finding and Fixing Usability Problems&#8221;.  I love one of Steve&#8217;s other books, <a href="/dont-make-me-think/"><em>Don&#8217;t Make Me Think</em></a> which is a great primer on building interfaces with good usability.</p>
+<p><em>Rocket Surgery Made Easy</em> is a short, easy read, just my kind of book.  After reading this book I felt I was ready to sit down with a user and get feedback from them on our site.  Steve is a veteran in doing usability testing and he imparts his wisdom in a easy to absorb way. </p>
+<p>Three big take-aways from this book are:<br />
+&#8211; How to test any design, on a web page or hand drawn.<br />
+&#8211; How to find the most important problems<br />
+&#8211; And how to fix the problems you&#8217;ve found, using his &#8220;The least you can do&#8221; approach.</p>
+<p>If you don&#8217;t have any experience in usability testing, but find yourself needing to do so, this is the book for you.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/usability-testing-book-review/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>New ColdFusion book &#8211; Adobe ColdFusion Anthology</title>
+		<link>/new-book-coldfusion-anthology/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 30 Jun 2010 03:15:44 +0000</pubDate>
+				<category><![CDATA[Book Reviews]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=853</guid>
+
+					<description><![CDATA[We have a new ColdFusion book! The CF community has not been blessed with an abundency of printed materials, so I was excited when I heard this book was coming out. Adobe ColdFusion Anthology is a compilation of Fusion Authority Quarterly Update articles. FAQU is a great publication that has contributions from many smart ColdFusion [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>We have a new ColdFusion book!  The CF community has not been blessed with an abundency of printed materials, so I was excited when I heard this book was coming out.  <i>Adobe ColdFusion Anthology</i> is a compilation of Fusion Authority Quarterly Update articles.  FAQU is a great publication that has contributions from many smart ColdFusion developers.</p>
+<p>This book is 476 and covers a lot of interesting things.  I&#8217;ve been using CFCs for years but I learned some new things in Michael Dinowitz&#8217;s chapters on Components.  There are articles on all the major frameworks, there is even one on the new FW/1 framework.</p>
+<p>Pete Freitag has a good article on image processing that also covers creating your own captchas.  Did you know ColdFusion can read EXIF data?!</p>
+<p>I also found John Mason&#8217;s article on BlazeDS interesting since I&#8217;ve never used BlazeDS before.  I&#8217;ve always been confused about the differences between BlazeDS and LiveCycle Data Services, and this article helped clear some of that up.</p>
+<p>This isn&#8217;t a beginner book, I&#8217;ll bet every CF developer out there could learn a few things from this book.  Also they&#8217;ve done a nice job with the editing, everything is clearly explained. </p>
+<p><a href="http://www.amazon.com/dp/1430272155/"><img decoding="async" loading="lazy" src="/wp-content/uploads/2010/06/adobe_coldfusion_anthology.gif" alt="Adobe ColdFusion Anthology" title="Adobe ColdFusion Anthology" width="125" height="165" class="size-full wp-image-856" /></a><br />
+<a href="http://www.amazon.com/dp/1430272155/">http://www.amazon.com/dp/1430272155/</a></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Book review: More Joel on Software</title>
+		<link>/book-review-more-joel-on-software/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 29 Mar 2009 04:00:37 +0000</pubDate>
+				<category><![CDATA[Book Reviews]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=339</guid>
+
+					<description><![CDATA[I just finished one of the books I received for Christmas, More Joel on Software by Joel Spolsky. This book is the 2nd compilation of blog articles from Joel&#8217;s popular software development blog. I really enjoyed this book. I was surprised how often Joel had me laughing out loud, he really is a good writer. [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I just finished one of the books I received for Christmas, <em><a href="http://www.amazon.com/dp/1430209879">More Joel on Software</a></em> by Joel Spolsky.  This book is the 2nd compilation of blog articles from Joel&#8217;s popular software development <a href="http://www.joelonsoftware.com/">blog</a>.</p>
+<p>I really enjoyed this book.  I was surprised how often Joel had me laughing out loud, he really is a good writer.  The book is broken down into nine sections.</p>
+<p><a href="/wp-content/uploads/2009/03/more_joel_on_software.jpg"><img decoding="async" loading="lazy" align="right" style="padding-right:20px;" src="/blog/wp-content/uploads/2009/03/more_joel_on_software-199x300.jpg" alt="" title="More Joel on Software" width="199" height="300" class="alignnone size-medium wp-image-342" srcset="/wp-content/uploads/2009/03/more_joel_on_software-199x300.jpg 199w, /wp-content/uploads/2009/03/more_joel_on_software.jpg 333w" sizes="(max-width: 199px) 100vw, 199px" /></a></p>
+<ul>
+<li>Managing People</li>
+<li>Advice to Potential Programmers</li>
+<li>The Impact of Design</li>
+<li>Managing Large Projects</li>
+<li>Programming Advice</li>
+<li>Starting a Software Business</li>
+<li>Running a Software Business</li>
+<li>Releasing Software</li>
+<li>Revising Software</li>
+</ul>
+<p>Joel has a lot of experience in programming and in running a software business, and has lots of interesting stories to tell.  In fact chapter one is titled <em>My First BillG Review</em>, its a story about Joel&#8217;s first meeting with Bill Gates, where Bill reviewed Joel&#8217;s 500 page spec on Excel Basic.</p>
+<p>Joel covers a lot of interesting topics, including finding and keeping great developers, different management styles, running a software business, and revising code.</p>
+<p>I especially liked his thoughts on estimating.  He uses something called <a href="http://www.joelonsoftware.com/items/2007/10/26.html">Evidence Based Scheduling</a>. EBS is a system where you keep track of estimated hours vs actual hours.  The math gets a little complicated, you can read about in detail on Joel&#8217;s site (or the book), but basically its a way to accurately estimate projects.  Regardless of if the developer estimating tends to over or under estimate, the formula works all this out.  It sounds like a really neat system.  Joel&#8217;s popular project management software <a href="http://www.fogcreek.com/FogBugz/">FogBugz</a> supports EBS.</p>
+<p>All the content of the book is available on his blog for free, but it is nicely organized in the book and it has some updates.  Its a bargain at <a href="http://www.amazon.com/dp/1430209879">$16 on Amazon</a>, and I enjoy reading stuff like this in book format rather than on a computer screen.  This is a book that I will be hanging on to.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Book review: Don&#8217;t Make Me Think!</title>
+		<link>/dont-make-me-think/</link>
+					<comments>/dont-make-me-think/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 07 Sep 2008 23:28:31 +0000</pubDate>
+				<category><![CDATA[Book Reviews]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/09/07/dont-make-me-think/</guid>
+
+					<description><![CDATA[I had heard of this book a few years ago, and have had it on my Amazon wishlist for some time. So when fellow ColdFusion programmer Mike Henke offered me a copy, I quickly accepted. Steve Krug&#8217;s Don&#8217;t Make Me Think! A Common Sense Approach to Web Usability is a short read, designed to be [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I had heard of this book a few years ago, and have had it on my Amazon wishlist for some time.  So when fellow ColdFusion programmer <a href="http://www.henke.ws/">Mike Henke</a> offered me a copy, I quickly accepted.  Steve Krug&#8217;s <em>Don&#8217;t Make Me Think! A Common Sense Approach to Web Usability</em> is a short read, designed to be read in under 4 hours.<br />
+<span id="more-110"></span><br />
+My quick take: it definitely deserves the 4.5/5 stars its rated on Amazon.</p>
+<p>The first part of the book explains how to eliminate those things in a user interface (on a website) that may cause the user to pause and think for a minute.  Things like not clearly labeling the search box, not making links underlined, not making buttons clearly &#8220;clickable&#8221;, etc.  The web has been around long enough that conventions have begun to develop.  When a website deviates from this, the user has to spend a few milliseconds (ok, seconds on some sites) figuring it out.  All this time adds up, and if it crosses a threshold, the user may just look elsewhere.</p>
+<p>I mentioned clearly labeling the search box.  Steve recommends that a search box be on nearly every page, and just be labeled &#8220;Search&#8221;.  A little looking around on the web will find some sites label their search box &#8220;Find&#8221;, &#8220;Keywords&#8221;, things like that.  One thing that confuses me sometimes is sites that put some type of &#8220;subscribe&#8221; box in the sidebar on every page.  This little text box with a small submit button easily passes for a search box when I&#8217;m not paying attention, and I often end up subscribing my keywords to a newsletter.</p>
+<p>We all know that users don&#8217;t really read pages, they skim them.  Because of this Steve says we need to be designing billboards, not documents.  We need to design our pages to create a visual hierarchy.   A newspaper does a great job at this.  You can clearly see which headlines, photos, and text are related to each other.  Here are the main points I got from the billboards chapter:</p>
+<ul>
+<li>Create a visual hierarchy (think newspaper)</li>
+<li>Things that are related logically should be related visually</li>
+<li>Break the page up into clearly defined areas</li>
+<li>Make it obvious what is clickable</li>
+<li>Keep the &#8220;noise&#8221; down (there is a chapter on &#8220;noise&#8221;, or needless words)</li>
+</ul>
+<p>Steve makes a point that every page should have a page name, or header or title, whatever you want to call it.  Its important to have this title closely (exactly most of the time) coincide with the navigation link that was used to reach this page.  One thing I&#8217;ll add is that the page name should be reflected in the title tag, too.  This way the browser window title in the operating system or the tab tool tip within the browser will reflect the page that the user is on.  I run into this a lot in a web based tool I use every day, it doesn&#8217;t have the client name in the title and I&#8217;m always looking to the window/tab name for some reason to see what client I&#8217;m editing &#8211; but it doesn&#8217;t tell me.</p>
+<p>Breadcrumbs a very valuable navigation tool.  They make a great accessory, but should never be the primary navigation system.  Users often don&#8217;t enter a site from the home page anymore, they usually jump in from a google search result or a blog or something.  When I&#8217;m searching for mittens, and I end up on a page selling red seal skin mittens, its nice to be able to use the breadcrumbs to quickly see where I&#8217;m at, and be able to jump up in to the mittens category to see all the available mittens.</p>
+<p>Another note about breadcrumbs &#8211; they work well at the <em>very</em> top of the page.  This way they won&#8217;t be confused with anything else, like the page header.</p>
+<p>Another one of Steve&#8217;s ideas I liked was his list of important questions a site&#8217;s &#8220;homepage&#8221; needs to answer.</p>
+<ul>
+<li>What <em>is</em> this?</li>
+<li>What do they have here?</li>
+<li>What can I do here?</li>
+<li>Why should I be here, and not somewhere else?</li>
+</ul>
+<p>I think this is especially important for things like user groups and clubs.  Sometimes I come across a user group, club, church, or other local organization website and I have a hard time even tracking down what part of the country they are located in.  We need to remember that we are not designing websites for ourselves!</p>
+<p>There are really a lot more great ideas I could add here, but I&#8217;ll stop now and just say that this book should definitely be in the library of any web developer who works with UI.</p>
+<p>The last section of the book covers how to do user testing inexpensively on your own.</p>
+<p><a href="http://www.amazon.com/Dont-Make-Me-Think-Usability/dp/0321344758/ref=ed_oe_p"><br />
+<img decoding="async" id="image111" style="border: 1px solid grey;" src="/wp-content/uploads/2008/09/dontmakemethink.jpg" alt="Don't Make Me Think - by Steve Krug" /></a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/dont-make-me-think/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Book Review: My Job Went to India</title>
+		<link>/book-review-my-job-went-to-india/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sat, 05 Jul 2008 22:54:30 +0000</pubDate>
+				<category><![CDATA[Book Reviews]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2008/07/05/book-review-my-job-went-to-india/</guid>
+
+					<description><![CDATA[Despite the alarmist title, I loved this book. The author, Chad Fowler, spent a year and a half in India setting up his company&#8217;s new software development center. Chad&#8217;s task was to interview and select 25 people who would form the &#8220;seed team&#8221; of a development shop that would eventually employ 250 people. The book [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p><a href="http://www.amazon.com/gp/product/0976694018"><img decoding="async" align="left" border="0" id="image104" src="/wp-content/uploads/2008/07/job_went_to_india.jpg" alt="My Job Went to India - book cover" /></a>Despite the alarmist title, I loved this book. The author, Chad Fowler, spent a year and a half in India setting up his company&#8217;s  new software development center.  Chad&#8217;s task was to interview and select 25 people who would form the &#8220;seed team&#8221; of a development shop that would eventually employ 250 people.  The book contains his thoughts on the steps you need to take to ensure your job is not one of the many IT jobs that are moving over seas.  Because of his experience there he is in a good position to expound on the differences between IT services performed here and abroad.</p>
+<p>There are 52 bite sized chapters that are usually around 2-4 pages each.  Its very easy to get through this book, the small chapters make it easy to read just a few pages whenever you can find time.  Most chapters end with an &#8220;Act on It!&#8221; section where Chad gives you a short list action items that will help you implement the topic of the chapter.</p>
+<p>Some of my favorite chapters are:<br />
+<span id="more-103"></span><br />
+<strong>Chapter 2, <em>Coding Don&#8217;t Cut it Anymore</em></strong><br />
+This chapter discusses that we need to be more than &#8220;just programmers&#8221;, we need to have an understanding of the business we work in.  For example, if you work for Enterprise, you&#8217;ll be a more successful programmer/DBA/whatever if you have an understanding of the vehicle rental business.  I&#8217;ve experienced this personally at CF WebTools.  Several of the developers here have previous experience working at a company that provides financial data.  This has given us an edge in gaining several clients that have financial based websites.</p>
+<p><strong>Chapter 5, <em>Be a Generalist</em></strong>, expands on the &#8220;not just a programmer&#8221; theme.  General programming jobs (here&#8217;s the design, now make code out of it) will be the likely jobs outsourced.  It&#8217;s wise to invest time in learning database administration, server operating systems, interface design, etc.</p>
+<p><strong>Chapter 16, <em>On the Shoulders of Giants</em></strong><br />
+This one talks about learning from the leaders in your profession.  Read their blogs, download their code and go through it, and join them in conversation at conferences.  A side benefit of this is when you need a particular piece of functionality in your app, you may be able to contribute &#8211; &#8220;I saw that so and so already has a component out there to do that, lets use it and save us ourselves some time.&#8221;  Closely related is chapter 41, <em>Making the Hang</em>, which goes into more detail about the benefits of getting to know the key players in your chosen technology.</p>
+<p>The last third of the book is about marketing yourself, specifically in how you deal with customers, managers and coworkers.  There was some great stuff here.</p>
+<p>Overall this is one of my favorite career books, and I&#8217;m looking forward to reading it again.</p>
+<p>The book is very reasonably priced, and available at <a href="http://www.amazon.com/gp/product/0976694018">Amazon.com</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Book Review &#8211; Apache Security</title>
+		<link>/book-review-apache-security/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 12 Oct 2007 00:38:20 +0000</pubDate>
+				<category><![CDATA[Book Reviews]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/2007/10/11/book-review-apache-security/</guid>
+
+					<description><![CDATA[A few months ago I decided to go on a book binge and acquired a stack of books about two feet tall. It includes classics such as The Pragmatic Progammer and Practices of an Agile Developer, as well as some on Java, Asterisk, Extreme Programming, Linux Firewalls, and a NASCAR book thrown in for good [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A few months ago I decided to go on a book binge and acquired a stack of books about two feet tall. It includes classics such as <a href="http://www.amazon.com/dp/020161622X">The Pragmatic Progammer</a> and <a href="http://www.amazon.com/dp/097451408X/">Practices of an Agile Developer</a>, as well as some on Java, <a href="http://www.oreilly.com/catalog/9780596510480/">Asterisk</a>, <a href="http://www.amazon.com/dp/0672324415/">Extreme Programming</a>, <a href="http://www.amazon.com/dp/0764524631/">Linux Firewalls</a>, and a NASCAR book thrown in for good measure.</p>
+<p>I&#8217;ve gotten through a couple, and will be posting reviews of a few of them.  This week I finished <a href="http://www.amazon.com/dp/0596007248/">Apache Security</a>, from O&#8217;Reilly.  I found this book while browsing the programming section of Borders (the programming section of my local Borders is amazing!), and I&#8217;ve found it to be a real gem.<br />
+<span id="more-66"></span><br />
+The book covers so much more than just Apache security.  It covers installation and configuration, and explains a little of how Apache works along the way.  There are also chapters or sections on:</p>
+<p>&#8211; Understanding and securing PHP<br />
+&#8211; An explanation of SSL<br />
+&#8211; DOS attacks<br />
+&#8211; Traffic shaping in Apache<br />
+&#8211; Logging is covered extensively<br />
+&#8211; There&#8217;s a chapter on web security in general, where all the common attacks are explained<br />
+&#8211; Using Apache as a proxy or a reverse proxy</p>
+<p>I especially enjoyed the <em>Web Security Assessment</em> chapter where the author explained how to systematically analyze and probe web applications/servers, with many real world examples.</p>
+<p>There is a large section discussing mod_security, which is an amazing Apache module. Mod_security is an intrusion detection and prevention engine for web applications (a web application firewall).  The book is written by the author of mod_security (Ivan Ristic), so he really knows what he&#8217;s talking about in this area.  Also covered is mod_dosevasive, which, obviously helps prevent against denial of service attacks.</p>
+<p>I would not hesitate to recommend this book to any Apache administrator, user, or web programmer.</p>
+<p><a href="http://www.amazon.com/dp/0596007248/" title="Apache Security book cover"><img decoding="async" id="image67" src="/wp-content/uploads/2007/10/apachesecurity.jpg" alt="Apache Security book cover" style="border: 1px solid black;" /></a></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

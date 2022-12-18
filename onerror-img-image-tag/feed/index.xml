@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Did you know about the onerror attribute of the img tag?	</title>
+	<atom:link href="/onerror-img-image-tag/feed/" rel="self" type="application/rss+xml" />
+	<link>/onerror-img-image-tag/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 15 Jan 2013 21:56:28 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Wayne		</title>
+		<link>/onerror-img-image-tag/comment-page-1/#comment-3547</link>
+
+		<dc:creator><![CDATA[Wayne]]></dc:creator>
+		<pubDate>Tue, 15 Jan 2013 21:56:28 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1162#comment-3547</guid>
+
+					<description><![CDATA[Just read: http://jquery-howto.blogspot.de/2013/01/8-methods-that-will-not-work-in-jquery.html
+
+.error() added in v1.0, deprecated in v1.8. Not to be confused with $.error() method, that throws new Error(msg);]]></description>
+			<content:encoded><![CDATA[<p>Just read: <a href="http://jquery-howto.blogspot.de/2013/01/8-methods-that-will-not-work-in-jquery.html" rel="nofollow ugc">http://jquery-howto.blogspot.de/2013/01/8-methods-that-will-not-work-in-jquery.html</a></p>
+<p>.error() added in v1.0, deprecated in v1.8. Not to be confused with $.error() method, that throws new Error(msg);</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dominic Watson		</title>
+		<link>/onerror-img-image-tag/comment-page-1/#comment-3402</link>
+
+		<dc:creator><![CDATA[Dominic Watson]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 19:53:56 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1162#comment-3402</guid>
+
+					<description><![CDATA[Awesome, I had no idea, thanks for the tip. The jquery example here suggests that the src attribute of the image would need / want to be dynamically attached to the image element after attaching your error handler (so that the handler will always fire) if using .error():
+
+http://api.jquery.com/error/
+
+I couldn&#039;t get $(&#039;img&#039;).on( &#039;error&#039;, function(){...}) to fire because it was too late. jQuery suggest:
+
+$(&#039;#myimage&#039;).error( handler ).attr( &#039;src&#039;, &#039;/path/to/the/image.jpg&#039; );
+
+Which is a shame.]]></description>
+			<content:encoded><![CDATA[<p>Awesome, I had no idea, thanks for the tip. The jquery example here suggests that the src attribute of the image would need / want to be dynamically attached to the image element after attaching your error handler (so that the handler will always fire) if using .error():</p>
+<p><a href="http://api.jquery.com/error/" rel="nofollow ugc">http://api.jquery.com/error/</a></p>
+<p>I couldn&#8217;t get $(&#8216;img&#8217;).on( &#8216;error&#8217;, function(){&#8230;}) to fire because it was too late. jQuery suggest:</p>
+<p>$(&#8216;#myimage&#8217;).error( handler ).attr( &#8216;src&#8217;, &#8216;/path/to/the/image.jpg&#8217; );</p>
+<p>Which is a shame.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/onerror-img-image-tag/comment-page-1/#comment-3396</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 16:34:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1162#comment-3396</guid>
+
+					<description><![CDATA[Nathan that&#039;s neat, I&#039;ve read that you can do it that way. But I&#039;m still surprised it works. I would think that sometimes the error event would fire before jQuery had added the handler to those elements? But I may not be completely understanding the order of execution.]]></description>
+			<content:encoded><![CDATA[<p>Nathan that&#8217;s neat, I&#8217;ve read that you can do it that way. But I&#8217;m still surprised it works. I would think that sometimes the error event would fire before jQuery had added the handler to those elements? But I may not be completely understanding the order of execution.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nathan Strutz		</title>
+		<link>/onerror-img-image-tag/comment-page-1/#comment-3395</link>
+
+		<dc:creator><![CDATA[Nathan Strutz]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 16:30:37 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1162#comment-3395</guid>
+
+					<description><![CDATA[That&#039;s awesome. Why have I never seen that before? Thanks! I just experimented a bit with it, and it looks like you can do this more automatically with some jQuery. I don&#039;t know how well this will print out on your blog comments, but...
+
+$(&quot;img&quot;).on(&quot;error&quot;, function(e){
+    this.src=&quot;imageDoesNotExist.png&quot;;
+});
+
+That lets you leave off the onerror= event from your HTML elements. Thanks again, Ryan!]]></description>
+			<content:encoded><![CDATA[<p>That&#8217;s awesome. Why have I never seen that before? Thanks! I just experimented a bit with it, and it looks like you can do this more automatically with some jQuery. I don&#8217;t know how well this will print out on your blog comments, but&#8230;</p>
+<p>$(&#8220;img&#8221;).on(&#8220;error&#8221;, function(e){<br />
+    this.src=&#8221;imageDoesNotExist.png&#8221;;<br />
+});</p>
+<p>That lets you leave off the onerror= event from your HTML elements. Thanks again, Ryan!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris Tierney		</title>
+		<link>/onerror-img-image-tag/comment-page-1/#comment-3394</link>
+
+		<dc:creator><![CDATA[Chris Tierney]]></dc:creator>
+		<pubDate>Tue, 08 Jan 2013 16:17:28 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1162#comment-3394</guid>
+
+					<description><![CDATA[Excellent tip. Thanks Ryan!]]></description>
+			<content:encoded><![CDATA[<p>Excellent tip. Thanks Ryan!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

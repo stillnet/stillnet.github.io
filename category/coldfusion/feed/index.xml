@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ColdFusion &#8211; Stillnet Studios</title>
+	<atom:link href="/category/coldfusion/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 20 Feb 2013 00:26:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Accessing form fields as an array in CF10</title>
+		<link>/coldfusion-formfield-as-array-cf10/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 20 Feb 2013 00:20:44 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1189</guid>
+
+					<description><![CDATA[A while back I wrote a post about accessing form fields in ColdFusion as an array. This is useful when you have several fields with the same name, and there is a chance they could contain a comma. Working with the data as an array is much more robust. But after updating to CF10 I [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A while back I wrote a post about accessing form fields in ColdFusion <a href="/cf-form-array-comma-workaround/">as an array</a>. This is useful when you have several fields with the same name, and there is a chance they could contain a comma. Working with the data as an array is much more robust.</p>
+<p>But after updating to CF10 I realized this didn&#8217;t work anymore! I was surprised, since I thought the getPageContext() stuff was pretty standard, and not undocumented. So anyway I&#8217;ve rewritten my function to work in CF10. The code is much simpler now.</p>
+<pre><code>&lt;cffunction name="formFieldAsArray" returntype="array" output="false" hint="Returns a Form/URL variable as an array."&gt;
+	&lt;cfargument name="fieldName" required="true" type="string" hint="Name of the Form or URL field" /&gt;
+	
+	&lt;cfset var content = getHTTPRequestData().content /&gt;
+	&lt;cfset var returnArray = arrayNew(1) /&gt;
+	
+	&lt;cfloop list="#content#" delimiters="&amp;" index="local.parameter"&gt;
+		&lt;cfif listFirst(local.parameter,"=") EQ arguments.fieldName&gt;
+			&lt;cfif ListLen(local.parameter,"=") EQ 2&gt;
+				&lt;cfset arrayAppend(returnArray,URLDecode(listLast(local.parameter,"="))) /&gt;
+			&lt;cfelse&gt;
+				&lt;cfset arrayAppend(returnArray,"") /&gt;
+			&lt;/cfif&gt;
+		&lt;/cfif&gt;
+	&lt;/cfloop&gt;
+	
+	&lt;cfreturn returnArray /&gt;
+
+&lt;/cffunction&gt;</code></pre>
+<p>You may have heard about the new <strong><a href="http://www.raymondcamden.com/index.cfm/2012/6/19/ColdFusion-10-Missing-Feature--Form-Fields-and-Arrays">sameformfieldsasarray</a></strong> setting in CF10. This is another option. But it is application-wide. That is, anytime you have form fields with the same name they will come through as an array. This may or may not work for you. In my application, enabling that would break a lot of code so I wrote this separate function to handle when I need the values as an array.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Using DateConvert to get a UTC timestamp may not return what you expect</title>
+		<link>/dateconvert-utc-not-what-you-expect/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 13 Dec 2012 18:57:56 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1143</guid>
+
+					<description><![CDATA[I ran into an interesting issue today. Our database timestamps are all stored in UTC. So when a user runs a report from a webpage, we convert the time they entered into a UTC timestamp. If we didn&#8217;t do this, the report may miss some records. For example, a customer buys a product at 11:00pm [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I ran into an interesting issue today. Our database timestamps are all stored in UTC. So when a user runs a report from a webpage, we convert the time they entered into a UTC timestamp. If we didn&#8217;t do this, the report may miss some records.</p>
+<p>For example, a customer buys a product at 11:00pm our time on the 1st of the month. The timestamp in the database for this record will be 5:00am on the <em>2nd</em>, since we are -6 hours from UTC here in the Central timezone.</p>
+<p>So we modify timestamps in our reporting queries like this:</p>
+<pre><code>...  WHERE
+order.createDate &gt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.startDate)#" cfsqltype="cf_sql_timestamp"&gt;
+AND
+order.createDate &lt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.endDate)#" cfsqltype="cf_sql_timestamp"&gt;</code></pre>
+<p>There is an issue with this in CF10. Take this code:</p>
+<pre><code>&lt;cfset arguments.startDate = CreateDateTime(2012,1,1,00,00,00) /&gt;
+&lt;cfquery&gt;
+...
+WHERE order.createDate &gt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.startDate)#" cfsqltype="cf_sql_timestamp"&gt;
+....
+&lt;/cfquery&gt;
+&lt;cflog text="I think I passed #DateConvert('local2utc', arguments.startDate)# to the database" /&gt;</code></pre>
+<p>If you look in your log you&#8217;ll see <code>I think I passed {ts '2012-01-02 6:00:00'} to the database</code> (since I am -6 from UTC). But if you look in the debugging information for this query, or use SQL Server Profiler to view it, you&#8217;ll see it gets sent to the database as <b>2012-01-01 00:00:00:000</b>!<br />
+<span id="more-1143"></span><br />
+My guess is that the DateConvert() method doesn&#8217;t actually change the value. Instead it does something like adjust the timezone or offset inside the date object. And I think the cfqueryparam tag isn&#8217;t paying attention to whatever DateConvert has changed. I further confirmed this by trying to add .toString() on the method result, inside the cfqueryparam tag. This causes the expected behavior.</p>
+<p>After tracking this down my coworker Jason Troy discovered there is a bug report for this already. From reading through these bug reports it doesn&#8217;t sound like Adobe is going to make any changes, however. They do point out that you can set this JVM argument to return to the previous behavior of CF9: <code>-Dcoldfusion.preserveTimeZoneOnPersist=true</code>.</p>
+<p>More info:<br />
+<a href="https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3338974">https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3338974</a><br />
+<a href="https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3347145">https://bugbase.adobe.com/index.cfm?event=bug&#038;id=3347145</a></p>
+<p>So for now what I&#8217;ve done is change my code to this:</p>
+<pre><code>...  WHERE
+order.createDate &gt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.startDate)<strong style="color: red;">.toString()</strong>#" cfsqltype="cf_sql_timestamp"&gt;
+AND
+order.createDate &lt; &lt;cfqueryparam value="#DateConvert('local2utc', arguments.endDate)<strong style="color: red;">.toString()</strong>#" cfsqltype="cf_sql_timestamp"&gt;</code></pre>
+<p>You may wonder what&#8217;s the reason for this change in behavior? It&#8217;s alluded to in the bug reports above. I think there is a different way we are supposed to be doing this now, I haven&#8217;t got it completely figured out yet. One of the bug report comments from <a href="http://www.adobe.com/devnet/author_bios/himavanth-rachamsetty.html">Himavanth Rachamsetty</a>, who is on ColdFusion team, says this:</p>
+<blockquote><p>The current CF 10 behavior included in the update 4 is correct because when you move the time from one timezone to another, date.getTime() should not change at all.<br />
+The way date object is defined in Java, the time elapsed since Epoch should not change at all no matter which timezone the date is in. CF 9 and the earlier versions were violating this definition of Java date and were changing the time elapsed since epoch. This caused few issues which we fixed in CF 10.<br />
+When the date is persisted and retrieved from DB, the JVM automatically converts it back to local timezone. While retrieving a date, we don’t have any mechanism to find out that a date was converted to UTC when it was first inserted and therefore we would not be able to do any conversion ourselves. It is actually the application&#8217;s responsibility to convert the date/time to appropriate timezone after it is retrieved. Another option to work with date and DB is &#8211; you always store date as string in DB and when it is retrieved, convert it back to date.<br />
+Since this change of behavior in CF 10 could break a lot of applications, we have fixed this by introducing a flag so that the applications can run without any issues. Since this flag changes the way date is defined in Java, we will keep it disabled by default.</p></blockquote>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Getting the client filename before using cffile</title>
+		<link>/get-filename-before-calling-cffile/</link>
+					<comments>/get-filename-before-calling-cffile/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 04 Dec 2012 06:41:47 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<guid isPermaLink="false">/?p=1132</guid>
+
+					<description><![CDATA[When accepting uploads from a browser, it can sometimes be handy to have access to the filename before using CFFILE to &#8220;upload&#8221; the file onto the file system. For example say you want to show an error message if the file is not a PDF. In that case what I&#8217;ve usually done is use CFFILE [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When accepting uploads from a browser, it can sometimes be handy to have access to the filename before using CFFILE to &#8220;upload&#8221; the file onto the file system. For example say you want to show an error message if the file is not a PDF. In that case what I&#8217;ve usually done is use CFFILE to place the file onto the file system, and then check the extension. If its not in my allowed list, then I delete the file and send an error message to the client. But using the code below I can check the file extension without having to use CFFILE first. For example you could do something like this:</p>
+<pre><code>&lt;cfset theClientFilename = getClientFileName("myFormField")&gt;
+&lt;cfif ListLast(theClientFilename,".") NEQ "pdf"&gt;
+   // do your error handling here
+&lt;cfelse&gt;
+  // else the extension is ok. Use cffile to handle the upload and proceed
+&lt;/cfif&gt;</code></pre>
+<p>Here is the getClientFileName function,  both in cfscript and regular tag formats.<br />
+<span id="more-1132"></span></p>
+<pre><code>&lt;cfscript&gt;
+function getClientFileName(fieldName) {
+	var tmpPartsArray = Form.getPartsArray();
+	var clientFileName = "";
+
+	if (IsDefined("tmpPartsArray")) {
+		for (local.tmpPart in tmpPartsArray) {
+			if (local.tmpPart.isFile() AND local.tmpPart.getName() EQ arguments.fieldName) {
+				return local.tmpPart.getFileName();
+				}
+			}
+		}
+	
+	return "";
+	}
+&lt;/cfscript&gt;</code></pre>
+<pre><code>&lt;cffunction name="getClientFileName" returntype="string" output="false" hint=""&gt;
+	&lt;cfargument name="fieldName" required="true" type="string" hint="Name of the Form field" /&gt;
+
+	&lt;cfset var tmpPartsArray = Form.getPartsArray() /&gt;
+
+	&lt;cfif IsDefined("tmpPartsArray")&gt;
+		&lt;cfloop array="#tmpPartsArray#" index="local.tmpPart"&gt;
+			&lt;cfif local.tmpPart.isFile() AND local.tmpPart.getName() EQ arguments.fieldName&gt; <!---   --->
+				&lt;cfreturn local.tmpPart.getFileName() /&gt;
+			&lt;/cfif&gt;
+		&lt;/cfloop&gt;
+	&lt;/cfif&gt;
+	
+	&lt;cfreturn "" /&gt;
+&lt;/cffunction&gt;</code></pre>
+<p>I wrote and tested this on CF10, but it will probably work all the way back to CF7. I tried this on Railo and it did <b>not</b> work, it errored on the getPartsArray() method. If you need to do this on Railo, this code will work (tested on 4.0.2): <code>GetPageContext().formScope().getUploadResource("myFormField").getName()</code></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/get-filename-before-calling-cffile/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Free ColdFusion 10 beta hosting</title>
+		<link>/free-coldfusion-10-beta-hosting/</link>
+					<comments>/free-coldfusion-10-beta-hosting/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 05 Mar 2012 03:47:22 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1101</guid>
+
+					<description><![CDATA[Wanting to try out the new ColdFusion 10 beta without downloading and installing it? Hostek is offering free CF 10 beta hosting. You&#8217;ll get 5GB of storage space, and 200GB of transfer. Plenty of resources to play around with. You&#8217;ll get your own subdomain to use, and access to a MySQL database. Get it here: [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Wanting to try out the new ColdFusion 10 beta without downloading and installing it? Hostek is offering free CF 10 beta hosting. You&#8217;ll get 5GB of storage space, and 200GB of transfer. Plenty of resources to play around with. You&#8217;ll get your own subdomain to use, and access to a MySQL database.</p>
+<p>Get it here: <a href="http://hostek.com/hosting/coldfusion/coldfusion10-hosting.asp">http://hostek.com/hosting/coldfusion/coldfusion10-hosting.asp</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/free-coldfusion-10-beta-hosting/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Removing spaces from columns in cfspreadsheet (or any query)</title>
+		<link>/remove-spaces-columns-cfspreadsheet/</link>
+					<comments>/remove-spaces-columns-cfspreadsheet/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2011 02:33:07 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1086</guid>
+
+					<description><![CDATA[I love the CFSPREADSHEET tag that was added to ColdFusion9. It makes working with spread sheet data so easy. The spreadsheets I am given to work with often contain descriptive column names that contain spaces like &#8220;First Name&#8221; or &#8220;Home Phone&#8221;. This causes a problem when you try to work with the data in a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I love the CFSPREADSHEET tag that was added to ColdFusion9. It makes working with spread sheet data so easy. The spreadsheets I am given to work with often contain descriptive column names that contain spaces like &#8220;First Name&#8221; or &#8220;Home Phone&#8221;. This causes a problem when you try to work with the data in a QoQ (query of a query).</p>
+<p>Lets say you have a spread sheet containing these columns: Name, City, State, Postal Code. Then pull it into a query using the cfspreadsheet tag:<br />
+<code>&lt;cfspreadsheet action="read" src="c:\Customers.xls" query="customers" headerrow="1" rows="2-65536" sheetname="Customers"&gt;</code></p>
+<p>Now try to narrow down the results to only those in a certain postal code. This won&#8217;t work of course:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE [Postal Code] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>Neither will this:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE [Postal\ Code] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>Or this:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE ['Postal Code'] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>I have not found any way to escape a space in a column name inside QoQ. But, thankfully there is a way we can manipulate the column names to remove the space.</p>
+<pre><code>&lt;cfset colNameArray = customers.getColumnNames() /&gt;
+&lt;cfloop from="1" to="#arrayLen(colNameArray)#" index="i"&gt;
+	&lt;cfset colNameArray[i] = colNameArray[i].replace(' ','') /&gt;
+&lt;/cfloop&gt;
+&lt;cfset customers.setColumnNames(colNameArray) /&gt;</code></pre>
+<p>You could use this to completely rename column names if you wanted to. This isn&#8217;t just useful for working with cfspreadsheet either, I could see this being used in other circumstances to change the column names.</p>
+<p>Thanks to <a href="http://www.neiland.net/blog/article/using-java-to-rename-columns-in-a-coldfusion-query-object/" title="Steven Neiland">Steven Neiland</a> for pointing me in this direction.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/remove-spaces-columns-cfspreadsheet/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Formatting CFGRID with JavaScript</title>
+		<link>/formatting-cfgrid-with-javascript/</link>
+					<comments>/formatting-cfgrid-with-javascript/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 14:47:24 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=806</guid>
+
+					<description><![CDATA[A while back I had the need to do some formatting on a cfgrid. I was using a typical product/price table but the prices are stored with 4 decimals and we needed to display that much resolution. The html version of CFGRID does not directly support this. Consider this &#8220;fake&#8221; query set: &#60;cfset materials=QueryNew("ProductCode,Description,Price","VarChar, VarChar, [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>A while back I had the need to do some formatting on a cfgrid. I was using a typical product/price table but the prices are stored with 4 decimals and we needed to display that much resolution. The html version of CFGRID does not directly support this.</p>
+<p>Consider this &#8220;fake&#8221; query set:</p>
+<pre><code>&lt;cfset materials=QueryNew("ProductCode,Description,Price","VarChar, VarChar, decimal")&gt;  
+&lt;cfset Temp=QueryAddRow(materials,1)&gt;
+&lt;cfset Temp=QuerySetCell(materials,"ProductCode","MAT1")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Description","Copper Bar")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Price",<strong>3.3400</strong>)&gt;  
+&lt;cfset Temp=QueryAddRow(materials)&gt;
+&lt;cfset Temp=QuerySetCell(materials,"ProductCode","MAT2")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Description","Feeler Gauge")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Price",<strong>2.2900</strong>)&gt;  
+&lt;cfset Temp=QueryAddRow(materials)&gt;
+&lt;cfset Temp=QuerySetCell(materials,"ProductCode","MAT3")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Description","Plastic Retainer")&gt;  
+&lt;cfset Temp=QuerySetCell(materials,"Price",<strong>1.3201</strong>)&gt;  </code></pre>
+<p>Note the prices have 4 decimal values, this is how they come to us from the database. If you try to display these with this cfgrid code:</p>
+<pre><code>&lt;cfform&gt;
+&lt;cfgrid name="testgrid" format="html" query="materials"&gt;
+&lt;/cfgrid&gt;
+&lt;/cfform&gt;</code></pre>
+<p>You will end up with this:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfgrid-1.png" alt="" title="cfgrid-1" width="302" height="96" class="alignnone size-full wp-image-1014" srcset="/wp-content/uploads/2011/03/cfgrid-1.png 302w, /wp-content/uploads/2011/03/cfgrid-1-300x95.png 300w" sizes="(max-width: 302px) 100vw, 302px" /><br />
+<span id="more-806"></span><br />
+Notice the 3rd material is displayed correctly, but the others are not, we would like them to all have the same number of decimals for consistency. You might think you could use cfgridcolumn tags and the numberformat attribute like this:</p>
+<pre><code>&lt;cfform&gt;
+&lt;cfgrid name="testgrid" format="html" query="materials"&gt;
+	&lt;cfgridcolumn name="ProductCode"&gt;
+	&lt;cfgridcolumn name="Description"&gt;
+	&lt;cfgridcolumn name="Price" numberformat="0.0000"&gt;
+&lt;/cfgrid&gt;
+&lt;/cfform&gt;</code></pre>
+<p>But this will not work, the numberformat attribute only works on Java type cfgrids, not HTML ones. This attempt will silently fail with no error message, leaving you scratching your head for a while.  Lucky for us, ColdFusion creates its grids using the populat EXT JavaScript framework. This means there is a lot of documentation and examples out there on how to work with this code in EXT.  Its pretty easy to hook into the grid with JavaScript and format the data.</p>
+<pre><code>&lt;script&gt;var myFormatter = Ext.util.Format.numberRenderer('.0000');
+mygrid = ColdFusion.Grid.getGridObject('testgrid');
+cm = mygrid.getColumnModel();
+cm.setRenderer(2, myFormatter);  <em>// the 2 here indicates we want to format the 3rd column (JS is zero indexed)</em>
+mygrid.reconfigure(mygrid.getStore(),cm);
+&lt;/script&gt;</code></pre>
+<p>But you can&#8217;t run the JavaScript code when your page loads because the grid takes a few milliseconds to get setup, so if your code runs right away it won&#8217;t find the grid. You could use the JavaScript setTimeout() to delay execution of your code:</p>
+<pre><code>&lt;script language="javaScript"&gt;
+var myFormatter = Ext.util.Format.numberRenderer('.0000');
+formatgrid = function() {
+	mygrid = ColdFusion.Grid.getGridObject('testgrid');
+	cm = mygrid.getColumnModel();
+	cm.setRenderer(2, myFormatter);
+	mygrid.reconfigure(mygrid.getStore(),cm);
+	}
+setTimeout("formatgrid()",500);
+&lt;/script&gt;</code></pre>
+<p>However you would be guessing at how long it will take and its going to vary on each client. I know ColdFusion has the built in ajaxOnLoad function that is supposed to run your code after things like grids have been created, but I have never gotten this to work. I know for sure it won&#8217;t work for content that is loaded secondarily after the base page has finished loading, like many of my pages are. But I can&#8217;t get it work even on a simple test file. So I wrote a little function to watch for the grid, and call the formatting code when the grid exists.</p>
+<pre><code>&lt;script language="javaScript"&gt;
+function lookForGrid() {
+	// keeps checking the page to see if the grid exists yet. When it does, then call the formatter function
+	if (ColdFusion.Grid.getGridObject('testgrid')) {
+		formatgrid();
+		}
+	else {
+		setTimeout(lookForGrid,10);
+		}
+	}
+
+var myFormatter = Ext.util.Format.numberRenderer('.0000');
+formatgrid = function() {
+	mygrid = ColdFusion.Grid.getGridObject('testgrid');
+	cm = mygrid.getColumnModel();
+	cm.setRenderer(2, myFormatter);
+	mygrid.reconfigure(mygrid.getStore(),cm);
+	}
+();
+&lt;/script&gt;</code></pre>
+<p>And this is the result:<br />
+<a href="/wp-content/uploads/2011/03/cfgrid-2.png"><img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfgrid-2.png" alt="cfgrid is now formatted correctly" width="302" height="96" class="alignnone size-full wp-image-1020" srcset="/wp-content/uploads/2011/03/cfgrid-2.png 302w, /wp-content/uploads/2011/03/cfgrid-2-300x95.png 300w" sizes="(max-width: 302px) 100vw, 302px" /></a></p>
+<p>The code could definitely be cleaned up a little, so the grid name isn&#8217;t duplicated at least, but its a good start. There are lots of other formatters available also, we&#8217;ve found the DateRenderer to be useful.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/formatting-cfgrid-with-javascript/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Accessing ColdFusion form values as an array</title>
+		<link>/cf-form-array-comma-workaround/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 22 Mar 2011 13:44:49 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1028</guid>
+
+					<description><![CDATA[When you pass several form or URL variables into ColdFusion with the same name, they end up as a comma separated list. This is commonly done with checkboxes &#8211; a user can check as many items as they want, then they will end up in your code all in a single variable. In many other [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>When you pass several form or URL variables into ColdFusion with the same name, they end up as a comma separated list.  This is commonly done with checkboxes &#8211; a user can check as many items as they want, then they will end up in your code all in a single variable. In many other languages, Ruby or PHP for example, the selected items will end up in an array. Getting these values as a list usually works fine, until one of your values contains the list delimiter (comma).  Take this form, for example:</p>
+<pre><code>&lt;form action="test.cfm" method="post"&gt;
+&lt;p&gt;Select your books:&lt;/p&gt;
+&lt;input type="checkbox" name="books" value="A Wrinkle in Time"&gt;
+A Wrinkle in Time&lt;br&gt;
+&lt;input type="checkbox" name="books" value="A Tale of Two Cities"&gt;
+A Tale of Two Cities&lt;br&gt;
+&lt;input type="checkbox" name="books" value="The Lion, the Witch and the Wardrobe"&gt;
+The Lion, the Witch and the Wardrobe&lt;br&gt;
+&lt;input type="submit" name="submitButton" value="Go"&gt;
+&lt;/form&gt;</code></pre>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/book-form.png" alt="example of the book form" title="book-form" width="272" height="130" class="alignnone size-full wp-image-1036" /></p>
+<p>If you check the first two boxes and submit the form, you will end up with this in the form scope:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfdump-form-1.png" alt="a dump of the form scope shows two books separated by a comma" width="297" height="96" class="alignnone size-full wp-image-1030" /></p>
+<p>But if you check the third book, which has a title containing commas, things start to get messy:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfdump-form-2.png" alt="Dumping the form scope with a book containing commas - you can&#039;t tell them apart." width="486" height="94" class="alignnone size-full wp-image-1031" srcset="/wp-content/uploads/2011/03/cfdump-form-2.png 486w, /wp-content/uploads/2011/03/cfdump-form-2-300x58.png 300w" sizes="(max-width: 486px) 100vw, 486px" /><br />
+<span id="more-1028"></span><br />
+How can you tell the selections apart!?  You can&#8217;t. Now, ideally you should be using an ID for the checkbox values instead of a string. In this example maybe you&#8217;d use the ISBN number instead of the title. But this is not always possible. Sometimes you are receiving a form post from a third party which you have no control over. I&#8217;ve run into situations where the checkbox values contained part numbers, which you would think would be comma-safe, but we did encounter some part numbers that contained commas (don&#8217;t get me started&#8230;)</p>
+<p>But, ColdFusion gives us the power of Java under the hood, and we can reach down into the Java layer to pull out these parameters as a real <em>array</em>! Its very easy:</p>
+<p><code>getPageContext().getRequest().getParameterValues('Your form or url field name')</code></p>
+<p>So lets try it with the &#8216;books&#8217; field:</p>
+<p><code>&lt;cfdump var="#getPageContext().getRequest().getParameterValues('books')#"&gt;</code></p>
+<p>Gives us:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfdump-parameterValues.png" alt="a dump of the getParameterValues() method reveals an array" width="215" height="94" class="alignnone size-full wp-image-1038" /></p>
+<p>Nice! Another interesting method is <code>getParameterMap()</code>. It gives us Form <em>and </em>URL variables, with each variable coming through as its own array. To show this, I&#8217;ve modified the form tag a little to include a URL variable:</p>
+<p><code>&lt;form action="test.cfm?event=someFakeEvent" method="post"&gt;</code></p>
+<p>Here is the output of the getParameterMap() method:<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2011/03/cfdump-parameterMap.png" alt="a dump of the getParameterMap() method" width="302" height="236" class="alignnone size-full wp-image-1039" srcset="/wp-content/uploads/2011/03/cfdump-parameterMap.png 302w, /wp-content/uploads/2011/03/cfdump-parameterMap-300x234.png 300w" sizes="(max-width: 302px) 100vw, 302px" /></p>
+<p>As I was wrapping up this blog post another opportunity arose to use this idea at work. We tried this, but for some reason it wasn&#8217;t working, we always got an undefined value instead of an array. After some research we discovered this way of pulling parameters only works on regular application/x-www-form-urlencoded encoded forms. When you upload files on a form, as we were in this case, you need to use the multipart/form-data enctype. Which renders this nice trick useless.</p>
+<p>But there is another way to get the values as an array when the enctype is set to application/x-www-form-urlencoded. Below is a method that will return a form or URL variable as an array, and it works for either enctype. All values with the given name will be returned, whether they came in on the URL or the Form scope.</p>
+<pre><code>&lt;cffunction name="FormFieldAsArray" returntype="array" output="false" hint="Returns a Form/URL variable as an array."&gt;
+	&lt;cfargument name="fieldName" required="true" type="string" hint="Name of the Form or URL field" /&gt;
+
+	&lt;cfset var tmpPartsArray = Form.getPartsArray() /&gt;
+	&lt;cfset var returnArray = arrayNew(1) /&gt; 
+	&lt;cfset var tmpPart = 0 /&gt;
+	&lt;cfset var tmpValueArray = "" &gt;
+	
+	&lt; !--- if the getPartsArray method did not return NULL, then this is a multipart/form-data request, which must be handled as such. ---&gt;
+	&lt;cfif IsDefined("tmpPartsArray")&gt;
+		&lt;cfloop array="#tmpPartsArray#" index="tmpPart"&gt;
+			&lt;cfif tmpPart.isParam() AND tmpPart.getName() EQ arguments.fieldName&gt;
+				&lt;cfset arrayAppend(returnArray, tmpPart.getStringValue()) /&gt;
+			&lt;/cfif&gt;
+		&lt;/cfloop&gt;
+	&lt;/cfif&gt;
+	
+	&lt; !--- Add the values that maybe on the URL with the same name, also if this *wasn't* a multipart/form-data request then
+	the above code did not get any of the data, and the method below will return all of it. ---&gt;
+	&lt;cfset tmpValueArray = getPageContext().getRequest().getParameterValues(arguments.fieldName) /&gt;
+	
+	&lt; !--- that may have returned null, so need to test for it. ---&gt;
+	&lt;cfif IsDefined("tmpValueArray")&gt;
+		&lt;cfloop array="#tmpValueArray#" index="tmpPart"&gt;
+			&lt;cfset arrayAppend(returnArray, tmpPart) /&gt;
+		&lt;/cfloop&gt;
+	&lt;/cfif&gt;
+	
+	&lt;cfreturn returnArray /&gt;
+&lt;/cffunction&gt;</code></pre>
+<p>If you copy and paste the code above you&#8217;ll need to fix the comments to get it to execute, I had to mangle them to get them to display properly in this post.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Loading CFrichtext / FCKeditor on-the-fly</title>
+		<link>/loading-fckeditor-dynamically/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 06 Mar 2011 22:20:06 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[ColdFusion]]></category>
+		<guid isPermaLink="false">/?p=1003</guid>
+
+					<description><![CDATA[At work we had an issue where we had too many FCKeditor rich text controls on a page at once. We probably had 6 or 7, each on their own tab. For the tabs we are using the &#60;cflayout type="tab"&#62; tag. FireFox would handle the page with no problems, but IE would sometimes fail to [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>At work we had an issue where we had too many FCKeditor rich text controls on a page at once. We probably had 6 or 7, each on their own tab. For the tabs we are using the <code>&lt;cflayout type="tab"&gt;</code> tag. FireFox would handle the page with no problems, but IE would sometimes fail to load one or more of the rich text controls and would not throw any kind of error about it. The controls simply did not display.</p>
+<p>A solution we came up with was to load the rich text controls on demand, when the user needed to use them, rather than load them all when the page first loads. At first I thought we&#8217;d have to install a separate, stand alone copy of FCKeditor (now called &#8220;CKEditor&#8221;) to do this, but we found out this is unnecessary, you use the version that comes with CF to do this.</p>
+<p>First, we manually load the FCKeditor JavaScript:<br />
+<code>&lt;script type="text/javascript" src="/CFIDE/scripts/ajax/FCKeditor/fckeditor.js"&gt;&lt;/script&gt;</code></p>
+<p>Then create a function that can change a regular textarea into a rich text controls:</p>
+<pre><code>&lt;script type="text/javascript"&gt;
+function changeToRichText(elementToHide,id,width,height) {
+	var oFCKeditor = new FCKeditor(id,width,height,'my_toolbar_set') ;
+	oFCKeditor.BasePath = "/CFIDE/scripts/ajax/FCKeditor/";
+	oFCKeditor.ReplaceTextarea();
+	if (elementToHide) elementToHide.style.display = 'none';
+	}
+&lt;/script&gt;</code></pre>
+<p>Then we changed the places on the page that used to have rich text controls to instead use plain textareas. Then placed an link next to each one the user can click on to change the textarea into a rich text. Sometimes they don&#8217;t need the functionality of rich text and will just enter plain text into a textarea. Here is the code:</p>
+<pre><code>&lt;div id="rootCause_outter" style="text-align: left; width: 100%;"&gt;<a href="JavaScript:;" onclick="changeToRichText(document.getElementById('rootCause_outter'),'rootCause',740,290);">click to use editor</a>&lt;br /&gt;&lt;/div&gt;
+&lt;textarea name="rootCause" style="width:740px; height: 290px;"&gt;&lt;/textarea&gt;&lt;br /&gt;</code></pre>
+<p>This is used for creating records only, not editing. But it would not be hard to modify this to make it work on an edit page also.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Mura URL rewriting on Windows 2008 / IIS7</title>
+		<link>/url-rewriting-windows-2008-iis7/</link>
+					<comments>/url-rewriting-windows-2008-iis7/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 09 Dec 2010 23:21:00 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<guid isPermaLink="false">/?p=973</guid>
+
+					<description><![CDATA[I have been involved in setting up a new Mura site on Windows 2008 Server. Mura is a full featured CMS written in ColdFusion. By default Mura URLs look something like /index.cfm/SiteID/pagename. So for example the contact us page might look like /index.cfm/default/contact-us. Not a great URL. But its fairly simple to translate into /contact-us [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I have been involved in setting up a new Mura site on Windows 2008 Server.  <a href="http://www.getmura.com/">Mura</a> is a full featured CMS written in ColdFusion.</p>
+<p>By default Mura URLs look something like /index.cfm/SiteID/pagename.  So for example the contact us page might look like /index.cfm/default/contact-us.  Not a great URL.  But its fairly simple to translate into /contact-us which is much nicer.</p>
+<h2>Getting rid of the SiteID</h2>
+<p>Getting rid of the siteID is easy in the newest version of Mura.  In the config/settings.ini.cfm file there is a setting named &#8220;siteidinurls&#8221;.  Set this to 0 and Mura will no longer add the siteID to the URLs it generates.  Of course this only works if you plan on only using Mura for one site.  If you had more than one site, Mura wouldn&#8217;t know which one you are trying to access.  There are several ways to get around this if you have more than one site, but I won&#8217;t get into that in this article.</p>
+<h2>Getting rid of the index.cfm</h2>
+<p>Getting rid of the index.cfm takes a little more work.  There is another setting in the ini file called indexfileinurls.  Setting this to 0 will remove the index.cfm from the URLs Mura generates.  But when you click on any of those links you are going to get the 404 page.  To fix this, you&#8217;ll need to tweak your webserver.</p>
+<p>Apache is pretty straight forward, as you would expect.  Enable the mod_rewrite module and drop this into an .htaccess file in your webroot:</p>
+<pre><code>RewriteEngine On
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-d
+RewriteRule ^([a-zA-Z0-9/-]+)$ /index.cfm%{REQUEST_URI} [PT]</code></pre>
+<p>Our site happens to be hosted on Windows 2008 Server / IIS7.  To do the rewriting on II7 you&#8217;ll need to install Microsoft&#8217;s URL rewriting extension.  You can get it from here: <a href="http://www.iis.net/download/URLRewrite">http://www.iis.net/download/URLRewrite</a></p>
+<p>Once its installed, open IIS Manager.  Click on your website, then double click on the new URL rewrite icon.<br />
+<a href="/wp-content/uploads/2010/12/iis7_url_rewrite1.png"><img decoding="async" src="/wp-content/uploads/2010/12/iis7_url_rewrite1.png" alt="" title="iis7_url_rewrite" width="600" class="alignnone size-full wp-image-988" srcset="/wp-content/uploads/2010/12/iis7_url_rewrite1.png 800w, /wp-content/uploads/2010/12/iis7_url_rewrite1-300x208.png 300w" sizes="(max-width: 800px) 100vw, 800px" /></a><br />
+<span id="more-973"></span><br />
+Select Import Rules from the right hand side.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2010/12/iis7_url_import_link.png" alt="" title="iis7_url_import_link" width="583" height="474" class="alignnone size-full wp-image-979" srcset="/wp-content/uploads/2010/12/iis7_url_import_link.png 583w, /wp-content/uploads/2010/12/iis7_url_import_link-300x243.png 300w" sizes="(max-width: 583px) 100vw, 583px" /></p>
+<p>Then paste the apache lines above into the Rewrite rules box.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2010/12/iis7_url_paste_here.png" alt="" title="iis7_url_paste_here" width="583" height="474" class="alignnone size-full wp-image-980" srcset="/wp-content/uploads/2010/12/iis7_url_paste_here.png 583w, /wp-content/uploads/2010/12/iis7_url_paste_here-300x243.png 300w" sizes="(max-width: 583px) 100vw, 583px" /></p>
+<p>Instantly you&#8217;ll see the new rules appear in the Converted Rules box. Click Apply in the upper right.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2010/12/iis7_url_after_pasting.png" alt="" title="iis7_url_after_pasting" width="583" height="474" class="alignnone size-full wp-image-981" srcset="/wp-content/uploads/2010/12/iis7_url_after_pasting.png 583w, /wp-content/uploads/2010/12/iis7_url_after_pasting-300x243.png 300w" sizes="(max-width: 583px) 100vw, 583px" /></p>
+<p>Now change the Mura ini file I mentioned above, then click the Reload link in your Mura admin.</p>
+<p><img decoding="async" loading="lazy" style="border: 1px solid black;" src="/wp-content/uploads/2010/12/iis7_mura_ini.png" alt="" title="iis7_mura_ini" width="237" height="167" class="alignnone size-full wp-image-983" /></p>
+<p>That&#8217;s it!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/url-rewriting-windows-2008-iis7/feed/</wfw:commentRss>
+			<slash:comments>13</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Be careful using ucase() on odd characters</title>
+		<link>/careful-using-ucase-odd-characters/</link>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 08 Sep 2010 01:53:31 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[Railo]]></category>
+		<guid isPermaLink="false">/?p=917</guid>
+
+					<description><![CDATA[I ran into an issue today where users were unable to lookup a certain part in our system. The part in question had a µ character in the product code (don&#8217;t get me started!). I started adding some debug outputs and found that when the part number was passed to our back end system, the [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I ran into an issue today where users were unable to lookup a certain part in our system.  The part in question had a µ character in the product code (don&#8217;t get me started!).  I started adding some debug outputs and found that when the part number was passed to our back end system, the µ had been replaced with an &#8216;M&#8217;!</p>
+<p>After some more troubleshooting I figured out the culprit was ucase().  We run all part numbers through ucase() before passing them in. At first I thought this was a CF bug, after verifying that the java string.toUpperCase() method did exactly the same thing I had to look into it some more.</p>
+<p>It turns out that M actually <i>is</i> the uppercase version of µ, sort of. The µ character, which is ascii code 181, is often used to abbreviate &#8216;micro&#8217; as in microamp (µA) or microfarad (µF).  Its the 12th letter of the greek alphabet, &#8216;<a href="http://en.wikipedia.org/wiki/%CE%9C">Mu</a>&#8216;.  The lowercase version is μ, the uppercase version is M.</p>
+<p>I tested this on Railo and got exactly the same result, which makes sense because I think both engines just call the .toUpperCase() method in the JVM.</p>
+<p>So while this is technically correct, I&#8217;m certain is almost never what the developer actually wants to do.  I have not found a good way around this issue, except to maybe look specifically for this character, replace it out, do the ucase(), then put the character back.  For now I was able to remove the ucase() calls because they were not absolutely necessary.  Any other ideas?</p>
+<p><strong>Update:</strong> This is what I came up with as a work around.  I thought it would be slow but benchmarking it shows its 0ms even with a 50 character string.</p>
+<pre><code>&lt;cffunction name="safeUcase" returntype="string" hint="Uppercases only letters"&gt;
+	&lt;cfargument name="inputString" /&gt;
+	&lt;cfset local.outputString = "" &gt;
+	&lt;cfloop from="1" to="#Len(arguments.inputString)#" index="local.i"&gt;
+		&lt;cfset local.chr = Mid(arguments.inputString,local.i,1) /&gt;
+		&lt;cfset local.asciiCode = Asc(local.chr) /&gt;
+		&lt;cfif local.asciiCode LTE 122 AND local.asciiCode GTE 97&gt;
+			&lt;cfset local.outputString &amp;= ucase(local.chr) /&gt;
+		&lt;cfelse&gt;
+			&lt;cfset local.outputString &amp;= local.chr /&gt;
+		&lt;/cfif&gt;
+	&lt;/cfloop&gt;
+
+	&lt;cfreturn local.outputString /&gt;
+&lt;/cffunction&gt;</code></pre>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

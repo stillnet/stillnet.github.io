@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>SQL &#8211; Stillnet Studios</title>
+	<atom:link href="/category/sql/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Wed, 02 Jan 2013 15:14:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Copying data from SQL Studio to Excel</title>
+		<link>/copying-sql-studio-excel-headers/</link>
+					<comments>/copying-sql-studio-excel-headers/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 02 Jan 2013 15:14:04 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1164</guid>
+
+					<description><![CDATA[I often need to write ad-hoc reports in MS SQL Studio, and then provide those results in an Excel spreadsheet. This has usually been a little tedious, I copy &#038; paste the results from SQL Studio into Excel, then have to manually add column names to the Excel spreadsheet. So I finally spent some time [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I often need to write ad-hoc reports in MS SQL Studio, and then provide those results in an Excel spreadsheet. This has usually been a little tedious, I copy &#038; paste the results from SQL Studio into Excel, then have to manually add column names to the Excel spreadsheet. So I finally spent some time figuring out how to do this better, and discovered that it is possible to have the column names come over automatically. I&#8217;m sure many of you already knew about this, but I didn&#8217;t so I thought it might be worth sharing. I had tried googling this in the past and didn&#8217;t come up with anything, so maybe it&#8217;s not widely known.<br />
+<span id="more-1164"></span><br />
+It&#8217;s as simple as checking a box in the settings of MS SQL Studio. These instructions are for SQL Studio 2005, it may be different in later versions. Go Tools->Options and then Query Results->Results To Grid. Then check the box for <em>Include column headers when copying or saving the results</em>.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/12/SQLStudioIncludeColumnHeaders.png" alt="Screenshot of options" title="" width="643" height="374" class="alignnone size-full wp-image-1168" srcset="/wp-content/uploads/2012/12/SQLStudioIncludeColumnHeaders.png 643w, /wp-content/uploads/2012/12/SQLStudioIncludeColumnHeaders-300x174.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></p>
+<p>There are a few ways to get these results into Excel, but this is what I do. After running the query, I click on the blank box that intersects the row numbers and the column headers. This causes all the rows &#038; columns to be selected. You could also press Ctrl+A to do the same thing.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/12/SQLStudioResults.png" alt="SQL Studio Results" title="" width="505" height="200" class="alignnone size-full wp-image-1170" srcset="/wp-content/uploads/2012/12/SQLStudioResults.png 505w, /wp-content/uploads/2012/12/SQLStudioResults-300x118.png 300w" sizes="(max-width: 505px) 100vw, 505px" /></p>
+<p>Then I copy the results using Ctrl+C, then switch over to my Excel window and paste the results in. And voilà, the column headers are there.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2012/12/ExcelResults.png" alt="Excel has column headers" title="" width="406" height="157" class="alignnone size-full wp-image-1171" srcset="/wp-content/uploads/2012/12/ExcelResults.png 406w, /wp-content/uploads/2012/12/ExcelResults-300x116.png 300w" sizes="(max-width: 406px) 100vw, 406px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/copying-sql-studio-excel-headers/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Removing spaces from columns in cfspreadsheet (or any query)</title>
+		<link>/remove-spaces-columns-cfspreadsheet/</link>
+					<comments>/remove-spaces-columns-cfspreadsheet/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 17 Oct 2011 02:33:07 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1086</guid>
+
+					<description><![CDATA[I love the CFSPREADSHEET tag that was added to ColdFusion9. It makes working with spread sheet data so easy. The spreadsheets I am given to work with often contain descriptive column names that contain spaces like &#8220;First Name&#8221; or &#8220;Home Phone&#8221;. This causes a problem when you try to work with the data in a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I love the CFSPREADSHEET tag that was added to ColdFusion9. It makes working with spread sheet data so easy. The spreadsheets I am given to work with often contain descriptive column names that contain spaces like &#8220;First Name&#8221; or &#8220;Home Phone&#8221;. This causes a problem when you try to work with the data in a QoQ (query of a query).</p>
+<p>Lets say you have a spread sheet containing these columns: Name, City, State, Postal Code. Then pull it into a query using the cfspreadsheet tag:<br />
+<code>&lt;cfspreadsheet action="read" src="c:\Customers.xls" query="customers" headerrow="1" rows="2-65536" sheetname="Customers"&gt;</code></p>
+<p>Now try to narrow down the results to only those in a certain postal code. This won&#8217;t work of course:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE [Postal Code] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>Neither will this:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE [Postal\ Code] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>Or this:<br />
+<code>&lt;cfquery name="qryCA" dbtype="query"&gt;<br />
+SELECT * FROM customers WHERE ['Postal Code'] = '90210'<br />
+&lt;/cfquery&gt;</code></p>
+<p>I have not found any way to escape a space in a column name inside QoQ. But, thankfully there is a way we can manipulate the column names to remove the space.</p>
+<pre><code>&lt;cfset colNameArray = customers.getColumnNames() /&gt;
+&lt;cfloop from="1" to="#arrayLen(colNameArray)#" index="i"&gt;
+	&lt;cfset colNameArray[i] = colNameArray[i].replace(' ','') /&gt;
+&lt;/cfloop&gt;
+&lt;cfset customers.setColumnNames(colNameArray) /&gt;</code></pre>
+<p>You could use this to completely rename column names if you wanted to. This isn&#8217;t just useful for working with cfspreadsheet either, I could see this being used in other circumstances to change the column names.</p>
+<p>Thanks to <a href="http://www.neiland.net/blog/article/using-java-to-rename-columns-in-a-coldfusion-query-object/" title="Steven Neiland">Steven Neiland</a> for pointing me in this direction.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/remove-spaces-columns-cfspreadsheet/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Online code formatters</title>
+		<link>/online-code-formatters/</link>
+					<comments>/online-code-formatters/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 14 Jul 2011 01:53:22 +0000</pubDate>
+				<category><![CDATA[AJAX / JavaScript]]></category>
+		<category><![CDATA[Misc]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1082</guid>
+
+					<description><![CDATA[Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine. Here is one for formatting XML: http://www.shell-tools.net/index.php?op=xml_format And [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Lately I&#8217;ve come across some online formatting tools that have been very helpful. I like these because they work regardless of what IDE you use, what operating system, etc. They work from any computer that has internet access. Handy when you are troubleshooting on a remote machine.</p>
+<p>Here is one for formatting XML: <a href="http://www.shell-tools.net/index.php?op=xml_format">http://www.shell-tools.net/index.php?op=xml_format</a></p>
+<p>And one for JSON from the same site: <a href="http://www.shell-tools.net/index.php?op=json_format">http://www.shell-tools.net/index.php?op=json_format</a></p>
+<p>Here is a SQL one that helped me out a lot tonight: <a href="http://www.dpriver.com/pp/sqlformat.htm">http://www.dpriver.com/pp/sqlformat.htm</a></p>
+<p>I fed it a horrible looking, very complex query and it made it easily readable. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/online-code-formatters/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Joining to one of two tables with one ID</title>
+		<link>/joining-two-tables-one-id/</link>
+					<comments>/joining-two-tables-one-id/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 23 May 2011 01:40:47 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=1061</guid>
+
+					<description><![CDATA[I came across an interesting problem the other day where I needed to join to either one of two different tables. Here is an example scenario: Say you have an ecommerce site that your customers log into. Customers exist in a table named “customers”. When they place an order, an order record is created in [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I came across an interesting problem the other day where I needed to join to either one of two different tables. Here is an example scenario:</p>
+<p>Say you have an ecommerce site that your customers log into. Customers exist in a table named “customers”. When they place an order, an order record is created in the orders table.  There is a CreatorID field that indicates which customer placed the order. A common practice when creating order reports is to join the order to the customer in order to be able to display the customer contact information when displaying the order. </p>
+<p><code>SELECT orders.*, customers.name FROM orders<br />
+JOIN customers on orders.creator ID = customers.customerID</code></p>
+<p>Later you are given the task of allowing vendors to place orders.  Vendors also log into your site but their accounts are stored in a separate vendors table. So now you are faced with the question of how to link orders to both the customers and vendors table. You could add a vendorID field to the orders table, then change your join to connect to both tables:</p>
+<p><code>SELECT orders.*, customers.name AS customerName, vendors.name AS vendorName FROM orders<br />
+LEFT JOIN customers on orders.creator ID = customers.customerID<br />
+LEFT JOIN  vendors on orders.vendorID = vendors.vendor ID</code></p>
+<p>The LEFT JOIN here is necessary so we still get an order record even when there is not a match in the customers or vendors table. The problem I had with this approach is it requires changing a lot of other code on the system. Because the “name” column is ambiguous between the two tables, we had to alias the “name” column to be different for each of the two tables. So now all your view code would have to be changed to look at one of those two columns.</p>
+<p><code>&lt;cfoutput query=”TodaysOrders”&gt;<br />
+ 	order: #orderID#, placed by<br />
+	&lt;cfif val(creatorID)&gt;#customerName#&lt;cfelse&gt;#vendorName#&lt;/cfif&gt;<br />
+&lt;/cfoutput&gt;</code></p>
+<p>Here is another solution – I added creatorIDtype field that indicates if the creatorID is a customer or a vendor:</p>
+<p><code>SELECT orders.*,<br />
+name =<br />
+CASE e.creatorIDtype<br />
+		WHEN 'CUSTOMER' THEN customer.name<br />
+	      	ELSE vendor.name<br />
+	    	END<br />
+FROM orders<br />
+LEFT JOIN customers on orders.creatorID = customers.customerID<br />
+LEFT JOIN  vendors on orders.creatorID = vendors.vendorID</code></p>
+<p>Now the view code does not need to be changed, the “name” column will continue to hold the name of the person who placed the order, regardless if it was a customer or a vendor.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/joining-two-tables-one-id/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Concatenating child rows in SQL &#8211; Cross Apply / FOR XML PATH</title>
+		<link>/concatenating-child-rows/</link>
+					<comments>/concatenating-child-rows/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 20 Oct 2010 16:39:47 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">/?p=764</guid>
+
+					<description><![CDATA[Here&#8217;s a neat trick when you need to concatenate child rows in a SQL Select statement. What do I mean by that? Its a little hard to explain, so I&#8217;ll try to illustrate below. Say you have these two database tables: orders OrderID OrderNotes 1 Notes about order 1 2 Notes about order 2 3 [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Here&#8217;s a neat trick when you need to concatenate child rows in a SQL Select statement.  What do I mean by that? Its a little hard to explain, so I&#8217;ll try to illustrate below.</p>
+<p>Say you have these two database tables:</p>
+<table style="background-color: #FFEF0A; margin-right: 40px;" border="1" align="left">
+<caption>orders</caption>
+<tr>
+<td><b>OrderID</b></td>
+<td><b>OrderNotes</b></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Notes about order 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Notes about order 2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Notes about order 3</td>
+</tr>
+</table>
+<table style="background-color: #FFEF0A;" border="1">
+<caption>orderLines</caption>
+<tr>
+<td><b>LineItemID</b></td>
+<td><b>OrderID</b></td>
+<td><b>LineNotes</b></td>
+</tr>
+<tr>
+<td>50</td>
+<td>1</td>
+<td>ABC</td>
+</td>
+<tr>
+<td>51</td>
+<td>1</td>
+<td>XYZ</td>
+</td>
+<tr>
+<td>52</td>
+<td>2</td>
+<td>HJK</td>
+</td>
+<tr>
+<td>53</td>
+<td>2</td>
+<td>DEF</td>
+</td>
+<tr>
+<td>54</td>
+<td>2</td>
+<td>KLM</td>
+</td>
+</table>
+<p>Using the SQL trick below you will end up with a result set that looks like this:</p>
+<table cellpadding="5" border="1">
+<tr>
+<td><b>OrderID</b></td>
+<td><b>OrderNotes</b></td>
+<td><b>listOfLineNotes</b></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Notes about order 1</td>
+<td>ABC,XYZ</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Notes about order 2</td>
+<td>HJK,DEF,KLM</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Notes about order 3</td>
+<td>NULL</td>
+</tr>
+</table>
+<p>When would you need to do this?  I&#8217;ve need it a couple times.  One was when we were grabbing database records to index into Verity.  We wanted not only data from the orders table, but also wanted to index all the notes on each line item, which were separate records in a different table.  We didn&#8217;t want to index these separately, because if there was a match in a Verity search we wanted to return the order, not the line item.  Using the query below we were able to combine all this data into one query.</p>
+<pre><code>SELECT *
+FROM orders AS o
+CROSS APPLY (
+	SELECT linenotes + ','
+	FROM orderLines AS ol
+	WHERE ol.orderID = o.orderID 
+	FOR XML PATH('') )
+temp ( listOfLineNotes )</code></pre>
+<p>Using this code, listOfLineNotes will be a comma separated list of all the line item notes for this order.</p>
+<p>Another time this trick came in handy was when we needed to get some records from a literature database table to display on our public website.  We were going to do some filtering using JavaScript, so needed a field in each literature item row that contained a list of all the categories the item was in.  This was an easy way to accomplish that.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/concatenating-child-rows/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>MySQL losing case in table names</title>
+		<link>/mysql-losing-case-in-table-names/</link>
+					<comments>/mysql-losing-case-in-table-names/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 03 Jan 2010 17:24:13 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<category><![CDATA[System Administration]]></category>
+		<guid isPermaLink="false">/?p=699</guid>
+
+					<description><![CDATA[I had an issue recently when I was working with a couple other developers on a project. We keep our MySQL database in sync by exporting the database as an SQL script and sharing it in a subversion repository (I wish MS SQL could be this easy!). Our table names are saved with mix case, [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I had an issue recently when I was working with a couple other developers on a project.  We keep our MySQL database in sync by exporting the database as an SQL script and sharing it in a subversion repository (I wish MS SQL could be this easy!).  Our table names are saved with mix case, like &#8220;userFiles&#8221;, but everytime I would export my database the tables would come out all lower case, like &#8220;userfiles&#8221;.</p>
+<p>Turns out this is a simple thing to fix, I had to add a line to MySQL&#8217;s config file: <em>my.cnf</em>.  Mine was located at <em>[MySQL installed root]\bin\my.cnf</em>.  The setting that needs to change is lower_case_table_names, I set the value to 2, like this:</p>
+<p><code>lower_case_table_names=2</code></p>
+<p>If you are interested, here are the different possible values:</p>
+<table>
+<tbody>
+<tr>
+<td valign="top"><span class="bold"><strong>Value</strong></span></td>
+<td><span class="bold"><strong>Meaning</strong></span></td>
+</tr>
+<tr>
+<td valign="top">0</td>
+<td>Table and database names are stored on disk using the lettercase<br />
+                specified in the CREATE  TABLE or CREATE DATABASE statement. Name comparisons are case<br />
+                sensitive. Note that if you force this variable to 0 with &#8211;lower-case-table-names=0<br />
+                on a case-insensitive file system and access MyISAM tablenames using different<br />
+                lettercases, index corruption may result.</td>
+</tr>
+<tr>
+<td valign="top">1</td>
+<td>Table names are stored in lowercase on disk and name comparisons are not<br />
+                case sensitive. MySQL converts all table names to<br />
+                lowercase on storage and lookup. This behavior also<br />
+                applies to database names and table aliases.</td>
+</tr>
+<tr>
+<td valign="top">2</td>
+<td>Table and database names are stored on disk using the lettercase<br />
+                specified in the CREATE TABLE or CREATE  DATABASE statement, but MySQL converts them to<br />
+                lowercase on lookup. Name comparisons are not case sensitive. This works only on file<br />
+                systems that are not case sensitive! InnoDB table names are stored in<br />
+                lowercase, as for lower_case_table_names=1.</td>
+</tr>
+</tbody>
+</table>
+<p>On Windows the default is 1.</p>
+<p>More information at <a href="http://dev.mysql.com/doc/refman/5.0/en/identifier-case-sensitivity.html">http://dev.mysql.com/doc/refman/5.0/en/identifier-case-sensitivity.html</a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/mysql-losing-case-in-table-names/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>A &#8216;MakeDate&#8217; function for MS SQL Server</title>
+		<link>/makedate-function-ms-sql-server/</link>
+					<comments>/makedate-function-ms-sql-server/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 03 Apr 2009 02:14:41 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=361</guid>
+
+					<description><![CDATA[The other day I had a need to be creating dates in a SQL Server SQL statement, made from a few different text fields. I could not find a function to create a date from these, so I wrote one (with the help of our in house SQL guru). CREATE FUNCTION [dbo].[MakeDate] ( -- Add [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>The other day I had a need to be creating dates in a SQL Server SQL statement, made from a few different text fields.  I could not find a function to create a date from these, so I wrote one (with the help of our in house SQL guru).<br />
+<span id="more-361"></span></p>
+<pre><code>CREATE FUNCTION [dbo].[MakeDate]
+(
+	-- Add the parameters for the function here
+	@inputYear int, @inputMonth int, @inputDay int
+)
+RETURNS smalldatetime
+AS
+BEGIN
+	DECLARE @inputMonthStr varchar(2), @inputDayStr varchar(2), @returnDate smalldatetime
+
+	SET @inputMonthStr = Right('0' + cast(@inputMonth as varchar(2)),2)
+	SET @inputDayStr = Right('0' + cast(@inputDay as varchar(2)),2)
+
+	SET @returnDate = CAST( cast(@inputYear as varchar(4)) + @inputMonthStr + @inputDayStr as smalldatetime)
+
+	-- Return the result of the function
+	RETURN @returnDate
+
+END</code></pre>
+<p>If you are using MySQL, you already have a create date function built in: <a href="http://dev.mysql.com/doc/refman/5.1/en/date-and-time-functions.html#function_makedate">http://dev.mysql.com/doc/refman/5.1/en/date-and-time-functions.html#function_makedate</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/makedate-function-ms-sql-server/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>A bug with Query of Query and * ?</title>
+		<link>/query-of-query-bug/</link>
+					<comments>/query-of-query-bug/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 21 Jan 2009 00:32:03 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[SQL]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=291</guid>
+
+					<description><![CDATA[There may be something buggy here, or maybe I&#8217;m misunderstanding how this should work. This code executes fine: &#60;cfquery name="qryListings" dbtype="query"&#62; SELECT 1 as OrdBy, * FROM qryListings UNION SELECT 2 as OrdBy, * FROM qryListingsTmp ORDER BY OrdBy &#60;/cfquery&#62; But when I add a WHERE clause to the second part to filter out records [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>There may be something buggy here, or maybe I&#8217;m misunderstanding how this should work.</p>
+<p>This code executes fine:</p>
+<pre><code>&lt;cfquery name="qryListings" dbtype="query"&gt;
+SELECT 1 as OrdBy, * FROM qryListings
+UNION
+SELECT 2 as OrdBy, * FROM qryListingsTmp
+ORDER BY OrdBy
+&lt;/cfquery&gt;</code></pre>
+<p>But when I add a WHERE clause to the second part to filter out records that were in the first group:</p>
+<pre><code>&lt;cfquery name="qryListings" dbtype="query"&gt;
+SELECT 1 as OrdBy, * FROM qryListings
+UNION
+SELECT 2 as OrdBy, * FROM qryListingsTmp WHERE ref_num NOT IN
+(#ValueList(qryListings.ref_num)#)
+ORDER BY OrdBy
+&lt;/cfquery&gt;</code></pre>
+<p> I get a ColdFusion error about the number of columns being different between the two queries.<br />
+<img decoding="async" loading="lazy" src="/wp-content/uploads/2009/01/qoq_error.png" alt="" title="query of query error" width="435" height="170" class="alignnone size-full wp-image-292" srcset="/wp-content/uploads/2009/01/qoq_error.png 435w, /wp-content/uploads/2009/01/qoq_error-300x117.png 300w" sizes="(max-width: 435px) 100vw, 435px" /></p>
+<p><span id="more-291"></span><br />
+The error goes away if I list out the individual columns, instead of using an asterisk.  This would not work very well in my case, since I don&#8217;t have any control over the query being returned to me and it could be changed without regard to this code.  Thankfully I&#8217;m on CF8 and was able to dynamically grab the column names.</p>
+<pre><code>&lt;cfquery name="qryListings" dbtype="query"&gt;
+SELECT 1 as OrdBy, #ArrayToList(qryListingsTmp.GetColumnNames())# FROM qryListings
+UNION
+SELECT 2 as OrdBy, #ArrayToList(qryListingsTmp.GetColumnNames())# FROM qryListingsTmp WHERE ref_num NOT IN
+(#ValueList(qryListings.ref_num)#)
+ORDER BY OrdBy
+&lt;/cfquery&gt;</code></pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/query-of-query-bug/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>ColdFusion / MySQL Error: Cannot convert value &#8216;0000-00-00 00:00:00&#8217; from column X to TIMESTAMP.</title>
+		<link>/coldfusion-convert-value-from-column-timestamp/</link>
+					<comments>/coldfusion-convert-value-from-column-timestamp/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Fri, 21 Nov 2008 01:14:14 +0000</pubDate>
+				<category><![CDATA[ColdFusion]]></category>
+		<category><![CDATA[SQL]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=214</guid>
+
+					<description><![CDATA[I ran into this issue when adding a new datetime column to an existing table in my MySQL 5 database. I did not get the error in my production environment, only the dev environment on my local machine. I was puzzled by this error, because I thought the all zeros value basically meant a null/unknown [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I ran into this issue when adding a new datetime column to an existing table in my MySQL 5 database.  I did not get the error in my production environment, only the dev environment on my local machine.</p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2008/11/mysql_error_screenshot.png" alt="" title="mysql error screenshot" width="500" height="78" class="alignnone size-full wp-image-215" srcset="/wp-content/uploads/2008/11/mysql_error_screenshot.png 644w, /wp-content/uploads/2008/11/mysql_error_screenshot-300x47.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<p>I was puzzled by this error, because I thought the all zeros value basically meant a null/unknown date value.  Also I wasn&#8217;t using a type TIMESTAMP, I was using a DATETIME column type, so that threw me, too.  After digging through the data a little bit, I found that the values for these new columns in the production database were NULL, but the values in my dev database were &#8216;0000-00-00 00:00:00&#8217;.  A little googling told me that the all zeros value is what happens when an invalid date is assigned to a datetime field.</p>
+<p>I could not see any differences in the schema, so I&#8217;m not sure how this happened.  But updating my dev data to be NULL where the value was &#8216;0000-00-00 00:00:00&#8217; solved the problem.</p>
+<p>The <em>other</em> option, if you can&#8217;t change your data, is to add these items to your connection string value in the ColdFusion Administrator for your datasource:</p>
+<p><code>noDatetimeStringSync=true&amp;zeroDateTimeBehavior=convertToNull</code></p>
+<p><img decoding="async" loading="lazy" src="/wp-content/uploads/2008/11/dsn_screenshot.png" alt="" title="mysql connection string screenshot" width="481" height="404" class="alignnone size-full wp-image-216" style="border: 1px solid gray;" srcset="/wp-content/uploads/2008/11/dsn_screenshot.png 481w, /wp-content/uploads/2008/11/dsn_screenshot-300x251.png 300w" sizes="(max-width: 481px) 100vw, 481px" /></p>
+<p>This tells MySQL to return a null instead of throwing an exception when one of these values is found.  This is how I initially solved the problem, until I figured out that &#8216;0000-00-00 00:00:00&#8217; was not a proper value.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/coldfusion-convert-value-from-column-timestamp/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Elegant pagination with MS SQL 2005</title>
+		<link>/pagination-mssql-2005/</link>
+					<comments>/pagination-mssql-2005/#comments</comments>
+		
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Wed, 12 Nov 2008 21:56:59 +0000</pubDate>
+				<category><![CDATA[SQL]]></category>
+		<category><![CDATA[Web Development]]></category>
+		<guid isPermaLink="false">/?p=188</guid>
+
+					<description><![CDATA[I&#8217;ve never found a great solution for pagination in SQL 2000. I much prefer MySQL&#8217;s syntax: SELECT * FROM table LIMIT 100,10. That will get you 10 records starting at the 100th record. Why MS SQL still doesn&#8217;t offer an opposite to TOP, I don&#8217;t know. Yes, I&#8217;ve seen the double TOP method where you [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve never found a great solution for pagination in SQL 2000.  I much prefer MySQL&#8217;s syntax: <code>SELECT * FROM table LIMIT 100,10</code>.  That will get you 10 records starting at the 100th record.  Why MS SQL still doesn&#8217;t offer an opposite to TOP, I don&#8217;t know.  Yes, I&#8217;ve seen the double TOP method where you sort your data twice to end up with the last X rows.  It works, but its not exactly elegant.</p>
+<p>But I have come across a new method for pagination using some new 2005 features that is pretty neat.  What I <em>really</em> like about this solution is that it gives you a count of the total number of records, which you usually don&#8217;t get with other pagination methods.<br />
+<span id="more-188"></span></p>
+<pre><code>SELECT TOP #Val(arguments.maxRows)# * FROM
+	(
+	SELECT ROW_NUMBER() OVER (ORDER BY <em>your sort order here</em>) AS RowNumber, *, TotalRows=Count(*) OVER()
+	FROM <em>tableName</em> WHERE <em>your criteria here</em>
+	) _tmpInlineView
+WHERE RowNumber &gt;= &lt;cfqueryparam value="#Arguments.startRow#"&gt;
+ORDER BY <em>your sort order here</em></code></pre>
+<p>This works great, is fast, and as a bonus includes the total number of rows!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/pagination-mssql-2005/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: jQuery snippet to get all input values	</title>
+	<atom:link href="/jquery-snippet-to-get-all-input-values/feed/" rel="self" type="application/rss+xml" />
+	<link>/jquery-snippet-to-get-all-input-values/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sun, 28 Oct 2012 15:34:27 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Ryan		</title>
+		<link>/jquery-snippet-to-get-all-input-values/comment-page-1/#comment-2981</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Sun, 28 Oct 2012 15:34:27 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1121#comment-2981</guid>
+
+					<description><![CDATA[Interesting suggestion Nathan. I just played with .serialize() a little, and  confirmed that you can give it a class. For my use, I need to know if a specific group of fields on the form was filled in. So I tried using this:
+
+&lt;code&gt;var allValues = $(&quot;input.someClass&quot;).serialize();&lt;/code&gt;
+
+The problem is that it returns a string regardless if the fields are filled in or not. So I don&#039;t see an easy way to use this to determine if the fields were filled in.
+
+&lt;b&gt;Update&lt;/b&gt;: Ah, I just thought of a way this could be used. I could find out the length of a serialized empty form, then compare that, like:
+
+&lt;code&gt;
+var emptyLength = 56; // determined when the form was built
+var allValues = $(&quot;input.someClass&quot;).serialize();
+if (allValues.length &gt; emptyLength) {
+  // then I know the fields were filled in
+  }
+&lt;/code&gt;
+
+]]></description>
+			<content:encoded><![CDATA[<p>Interesting suggestion Nathan. I just played with .serialize() a little, and  confirmed that you can give it a class. For my use, I need to know if a specific group of fields on the form was filled in. So I tried using this:</p>
+<p><code>var allValues = $("input.someClass").serialize();</code></p>
+<p>The problem is that it returns a string regardless if the fields are filled in or not. So I don&#8217;t see an easy way to use this to determine if the fields were filled in.</p>
+<p><b>Update</b>: Ah, I just thought of a way this could be used. I could find out the length of a serialized empty form, then compare that, like:</p>
+<p><code><br />
+var emptyLength = 56; // determined when the form was built<br />
+var allValues = $("input.someClass").serialize();<br />
+if (allValues.length > emptyLength) {<br />
+  // then I know the fields were filled in<br />
+  }<br />
+</code></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nathan Strutz		</title>
+		<link>/jquery-snippet-to-get-all-input-values/comment-page-1/#comment-2970</link>
+
+		<dc:creator><![CDATA[Nathan Strutz]]></dc:creator>
+		<pubDate>Sun, 28 Oct 2012 07:44:30 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1121#comment-2970</guid>
+
+					<description><![CDATA[Just a quick question - why not the serialize function - $(&quot;form&quot;).serialize(); - it returns a json string. I mean, your method is good too, just seems like it does a lot more than it needs.]]></description>
+			<content:encoded><![CDATA[<p>Just a quick question &#8211; why not the serialize function &#8211; $(&#8220;form&#8221;).serialize(); &#8211; it returns a json string. I mean, your method is good too, just seems like it does a lot more than it needs.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

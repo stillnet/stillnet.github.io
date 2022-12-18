@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Joining to one of two tables with one ID	</title>
+	<atom:link href="/joining-two-tables-one-id/feed/" rel="self" type="application/rss+xml" />
+	<link>/joining-two-tables-one-id/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Sat, 13 Aug 2011 08:09:56 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Damien		</title>
+		<link>/joining-two-tables-one-id/comment-page-1/#comment-2501</link>
+
+		<dc:creator><![CDATA[Damien]]></dc:creator>
+		<pubDate>Sat, 13 Aug 2011 08:09:56 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1061#comment-2501</guid>
+
+					<description><![CDATA[I&amp;apos;m doing a similar thing - one table with all contacts.
+I&amp;apos;m also doing this for the&#160;&#160;products and services tables.
+All relationships between objects are linked through a separate master table &amp;apos;idlinker&amp;apos;
+In this table, any row can be related to any row in any table.. I&amp;apos;m not sure I explained that very well..
+This means I can have one contact assigned to many locations, orders can be assigned here depending on the accent of the query, etc..
+
+Im sure there are shortfalls to this method but it works for me..]]></description>
+			<content:encoded><![CDATA[<p>I&apos;m doing a similar thing &#8211; one table with all contacts.<br />
+I&apos;m also doing this for the&nbsp;&nbsp;products and services tables.<br />
+All relationships between objects are linked through a separate master table &apos;idlinker&apos;<br />
+In this table, any row can be related to any row in any table.. I&apos;m not sure I explained that very well..<br />
+This means I can have one contact assigned to many locations, orders can be assigned here depending on the accent of the query, etc..</p>
+<p>Im sure there are shortfalls to this method but it works for me..</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/joining-two-tables-one-id/comment-page-1/#comment-2339</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Tue, 31 May 2011 01:03:22 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1061#comment-2339</guid>
+
+					<description><![CDATA[Interesting ideas, thanks for the feedback guys.]]></description>
+			<content:encoded><![CDATA[<p>Interesting ideas, thanks for the feedback guys.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Seth S.		</title>
+		<link>/joining-two-tables-one-id/comment-page-1/#comment-2338</link>
+
+		<dc:creator><![CDATA[Seth S.]]></dc:creator>
+		<pubDate>Mon, 30 May 2011 18:56:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1061#comment-2338</guid>
+
+					<description><![CDATA[My first thought would be to have a generic person table (e.g., &#034;contact&#034;) for the basic and common attributes like name, etc.
+
+Then have vendor and customer tables that are associated to contact by contactID.
+
+Then you could use &#034;contactID&#034; as your creatorID.
+
+Obviously that would be a major re-org, but just thinking theoretically here.]]></description>
+			<content:encoded><![CDATA[<p>My first thought would be to have a generic person table (e.g., &quot;contact&quot;) for the basic and common attributes like name, etc.</p>
+<p>Then have vendor and customer tables that are associated to contact by contactID.</p>
+<p>Then you could use &quot;contactID&quot; as your creatorID.</p>
+<p>Obviously that would be a major re-org, but just thinking theoretically here.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: CephalidOne		</title>
+		<link>/joining-two-tables-one-id/comment-page-1/#comment-2337</link>
+
+		<dc:creator><![CDATA[CephalidOne]]></dc:creator>
+		<pubDate>Mon, 30 May 2011 08:47:29 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1061#comment-2337</guid>
+
+					<description><![CDATA[or you could do 2 select with cross join and a union]]></description>
+			<content:encoded><![CDATA[<p>or you could do 2 select with cross join and a union</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/joining-two-tables-one-id/comment-page-1/#comment-2320</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Mon, 23 May 2011 23:46:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1061#comment-2320</guid>
+
+					<description><![CDATA[Roland, sorry I had a typo in my last example. I am doing a JOIN here without creating another ID field. So there is no orders.vendorID field, that was a typo. I am joining to either of one of two tables using a single ID field (creatorID).
+
+Thanks for your comment.]]></description>
+			<content:encoded><![CDATA[<p>Roland, sorry I had a typo in my last example. I am doing a JOIN here without creating another ID field. So there is no orders.vendorID field, that was a typo. I am joining to either of one of two tables using a single ID field (creatorID).</p>
+<p>Thanks for your comment.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Roland Collins		</title>
+		<link>/joining-two-tables-one-id/comment-page-1/#comment-2319</link>
+
+		<dc:creator><![CDATA[Roland Collins]]></dc:creator>
+		<pubDate>Mon, 23 May 2011 22:55:23 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1061#comment-2319</guid>
+
+					<description><![CDATA[You could also use a COALESCE, which is going to perform better and require no new fields at all!
+
+SELECT orders.*,
+ COALESCE(customer.name, vendor.name) AS name
+FROM orders
+ LEFT JOIN customers on orders.creator ID = customers.customerID
+ LEFT JOIN vendors on orders.vendorID = vendors.vendor ID]]></description>
+			<content:encoded><![CDATA[<p>You could also use a COALESCE, which is going to perform better and require no new fields at all!</p>
+<p>SELECT orders.*,<br />
+ COALESCE(customer.name, vendor.name) AS name<br />
+FROM orders<br />
+ LEFT JOIN customers on orders.creator ID = customers.customerID<br />
+ LEFT JOIN vendors on orders.vendorID = vendors.vendor ID</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

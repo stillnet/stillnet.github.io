@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: ColdFusion 9 disabling bold text	</title>
+	<atom:link href="/cf9-disable-bold-tex/feed/" rel="self" type="application/rss+xml" />
+	<link>/cf9-disable-bold-tex/</link>
+	<description>Web development notes and commentary from Ryan Stille</description>
+	<lastBuildDate>Tue, 28 Sep 2010 18:16:38 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>
+		By: Kris		</title>
+		<link>/cf9-disable-bold-tex/comment-page-1/#comment-1755</link>
+
+		<dc:creator><![CDATA[Kris]]></dc:creator>
+		<pubDate>Tue, 28 Sep 2010 18:16:38 +0000</pubDate>
+		<guid isPermaLink="false">/?p=787#comment-1755</guid>
+
+					<description><![CDATA[Hi Quido, I have the same problem.&#160;&#160;I loaded my content on a new CF9 box (no changes from CF8) and noticed all my content is scrunched together, as it appears to be ignoring my P paragraph tags.&#160;&#160;
+
+I don&amp;apos;t know if it this is CF9 related or IIS on WS2008 related, but I&amp;apos;m stuck until I can figure this one out short of re-coding the entire site.]]></description>
+			<content:encoded><![CDATA[<p>Hi Quido, I have the same problem.&nbsp;&nbsp;I loaded my content on a new CF9 box (no changes from CF8) and noticed all my content is scrunched together, as it appears to be ignoring my P paragraph tags.&nbsp;&nbsp;</p>
+<p>I don&apos;t know if it this is CF9 related or IIS on WS2008 related, but I&apos;m stuck until I can figure this one out short of re-coding the entire site.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Quido T. Sarducci		</title>
+		<link>/cf9-disable-bold-tex/comment-page-1/#comment-1353</link>
+
+		<dc:creator><![CDATA[Quido T. Sarducci]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 02:26:18 +0000</pubDate>
+		<guid isPermaLink="false">/?p=787#comment-1353</guid>
+
+					<description><![CDATA[Has NE1 had this problem with &#060;br /&#062; and &#060;p&#062;?&#160;&#160;CF9 does not seem to recognize these tags either.
+
+BTW, many thanx for the tips on &#060;strong&#062; and &#060;em&#062;, really helpful.]]></description>
+			<content:encoded><![CDATA[<p>Has NE1 had this problem with &lt;br /&gt; and &lt;p&gt;?&nbsp;&nbsp;CF9 does not seem to recognize these tags either.</p>
+<p>BTW, many thanx for the tips on &lt;strong&gt; and &lt;em&gt;, really helpful.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan		</title>
+		<link>/cf9-disable-bold-tex/comment-page-1/#comment-1281</link>
+
+		<dc:creator><![CDATA[Ryan]]></dc:creator>
+		<pubDate>Thu, 15 Apr 2010 19:08:25 +0000</pubDate>
+		<guid isPermaLink="false">/?p=787#comment-1281</guid>
+
+					<description><![CDATA[I&amp;apos;ve found the same problem exists with the &#060;em&#062; tag (italics).&#160;&#160;Fix it with this in your CSS:
+
+em { font-style: italic; }
+
+I see the bug I had created for the bold issue is marked closed, so hopefully this will be fixed in the 9.1 update.]]></description>
+			<content:encoded><![CDATA[<p>I&apos;ve found the same problem exists with the &lt;em&gt; tag (italics).&nbsp;&nbsp;Fix it with this in your CSS:</p>
+<p>em { font-style: italic; }</p>
+<p>I see the bug I had created for the bold issue is marked closed, so hopefully this will be fixed in the 9.1 update.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>
